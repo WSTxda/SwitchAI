@@ -1,7 +1,8 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:configure="com.wstxda.switchai.widget.WidgetConfigureActivity"
-    android:description="@string/widget_assistant_invisible_description"
-    android:initialLayout="@layout/widget_assistant_invisible_default"
+    android:description="@string/widget_assistant_description"
+    android:initialLayout="@layout/widget_assistant_material_default"
     android:resizeMode="horizontal|vertical"
+    android:previewImage="@drawable/ic_widget_logo"
     android:updatePeriodMillis="0"
     android:widgetCategory="home_screen" />

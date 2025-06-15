@@ -120,10 +120,10 @@
 
     <!--app widget-->
 
-    <string name="widget_assistant_label">Material3</string>
+    <string name="widget_assistant_label">Estilo material</string>
     <string name="widget_assistant_invisible_label">Invisível</string>
     <!--widget description-->
-    <string name="widget_assistant_description">Um widget estilo Material3 para acessar rapidamente seu assistente</string>
+    <string name="widget_assistant_description">Um widget estilo material para acessar rapidamente seu assistente</string>
     <string name="widget_assistant_invisible_description">Um widget invisível para acessar rapidamente seu assistente</string>
     <!--pinning widget-->
     <string name="widget_added_success">Widget adicionado com sucesso à tela inicial</string>

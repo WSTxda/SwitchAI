@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/widget_assistant"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background_material"
+    android:baselineAligned="false"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:id="@+id/button_assistant"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:background="@drawable/widget_button_background_primary"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:minWidth="48dp"
+        android:minHeight="48dp">
+
+        <ImageView
+            android:id="@+id/button_assistant_icon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/assistant_open"
+            android:tint="@color/widget_icon_color_primary"
+            tools:ignore="UseAppTint"
+            tools:src="@drawable/ic_assistant_chatgpt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/button_assistant_select"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:background="@drawable/widget_button_background_secondary"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:minWidth="48dp"
+        android:minHeight="48dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/assistant_select"
+            android:src="@drawable/ic_select"
+            android:tint="@color/widget_icon_color_secondary"
+            tools:ignore="UseAppTint" />
+    </LinearLayout>
+</LinearLayout>

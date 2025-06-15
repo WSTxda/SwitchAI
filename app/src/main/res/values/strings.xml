@@ -124,10 +124,10 @@
 
     <!--app widgets-->
 
-    <string name="widget_assistant_label">Material3</string>
+    <string name="widget_assistant_label">Material style</string>
     <string name="widget_assistant_invisible_label">Invisible</string>
     <!--widget description-->
-    <string name="widget_assistant_description">A Material3 styled widget to access your assistant</string>
+    <string name="widget_assistant_description">A material styled widget to access your assistant</string>
     <string name="widget_assistant_invisible_description">An invisible widget to access your assistant</string>
     <!--pinning widget-->
     <string name="widget_added_success">Widget added successfully to home screen</string>

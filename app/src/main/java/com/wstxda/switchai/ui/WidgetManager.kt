@@ -9,13 +9,13 @@ import android.content.Intent
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.wstxda.switchai.R
-import com.wstxda.switchai.widget.AssistantWidgetProvider
+import com.wstxda.switchai.widget.AssistantMaterialWidgetProvider
 
 class WidgetManager(private val context: Context) {
 
     fun requestAddAssistantWidget() {
         val appWidgetManager = AppWidgetManager.getInstance(context)
-        val widgetProvider = ComponentName(context, AssistantWidgetProvider::class.java)
+        val widgetProvider = ComponentName(context, AssistantMaterialWidgetProvider::class.java)
 
         if (appWidgetManager.isRequestPinAppWidgetSupported) {
             val successCallback = PendingIntent.getBroadcast(

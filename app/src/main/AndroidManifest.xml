@@ -345,18 +345,33 @@
             </intent-filter>
         </activity>
 
-        <!--assistant widget-->
+        <!--digital assistant widget service-->
+
+        <activity
+            android:name=".services.AssistantWidgetService"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--assistant material widget-->
 
         <receiver
-            android:name=".widget.AssistantWidgetProvider"
-            android:label="@string/widget_assistant_label"
-            android:exported="true">
+            android:name=".widget.AssistantMaterialWidgetProvider"
+            android:exported="true"
+            android:label="@string/widget_assistant_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_assistant_info" />
+                android:resource="@xml/widget_assistant_material" />
         </receiver>
 
         <!--assistant invisible widget-->
@@ -370,13 +385,17 @@
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_assistant_invisible_info" />
+                android:resource="@xml/widget_assistant_invisible" />
         </receiver>
 
         <!--widget configure activity-->
         <activity
             android:name=".widget.WidgetConfigureActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
 
         <!--digital assistant quick settings tile service-->
 

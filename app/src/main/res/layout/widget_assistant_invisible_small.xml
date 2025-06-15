@@ -2,12 +2,13 @@
     android:id="@+id/widget_assistant_invisible"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent">
+    android:background="@drawable/widget_background_invisible">
 
     <ImageView
+        android:id="@+id/widget_assistant_icon"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_gravity="center"
-        android:contentDescription="@string/assistant_open"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/ic_widget_logo" />
 </FrameLayout>

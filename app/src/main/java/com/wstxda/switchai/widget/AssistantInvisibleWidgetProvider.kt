@@ -46,7 +46,7 @@ class AssistantInvisibleWidgetProvider : AppWidgetProvider() {
 
         val pendingIntent = PendingIntent.getActivity(
             context,
-            appWidgetId,
+            appWidgetId + 100000,
             intent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )

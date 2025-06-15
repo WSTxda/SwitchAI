@@ -10,9 +10,11 @@
 
     <!--app widget-->
 
-    <color name="icon_color">#435E91</color>
-    <color name="background_color">#EDEDF4</color>
-    <color name="text_color">#1A1B20</color>
+    <color name="widget_icon_color_primary">#D8E2FF</color>
+    <color name="widget_icon_color_secondary">#FBD7FC</color>
+    <color name="widget_background_color">#EDEDF4</color>
+    <color name="widget_background_color_primary">#435E91</color>
+    <color name="widget_background_color_secondary">#715574</color>
 
     <!--material colors-->
 

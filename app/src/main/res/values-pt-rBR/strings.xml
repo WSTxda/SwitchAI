@@ -50,13 +50,16 @@
     <string name="pref_setup_digital_assistant_summary">Definir o SwitchAI como o aplicativo de assistente digital padrão</string>
 
     <string name="pref_assistant_selector">Usar seletor de assistente</string>
-    <string name="pref_assistant_selector_summary">Se ativado, selecione um assistente a cada vez. Caso contrário, use a opção <b>assistente digital</b></string>
+    <string name="pref_assistant_selector_summary">Se ativado, selecione um assistente toda vez que iniciar. Caso contrário, será usada a opção <b>Assistente digital</b></string>
 
-    <string name="pref_manage_assistant">Gerenciar assistentes</string>
-    <string name="pref_manage_assistant_summary">Escolha quais assistentes serão exibidos no seletor</string>
+    <string name="pref_assistant_manage">Gerenciar assistentes</string>
+    <string name="pref_assistant_manage_summary">Escolha quais assistentes serão exibidos no seletor</string>
 
-    <string name="pref_assistant_tile">Abrir assistente digital</string>
-    <string name="pref_assistant_tile_summary">Adicionar o bloco para abrir o assistente digital ao painel de configurações rápidas</string>
+    <string name="pref_assistant_tile">Bloco abrir assistente</string>
+    <string name="pref_assistant_tile_summary">Adicionar bloco para abrir assistente no painel de configurações rápidas</string>
+
+    <string name="pref_assistant_widget">Widget abrir assistente</string>
+    <string name="pref_assistant_widget_summary">Adicionar widget para abrir assistente na tela inicial do seu launcher</string>
 
     <string name="pref_assistant_root">Usar permissão root</string>
     <string name="pref_assistant_root_summary">Use permissão root para ativar a entrada de voz em assistentes específicos e melhorar a usabilidade</string>
@@ -115,11 +118,14 @@
     <string name="error_min_selection">Selecione pelo menos %1$d opções</string>
     <string name="error_max_selection">Selecione no máximo %1$d opções</string>
 
-    <!--widgets labels/descriptions-->
+    <!--app widget-->
 
     <string name="widget_assistant_label">Material3</string>
     <string name="widget_assistant_invisible_label">Invisível</string>
-
-    <string name="widget_assistant_description">Um widget estilo Material3 para acessar seu assistente</string>
-    <string name="widget_assistant_invisible_description">Um widget invisível para acessar seu assistente</string>
+    <!--widget description-->
+    <string name="widget_assistant_description">Um widget estilo Material3 para acessar rapidamente seu assistente</string>
+    <string name="widget_assistant_invisible_description">Um widget invisível para acessar rapidamente seu assistente</string>
+    <!--pinning widget-->
+    <string name="widget_added_success">Widget adicionado com sucesso à tela inicial</string>
+    <string name="widget_launcher_not_supported">Seu launcher não suporta a fixação de widgets</string>
 </resources>

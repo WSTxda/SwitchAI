@@ -39,11 +39,11 @@
         android:entryValues="@array/assistant_values"
         android:key="assistant_selector_manager"
         android:layout="@layout/preference_material_bottom"
-        android:title="@string/pref_manage_assistant"
+        android:title="@string/pref_assistant_manage"
         app:defaultValue="@array/assistant_visibility_values"
         app:dialogIcon="@drawable/ic_assistants"
         app:minSelection="2"
-        app:summary="@string/pref_manage_assistant_summary" />
+        app:summary="@string/pref_assistant_manage_summary" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"
@@ -63,10 +63,16 @@
         app:allowDividerAbove="false" />
 
     <Preference
-        android:key="digital_assistant_tile"
-        android:layout="@layout/preference_material_single"
+        android:key="open_assistant_tile"
+        android:layout="@layout/preference_material_top"
         android:summary="@string/pref_assistant_tile_summary"
         android:title="@string/pref_assistant_tile" />
+
+    <Preference
+        android:key="open_assistant_widget"
+        android:layout="@layout/preference_material_bottom"
+        android:title="@string/pref_assistant_widget"
+        android:summary="@string/pref_assistant_widget_summary" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"

@@ -20,6 +20,7 @@ import com.wstxda.switchai.ui.TileManager
 import com.wstxda.switchai.ui.component.AssistantManagerDialog
 import com.wstxda.switchai.ui.component.DigitalAssistantSetupDialog
 import com.wstxda.switchai.fragment.preferences.AssistantIconUpdater
+import com.wstxda.switchai.ui.WidgetManager
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.SettingsViewModel
 import kotlinx.coroutines.launch
@@ -31,6 +32,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
     }
     private val assistantIconUpdater: AssistantIconUpdater by lazy { AssistantIconUpdater() }
+    private val widgetManager by lazy { WidgetManager(requireContext()) }
     private val digitalAssistantPreference by lazy { DigitalAssistantPreference(this) }
     private val digitalAssistantLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -90,13 +92,15 @@ class SettingsFragment : PreferenceFragmentCompat() {
         setupDigitalAssistantIconPreferenceListener()
         setupThemePreference()
         setupTilePreference()
+        setupWidgetPreference()
         setupLibraryPreference()
         setupLinkPreferences()
     }
 
     private fun setupInitialVisibility() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
-            findPreference<Preference>(Constants.DIGITAL_ASSISTANT_TILE_PREF_KEY)?.isVisible = false
+            findPreference<Preference>(Constants.OPEN_ASSISTANT_TILE_PREF_KEY)?.isVisible = false
+            findPreference<Preference>(Constants.OPEN_ASSISTANT_WIDGET_PREF_KEY)?.isVisible = false
             findPreference<PreferenceCategory>(Constants.SETTINGS_CATEGORY_SHORTCUTS)?.isVisible =
                 false
         }
@@ -110,7 +114,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun setupDigitalAssistantIconPreferenceListener() {
-        val listPreference = findPreference<ListPreference>(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY)
+        val listPreference =
+            findPreference<ListPreference>(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY)
         listPreference?.setOnPreferenceChangeListener { preference, newValue ->
             if (preference is ListPreference) {
                 assistantIconUpdater.updateIcon(requireContext(), preference, newValue.toString())
@@ -130,8 +135,15 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun setupTilePreference() {
-        findPreference<Preference>(Constants.DIGITAL_ASSISTANT_TILE_PREF_KEY)?.setOnPreferenceClickListener {
+        findPreference<Preference>(Constants.OPEN_ASSISTANT_TILE_PREF_KEY)?.setOnPreferenceClickListener {
             TileManager(requireContext()).requestAddTile()
+            true
+        }
+    }
+
+    private fun setupWidgetPreference() {
+        findPreference<Preference>(Constants.OPEN_ASSISTANT_WIDGET_PREF_KEY)?.setOnPreferenceClickListener {
+            widgetManager.requestAddAssistantWidget()
             true
         }
     }

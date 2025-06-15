@@ -54,13 +54,16 @@
     <string name="pref_setup_digital_assistant_summary">Set SwitchAI as default digital assistant app</string>
 
     <string name="pref_assistant_selector">Use assistant selector</string>
-    <string name="pref_assistant_selector_summary">If enabled, select an assistant each time. Otherwise, use the <b>digital assistant</b> option</string>
+    <string name="pref_assistant_selector_summary">If enabled, select an assistant each time it starts. Otherwise, the <b>Digital assistant</b> option will be used</string>
 
-    <string name="pref_manage_assistant">Manage assistants</string>
-    <string name="pref_manage_assistant_summary">Choose which assistants are displayed in the selector</string>
+    <string name="pref_assistant_manage">Manage assistants</string>
+    <string name="pref_assistant_manage_summary">Choose which assistants are displayed in the selector</string>
 
-    <string name="pref_assistant_tile">Open digital assistant tile</string>
-    <string name="pref_assistant_tile_summary">Add open digital assistant tile in quick settings panel</string>
+    <string name="pref_assistant_tile">Open assistant tile</string>
+    <string name="pref_assistant_tile_summary">Add open assistant tile in quick settings panel</string>
+
+    <string name="pref_assistant_widget">Open assistant widget</string>
+    <string name="pref_assistant_widget_summary">Add open assistant widget on your launcher home screen</string>
 
     <string name="pref_assistant_root">Use root permission</string>
     <string name="pref_assistant_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
@@ -119,11 +122,14 @@
     <string name="error_min_selection">Select at least %1$d options</string>
     <string name="error_max_selection">Select a maximum of %1$d options</string>
 
-    <!--widgets labels/descriptions-->
+    <!--app widgets-->
 
     <string name="widget_assistant_label">Material3</string>
     <string name="widget_assistant_invisible_label">Invisible</string>
-
+    <!--widget description-->
     <string name="widget_assistant_description">A Material3 styled widget to access your assistant</string>
     <string name="widget_assistant_invisible_description">An invisible widget to access your assistant</string>
+    <!--pinning widget-->
+    <string name="widget_added_success">Widget added successfully to home screen</string>
+    <string name="widget_launcher_not_supported">Your launcher does not support widget pinning</string>
 </resources>

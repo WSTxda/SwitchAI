@@ -3,8 +3,8 @@
         android:enabled="true"
         android:icon="@drawable/ic_launcher_shortcut"
         android:shortcutId="open_assistant_shortcut"
-        android:shortcutLongLabel="@string/shortcut_label_assistant_long"
-        android:shortcutShortLabel="@string/shortcut_label_assistant">
+        android:shortcutLongLabel="@string/assistant_label_long"
+        android:shortcutShortLabel="@string/assistant_label">
 
         <intent
             android:action="android.intent.action.VIEW"

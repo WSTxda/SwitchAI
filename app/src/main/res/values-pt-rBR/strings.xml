@@ -96,10 +96,10 @@
     <string name="digital_assistant_setup_message">Nas configurações, selecione o <b>SwitchAI</b> como o aplicativo de assistente digital padrão para lançar rapidamente o assistente selecionado usando gestos, botões e mais…</string>
     <string name="digital_assistant_setup_button">Configurar agora</string>
 
-    <!--app shortcut-->
+    <!--app shortcut/tile-->
 
-    <string name="shortcut_label_assistant">Assistente</string>
-    <string name="shortcut_label_assistant_long">Abrir assistente selecionado</string>
+    <string name="assistant_label">Assistente</string>
+    <string name="assistant_label_long">Abrir assistente</string>
 
     <!--app quick settings tile-->
 

@@ -5,8 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.net.toUri
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 
 fun Context.launchAssistant(
     intents: List<Intent>,

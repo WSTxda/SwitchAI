@@ -100,10 +100,10 @@
     <string name="digital_assistant_setup_message">In settings, select <b>SwitchAI</b> as default digital assistant app to quickly launch your selected assistant using device gestures, buttons and more…</string>
     <string name="digital_assistant_setup_button">Setup now</string>
 
-    <!--app shortcut-->
+    <!--app shortcut/tile-->
 
-    <string name="shortcut_label_assistant">Assistant</string>
-    <string name="shortcut_label_assistant_long">Open selected assistant</string>
+    <string name="assistant_label">Assistant</string>
+    <string name="assistant_label_long">Open assistant</string>
 
     <!--app quick settings tile-->
 

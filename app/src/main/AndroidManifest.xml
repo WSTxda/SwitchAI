@@ -351,7 +351,7 @@
             android:name="com.wstxda.switchai.services.DigitalAssistantTileService"
             android:exported="true"
             android:icon="@drawable/ic_assistant"
-            android:label="@string/assistant_open"
+            android:label="@string/assistant_label"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />

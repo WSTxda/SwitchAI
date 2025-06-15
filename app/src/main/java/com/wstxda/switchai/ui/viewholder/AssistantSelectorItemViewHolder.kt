@@ -21,7 +21,7 @@ class AssistantSelectorItemViewHolder(
         val item = wrapper.assistantItem
         binding.assistantCheckedTextView.text = item.name
         binding.assistantIcon.setImageResource(
-            if (item.iconResId != 0) item.iconResId else R.drawable.ic_assistant
+            if (item.iconResId != 0) item.iconResId else R.drawable.ic_assistants
         )
         binding.pinButton.setIconResource(
             if (item.isPinned) R.drawable.ic_pin_filled else R.drawable.ic_pin_outline

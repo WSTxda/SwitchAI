@@ -38,7 +38,7 @@ class TileManager(private val context: Context) {
             }
             context.getSystemService(StatusBarManager::class.java)?.requestAddTileService(
                 tileServiceComponent,
-                context.getString(R.string.assistant_open),
+                context.getString(R.string.assistant_label),
                 Icon.createWithResource(context, R.drawable.ic_assistant),
                 executor,
                 resultCallback

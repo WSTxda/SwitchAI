@@ -345,6 +345,39 @@
             </intent-filter>
         </activity>
 
+        <!--assistant widget-->
+
+        <receiver
+            android:name=".widget.AssistantWidgetProvider"
+            android:label="@string/widget_assistant_label"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_assistant_info" />
+        </receiver>
+
+        <!--assistant invisible widget-->
+
+        <receiver
+            android:name=".widget.AssistantInvisibleWidgetProvider"
+            android:exported="true"
+            android:label="@string/widget_assistant_invisible_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_assistant_invisible_info" />
+        </receiver>
+
+        <!--widget configure activity-->
+        <activity
+            android:name=".widget.WidgetConfigureActivity"
+            android:exported="true" />
+
         <!--digital assistant quick settings tile service-->
 
         <service

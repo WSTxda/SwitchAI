@@ -8,6 +8,12 @@
 
     <color name="divider_color">#1F000000</color>
 
+    <!--app widget-->
+
+    <color name="icon_color">#435E91</color>
+    <color name="background_color">#EDEDF4</color>
+    <color name="text_color">#1A1B20</color>
+
     <!--material colors-->
 
     <color name="md_theme_primary">#435E91</color>

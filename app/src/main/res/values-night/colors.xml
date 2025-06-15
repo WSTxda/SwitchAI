@@ -4,6 +4,12 @@
 
     <color name="divider_color">#1FFFFFFF</color>
 
+    <!--app widget-->
+
+    <color name="icon_color">#ADC7FF</color>
+    <color name="background_color">#1E1F25</color>
+    <color name="text_color">#E2E2E9</color>
+
     <!--material colors-->
 
     <color name="md_theme_primary">#ADC7FF</color>

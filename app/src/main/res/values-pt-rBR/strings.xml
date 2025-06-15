@@ -114,4 +114,12 @@
 
     <string name="error_min_selection">Selecione pelo menos %1$d opções</string>
     <string name="error_max_selection">Selecione no máximo %1$d opções</string>
+
+    <!--widgets labels/descriptions-->
+
+    <string name="widget_assistant_label">Material3</string>
+    <string name="widget_assistant_invisible_label">Invisível</string>
+
+    <string name="widget_assistant_description">Um widget estilo Material3 para acessar seu assistente</string>
+    <string name="widget_assistant_invisible_description">Um widget invisível para acessar seu assistente</string>
 </resources>

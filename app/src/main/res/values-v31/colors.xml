@@ -1,0 +1,8 @@
+<resources>
+
+    <!--app widget-->
+
+    <color name="icon_color">@android:color/system_accent1_600</color>
+    <color name="background_color">@android:color/system_accent2_50</color>
+    <color name="text_color">@android:color/system_neutral2_900</color>
+</resources>

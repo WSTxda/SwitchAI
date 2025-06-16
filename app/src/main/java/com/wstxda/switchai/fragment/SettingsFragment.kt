@@ -23,6 +23,7 @@ import com.wstxda.switchai.fragment.preferences.AssistantIconUpdater
 import com.wstxda.switchai.ui.WidgetManager
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.SettingsViewModel
+import com.wstxda.switchai.widget.utils.AssistantWidgetUpdater
 import kotlinx.coroutines.launch
 import kotlin.getValue
 
@@ -120,6 +121,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             if (preference is ListPreference) {
                 assistantIconUpdater.updateIcon(requireContext(), preference, newValue.toString())
             }
+            AssistantWidgetUpdater.updateAllWidgets(requireContext())
             true
         }
         listPreference?.let { pref ->

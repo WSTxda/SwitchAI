@@ -27,7 +27,7 @@ class GeminiAssistant : AssistantActivity() {
     private  fun launchGeminiFloaty() {
         launchAssistantRoot(
             intents = listOf(createGeminiFloatyIntent()),
-            rootAccessMessageResId = R.string.root_access_error,
+            rootAccessMessageResId = R.string.root_access_warning,
             errorMessageResId = R.string.assistant_application_not_found,
             packageName = "com.google.android.googlequicksearchbox"
         )

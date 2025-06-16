@@ -60,10 +60,10 @@
     <string name="pref_assistant_manage_summary">Choose which assistants are displayed in the selector</string>
 
     <string name="pref_assistant_tile">Open assistant tile</string>
-    <string name="pref_assistant_tile_summary">Add open assistant tile in quick settings panel</string>
+    <string name="pref_assistant_tile_summary">Add tile to launch the assistant in your device\'s quick settings panel</string>
 
     <string name="pref_assistant_widget">Open assistant widget</string>
-    <string name="pref_assistant_widget_summary">Add open assistant widget on your launcher home screen</string>
+    <string name="pref_assistant_widget_summary">Add widget to launch the assistant on your device\'s home screen</string>
 
     <string name="pref_assistant_root">Use root permission</string>
     <string name="pref_assistant_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
@@ -84,7 +84,7 @@
     <string name="update_checker_no_update">No update available</string>
     <string name="update_checker_update_available">New update available: %s</string>
     <string name="update_checker_no_internet">No internet connection</string>
-    <string name="update_checker_generic_error">Something went wrong. Please try again later</string>
+    <string name="update_checker_generic_error">Something went wrong… Please try again later</string>
 
     <!--digital/selector/open assistant-->
 
@@ -100,8 +100,9 @@
     <string name="assistant_not_implemented">Assistant not implemented yet…</string>
     <!--setup digital assistant dialog-->
     <string name="digital_assistant_setup_title">Default digital assistant app</string>
-    <string name="digital_assistant_setup_message">In settings, select <b>SwitchAI</b> as default digital assistant app to quickly launch your selected assistant using device gestures, buttons and more…</string>
+    <string name="digital_assistant_setup_message">In the settings, select <b>SwitchAI</b> as your default digital assistant app to quickly launch the selected assistant using gestures, buttons, and more…</string>
     <string name="digital_assistant_setup_button">Setup now</string>
+
 
     <!--app shortcut/tile-->
 
@@ -115,7 +116,7 @@
 
     <!--root permission-->
 
-    <string name="root_access_error">Grant root permission first</string>
+    <string name="root_access_warning">Grant root permission first</string>
 
     <!--multi select list preference selection-->
 

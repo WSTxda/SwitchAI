@@ -56,10 +56,10 @@
     <string name="pref_assistant_manage_summary">Escolha quais assistentes serão exibidos no seletor</string>
 
     <string name="pref_assistant_tile">Bloco abrir assistente</string>
-    <string name="pref_assistant_tile_summary">Adicionar bloco para abrir assistente no painel de configurações rápidas</string>
+    <string name="pref_assistant_tile_summary">Adicionar bloco para iniciar o assistente no painel de configurações rápidas do seu dispositivo</string>
 
     <string name="pref_assistant_widget">Widget abrir assistente</string>
-    <string name="pref_assistant_widget_summary">Adicionar widget para abrir assistente na tela inicial do seu launcher</string>
+    <string name="pref_assistant_widget_summary">Adicionar widget para iniciar o assistente na tela inicial do seu dispositivo</string>
 
     <string name="pref_assistant_root">Usar permissão root</string>
     <string name="pref_assistant_root_summary">Use permissão root para ativar a entrada de voz em assistentes específicos e melhorar a usabilidade</string>
@@ -80,7 +80,7 @@
     <string name="update_checker_no_update">Nenhuma atualização disponível</string>
     <string name="update_checker_update_available">Nova atualização disponível: %s</string>
     <string name="update_checker_no_internet">Sem conexão com a internet</string>
-    <string name="update_checker_generic_error">Algo deu errado. Tente novamente mais tarde</string>
+    <string name="update_checker_generic_error">Algo deu errado… Tente novamente mais tarde</string>
 
     <!--digital/selector/open assistant-->
 
@@ -96,7 +96,7 @@
     <string name="assistant_not_implemented">Assistente ainda não implementado…</string>
     <!--setup digital assistant dialog-->
     <string name="digital_assistant_setup_title">Aplicativo de assistente digital padrão</string>
-    <string name="digital_assistant_setup_message">Nas configurações, selecione o <b>SwitchAI</b> como o aplicativo de assistente digital padrão para lançar rapidamente o assistente selecionado usando gestos, botões e mais…</string>
+    <string name="digital_assistant_setup_message">Nas configurações, selecione o <b>SwitchAI</b> como o aplicativo de assistente digital padrão para lançar rapidamente o assistente selecionado usando gestos, botões e muito mais…</string>
     <string name="digital_assistant_setup_button">Configurar agora</string>
 
     <!--app shortcut/tile-->
@@ -111,7 +111,7 @@
 
     <!--root permission-->
 
-    <string name="root_access_error">Conceda permissão root primeiro</string>
+    <string name="root_access_warning">Conceda permissão root primeiro</string>
 
     <!--multi select list preference selection-->
 

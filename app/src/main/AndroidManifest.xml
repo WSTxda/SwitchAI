@@ -351,7 +351,7 @@
             android:name=".services.AssistantWidgetService"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:excludeFromRecents="true"
-            android:exported="true"
+            android:exported="false"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent">
@@ -391,7 +391,7 @@
         <!--widget configure activity-->
         <activity
             android:name=".widget.WidgetConfigureActivity"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>

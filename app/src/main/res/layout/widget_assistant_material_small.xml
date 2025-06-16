@@ -41,7 +41,7 @@
         android:gravity="center"
         android:minWidth="48dp"
         android:minHeight="48dp"
-        android:padding="8dp">
+        android:padding="6dp">
 
         <ImageView
             android:layout_width="wrap_content"

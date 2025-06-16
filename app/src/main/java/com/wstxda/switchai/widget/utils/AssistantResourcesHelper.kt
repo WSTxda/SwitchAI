@@ -8,12 +8,12 @@ object AssistantResourcesHelper {
 
     @SuppressLint("DiscouragedApi")
     fun getAssistantIcon(context: Context, assistantValue: String?): Int {
-        if (assistantValue.isNullOrEmpty()) return R.drawable.ic_assistant
+        if (assistantValue.isNullOrEmpty()) return R.drawable.ic_assistant_default
 
         val resourceName = "ic_assistant_" + assistantValue.replace("_assistant", "")
         val resId = context.resources.getIdentifier(resourceName, "drawable", context.packageName)
 
-        return if (resId != 0) resId else R.drawable.ic_assistant
+        return if (resId != 0) resId else R.drawable.ic_assistant_default
     }
 
     @SuppressLint("DiscouragedApi")

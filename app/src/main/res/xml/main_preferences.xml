@@ -41,7 +41,7 @@
         android:layout="@layout/preference_material_bottom"
         android:title="@string/pref_assistant_manage"
         app:defaultValue="@array/assistant_visibility_values"
-        app:dialogIcon="@drawable/ic_assistants"
+        app:dialogIcon="@drawable/ic_visibility"
         app:minSelection="2"
         app:summary="@string/pref_assistant_manage_summary" />
 

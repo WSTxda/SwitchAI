@@ -4,5 +4,5 @@
     android:initialLayout="@layout/widget_assistant_invisible_default"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="0"
-    android:previewImage="@drawable/ic_widget_logo"
+    android:previewImage="@drawable/widget_invisible_preview"
     android:widgetCategory="home_screen" />

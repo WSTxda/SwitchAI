@@ -30,7 +30,7 @@
             android:contentDescription="@string/assistant_open"
             android:tint="@color/widget_icon_color_primary"
             tools:ignore="UseAppTint"
-            tools:src="@drawable/ic_assistant_chatgpt" />
+            android:src="@drawable/ic_assistant" />
 
         <TextView
             android:id="@+id/button_assistant_title"
@@ -42,7 +42,7 @@
             android:maxLines="1"
             android:textColor="@color/widget_icon_color_primary"
             android:textSize="16sp"
-            tools:text="@string/chatgpt" />
+            android:text="@string/assistant_label" />
     </LinearLayout>
 
     <LinearLayout

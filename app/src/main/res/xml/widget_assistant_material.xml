@@ -3,6 +3,6 @@
     android:description="@string/widget_assistant_description"
     android:initialLayout="@layout/widget_assistant_material_default"
     android:resizeMode="horizontal|vertical"
-    android:previewImage="@drawable/ic_widget_logo"
+    android:previewImage="@drawable/widget_material_preview"
     android:updatePeriodMillis="0"
     android:widgetCategory="home_screen" />

@@ -12,7 +12,7 @@ class DigitalAssistantTileService : TileService() {
     override fun onClick() {
         super.onClick()
 
-        val intent = Intent(this, DigitalAssistantFallbackService::class.java)
+        val intent = Intent(this, DigitalAssistantService::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {

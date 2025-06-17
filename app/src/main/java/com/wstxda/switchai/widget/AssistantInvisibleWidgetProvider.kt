@@ -8,7 +8,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.RemoteViews
 import com.wstxda.switchai.R
-import com.wstxda.switchai.services.DigitalAssistantFallbackService
+import com.wstxda.switchai.services.DigitalAssistantService
 
 class AssistantInvisibleWidgetProvider : AppWidgetProvider() {
 
@@ -40,7 +40,7 @@ class AssistantInvisibleWidgetProvider : AppWidgetProvider() {
 
         val views = RemoteViews(context.packageName, layoutId)
 
-        val intent = Intent(context, DigitalAssistantFallbackService::class.java).apply {
+        val intent = Intent(context, DigitalAssistantService::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
 

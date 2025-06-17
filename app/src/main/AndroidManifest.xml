@@ -328,10 +328,10 @@
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />
 
-        <!--digital assistant fallback service-->
+        <!--digital assistant service-->
 
         <activity
-            android:name=".services.DigitalAssistantFallbackService"
+            android:name=".services.DigitalAssistantService"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:excludeFromRecents="true"
             android:exported="true"
@@ -340,22 +340,22 @@
             android:theme="@style/AppTheme.Transparent">
             <intent-filter>
                 <action android:name="android.intent.action.ASSIST" />
-                <action android:name="android.intent.action.VOICE_COMMAND" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <!--digital assistant widget service-->
+        <!--assistant service-->
 
         <activity
-            android:name=".services.AssistantWidgetService"
+            android:name=".services.AssistantService"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:excludeFromRecents="true"
-            android:exported="false"
+            android:exported="true"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent">
             <intent-filter>
+                <action android:name="android.intent.action.VOICE_COMMAND" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

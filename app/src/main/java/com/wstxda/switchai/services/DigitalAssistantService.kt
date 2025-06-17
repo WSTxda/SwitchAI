@@ -7,7 +7,7 @@ import com.wstxda.switchai.utils.DigitalAssistantMap
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.utils.Constants
 
-class DigitalAssistantFallbackService : AssistantActivity() {
+class DigitalAssistantService : AssistantActivity() {
     override fun onCreateInternal() {
         val preferenceHelper = PreferenceHelper(this)
         val showSelector =

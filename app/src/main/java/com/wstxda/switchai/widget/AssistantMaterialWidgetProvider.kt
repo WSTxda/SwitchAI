@@ -10,7 +10,7 @@ import android.widget.RemoteViews
 import androidx.preference.PreferenceManager
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantSelectorActivity
-import com.wstxda.switchai.services.AssistantWidgetService
+import com.wstxda.switchai.services.AssistantService
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.utils.AssistantResourcesManager
 
@@ -53,7 +53,7 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
         views.setImageViewResource(R.id.button_assistant_icon, assistantIconRes)
         views.setTextViewText(R.id.button_assistant_title, assistantName)
 
-        val assistantIntent = Intent(context, AssistantWidgetService::class.java).apply {
+        val assistantIntent = Intent(context, AssistantService::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
         val assistantPendingIntent = PendingIntent.getActivity(

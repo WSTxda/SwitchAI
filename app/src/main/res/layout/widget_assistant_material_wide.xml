@@ -18,9 +18,7 @@
         android:background="@drawable/widget_button_background_primary"
         android:clickable="true"
         android:focusable="true"
-        android:gravity="center"
-        android:minWidth="48dp"
-        android:minHeight="48dp">
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/button_assistant_icon"
@@ -28,9 +26,9 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:contentDescription="@string/assistant_open"
+            android:src="@drawable/ic_assistant"
             android:tint="@color/widget_icon_color_primary"
-            tools:ignore="UseAppTint"
-            android:src="@drawable/ic_assistant" />
+            tools:ignore="UseAppTint" />
 
         <TextView
             android:id="@+id/button_assistant_title"
@@ -40,9 +38,9 @@
             android:ellipsize="end"
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
+            android:text="@string/assistant_label"
             android:textColor="@color/widget_icon_color_primary"
-            android:textSize="16sp"
-            android:text="@string/assistant_label" />
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -53,9 +51,7 @@
         android:background="@drawable/widget_button_background_secondary"
         android:clickable="true"
         android:focusable="true"
-        android:gravity="center"
-        android:minWidth="48dp"
-        android:minHeight="48dp">
+        android:gravity="center">
 
         <ImageView
             android:layout_width="wrap_content"

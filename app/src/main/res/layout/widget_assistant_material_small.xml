@@ -10,23 +10,21 @@
         android:id="@+id/button_assistant"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_weight="1.4"
         android:background="@drawable/widget_background_material"
         android:clickable="true"
         android:focusable="true"
-        android:gravity="center"
-        android:minWidth="48dp"
-        android:minHeight="48dp">
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/button_assistant_icon"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:contentDescription="@string/assistant_open"
+            android:src="@drawable/ic_assistant"
             android:tint="@color/widget_background_color_primary"
-            tools:ignore="UseAppTint"
-            android:src="@drawable/ic_assistant" />
+            tools:ignore="UseAppTint" />
     </LinearLayout>
 
     <LinearLayout
@@ -38,10 +36,7 @@
         android:background="@drawable/widget_button_background_secondary"
         android:clickable="true"
         android:focusable="true"
-        android:gravity="center"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:padding="6dp">
+        android:gravity="center">
 
         <ImageView
             android:layout_width="wrap_content"

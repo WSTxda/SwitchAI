@@ -17,7 +17,7 @@
     </style>
 
     <style name="Theme.Component.Material.Snackbar" parent="Widget.Material3.Snackbar">
-        <item name="android:layout_margin">24dp</item>
+        <item name="android:layout_margin">17dp</item>
         <item name="animationMode">slide</item>
     </style>
 

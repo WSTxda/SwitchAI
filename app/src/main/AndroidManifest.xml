@@ -328,6 +328,16 @@
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />
 
+        <!--widget configure activity-->
+
+        <activity
+            android:name=".widget.WidgetConfigureActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
         <!--digital assistant service-->
 
         <activity
@@ -387,15 +397,6 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_assistant_invisible" />
         </receiver>
-
-        <!--widget configure activity-->
-        <activity
-            android:name=".widget.WidgetConfigureActivity"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
-            </intent-filter>
-        </activity>
 
         <!--digital assistant quick settings tile service-->
 

@@ -12,8 +12,7 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantSelectorActivity
 import com.wstxda.switchai.services.AssistantWidgetService
 import com.wstxda.switchai.utils.Constants
-import com.wstxda.switchai.widget.utils.AssistantResourcesHelper.getAssistantIcon
-import com.wstxda.switchai.widget.utils.AssistantResourcesHelper.getAssistantName
+import com.wstxda.switchai.utils.AssistantResourcesManager
 
 class AssistantMaterialWidgetProvider : AppWidgetProvider() {
 
@@ -47,9 +46,9 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
 
         val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         val assistantValue = prefs.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
-
-        val assistantIconRes = getAssistantIcon(context, assistantValue)
-        val assistantName = getAssistantName(context, assistantValue)
+        val assistantResourcesManager = AssistantResourcesManager(context)
+        val assistantIconRes = assistantResourcesManager.getAssistantIcon(assistantValue)
+        val assistantName = assistantResourcesManager.getAssistantName(assistantValue)
 
         views.setImageViewResource(R.id.button_assistant_icon, assistantIconRes)
         views.setTextViewText(R.id.button_assistant_title, assistantName)

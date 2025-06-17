@@ -19,7 +19,7 @@ import com.wstxda.switchai.fragment.preferences.DigitalAssistantPreference
 import com.wstxda.switchai.ui.TileManager
 import com.wstxda.switchai.ui.component.AssistantManagerDialog
 import com.wstxda.switchai.ui.component.DigitalAssistantSetupDialog
-import com.wstxda.switchai.fragment.preferences.AssistantIconUpdater
+import com.wstxda.switchai.utils.AssistantResourcesManager
 import com.wstxda.switchai.ui.WidgetManager
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.SettingsViewModel
@@ -32,7 +32,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private val viewModel: SettingsViewModel by viewModels {
         ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
     }
-    private val assistantIconUpdater: AssistantIconUpdater by lazy { AssistantIconUpdater() }
+
+    private lateinit var assistantResourcesManager: AssistantResourcesManager
     private val widgetManager by lazy { WidgetManager(requireContext()) }
     private val digitalAssistantPreference by lazy { DigitalAssistantPreference(this) }
     private val digitalAssistantLauncher = registerForActivityResult(
@@ -83,6 +84,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.main_preferences, rootKey)
+        assistantResourcesManager = AssistantResourcesManager(requireContext()) // Initialize here
         setupInitialVisibility()
         setupPreferences()
         observeViewModel()
@@ -119,13 +121,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
             findPreference<ListPreference>(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY)
         listPreference?.setOnPreferenceChangeListener { preference, newValue ->
             if (preference is ListPreference) {
-                assistantIconUpdater.updateIcon(requireContext(), preference, newValue.toString())
+                assistantResourcesManager.updatePreferenceIcon(
+                    preference,
+                    newValue.toString()
+                )
             }
             AssistantWidgetUpdater.updateAllWidgets(requireContext())
             true
         }
         listPreference?.let { pref ->
-            assistantIconUpdater.updateIcon(requireContext(), pref, pref.value)
+            assistantResourcesManager.updatePreferenceIcon(pref, pref.value)
         }
     }
 

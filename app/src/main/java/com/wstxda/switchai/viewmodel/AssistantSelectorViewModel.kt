@@ -1,6 +1,5 @@
 package com.wstxda.switchai.viewmodel
 
-import android.annotation.SuppressLint
 import android.app.Application
 import android.content.SharedPreferences
 import androidx.lifecycle.AndroidViewModel
@@ -14,12 +13,12 @@ import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.utils.DigitalAssistantMap
 import org.json.JSONArray
 import org.json.JSONObject
-import java.util.Locale
 import androidx.core.content.edit
 import com.wstxda.switchai.utils.Constants.CAT_PINNED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_MAX_RECENTLY_USED
 import com.wstxda.switchai.utils.Constants.PREFS_NAME
+import com.wstxda.switchai.utils.AssistantResourcesManager
 
 class AssistantSelectorViewModel(application: Application) : AndroidViewModel(application),
     SharedPreferences.OnSharedPreferenceChangeListener {
@@ -39,6 +38,9 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
 
     private var defaultSharedPreferences: SharedPreferences =
         PreferenceManager.getDefaultSharedPreferences(application.applicationContext)
+
+    private val assistantResourcesManager: AssistantResourcesManager =
+        AssistantResourcesManager(application.applicationContext)
 
     init {
         defaultSharedPreferences.registerOnSharedPreferenceChangeListener(this)
@@ -115,11 +117,9 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         return list
     }
 
-    @SuppressLint("DiscouragedApi")
     private fun loadAssistants() {
         val context = getApplication<Application>().applicationContext
         val resources = context.resources
-        val packageName = context.packageName
 
         val assistantsMap = DigitalAssistantMap.assistantsMap
 
@@ -131,17 +131,8 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
 
         val allVisibleAssistantDetails =
             assistantsMap.filterKeys { it in visibleAssistantKeys }.map { (key, _) ->
-                val resourceName = key.replace("_assistant", "")
-                val stringResId = resources.getIdentifier(resourceName, "string", packageName)
-                val name =
-                    if (stringResId != 0) resources.getString(stringResId) else resourceName.replace(
-                        "_", " "
-                    ).capitalizeWords()
-                val iconResourceName = "ic_assistant_" + key.replace("_assistant", "")
-                val specificIconResId =
-                    resources.getIdentifier(iconResourceName, "drawable", packageName)
-                val finalIconResId =
-                    if (specificIconResId != 0) specificIconResId else R.drawable.ic_assistant_default
+                val name = assistantResourcesManager.getAssistantName(key)
+                val finalIconResId = assistantResourcesManager.getAssistantIcon(key)
 
                 AssistantItem(
                     key, name, finalIconResId, isPinned = false, lastUsedTimestamp = 0L
@@ -222,12 +213,6 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     override fun onCleared() {
         super.onCleared()
         defaultSharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
-    }
-
-    private fun String.capitalizeWords(): String = split(" ").joinToString(" ") {
-        it.replaceFirstChar { char ->
-            if (char.isLowerCase()) char.titlecase(Locale.getDefault()) else char.toString()
-        }
     }
 
     data class AssistantItem(

@@ -10,13 +10,30 @@ import com.wstxda.switchai.utils.Constants
 
 object VibrationService {
 
-    fun performVibration(context: Context) {
-        if (!isVibrationEnabled(context)) return
+    private const val EFFECT_CLICK = 1
+    private const val EFFECT_TICK = 2
 
-        val vibrator = context.getSystemService(Vibrator::class.java) ?: return
+    fun Context.openAssistantVibration() {
+        if (!isVibrationEnabled()) return
+        performVibration(
+            effectId = getEffectClick(), fallbackDuration = 40
+        )
+    }
+
+    fun Context.buttonVibration() {
+        performVibration(
+            effectId = getEffectTick(), fallbackDuration = 20
+        )
+    }
+
+    private fun Context.performVibration(
+        effectId: Int,
+        fallbackDuration: Long,
+    ) {
+        val vibrator = getSystemService(Vibrator::class.java) ?: return
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            val effect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_CLICK)
+            val effect = VibrationEffect.createPredefined(effectId)
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 val attrs =
@@ -25,21 +42,32 @@ object VibrationService {
             } else {
                 vibrator.vibrate(effect)
             }
-
         } else {
             val effect = VibrationEffect.createOneShot(
-                40, VibrationEffect.DEFAULT_AMPLITUDE
+                fallbackDuration, VibrationEffect.DEFAULT_AMPLITUDE
             )
             vibrator.vibrate(effect)
         }
     }
 
-    private fun isVibrationEnabled(context: Context): Boolean {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-        return prefs.getBoolean(Constants.ASSISTANT_VIBRATION_PREF_KEY, true)
+    private fun getEffectClick(): Int {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            VibrationEffect.EFFECT_CLICK
+        } else {
+            EFFECT_CLICK
+        }
     }
 
-    fun Context.openAssistantVibration() {
-        performVibration(this)
+    private fun getEffectTick(): Int {
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            VibrationEffect.EFFECT_TICK
+        } else {
+            EFFECT_TICK
+        }
+    }
+
+    private fun Context.isVibrationEnabled(): Boolean {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
+        return prefs.getBoolean(Constants.ASSISTANT_VIBRATION_PREF_KEY, true)
     }
 }

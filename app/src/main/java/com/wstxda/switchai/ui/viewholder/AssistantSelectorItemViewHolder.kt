@@ -7,6 +7,7 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.utils.DigitalAssistantMap
 import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
 import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView
+import com.wstxda.switchai.ui.utils.VibrationService.buttonVibration
 
 class AssistantSelectorItemViewHolder(
     private val binding: ListItemAssistantViewBinding,
@@ -26,7 +27,10 @@ class AssistantSelectorItemViewHolder(
             if (item.isPinned) R.drawable.ic_pin_filled else R.drawable.ic_pin_outline
         )
 
-        binding.pinButton.setOnClickListener { onPinClicked(item.key) }
+        binding.pinButton.setOnClickListener {
+            onPinClicked(item.key)
+            it.context.buttonVibration()
+        }
         itemView.setOnClickListener {
             val context = it.context
             DigitalAssistantMap.assistantsMap[item.key]?.let { cls ->

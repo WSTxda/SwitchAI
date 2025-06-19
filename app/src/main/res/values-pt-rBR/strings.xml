@@ -129,6 +129,5 @@
     <string name="widget_assistant_description">Um widget estilo material para acessar rapidamente seu assistente</string>
     <string name="widget_assistant_invisible_description">Um widget invisível para acessar rapidamente seu assistente</string>
     <!--pinning widget-->
-    <string name="widget_added_success">Widget adicionado com sucesso à tela inicial</string>
     <string name="widget_launcher_not_supported">Seu launcher não suporta a fixação de widgets</string>
 </resources>

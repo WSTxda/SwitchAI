@@ -134,6 +134,5 @@
     <string name="widget_assistant_description">A material styled widget to access your assistant</string>
     <string name="widget_assistant_invisible_description">An invisible widget to access your assistant</string>
     <!--pinning widget-->
-    <string name="widget_added_success">Widget added successfully to home screen</string>
     <string name="widget_launcher_not_supported">Your launcher does not support widget pinning</string>
 </resources>

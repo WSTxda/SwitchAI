@@ -1,7 +1,6 @@
 package com.wstxda.switchai.ui
 
 import android.app.Activity
-import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.content.Context
@@ -18,19 +17,7 @@ class WidgetManager(private val context: Context) {
         val widgetProvider = ComponentName(context, AssistantMaterialWidgetProvider::class.java)
 
         if (appWidgetManager.isRequestPinAppWidgetSupported) {
-            val successCallback = PendingIntent.getBroadcast(
-                context,
-                0,
-                Intent(context, javaClass),
-                PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-            )
-
-            appWidgetManager.requestPinAppWidget(widgetProvider, null, successCallback)
-
-            showSnackBar(
-                message = context.getString(R.string.widget_added_success)
-            )
-
+            appWidgetManager.requestPinAppWidget(widgetProvider, null, null)
         } else {
             showSnackBar(
                 message = context.getString(R.string.widget_launcher_not_supported)

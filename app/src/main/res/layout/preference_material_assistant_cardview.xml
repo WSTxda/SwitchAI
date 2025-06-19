@@ -9,6 +9,7 @@
     android:layout_marginEnd="17dp"
     android:layout_marginBottom="14dp"
     android:baselineAligned="true"
+    android:clickable="true"
     app:cardBackgroundColor="?attr/colorPrimaryContainer"
     app:cardCornerRadius="18dp">
 
@@ -24,17 +25,14 @@
             android:layout_gravity="start|center_vertical"
             android:layout_marginStart="16dp"
             android:importantForAccessibility="no"
-            android:tint="?attr/colorOnSecondaryContainer"
+            android:tint="?attr/colorOnPrimaryContainer"
             tools:src="@drawable/ic_assistant_chatgpt" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
+            android:layout_margin="16dp"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -46,7 +44,7 @@
                 android:maxLines="2"
                 android:paddingBottom="4dp"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:textColor="?attr/colorOnSecondaryContainer"
+                android:textColor="?attr/colorOnPrimaryContainer"
                 tools:text="@string/pref_digital_assistant" />
 
             <com.google.android.material.textview.MaterialTextView

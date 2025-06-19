@@ -47,7 +47,6 @@
             android:insetRight="0dp"
             android:insetBottom="0dp"
             app:backgroundTint="?attr/colorPrimaryInverse"
-            app:iconGravity="textStart"
             app:iconSize="20dp"
             app:iconTint="?attr/colorOnPrimaryContainer"
             tools:icon="@drawable/ic_pin_filled" />

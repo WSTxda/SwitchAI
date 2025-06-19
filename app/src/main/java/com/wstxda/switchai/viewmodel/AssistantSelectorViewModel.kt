@@ -18,7 +18,7 @@ import com.wstxda.switchai.utils.Constants.CAT_PINNED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_MAX_RECENTLY_USED
 import com.wstxda.switchai.utils.Constants.PREFS_NAME
-import com.wstxda.switchai.utils.AssistantResourcesManager
+import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 
 class AssistantSelectorViewModel(application: Application) : AndroidViewModel(application),
     SharedPreferences.OnSharedPreferenceChangeListener {

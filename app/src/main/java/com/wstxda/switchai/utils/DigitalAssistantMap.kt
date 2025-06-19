@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import com.wstxda.switchai.assistant.*
 import com.wstxda.switchai.logic.PreferenceHelper
-import com.wstxda.switchai.logic.launchAssistant
 
 object DigitalAssistantMap {
     internal val assistantsMap = mapOf(
@@ -34,7 +33,9 @@ object DigitalAssistantMap {
         val selectedShortcut =
             preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null) ?: return
         val activityClass = assistantsMap[selectedShortcut] ?: return
-        val intent = Intent(context, activityClass)
-        context.launchAssistant(intent)
+        val intent = Intent(context, activityClass).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        context.startActivity(intent)
     }
 }

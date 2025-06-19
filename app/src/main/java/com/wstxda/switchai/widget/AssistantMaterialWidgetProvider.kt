@@ -12,7 +12,7 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantSelectorActivity
 import com.wstxda.switchai.services.AssistantService
 import com.wstxda.switchai.utils.Constants
-import com.wstxda.switchai.utils.AssistantResourcesManager
+import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 
 class AssistantMaterialWidgetProvider : AppWidgetProvider() {
 

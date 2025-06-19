@@ -61,6 +61,9 @@
     <string name="pref_assistant_widget">Widget abrir assistente</string>
     <string name="pref_assistant_widget_summary">Adicionar widget para iniciar o assistente na tela inicial do seu dispositivo</string>
 
+    <string name="pref_assistant_vibration">Vibrar ao abrir</string>
+    <string name="pref_assistant_vibration_summary">Fornece feedback tátil ao abrir o assistente. As configurações do sistema podem afetar esta opção</string>
+
     <string name="pref_assistant_root">Usar permissão root</string>
     <string name="pref_assistant_root_summary">Use permissão root para ativar a entrada de voz em assistentes específicos e melhorar a usabilidade</string>
 

@@ -19,7 +19,7 @@ import com.wstxda.switchai.fragment.preferences.DigitalAssistantPreference
 import com.wstxda.switchai.ui.TileManager
 import com.wstxda.switchai.ui.component.AssistantManagerDialog
 import com.wstxda.switchai.ui.component.DigitalAssistantSetupDialog
-import com.wstxda.switchai.utils.AssistantResourcesManager
+import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 import com.wstxda.switchai.ui.WidgetManager
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.SettingsViewModel
@@ -84,7 +84,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.main_preferences, rootKey)
-        assistantResourcesManager = AssistantResourcesManager(requireContext()) // Initialize here
+        assistantResourcesManager = AssistantResourcesManager(requireContext())
         setupInitialVisibility()
         setupPreferences()
         observeViewModel()

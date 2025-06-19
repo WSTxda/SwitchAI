@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.net.toUri
+import com.wstxda.switchai.ui.utils.VibrationService.openAssistantVibration
 
 fun Context.launchAssistant(
     intents: List<Intent>,
@@ -24,6 +25,7 @@ fun Context.launchAssistant(
 
 fun Context.launchAssistant(intent: Intent): Boolean = runCatching {
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    openAssistantVibration()
     startActivity(intent)
     true
 }.getOrElse { false }
@@ -32,7 +34,7 @@ fun Context.launchAssistantRoot(
     intents: List<Intent>,
     rootAccessMessageResId: Int,
     errorMessageResId: Int,
-    packageName: String? = null
+    packageName: String? = null,
 ): Boolean {
     val hasRoot = runCatching {
         RootChecker.isRootAvailable()
@@ -46,12 +48,12 @@ fun Context.launchAssistantRoot(
     intents.forEach { intent ->
         val success = runCatching {
             RootChecker.launchRootActivity(
-                intent.component!!.packageName,
-                intent.component!!.className
+                intent.component!!.packageName, intent.component!!.className
             )
         }.getOrElse { false }
 
         if (success) return true
+        openAssistantVibration()
     }
 
     val handled = !packageName.isNullOrEmpty() && launchOnStore(packageName)

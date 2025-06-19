@@ -12,7 +12,6 @@ class DigitalAssistantService : AssistantActivity() {
         val preferenceHelper = PreferenceHelper(this)
         val showSelector =
             preferenceHelper.getBoolean(Constants.ASSISTANT_SELECTOR_DIALOG_PREF_KEY, true)
-
         if (showSelector) {
             val intent = Intent(this, AssistantSelectorActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)

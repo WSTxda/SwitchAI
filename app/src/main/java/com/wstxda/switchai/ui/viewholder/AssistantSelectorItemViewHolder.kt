@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wstxda.switchai.R
 import com.wstxda.switchai.utils.DigitalAssistantMap
 import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
-import com.wstxda.switchai.logic.launchAssistant
 import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView
 
 class AssistantSelectorItemViewHolder(
@@ -31,14 +30,11 @@ class AssistantSelectorItemViewHolder(
         itemView.setOnClickListener {
             val context = it.context
             DigitalAssistantMap.assistantsMap[item.key]?.let { cls ->
-                Intent(context, cls).also { intent ->
-                    if (context.launchAssistant(intent)) {
-                        onAssistantLaunched(item.key)
-                    } else {
-                        Toast.makeText(context, R.string.assistant_open_error, Toast.LENGTH_SHORT)
-                            .show()
-                    }
+                val intent = Intent(context, cls).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 }
+                context.startActivity(intent)
+                onAssistantLaunched(item.key)
             } ?: Toast.makeText(context, R.string.assistant_open_error, Toast.LENGTH_SHORT).show()
         }
     }

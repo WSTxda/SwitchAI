@@ -51,10 +51,18 @@
         app:allowDividerAbove="false" />
 
     <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="assistant_vibration"
+        android:layout="@layout/preference_material_top"
+        android:summary="@string/pref_assistant_vibration_summary"
+        android:title="@string/pref_assistant_vibration" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
         android:key="assistant_root"
-        android:title="@string/pref_assistant_root"
-        android:layout="@layout/preference_material_single"
-        android:summary="@string/pref_assistant_root_summary" />
+        android:layout="@layout/preference_material_bottom"
+        android:summary="@string/pref_assistant_root_summary"
+        android:title="@string/pref_assistant_root" />
 
     <PreferenceCategory
         android:key="shortcuts"

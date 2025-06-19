@@ -1,9 +1,9 @@
-package com.wstxda.switchai.utils
+package com.wstxda.switchai.ui.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
-import androidx.preference.ListPreference
 import androidx.core.content.ContextCompat
+import androidx.preference.ListPreference
 import com.wstxda.switchai.R
 import java.util.Locale
 

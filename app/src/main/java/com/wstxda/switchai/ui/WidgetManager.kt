@@ -4,7 +4,6 @@ import android.app.Activity
 import android.appwidget.AppWidgetManager
 import android.content.ComponentName
 import android.content.Context
-import android.content.Intent
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.wstxda.switchai.R

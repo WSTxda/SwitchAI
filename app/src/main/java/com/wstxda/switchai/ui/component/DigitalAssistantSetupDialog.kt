@@ -40,9 +40,7 @@ class DigitalAssistantSetupDialog : DialogFragment() {
         binding.positiveButton.setOnClickListener {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
                 (parentFragment as? PreferenceFragmentCompat)?.let {
-                    DigitalAssistantPreference(it).setDigitalAssistSetupStatus(
-                        requireContext(), true
-                    )
+                    DigitalAssistantPreference(it).setDigitalAssistSetupStatus(true)
                 }
             }
             runCatching {

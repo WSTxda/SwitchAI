@@ -7,10 +7,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.RemoteViews
-import androidx.preference.PreferenceManager
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantSelectorActivity
 import com.wstxda.switchai.services.AssistantService
+import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 
@@ -44,8 +44,9 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
 
         val views = RemoteViews(context.packageName, layoutId)
 
-        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-        val assistantValue = prefs.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
+        val preferenceHelper = PreferenceHelper(context)
+        val assistantValue =
+            preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
         val assistantResourcesManager = AssistantResourcesManager(context)
         val assistantIconRes = assistantResourcesManager.getAssistantIcon(assistantValue)
         val assistantName = assistantResourcesManager.getAssistantName(assistantValue)

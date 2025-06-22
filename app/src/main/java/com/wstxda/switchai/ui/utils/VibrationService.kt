@@ -5,7 +5,7 @@ import android.os.Build
 import android.os.VibrationAttributes
 import android.os.VibrationEffect
 import android.os.Vibrator
-import androidx.preference.PreferenceManager
+import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.utils.Constants
 
 object VibrationService {
@@ -67,7 +67,7 @@ object VibrationService {
     }
 
     private fun Context.isVibrationEnabled(): Boolean {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        return prefs.getBoolean(Constants.ASSISTANT_VIBRATION_PREF_KEY, true)
+        val preferenceHelper = PreferenceHelper(this)
+        return preferenceHelper.getBoolean(Constants.ASSISTANT_VIBRATION_PREF_KEY, true)
     }
 }

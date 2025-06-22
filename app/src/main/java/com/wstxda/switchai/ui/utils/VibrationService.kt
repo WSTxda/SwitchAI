@@ -16,13 +16,13 @@ object VibrationService {
     fun Context.openAssistantVibration() {
         if (!isVibrationEnabled()) return
         performVibration(
-            effectId = getEffectClick(), fallbackDuration = 40
+            effectId = getEffectClick(), fallbackDuration = 12
         )
     }
 
     fun Context.buttonVibration() {
         performVibration(
-            effectId = getEffectTick(), fallbackDuration = 20
+            effectId = getEffectTick(), fallbackDuration = 8
         )
     }
 

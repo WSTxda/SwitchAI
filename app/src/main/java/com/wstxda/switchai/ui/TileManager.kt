@@ -9,7 +9,7 @@ import android.os.Build
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.wstxda.switchai.R
-import com.wstxda.switchai.services.DigitalAssistantTileService
+import com.wstxda.switchai.services.AssistantTileService
 import java.util.concurrent.Executors
 import java.util.function.Consumer
 import kotlin.jvm.java
@@ -20,7 +20,7 @@ class TileManager(private val context: Context) {
     fun requestAddTile() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val tileServiceComponent =
-                ComponentName(context, DigitalAssistantTileService::class.java)
+                ComponentName(context, AssistantTileService::class.java)
             val executor = Executors.newSingleThreadExecutor()
             val resultCallback = Consumer<Int> { result ->
                 (context as? Activity)?.findViewById<View>(android.R.id.content)?.let { rootView ->

@@ -59,11 +59,11 @@
     <string name="pref_assistant_manage">Manage assistants</string>
     <string name="pref_assistant_manage_summary">Choose which assistants are displayed in the selector</string>
 
-    <string name="pref_assistant_tile">Open assistant tile</string>
-    <string name="pref_assistant_tile_summary">Add tile to launch the assistant in your device\'s quick settings panel</string>
+    <string name="pref_assistant_tile">Add assistant tile</string>
+    <string name="pref_assistant_tile_summary">Add tile to access the assistant in your device\'s quick settings panel</string>
 
-    <string name="pref_assistant_widget">Open assistant widget</string>
-    <string name="pref_assistant_widget_summary">Add widget to launch the assistant on your device\'s home screen</string>
+    <string name="pref_assistant_widget">Add assistant widget</string>
+    <string name="pref_assistant_widget_summary">Add widget to access the assistant on your device\'s home screen</string>
 
     <string name="pref_assistant_vibration">Vibrate when opening</string>
     <string name="pref_assistant_vibration_summary">Provides haptic feedback when opening the assistant. This may be affected by system settings</string>
@@ -103,7 +103,7 @@
     <string name="assistant_not_implemented">Assistant not implemented yet…</string>
     <!--setup digital assistant dialog-->
     <string name="digital_assistant_setup_title">Default digital assistant app</string>
-    <string name="digital_assistant_setup_message">In the settings, select <b>SwitchAI</b> as your default digital assistant app to quickly launch the selected assistant using gestures, buttons, and more…</string>
+    <string name="digital_assistant_setup_message">In the settings, select <b>SwitchAI</b> as your default digital assistant app to quickly access the selected assistant using gestures, buttons, and more…</string>
     <string name="digital_assistant_setup_button">Setup now</string>
 
 
@@ -111,6 +111,8 @@
 
     <string name="assistant_label">Assistant</string>
     <string name="assistant_label_long">Open assistant</string>
+    <string name="assistant_label_open">Open</string>
+    <string name="assistant_label_select">Select</string>
 
     <!--app quick settings tile-->
 

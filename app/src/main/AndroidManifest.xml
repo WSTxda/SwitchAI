@@ -403,7 +403,7 @@
         <!--digital assistant quick settings tile service-->
 
         <service
-            android:name="com.wstxda.switchai.services.DigitalAssistantTileService"
+            android:name="com.wstxda.switchai.services.AssistantTileService"
             android:exported="true"
             android:icon="@drawable/ic_assistant"
             android:label="@string/assistant_label"

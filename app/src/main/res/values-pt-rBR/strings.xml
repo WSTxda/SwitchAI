@@ -50,16 +50,16 @@
     <string name="pref_setup_digital_assistant_summary">Definir o SwitchAI como o aplicativo de assistente digital padrão</string>
 
     <string name="pref_assistant_selector">Usar seletor de assistente</string>
-    <string name="pref_assistant_selector_summary">Se ativado, selecione um assistente toda vez que iniciar. Caso contrário, será usada a opção <b>Assistente digital</b></string>
+    <string name="pref_assistant_selector_summary">Se ativado, selecione um assistente toda vez que iniciar. Caso contrário, será usado a opção <b>Assistente digital</b></string>
 
     <string name="pref_assistant_manage">Gerenciar assistentes</string>
     <string name="pref_assistant_manage_summary">Escolha quais assistentes serão exibidos no seletor</string>
 
-    <string name="pref_assistant_tile">Bloco abrir assistente</string>
-    <string name="pref_assistant_tile_summary">Adicionar bloco para iniciar o assistente no painel de configurações rápidas do seu dispositivo</string>
+    <string name="pref_assistant_tile">Adicionar bloco do assistente</string>
+    <string name="pref_assistant_tile_summary">Adicione um bloco para acessar o assistente no painel de configurações rápidas do seu dispositivo</string>
 
-    <string name="pref_assistant_widget">Widget abrir assistente</string>
-    <string name="pref_assistant_widget_summary">Adicionar widget para iniciar o assistente na tela inicial do seu dispositivo</string>
+    <string name="pref_assistant_widget">Adicionar widget do assistente</string>
+    <string name="pref_assistant_widget_summary">Adicione um widget para acessar o assistente na tela inicial do seu dispositivo</string>
 
     <string name="pref_assistant_vibration">Vibrar ao abrir</string>
     <string name="pref_assistant_vibration_summary">Fornece feedback tátil ao abrir o assistente. As configurações do sistema podem afetar esta opção</string>
@@ -99,13 +99,15 @@
     <string name="assistant_not_implemented">Assistente ainda não implementado…</string>
     <!--setup digital assistant dialog-->
     <string name="digital_assistant_setup_title">Aplicativo de assistente digital padrão</string>
-    <string name="digital_assistant_setup_message">Nas configurações, selecione o <b>SwitchAI</b> como o aplicativo de assistente digital padrão para lançar rapidamente o assistente selecionado usando gestos, botões e muito mais…</string>
+    <string name="digital_assistant_setup_message">Nas configurações, selecione o <b>SwitchAI</b> como o aplicativo de assistente digital padrão para acessar rapidamente o assistente selecionado usando gestos, botões e muito mais…</string>
     <string name="digital_assistant_setup_button">Configurar agora</string>
 
     <!--app shortcut/tile-->
 
     <string name="assistant_label">Assistente</string>
     <string name="assistant_label_long">Abrir assistente</string>
+    <string name="assistant_label_open">Abrir</string>
+    <string name="assistant_label_select">Selecionar</string>
 
     <!--app quick settings tile-->
 

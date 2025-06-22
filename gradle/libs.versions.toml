@@ -4,7 +4,7 @@ kotlin = "2.1.20"
 preference = "1.2.1"
 appcompat = "1.7.1"
 navigation = "2.9.0"
-material = "1.14.0-alpha01"
+material = "1.14.0-alpha02"
 aboutLibraries = "12.2.1"
 
 [libraries]

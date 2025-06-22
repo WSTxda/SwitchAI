@@ -15,7 +15,7 @@ class DigitalAssistantPreference(private val fragment: PreferenceFragmentCompat)
     fun checkDigitalAssistSetupStatus(): Boolean =
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             context.getSystemService(android.app.role.RoleManager::class.java)
-                ?.isRoleHeld(android.app.role.RoleManager.ROLE_ASSISTANT) ?: false
+                ?.isRoleHeld(android.app.role.RoleManager.ROLE_ASSISTANT) == true
         } else {
             preferenceHelper.getBoolean(Constants.IS_ASSIST_SETUP_DONE, false)
         }

@@ -400,7 +400,7 @@
                 android:resource="@xml/widget_assistant_invisible" />
         </receiver>
 
-        <!--digital assistant quick settings tile service-->
+        <!--assistant quick settings tile service-->
 
         <service
             android:name="com.wstxda.switchai.services.AssistantTileService"

@@ -21,7 +21,8 @@
             app:expandedTitleMarginTop="96dp"
             app:expandedTitleTextAppearance="?attr/collapsedTitleTextAppearance"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:maxLines="4">
+            app:maxLines="4"
+            app:titleCollapseMode="scale">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"

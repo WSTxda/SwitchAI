@@ -208,6 +208,20 @@
         </activity>
 
         <activity
+            android:name=".assistant.MarusyaAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/marusya"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
             android:name=".assistant.MetaAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

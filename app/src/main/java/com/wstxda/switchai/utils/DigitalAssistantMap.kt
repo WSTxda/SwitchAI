@@ -18,6 +18,7 @@ object DigitalAssistantMap {
         "le_chat_assistant" to LeChatAssistant::class.java,
         "kimi_assistant" to KimiAssistant::class.java,
         "manus_assistant" to ManusAssistant::class.java,
+        "marusya_assistant" to MarusyaAssistant::class.java,
         "meta_assistant" to MetaAssistant::class.java,
         "minimax_assistant" to MiniMaxAssistant::class.java,
         "perplexity_assistant" to PerplexityAssistant::class.java,

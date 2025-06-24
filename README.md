@@ -1,5 +1,6 @@
-# SwitchAI - Switch AI Assistant
-Easily select, start, and manage your preferred AI digital assistant. SwitchAI offers a fresh approach to managing and selecting your preferred AI digital assistants on your Android device.
+# SwitchAI – Switch AI Digital Assistant
+
+Easily select, start, and manage your preferred AI digital assistants. SwitchAI offers a fresh approach to managing and selecting your preferred AI digital assistants on your Android device.
 
 [![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/WSTxda/SwitchAI/.github%2Fworkflows%2Fandroid.yml?style=for-the-badge&logo=github-actions&labelColor=21262D&color=3FB950)](https://github.com/WSTxda/SwitchAI/actions)
 [![Platform](https://img.shields.io/badge/android-platform?style=for-the-badge&label=platform&labelColor=21262d&color=6e7681)](https://www.android.com)
@@ -9,7 +10,7 @@ Easily select, start, and manage your preferred AI digital assistant. SwitchAI o
 
 ![Banner](https://raw.githubusercontent.com/WSTxda/SwitchAI/main/images/Banner.svg)
 
-SwitchAI lets you seamlessly choose your preferred AI assistant. With a single tap, access your selected AI or set a default assistant for your device’s digital assistant feature. Boost productivity by effortlessly switching between AI assistants for different tasks.
+SwitchAI lets you easily choose your preferred AI assistant for different purposes. With a single tap, select an AI to use, or set one as the default assistant for your device’s digital assistant feature. Increase productivity by easily switching between AI assistants for different tasks.
 
 <details>
   <summary>Screenshots</summary>
@@ -20,38 +21,53 @@ SwitchAI lets you seamlessly choose your preferred AI assistant. With a single t
 
 ## Features
 
-#### Versatile Digital Assistant Management
-SwitchAI gives you full control over your device’s AI assistant capabilities::
-*   **Choose & Switch:** Easily select and alternate between installed AI assistant apps to serve as your primary device assistant.
-*   **On-the-Fly Selection:** Configure SwitchAI to display a selection dialog when you trigger your device’s assist function (via buttons or gestures), allowing you to choose the best AI for each task to optimize your workflow.
-*   **Set Default Assistant:** For a consistent experience, set a fixed default AI assistant to launch every time.
-*   **Broad Compatibility:** Supports a growing list of popular AI assistant apps. (Replaces Plugin-VoiceGPT with significant code improvements.)
+#### Versatile Digital Assistant Management  
+SwitchAI gives you full control over your device’s digital assistant capabilities:
 
-### Supported AI Assistants
+**Switch between digital assistants:**  
+Seamlessly choose and switch between installed digital assistant apps for better device feature management.
 
+**Assistant selector:**  
+Select which assistant to use each time you activate your digital assistant—via gestures, buttons, or other triggers—enabling workflows optimized for specific tasks.
+
+**Shortcuts & Widgets:**  
+Quickly start your selected assistant or assistant selector using a home screen widget or Quick Settings tile.
+
+**Broad compatibility:**  
+Supports a growing list of popular AI assistant apps, replacing the old Plugin-VoiceGPT solution.
+
+### Supported AI assistants apps
+
+*   **[Alexa](https://play.google.com/store/apps/details?id=com.amazon.dee.app)** by Amazon  
 *   **[ChatGPT](https://play.google.com/store/apps/details?id=com.openai.chatgpt)** by OpenAI  
 *   **[Claude](https://play.google.com/store/apps/details?id=com.anthropic.claude)** by Anthropic  
 *   **[Copilot](https://play.google.com/store/apps/details?id=com.microsoft.copilot)** by Microsoft  
 *   **[DeepSeek](https://play.google.com/store/apps/details?id=com.deepseek.chat)** by DeepSeek  
+*   **[Doubao](https://play.google.com/store/apps/details?id=com.larus.nova)** by ByteDance  
 *   **[Gemini](https://play.google.com/store/apps/details?id=com.google.android.apps.bard)** by Google  
 *   **[Grok](https://play.google.com/store/apps/details?id=ai.x.grok)** by xAI  
 *   **[Kimi](https://play.google.com/store/apps/details?id=com.moonshot.kimichat)** by Moonshot AI  
-*   **[Le Chat](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral  
+*   **[Le Chat](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI  
 *   **[Manus](https://play.google.com/store/apps/details?id=tech.butterfly.app)** by Butterfly Tech  
+*   **[Marusya](https://play.google.com/store/apps/details?id=ru.mail.search.electroscope)** by VK  
 *   **[Meta AI](https://play.google.com/store/apps/details?id=com.facebook.stella)** by Meta  
+*   **[MiniMax](https://play.google.com/store/apps/details?id=com.minimax.ai)** by MiniMax AI  
 *   **[Perplexity](https://play.google.com/store/apps/details?id=ai.perplexity.app.android)** by Perplexity AI  
+*   **[Qingyan](https://chatglm.cn/download?fr=web_home)** by Baidu  
 *   **[Qwen](https://play.google.com/store/apps/details?id=ai.qwenlm.chat.android)** by Alibaba Cloud  
-*   **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions
+*   **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions  
+*   **[Wenxin Yiyan](https://apkpure.com/cn/wen-xin-yi-yan/com.baidu.newapp)** by Baidu  
+*   **[Yuanbao](https://yuanbao.tencent.com/download)** by Tencent  
 
 -------
 
 > [!IMPORTANT]
-> App availability on the Google Play Store may vary by region and device. SwitchAI launches these apps using standard package names; if an app is not installed, you may see an error or be prompted to install it. Ensure the official apps are installed, as some assistants may be web-based or integrated into other applications. **Verify the Play Store links above for compatibility.**
+> App availability may vary by region and device. SwitchAI launches these apps using package and class names; if an app is not installed, you may see an error and be prompted to install it. Please ensure the apps are installed.
 
 > [!NOTE]  
-> **Requirements:** The AI assistant apps you wish to use must be installed on your device, along with Google Play Services for full functionality.
-> 
-> **Functionality:** SwitchAI launches external assistant apps but does not embed their services
+> **Requirements:** The AI assistant apps must be installed on your device.
+>
+> **Functionality:** SwitchAI launches external assistant apps, but does not embed their services.
 
 ### Download
 

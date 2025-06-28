@@ -1,0 +1,138 @@
+<resources>
+
+    <!--app names-->
+
+    <string name="app_settings">إعدادات المساعد</string>
+
+    <!--assistant names-->
+
+    <string name="alexa">Alexa</string>
+    <string name="chatgpt">ChatGPT</string>
+    <string name="claude">Claude</string>
+    <string name="copilot">Copilot</string>
+    <string name="deepseek">DeepSeek</string>
+    <string name="doubao">Doubao</string>
+    <string name="gemini">Gemini</string>
+    <string name="grok">Grok</string>
+    <string name="kimi">Kimi</string>
+    <string name="le_chat">Le Chat</string>
+    <string name="manus">Manus</string>
+    <string name="marusya">Marusya</string>
+    <string name="meta">Meta AI</string>
+    <string name="minimax">MiniMax"</string>
+    <string name="perplexity">Perplexity</string>
+    <string name="qingyan">Qingyan</string>
+    <string name="qwen">Qwen</string>
+    <string name="ultimate_alexa">Ultimate Alexa</string>
+    <string name="wenxin_yiyan">Wenxin Yiyan</string>
+    <string name="yuanbao">Yuanbao</string>
+
+    <!--preferences-->
+
+    <string name="pref_category_appearance">المظهر</string>
+    <string name="pref_category_selector">المُحدِّد</string>
+    <string name="pref_category_shortcuts">الاختصارات</string>
+    <string name="pref_category_about">حول</string>
+    <string name="pref_category_behavior">السلوك</string>
+
+    <string name="pref_developer">المطور</string>
+    <string name="pref_source_code">مستودع كود المصدر</string>
+
+    <string name="pref_theme">الثيم</string>
+
+    <string name="pref_used_library">المكتبات</string>
+    <string name="pref_used_library_summary">تراخيص مفتوحة المصدر</string>
+
+    <string name="pref_version">الإصدار</string>
+    <string name="pref_version_number" translatable="false">%s</string>
+
+    <string name="pref_digital_assistant">المساعد المحدد</string>
+
+    <string name="pref_setup_digital_assistant">تهيئة المساعد الذكي</string>
+    <string name="pref_setup_digital_assistant_summary">اجعل SwitchAI تطبيق المساعد الرقمي الافتراضي</string>
+
+    <string name="pref_assistant_selector">استخدام مُحدِّد المساعد</string>
+    <string name="pref_assistant_selector_summary">اذا تم تفعيله اذن اختر مساعدًا في كل مرة يتم البدء. وإلا خيار <b>المساعد الرقمي</b> سيتم استخدامه</string>
+
+    <string name="pref_assistant_manage">إدارة المساعد</string>
+    <string name="pref_assistant_manage_summary">اختر المساعدات التي ستظهر في القائمة</string>
+
+    <string name="pref_assistant_tile">اضافة زر المساعد في قائمة الإعدادات السريعة</string>
+    <string name="pref_assistant_tile_summary">اضف زرًا للوصول إلى المساعد في قائمة الإعدادات السريعة</string>
+
+    <string name="pref_assistant_widget">إضافة ويدجيت المساعد</string>
+    <string name="pref_assistant_widget_summary">أضف ويدجيت للوصول إلى المساعد عبر الشاشة الرئيسية للجهاز</string>
+
+    <string name="pref_assistant_vibration">اهتزاز عند الفتح</string>
+    <string name="pref_assistant_vibration_summary">يجعل الهاتف يهتز عند البدء. قد يتأثر بإعدادات الهاتف</string>
+
+    <string name="pref_assistant_root">استخدام صلاحيات الروت</string>
+    <string name="pref_assistant_root_summary">استخدام الروت لتفعيل ميزة الإدخال الصوتي لبعض المساعدين لتسهيل الاستخدام</string>
+
+    <!--theme selector-->
+
+    <string name="theme_select">إختيار الثيمات</string>
+    <!--themes modes-->
+    <string name="theme_system">الوضع الإفتراضي للنظام</string>
+    <string name="theme_light">الوضع المضيء</string>
+    <string name="theme_dark">الوضع المظلم</string>
+
+    <!--update checker-->
+
+    <string name="update_checker_button">التحقق من التحديثات</string>
+    <string name="update_checker_download_button">تحميل</string>
+    <!--updater messages-->
+    <string name="update_checker_no_update">لا توجد تحديثات</string>
+    <string name="update_checker_update_available">تحديث جديد متاح: %s</string>
+    <string name="update_checker_no_internet">لا يوجد اتصال بالإنترنت</string>
+    <string name="update_checker_generic_error">حدث خطأ ما… يرجى المعاودة لاحقا</string>
+
+    <!--digital/selector/open assistant-->
+
+    <string name="assistant_select">اختيار المساعد</string>
+    <!--selector assistant categories-->
+    <string name="assistant_category_pin">مثبت</string>
+    <string name="assistant_category_recent">المستخدمة مؤخرًا</string>
+    <string name="assistant_category_all">المساعدين</string>
+    <!--open assistant messages-->
+    <string name="assistant_open">افتح المساعد</string>
+    <string name="assistant_open_error">خطأ في فتح المساعد</string>
+    <string name="assistant_application_not_found">لم يتم العثور على التطبيق. برجاء تثبيته أولا.</string>
+    <string name="assistant_not_implemented">لم يتم تنفيذ المساعد بعد…</string>
+    <!--setup digital assistant dialog-->
+    <string name="digital_assistant_setup_title">تطبيق المساعد الرقمي الافتراضي</string>
+    <string name="digital_assistant_setup_message">في الإعدادات قم باختيار <b>SwitchAI</b> للوصول سريعا إلي المساعد المحدد باستخدام الإيماءات و الأزرار و المزيد.</string>
+    <string name="digital_assistant_setup_button">قم بالإعداد الآن</string>
+
+
+    <!--app shortcut/tile-->
+
+    <string name="assistant_label">المساعد</string>
+    <string name="assistant_label_long">فتح المساعد</string>
+    <string name="assistant_label_open">افتح</string>
+    <string name="assistant_label_select">اختر</string>
+
+    <!--app quick settings tile-->
+
+    <string name="tile_added_success">تمت الإضافة إلي قائمة الإعدادات السريعة</string>
+    <string name="tile_already_added">تمت الإضافة بالفعل</string>
+
+    <!--root permission-->
+
+    <string name="root_access_warning">امنح صلاحيات الروت أولا</string>
+
+    <!--multi select list preference selection-->
+
+    <string name="error_min_selection">اختر %1$d على الأقل</string>
+    <string name="error_max_selection">اختر %1$d كحد أقصى</string>
+
+    <!--app widgets-->
+
+    <string name="widget_assistant_label">تصميم Material</string>
+    <string name="widget_assistant_invisible_label">مخفي</string>
+    <!--widget description-->
+    <string name="widget_assistant_description">ويدجيت بتصميم material للوصول إلى المساعد بشكل سريع</string>
+    <string name="widget_assistant_invisible_description">ويدجيت مخفي للوصول إلي المساعد</string>
+    <!--pinning widget-->
+    <string name="widget_launcher_not_supported">برنامج الشاشة الرئيسية لا يدعم تثبيت الويدجيت</string>
+</resources>

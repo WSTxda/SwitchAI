@@ -61,13 +61,13 @@
     <string name="pref_assistant_selector_summary">اذا تم تفعيله اذن اختر مساعدا في كل مرة يتم البدء. وإلا خيار <b>المساعد الرقمي</b> سيتم استخدامه</string>
 
     <string name="pref_assistant_manage">إدارة المساعد</string>
-    <string name="pref_assistant_manage_summary">اختر المساعدات اللتي ستظهر في القائمة</string>
+    <string name="pref_assistant_manage_summary">اختر المساعدات التي ستظهر في القائمة</string>
 
     <string name="pref_assistant_tile">اضافة زر المساعد في قائمة الإعدادات السريعة</string>
-    <string name="pref_assistant_tile_summary">اضف زرا للوصول إلى المساعد في قائمة الإعدادات السريعة</string>
+    <string name="pref_assistant_tile_summary">اضف زراّ للوصول إلى المساعد في قائمة الإعدادات السريعة</string>
 
     <string name="pref_assistant_widget">إضافة ويدجيت المساعد</string>
-    <string name="pref_assistant_widget_summary">أضف الويدجيت للوصول إلى المساعد عبر الشاشة الرىيسية للجهاز</string>
+    <string name="pref_assistant_widget_summary">أضف الويدجيت للوصول إلى المساعد عبر الشاشة الرئيسية للجهاز</string>
 
     <string name="pref_assistant_vibration">اهتزاز عند الفتح</string>
     <string name="pref_assistant_vibration_summary">يجعل الهاتف يهتز عند البدء. قد يتأثر بإعدادات الهاتف</string>

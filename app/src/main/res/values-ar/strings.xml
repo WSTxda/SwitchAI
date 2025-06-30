@@ -58,29 +58,29 @@
     <string name="pref_setup_digital_assistant_summary">اجعل SwitchAI تطبيق المساعد الرقمي الافتراضي</string>
 
     <string name="pref_assistant_selector">استخدام مُحدِّد المساعد</string>
-    <string name="pref_assistant_selector_summary">اذا تم تفعيله اذن اختر مساعدا في كل مرة يتم البدء. وإلا خيار <b>المساعد الرقمي</b> سيتم استخدامه</string>
+    <string name="pref_assistant_selector_summary">اذا تم تفعيله اذن اختر مساعدًا في كل مرة يتم البدء. وإلا خيار <b>المساعد الرقمي</b> سيتم استخدامه</string>
 
     <string name="pref_assistant_manage">إدارة المساعد</string>
     <string name="pref_assistant_manage_summary">اختر المساعدات التي ستظهر في القائمة</string>
 
     <string name="pref_assistant_tile">اضافة زر المساعد في قائمة الإعدادات السريعة</string>
-    <string name="pref_assistant_tile_summary">اضف زراّ للوصول إلى المساعد في قائمة الإعدادات السريعة</string>
+    <string name="pref_assistant_tile_summary">اضف زرًا للوصول إلى المساعد في قائمة الإعدادات السريعة</string>
 
     <string name="pref_assistant_widget">إضافة ويدجيت المساعد</string>
-    <string name="pref_assistant_widget_summary">أضف الويدجيت للوصول إلى المساعد عبر الشاشة الرئيسية للجهاز</string>
+    <string name="pref_assistant_widget_summary">أضف ويدجيت للوصول إلى المساعد عبر الشاشة الرئيسية للجهاز</string>
 
     <string name="pref_assistant_vibration">اهتزاز عند الفتح</string>
     <string name="pref_assistant_vibration_summary">يجعل الهاتف يهتز عند البدء. قد يتأثر بإعدادات الهاتف</string>
 
     <string name="pref_assistant_root">استخدام صلاحيات الروت</string>
-    <string name="pref_assistant_root_summary">استخدام الروت لتفعيل ميزة الإدخال الصوتي لبعض المساعدين لتسهيل الإستخدام</string>
+    <string name="pref_assistant_root_summary">استخدام الروت لتفعيل ميزة الإدخال الصوتي لبعض المساعدين لتسهيل الاستخدام</string>
 
     <!--theme selector-->
 
     <string name="theme_select">إختيار الثيمات</string>
     <!--themes modes-->
     <string name="theme_system">الوضع الإفتراضي للنظام</string>
-    <string name="theme_light">الوضع المضئ</string>
+    <string name="theme_light">الوضع المضيء</string>
     <string name="theme_dark">الوضع المظلم</string>
 
     <!--update checker-->
@@ -89,7 +89,7 @@
     <!--updater messages-->
     <string name="update_checker_no_update">لا توجد تحديثات</string>
     <string name="update_checker_update_available">تحديث جديد متاح: %s</string>
-    <string name="update_checker_no_internet">لا يتوفر انترنت</string>
+    <string name="update_checker_no_internet">لا يوجد اتصال بالإنترنت</string>
     <string name="update_checker_generic_error">حدث خطأ ما... يرجى المعاودة لاحقا</string>
 
     <!--digital/selector/open assistant-->
@@ -97,7 +97,7 @@
     <string name="assistant_select">اختيار المساعد</string>
     <!--selector assistant categories-->
     <string name="assistant_category_pin">مثبت</string>
-    <string name="assistant_category_recent">تم الاستخدام مؤخرا</string>
+    <string name="assistant_category_recent">المستخدمة مؤخرًا</string>
     <string name="assistant_category_all">المساعدين</string>
     <!--open assistant messages-->
     <string name="assistant_open">افتح المساعد</string>
@@ -140,4 +140,4 @@
     <string name="widget_assistant_invisible_description">ويدجيت مخفي للوصول إلي المساعد</string>
     <!--pinning widget-->
     <string name="widget_launcher_not_supported">برنامج الشاشة الرئيسية لا يدعم تثبيت الويدجيت</string>
-</resources></resources>
+</resources>

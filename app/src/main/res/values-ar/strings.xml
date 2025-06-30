@@ -38,9 +38,6 @@
 
     <string name="pref_wstxda" translatable="false">WSTxda</string>
     <string name="pref_github" translatable="false">GitHub</string>
-
-    <string name="pref_wstxda" translatable="false">WSTxda</string>
-    <string name="pref_github" translatable="false">GitHub</string>
     <string name="pref_developer">المطور</string>
     <string name="pref_source_code">مستودع كود المصدر</string>
 

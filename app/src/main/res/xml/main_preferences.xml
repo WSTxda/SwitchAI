@@ -20,10 +20,6 @@
         app:layout="@layout/preference_material_assistant_cardview"
         app:useSimpleSummaryProvider="true" />
 
-    <Preference
-        android:layout="@layout/preference_material_single"
-        app:key="assistant_tutorial"
-        app:summary="@string/pref_assistant_tutorial" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"

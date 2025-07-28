@@ -17,7 +17,7 @@
         android:layout_marginHorizontal="12dp"
         android:layout_marginBottom="24dp"
         android:textAlignment="center"
-        tools:text="@string/pref_assistant_tutorial" />
+        tools:text="@string/digital_assistant_tutorial" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_top"

@@ -27,15 +27,6 @@
     <string name="wenxin_yiyan">Wenxin Yiyan</string>
     <string name="yuanbao">Yuanbao</string>
 
-    <!--digital assistant tutorial-->
-
-    <string name="tutorial_edge_gestures">استخدام إيماءات حافة الشاشة</string>
-    <string name="tutorial_edge_gestures_summary">على الأجهزة التي تستخدم التنقل بالإيماءات (أندرويد 10 والإصدارات الأحدث)، اسحب لأعلى وللداخل من أي من الزاويتين السفليتين للشاشة. سيظهر قوس متوهج من الزاوية لتأكيد فتح المساعد الرقمي. لكي يعمل هذا، يجب تحديد <b>التنقل بالإيماءات</b> كوضع تنقل النظام في إعدادات جهازك</string>
-    <string name="tutorial_home_button">استخدام زر التنقل الرئيسي</string>
-    <string name="tutorial_home_button_summary">إذا كان جهازك يستخدم التنقل الكلاسيكي بثلاثة أزرار، فاضغط مع الاستمرار على زر الصفحة الرئيسية المركزي للحظة. هذا الإجراء مخصص عادةً لفتح المساعد الرقمي. إذا كان هذا الإجراء يؤدي وظيفة مختلفة، فربما يكون قد تم تخصيصه بواسطة الشركة المصنعة لجهازك</string>
-    <string name="tutorial_power_button">استخدام زر الطاقة</string>
-    <string name="tutorial_power_button_summary">تسمح العديد من الأجهزة بفتح المساعد الرقمي عن طريق الضغط لفترة طويلة على زر الطاقة. إذا ظهرت قائمة إيقاف التشغيل/إعادة التشغيل عند القيام بذلك، فمن المحتمل أن تكون الميزة معطلة. يمكنك غالبًا تمكينها في إعدادات نظامك، عادةً ضمن مسار مثل <b>الإعدادات > النظام > الإيماءات > الضغط مع الاستمرار على زر الطاقة</b></string>
-
     <!--preferences-->
 
     <string name="pref_category_appearance">المظهر</string>
@@ -78,8 +69,6 @@
     <string name="pref_assistant_root">استخدام صلاحيات الروت</string>
     <string name="pref_assistant_root_summary">استخدام الروت لتفعيل ميزة الإدخال الصوتي لبعض المساعدين لتسهيل الاستخدام</string>
 
-    <string name="pref_assistant_tutorial">كيفية استخدام المساعد الرقمي</string>
-
     <!--theme selector-->
 
     <string name="theme_select">إختيار الثيمات</string>
@@ -114,7 +103,17 @@
     <string name="digital_assistant_setup_title">تطبيق المساعد الرقمي الافتراضي</string>
     <string name="digital_assistant_setup_message">في الإعدادات قم باختيار <b>SwitchAI</b> للوصول سريعا إلي المساعد المحدد باستخدام الإيماءات و الأزرار و المزيد.</string>
     <string name="digital_assistant_setup_button">قم بالإعداد الآن</string>
+    <!--tutorial digital assistant dialog-->
+    <string name="digital_assistant_tutorial">كيفية استخدام المساعد الرقمي</string>
 
+    <!--tutorial digital assistant-->
+
+    <string name="tutorial_edge_gestures">استخدام إيماءات حافة الشاشة</string>
+    <string name="tutorial_edge_gestures_summary">على الأجهزة التي تستخدم التنقل بالإيماءات (أندرويد 10 والإصدارات الأحدث)، اسحب لأعلى وللداخل من أي من الزاويتين السفليتين للشاشة. سيظهر قوس متوهج من الزاوية لتأكيد فتح المساعد الرقمي. لكي يعمل هذا، يجب تحديد <b>التنقل بالإيماءات</b> كوضع تنقل النظام في إعدادات جهازك</string>
+    <string name="tutorial_home_button">استخدام زر التنقل الرئيسي</string>
+    <string name="tutorial_home_button_summary">إذا كان جهازك يستخدم التنقل الكلاسيكي بثلاثة أزرار، فاضغط مع الاستمرار على زر الصفحة الرئيسية المركزي للحظة. هذا الإجراء مخصص عادةً لفتح المساعد الرقمي. إذا كان هذا الإجراء يؤدي وظيفة مختلفة، فربما يكون قد تم تخصيصه بواسطة الشركة المصنعة لجهازك</string>
+    <string name="tutorial_power_button">استخدام زر الطاقة</string>
+    <string name="tutorial_power_button_summary">تسمح العديد من الأجهزة بفتح المساعد الرقمي عن طريق الضغط لفترة طويلة على زر الطاقة. إذا ظهرت قائمة إيقاف التشغيل/إعادة التشغيل عند القيام بذلك، فمن المحتمل أن تكون الميزة معطلة. يمكنك غالبًا تمكينها في إعدادات نظامك، عادةً ضمن مسار مثل <b>الإعدادات > النظام > الإيماءات > الضغط مع الاستمرار على زر الطاقة</b></string>
 
     <!--app shortcut/tile-->
 

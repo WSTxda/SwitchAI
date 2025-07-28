@@ -3,6 +3,8 @@ package com.wstxda.switchai.activity
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
@@ -43,5 +45,19 @@ abstract class BaseActivity : AppCompatActivity() {
             )
             WindowInsetsCompat.CONSUMED
         }
+    }
+
+    protected open fun getMenuResId(): Int? = null
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        getMenuResId()?.let { menuInflater.inflate(it, menu) }
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    protected open fun onMenuItemSelected(item: MenuItem): Boolean = false
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (onMenuItemSelected(item)) true
+        else super.onOptionsItemSelected(item)
     }
 }

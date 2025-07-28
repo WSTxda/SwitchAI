@@ -1,8 +1,10 @@
 package com.wstxda.switchai.activity
 
 import android.os.Bundle
+import android.view.MenuItem
 import com.wstxda.switchai.R
 import com.wstxda.switchai.databinding.ActivityMainBinding
+import com.wstxda.switchai.ui.component.AssistantTutorialBottomSheet
 
 class MainActivity : BaseActivity() {
 
@@ -15,5 +17,18 @@ class MainActivity : BaseActivity() {
 
         setupToolbar(binding.toolbar, showBackButton = false)
         binding.collapsingToolbar.title = getString(R.string.app_settings)
+    }
+
+    override fun getMenuResId(): Int = R.menu.main_menu
+
+    override fun onMenuItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_show_tutorial -> {
+                AssistantTutorialBottomSheet.show(supportFragmentManager)
+                true
+            }
+
+            else -> false
+        }
     }
 }

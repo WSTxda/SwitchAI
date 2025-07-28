@@ -26,7 +26,7 @@ class AssistantTutorialBottomSheet : BaseBottomSheet<FragmentTutorialDialogBindi
     override val topDivider: View get() = binding.dividerTop
     override val bottomDivider: View get() = binding.dividerBottom
     override val titleTextView: TextView get() = binding.bottomSheetTitle
-    override val titleResId: Int get() = R.string.pref_assistant_tutorial
+    override val titleResId: Int get() = R.string.digital_assistant_tutorial
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

@@ -4,6 +4,7 @@
 
     <string-array name="assistant_entries">
         <item>@string/alexa</item>
+        <item>@string/alice</item>
         <item>@string/chatgpt</item>
         <item>@string/claude</item>
         <item>@string/copilot</item>
@@ -27,6 +28,7 @@
 
     <string-array name="assistant_values">
         <item>alexa_assistant</item>
+        <item>alice_assistant</item>
         <item>chatgpt_assistant</item>
         <item>claude_assistant</item>
         <item>copilot_assistant</item>
@@ -52,6 +54,7 @@
 
     <string-array name="assistant_visibility_values">
         <item>alexa_assistant</item>
+        <item>alice_assistant</item>
         <item>chatgpt_assistant</item>
         <item>claude_assistant</item>
         <item>copilot_assistant</item>

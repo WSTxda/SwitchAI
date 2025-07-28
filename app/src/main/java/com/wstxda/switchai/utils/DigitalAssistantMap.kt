@@ -8,6 +8,7 @@ import com.wstxda.switchai.logic.PreferenceHelper
 object DigitalAssistantMap {
     internal val assistantsMap = mapOf(
         "alexa_assistant" to AlexaAssistant::class.java,
+        "alice_assistant" to AliceAssistant::class.java,
         "chatgpt_assistant" to ChatGPTAssistant::class.java,
         "claude_assistant" to ClaudeAssistant::class.java,
         "copilot_assistant" to CopilotAssistant::class.java,

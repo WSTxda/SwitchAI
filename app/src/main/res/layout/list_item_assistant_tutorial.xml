@@ -34,6 +34,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
+        android:drawableTint="?attr/colorOnPrimaryContainer"
         android:ellipsize="marquee"
         android:maxLines="2"
         android:paddingTop="16dp"
@@ -41,7 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tutorial_card"
-        tools:drawableStart="@drawable/ic_screen"
+        tools:drawableStart="@drawable/ic_corners"
         tools:text="@string/tutorial_edge_gestures" />
 
     <com.google.android.material.textview.MaterialTextView

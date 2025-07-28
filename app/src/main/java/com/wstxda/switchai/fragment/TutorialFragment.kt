@@ -83,7 +83,7 @@ class TutorialFragment : Fragment() {
     companion object {
         fun defaultTutorialItems() = listOf(
             AssistantTutorialItemViewHolder(
-                iconRes = R.drawable.ic_screen,
+                iconRes = R.drawable.ic_corners,
                 imageRes = R.drawable.tutorial_gestures_card,
                 titleRes = R.string.tutorial_edge_gestures,
                 summaryRes = R.string.tutorial_edge_gestures_summary

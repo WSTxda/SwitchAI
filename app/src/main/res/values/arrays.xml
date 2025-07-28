@@ -24,6 +24,7 @@
         <item>@string/ultimate_alexa</item>
         <item>@string/wenxin_yiyan</item>
         <item>@string/yuanbao</item>
+        <item>@string/zapia</item>
     </string-array>
 
     <string-array name="assistant_values">
@@ -48,6 +49,7 @@
         <item>ultimate_alexa_assistant</item>
         <item>wenxin_yiyan_assistant</item>
         <item>yuanbao_assistant</item>
+        <item>zapia_assistant</item>
     </string-array>
 
     <!--assistant visibility multi-choice-->
@@ -74,6 +76,7 @@
         <item>ultimate_alexa_assistant</item>
         <item>wenxin_yiyan_assistant</item>
         <item>yuanbao_assistant</item>
+        <item>zapia_assistant</item>
     </string-array>
 
     <!--theme selector-->

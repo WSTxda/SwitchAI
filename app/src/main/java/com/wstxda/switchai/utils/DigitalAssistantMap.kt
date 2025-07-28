@@ -28,6 +28,7 @@ object DigitalAssistantMap {
         "ultimate_alexa_assistant" to UltimateAlexaAssistant::class.java,
         "wenxin_yiyan_assistant" to WenxinYiyanAssistant::class.java,
         "yuanbao_assistant" to YuanbaoAssistant::class.java,
+        "zapia_assistant" to ZapiaAssistant::class.java,
     )
 
     fun launchSelectedAssistant(context: Context) {

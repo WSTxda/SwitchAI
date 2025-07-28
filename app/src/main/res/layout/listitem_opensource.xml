@@ -6,7 +6,7 @@
     android:layout_marginStart="16dp"
     android:layout_marginTop="24dp"
     android:layout_marginEnd="16dp"
-    android:backgroundTint="?attr/colorSurfaceContainerLow"
+    android:backgroundTint="?attr/colorSurfaceContainer"
     android:clickable="true"
     android:focusable="true"
     app:cardCornerRadius="18dp"

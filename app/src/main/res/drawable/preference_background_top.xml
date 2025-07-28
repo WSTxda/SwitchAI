@@ -9,7 +9,7 @@
                 android:bottomRightRadius="4dp"
                 android:topLeftRadius="18dp"
                 android:topRightRadius="18dp" />
-            <solid android:color="?attr/colorSurfaceContainerLow" />
+            <solid android:color="?attr/colorSurfaceContainer" />
         </shape>
     </item>
 </ripple>

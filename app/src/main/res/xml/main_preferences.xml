@@ -20,6 +20,11 @@
         app:layout="@layout/preference_material_assistant_cardview"
         app:useSimpleSummaryProvider="true" />
 
+    <Preference
+        android:layout="@layout/preference_material_single"
+        app:key="assistant_tutorial"
+        app:summary="@string/pref_assistant_tutorial" />
+
     <PreferenceCategory
         android:layout="@layout/preference_material_category"
         android:title="@string/pref_category_selector"
@@ -79,8 +84,8 @@
     <Preference
         android:key="open_assistant_widget"
         android:layout="@layout/preference_material_bottom"
-        android:title="@string/pref_assistant_widget"
-        android:summary="@string/pref_assistant_widget_summary" />
+        android:summary="@string/pref_assistant_widget_summary"
+        android:title="@string/pref_assistant_widget" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"

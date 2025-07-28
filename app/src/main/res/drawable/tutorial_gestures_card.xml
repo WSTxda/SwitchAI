@@ -1,0 +1,55 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160"
+    tools:ignore="VectorRaster">
+    <group>
+        <path
+            android:fillColor="?attr/colorSurface"
+            android:pathData="M55-183c0-13.81 11.19-25 25-25h120c13.81 0 25 11.19 25 25v300c0 13.81-11.19 25-25 25h-120c-13.81 0-25-11.19-25-25z"
+            android:strokeWidth="10"
+            android:strokeColor="?attr/colorSurfaceVariant" />
+        <path android:pathData="M60 65h160v52c0 11.05-8.95 20-20 20H80c-11.05 0-20-8.95-20-20V65Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:endX="140"
+                    android:endY="137"
+                    android:startX="140"
+                    android:startY="65"
+                    android:type="linear">
+                    <item
+                        android:color="@android:color/transparent"
+                        android:offset="0" />
+                    <item
+                        android:color="?attr/colorSecondaryContainer"
+                        android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:pathData="M219 108v9c0 10.5-8.5 19-19 19H80c-10.5 0-19-8.5-19-19v-9h158Z"
+            android:strokeWidth="2">
+            <aapt:attr name="android:strokeColor">
+                <gradient
+                    android:endX="140"
+                    android:endY="118.5"
+                    android:startX="140"
+                    android:startY="137"
+                    android:type="linear">
+                    <item
+                        android:color="?attr/colorPrimary"
+                        android:offset="0" />
+                    <item
+                        android:color="@android:color/transparent"
+                        android:offset="1" />
+                </gradient>
+            </aapt:attr>
+        </path>
+        <path
+            android:fillColor="?attr/colorOnSurface"
+            android:pathData="M119 130c0-0.55 0.45-1 1-1h40c0.55 0 1 0.45 1 1v0c0 0.55-0.45 1-1 1h-40c-0.55 0-1-0.45-1-1z" />
+    </group>
+</vector>

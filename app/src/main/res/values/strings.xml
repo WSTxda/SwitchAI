@@ -28,6 +28,15 @@
     <string name="wenxin_yiyan">Wenxin Yiyan</string>
     <string name="yuanbao">Yuanbao</string>
 
+    <!--digital assistant tutorial-->
+
+    <string name="tutorial_edge_gestures">Using screen edge gestures</string>
+    <string name="tutorial_edge_gestures_summary">On devices using gesture navigation (Android 10+), swipe up and in from either of the bottom corners of the screen. A glowing arc will appear from the corner to confirm that the digital assistant is opening. For this to work, <b>Gesture navigation</b> must be selected as the system navigation mode in your device\'s settings</string>
+    <string name="tutorial_home_button">Using the home navigation button</string>
+    <string name="tutorial_home_button_summary">If your device uses the classic 3-button navigation, press and hold the center home button for a moment. This action is typically reserved to open the digital assistant. If this action performs a different function, it may have been customized by your device\'s manufacturer</string>
+    <string name="tutorial_power_button">Using the power button</string>
+    <string name="tutorial_power_button_summary">Many devices allow you to open the digital assistant by long-pressing the power button. If the power off/restart menu appears when you do this, the feature is likely disabled. You can often enable it in your system settings, typically under a path like <b>Settings > System > Gestures > Press and hold power button</b></string>
+
     <!--preferences-->
 
     <string name="pref_category_appearance">Appearance</string>
@@ -71,6 +80,8 @@
 
     <string name="pref_assistant_root">Use root permission</string>
     <string name="pref_assistant_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
+
+    <string name="pref_assistant_tutorial">How to use the digital assistant</string>
 
     <!--theme selector-->
 

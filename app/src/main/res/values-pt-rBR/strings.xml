@@ -27,6 +27,15 @@
     <string name="wenxin_yiyan">Wenxin Yiyan</string>
     <string name="yuanbao">Yuanbao</string>
 
+    <!--digital assistant tutorial-->
+
+    <string name="tutorial_edge_gestures">Usando gestos na borda da tela</string>
+    <string name="tutorial_edge_gestures_summary">Em dispositivos que usam navegação por gestos (Android 10+), deslize para cima e para dentro a partir de um dos cantos inferiores da tela. Um arco brilhante aparecerá no canto para confirmar que o assistente digital está abrindo. Para que isso funcione, a <b>Navegação por gestos</b> deve estar selecionada como o modo de navegação do sistema nas configurações do seu dispositivo</string>
+    <string name="tutorial_home_button">Usando o botão de navegação home</string>
+    <string name="tutorial_home_button_summary">Se o seu dispositivo usa a navegação clássica de 3 botões, pressione e segure o botão home central por alguns segundos. Esta ação é normalmente reservada para abrir o assistente digital. Se esta ação realizar uma função diferente, pode ter sido personalizada pela fabricante do seu dispositivo</string>
+    <string name="tutorial_power_button">Usando o botão liga/desliga</string>
+    <string name="tutorial_power_button_summary">Muitos dispositivos permitem que você abra o assistente digital pressionando longamente o botão liga/desliga. Se o menu desligar/reiniciar aparecer quando você fizer isso, o recurso provavelmente está desabilitado. Muitas vezes você pode ativá-lo nas configurações do sistema, normalmente em: <b>Configurações > Sistema > Gestos > Pressionar e segurar o botão liga/desliga</b></string>
+
     <!--preferences-->
 
     <string name="pref_category_appearance">Aparência</string>
@@ -67,6 +76,8 @@
 
     <string name="pref_assistant_root">Usar permissão root</string>
     <string name="pref_assistant_root_summary">Use permissão root para ativar a entrada de voz em assistentes específicos e melhorar a usabilidade</string>
+
+    <string name="pref_assistant_tutorial">Como utilizar o assistente digital</string>
 
     <!--theme selector-->
 

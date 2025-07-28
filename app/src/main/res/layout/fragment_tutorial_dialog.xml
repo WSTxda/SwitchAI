@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,7 +17,7 @@
         android:layout_marginHorizontal="12dp"
         android:layout_marginBottom="24dp"
         android:textAlignment="center"
-        tools:text="@string/assistant_select" />
+        tools:text="@string/pref_assistant_tutorial" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_top"
@@ -28,16 +27,13 @@
         app:dividerColor="@color/divider_color"
         app:dividerThickness="1dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/assistants_recycler_view"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/tutorial_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:clipToPadding="false"
-        android:paddingBottom="24dp"
-        android:scrollbarSize="2dp"
-        android:scrollbars="vertical"
-        tools:listitem="@layout/list_item_assistant_view" />
+        tools:layout="@layout/list_item_assistant_tutorial" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_bottom"

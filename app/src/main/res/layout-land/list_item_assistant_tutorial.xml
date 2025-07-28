@@ -1,0 +1,61 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="?attr/dialogPreferredPadding"
+    android:layout_marginEnd="?attr/dialogPreferredPadding"
+    android:layout_marginBottom="36dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/tutorial_card"
+        style="?attr/materialCardViewFilledStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorSurfaceContainerLowest"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.45">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/tutorial_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@drawable/tutorial_gestures_card" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tutorial_title"
+        style="?attr/textAppearanceTitleMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:drawablePadding="8dp"
+        android:ellipsize="marquee"
+        android:maxLines="2"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tutorial_card"
+        app:layout_constraintTop_toTopOf="@id/tutorial_card"
+        tools:drawableStart="@drawable/ic_screen"
+        tools:text="@string/tutorial_edge_gestures" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tutorial_summary"
+        style="?attr/textAppearanceBodyMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="10"
+        android:textColor="?android:textColorSecondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tutorial_title"
+        app:layout_constraintTop_toBottomOf="@id/tutorial_title"
+        tools:text="@string/tutorial_edge_gestures_summary" />
+</androidx.constraintlayout.widget.ConstraintLayout>

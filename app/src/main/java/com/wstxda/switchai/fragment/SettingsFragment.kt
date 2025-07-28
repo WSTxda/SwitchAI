@@ -21,6 +21,7 @@ import com.wstxda.switchai.ui.component.AssistantManagerDialog
 import com.wstxda.switchai.ui.component.DigitalAssistantSetupDialog
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 import com.wstxda.switchai.ui.WidgetManager
+import com.wstxda.switchai.ui.component.AssistantTutorialBottomSheet
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.SettingsViewModel
 import com.wstxda.switchai.widget.utils.AssistantWidgetUpdater
@@ -92,6 +93,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     private fun setupPreferences() {
         setupDigitalAssistantClickListener()
+        setupAssistantTutorialClickListener()
         setupDigitalAssistantIconPreferenceListener()
         setupThemePreference()
         setupTilePreference()
@@ -116,14 +118,20 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
+    private fun setupAssistantTutorialClickListener() {
+        findPreference<Preference>(Constants.ASSISTANT_TUTORIAL_PREF_KEY)?.setOnPreferenceClickListener {
+            AssistantTutorialBottomSheet.show(childFragmentManager)
+            true
+        }
+    }
+
     private fun setupDigitalAssistantIconPreferenceListener() {
         val listPreference =
             findPreference<ListPreference>(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY)
         listPreference?.setOnPreferenceChangeListener { preference, newValue ->
             if (preference is ListPreference) {
                 assistantResourcesManager.updatePreferenceIcon(
-                    preference,
-                    newValue.toString()
+                    preference, newValue.toString()
                 )
             }
             AssistantWidgetUpdater.updateAllWidgets(requireContext())

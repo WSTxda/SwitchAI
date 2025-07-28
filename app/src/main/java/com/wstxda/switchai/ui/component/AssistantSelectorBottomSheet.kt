@@ -4,40 +4,38 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
+import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.wstxda.switchai.R
 import com.wstxda.switchai.databinding.FragmentAssistantDialogBinding
 import com.wstxda.switchai.ui.adapter.AssistantSelectorAdapter
 import com.wstxda.switchai.viewmodel.AssistantSelectorViewModel
 
-class AssistantSelectorBottomSheet : BottomSheetDialogFragment() {
-    private var _binding: FragmentAssistantDialogBinding? = null
-    private val binding get() = _binding!!
+class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBinding>() {
 
     private val viewModel: AssistantSelectorViewModel by viewModels()
-
     private lateinit var assistantSelectorAdapter: AssistantSelectorAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
-        _binding = FragmentAssistantDialogBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentAssistantDialogBinding.inflate(inflater, container, false)
+
+    override val topDivider: View get() = binding.dividerTop
+    override val bottomDivider: View get() = binding.dividerBottom
+    override val titleTextView: TextView get() = binding.bottomSheetTitle
+    override val titleResId: Int get() = R.string.assistant_select
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        assistantSelectorAdapter = AssistantSelectorAdapter(emptyList(), onAssistantLaunched = { assistantKey ->
-            viewModel.assistantLaunched(assistantKey)
-            dismiss()
-        }, onPinClicked = { assistantKey ->
-            viewModel.togglePinAssistant(assistantKey)
-        })
+        assistantSelectorAdapter =
+            AssistantSelectorAdapter(emptyList(), onAssistantLaunched = { assistantKey ->
+                viewModel.assistantLaunched(assistantKey)
+                dismiss()
+            }, onPinClicked = { assistantKey ->
+                viewModel.togglePinAssistant(assistantKey)
+            })
 
         binding.assistantsRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
@@ -52,17 +50,12 @@ class AssistantSelectorBottomSheet : BottomSheetDialogFragment() {
             RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 val lm = recyclerView.layoutManager as? LinearLayoutManager ?: return
-                val first = lm.findFirstCompletelyVisibleItemPosition()
-                val last = lm.findLastCompletelyVisibleItemPosition()
-                val total = assistantSelectorAdapter.itemCount
-                binding.dividerTop.isVisible = first > 0
-                binding.dividerBottom.isVisible = last < total - 1
+                val canScrollUp = lm.findFirstCompletelyVisibleItemPosition() > 0
+                val canScrollDown =
+                    lm.findLastCompletelyVisibleItemPosition() < (assistantSelectorAdapter.itemCount - 1)
+
+                updateDividerVisibility(canScrollUp, canScrollDown)
             }
         })
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

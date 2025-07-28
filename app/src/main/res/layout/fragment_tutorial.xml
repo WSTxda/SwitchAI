@@ -1,0 +1,16 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutorial_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:nestedScrollingEnabled="true"
+    android:scrollbarSize="2dp"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:id="@+id/tutorial_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:listitem="@layout/list_item_assistant_tutorial" />
+</ScrollView>

@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160"
+    tools:ignore="VectorRaster">
+    <group>
+        <path
+            android:fillAlpha="0.4"
+            android:fillColor="?colorSecondaryContainer"
+            android:pathData="M234 74A36 36 0 1 0 234 146 36 36 0 1 0 234 74z" />
+        <path
+            android:fillColor="?colorSecondaryContainer"
+            android:pathData="M234 98A12 12 0 1 0 234 122 12 12 0 1 0 234 98z" />
+        <path
+            android:fillColor="?attr/colorPrimary"
+            android:pathData="M230 92c2.2 0 4 1.8 4 4v29c0 2.2-1.8 4-4 4V92Z" />
+        <path
+            android:fillColor="?attr/colorSurface"
+            android:pathData="M55 43c0-13.81 11.19-25 25-25h120c13.81 0 25 11.19 25 25v306c0 13.81-11.19 25-25 25h-120c-13.81 0-25-11.19-25-25z"
+            android:strokeWidth="10"
+            android:strokeColor="?attr/colorSurfaceVariant" />
+    </group>
+</vector>

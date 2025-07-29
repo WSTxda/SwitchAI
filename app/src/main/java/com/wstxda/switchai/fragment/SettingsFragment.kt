@@ -21,6 +21,7 @@ import com.wstxda.switchai.ui.component.AssistantManagerDialog
 import com.wstxda.switchai.ui.component.DigitalAssistantSetupDialog
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 import com.wstxda.switchai.ui.WidgetManager
+import com.wstxda.switchai.ui.component.AssistantTutorialBottomSheet
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.SettingsViewModel
 import com.wstxda.switchai.widget.utils.AssistantWidgetUpdater
@@ -43,7 +44,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
             val isDone = digitalAssistantPreference.checkDigitalAssistSetupStatus()
             viewModel.setAssistSetupDone(isDone)
             digitalAssistantPreference.updateDigitalAssistantPreferences(isDone)
-            if (!isDone) setupDigitalAssistantClickListener()
+            if (isDone) {
+                AssistantTutorialBottomSheet.show(childFragmentManager)
+            } else {
+                setupDigitalAssistantClickListener()
+            }
         }
     }
 

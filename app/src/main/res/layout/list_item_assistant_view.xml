@@ -30,7 +30,7 @@
             android:id="@+id/assistant_checked_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
+            android:layout_marginHorizontal="10dp"
             android:ellipsize="marquee"
             android:maxLines="2"
             android:textAppearance="?attr/textAppearanceTitleMedium"

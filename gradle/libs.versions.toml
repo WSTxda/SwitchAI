@@ -1,11 +1,11 @@
 [versions]
-agp = "8.10.1"
-kotlin = "2.1.20"
+agp = "8.11.1"
+kotlin = "2.2.0"
 preference = "1.2.1"
 appcompat = "1.7.1"
-navigation = "2.9.0"
-material = "1.14.0-alpha02"
-aboutLibraries = "12.2.1"
+navigation = "2.9.2"
+material = "1.14.0-alpha03"
+aboutLibraries = "12.2.4"
 
 [libraries]
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }

@@ -16,6 +16,7 @@ object DigitalAssistantMap {
         "doubao_assistant" to DoubaoAssistant::class.java,
         "gemini_assistant" to GeminiAssistant::class.java,
         "grok_assistant" to GrokAssistant::class.java,
+        "home_assistant" to HomeAssistant::class.java,
         "le_chat_assistant" to LeChatAssistant::class.java,
         "kimi_assistant" to KimiAssistant::class.java,
         "manus_assistant" to ManusAssistant::class.java,

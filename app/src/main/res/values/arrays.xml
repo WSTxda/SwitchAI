@@ -12,6 +12,7 @@
         <item>@string/doubao</item>
         <item>@string/gemini</item>
         <item>@string/grok</item>
+        <item>@string/home</item>
         <item>@string/kimi</item>
         <item>@string/le_chat</item>
         <item>@string/manus</item>
@@ -37,6 +38,7 @@
         <item>doubao_assistant</item>
         <item>gemini_assistant</item>
         <item>grok_assistant</item>
+        <item>home_assistant</item>
         <item>kimi_assistant</item>
         <item>le_chat_assistant</item>
         <item>manus_assistant</item>
@@ -64,6 +66,7 @@
         <item>doubao_assistant</item>
         <item>gemini_assistant</item>
         <item>grok_assistant</item>
+        <item>home_assistant</item>
         <item>kimi_assistant</item>
         <item>le_chat_assistant</item>
         <item>manus_assistant</item>

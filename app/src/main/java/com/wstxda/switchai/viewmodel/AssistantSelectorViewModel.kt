@@ -14,6 +14,7 @@ import com.wstxda.switchai.utils.DigitalAssistantMap
 import org.json.JSONArray
 import org.json.JSONObject
 import androidx.core.content.edit
+import com.wstxda.switchai.data.AssistantItem
 import com.wstxda.switchai.utils.Constants.CAT_PINNED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_MAX_RECENTLY_USED
@@ -214,12 +215,4 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         super.onCleared()
         defaultSharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
     }
-
-    data class AssistantItem(
-        val key: String,
-        val name: String,
-        val iconResId: Int,
-        val isPinned: Boolean,
-        val lastUsedTimestamp: Long,
-    )
 }

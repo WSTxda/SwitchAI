@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.wstxda.switchai.R
+import com.wstxda.switchai.ui.utils.TutorialItemList
 import com.wstxda.switchai.databinding.FragmentTutorialBinding
-import com.wstxda.switchai.databinding.ListItemAssistantTutorialBinding
-import com.wstxda.switchai.ui.viewholder.AssistantTutorialItemViewHolder
+import com.wstxda.switchai.ui.adapter.TutorialItemViewBuilder
 
 class TutorialFragment : Fragment() {
+
     interface ScrollListener {
         fun onScrollChanged(canScrollUp: Boolean, canScrollDown: Boolean)
     }
@@ -39,10 +39,9 @@ class TutorialFragment : Fragment() {
         populateTutorials()
 
         binding.tutorialScrollView.setOnScrollChangeListener { v, _, _, _, _ ->
-            val canScrollUp = v.canScrollVertically(-1)
-            val canScrollDown = v.canScrollVertically(1)
-
-            scrollListener?.onScrollChanged(canScrollUp, canScrollDown)
+            scrollListener?.onScrollChanged(
+                v.canScrollVertically(-1), v.canScrollVertically(1)
+            )
         }
 
         binding.tutorialScrollView.post {
@@ -54,18 +53,10 @@ class TutorialFragment : Fragment() {
     }
 
     private fun populateTutorials() {
-        val tutorialItems = defaultTutorialItems()
-        val inflater = LayoutInflater.from(requireContext())
-        tutorialItems.forEach { item ->
-            val itemBinding =
-                ListItemAssistantTutorialBinding.inflate(inflater, binding.tutorialContainer, false)
-            itemBinding.tutorialImage.setImageResource(item.imageRes)
-            itemBinding.tutorialTitle.setText(item.titleRes)
-            itemBinding.tutorialTitle.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                item.iconRes, 0, 0, 0
-            )
-            itemBinding.tutorialSummary.setText(item.summaryRes)
-            binding.tutorialContainer.addView(itemBinding.root)
+        val items = TutorialItemList.getTutorialItems()
+        items.forEach { item ->
+            val view = TutorialItemViewBuilder.build(requireContext(), item)
+            binding.tutorialContainer.addView(view)
         }
     }
 
@@ -78,26 +69,5 @@ class TutorialFragment : Fragment() {
     override fun onDetach() {
         super.onDetach()
         scrollListener = null
-    }
-
-    companion object {
-        fun defaultTutorialItems() = listOf(
-            AssistantTutorialItemViewHolder(
-                iconRes = R.drawable.ic_corners,
-                imageRes = R.drawable.tutorial_gestures_card,
-                titleRes = R.string.tutorial_edge_gestures,
-                summaryRes = R.string.tutorial_edge_gestures_summary
-            ), AssistantTutorialItemViewHolder(
-                iconRes = R.drawable.ic_home,
-                imageRes = R.drawable.tutorial_button_card,
-                titleRes = R.string.tutorial_home_button,
-                summaryRes = R.string.tutorial_home_button_summary
-            ), AssistantTutorialItemViewHolder(
-                iconRes = R.drawable.ic_power,
-                imageRes = R.drawable.tutorial_power_card,
-                titleRes = R.string.tutorial_power_button,
-                summaryRes = R.string.tutorial_power_button_summary
-            )
-        )
     }
 }

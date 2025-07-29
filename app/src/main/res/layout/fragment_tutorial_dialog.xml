@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:fitsSystemWindows="false"
     android:orientation="vertical">
 
     <com.google.android.material.bottomsheet.BottomSheetDragHandleView
@@ -23,7 +24,7 @@
         android:id="@+id/divider_top"
         style="?attr/materialDividerStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="1dp"
         app:dividerColor="@color/divider_color"
         app:dividerThickness="1dp" />
 
@@ -39,7 +40,7 @@
         android:id="@+id/divider_bottom"
         style="?attr/materialDividerStyle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="1dp"
         app:dividerColor="@color/divider_color"
         app:dividerThickness="1dp" />
 </androidx.appcompat.widget.LinearLayoutCompat>

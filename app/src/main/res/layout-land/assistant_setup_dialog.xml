@@ -5,9 +5,9 @@
     android:layout_height="wrap_content"
     android:background="?attr/colorSurfaceContainer"
     android:fitsSystemWindows="false"
-    android:paddingStart="?dialogPreferredPadding"
-    android:paddingTop="?dialogPreferredPadding"
-    android:paddingEnd="?dialogPreferredPadding"
+    android:paddingStart="?attr/dialogPreferredPadding"
+    android:paddingTop="?attr/dialogPreferredPadding"
+    android:paddingEnd="?attr/dialogPreferredPadding"
     android:paddingBottom="20dp"
     tools:ignore="Overdraw">
 

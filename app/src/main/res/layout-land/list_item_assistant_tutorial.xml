@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="?attr/dialogPreferredPadding"
-    android:layout_marginEnd="?attr/dialogPreferredPadding"
-    android:layout_marginBottom="36dp">
+    android:paddingStart="?attr/dialogPreferredPadding"
+    android:paddingEnd="?attr/dialogPreferredPadding"
+    android:paddingBottom="?attr/dialogPreferredPadding">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/tutorial_card"
@@ -51,9 +51,10 @@
         style="?attr/textAppearanceBodyMedium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ellipsize="end"
+        android:ellipsize="marquee"
         android:maxLines="10"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:textColor="?android:textColorSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tutorial_title"

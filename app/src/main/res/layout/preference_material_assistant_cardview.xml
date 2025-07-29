@@ -4,66 +4,77 @@
     style="?attr/materialCardViewFilledStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="17dp"
+    android:layout_marginStart="?attr/listPreferredItemPaddingStart"
     android:layout_marginTop="24dp"
-    android:layout_marginEnd="17dp"
+    android:layout_marginEnd="?attr/listPreferredItemPaddingEnd"
     android:layout_marginBottom="14dp"
-    android:baselineAligned="true"
     android:clickable="true"
     app:cardBackgroundColor="?attr/colorPrimaryContainer"
     app:cardCornerRadius="18dp">
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:padding="16dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@android:id/icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|center_vertical"
-            android:layout_marginStart="16dp"
             android:importantForAccessibility="no"
             android:tint="?attr/colorOnPrimaryContainer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:src="@drawable/ic_assistant_chatgpt" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/text_container"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_margin="16dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@android:id/icon"
+            app:layout_constraintEnd_toStartOf="@android:id/widget_frame"
+            app:layout_constraintStart_toEndOf="@android:id/icon"
+            app:layout_constraintTop_toTopOf="@android:id/icon">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@android:id/title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="marquee"
                 android:maxLines="2"
-                android:paddingBottom="4dp"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textColor="?attr/colorOnPrimaryContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/pref_digital_assistant" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@android:id/summary"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
                 android:ellipsize="marquee"
                 android:maxLines="8"
                 android:textAppearance="?attr/textAppearanceBodyLargeEmphasized"
                 android:textColor="?attr/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@android:id/title"
                 tools:text="@string/chatgpt" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@android:id/widget_frame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="16dp"
-            android:orientation="vertical" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@android:id/icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@android:id/icon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

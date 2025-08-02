@@ -25,7 +25,14 @@ object TutorialItemList {
             iconRes = R.drawable.ic_power,
             imageRes = R.drawable.tutorial_power_card,
             titleRes = R.string.tutorial_power_button,
-            summaryRes = R.string.tutorial_power_button_summary
+            summaryRes = R.string.tutorial_power_button_summary),
+
+        // Headset button tutorial
+        TutorialItem(
+            iconRes = R.drawable.ic_headset,
+            imageRes = R.drawable.tutorial_headset_card,
+            titleRes = R.string.tutorial_headset_button,
+            summaryRes = R.string.tutorial_headset_button_summary
         )
     )
 }

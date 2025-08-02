@@ -59,7 +59,7 @@
                 android:layout_marginTop="2dp"
                 android:ellipsize="marquee"
                 android:maxLines="8"
-                android:textAppearance="?attr/textAppearanceBodyLargeEmphasized"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?attr/colorOnErrorContainer"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

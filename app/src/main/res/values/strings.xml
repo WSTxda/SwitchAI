@@ -120,7 +120,9 @@
     <string name="tutorial_home_button">Using the home navigation button</string>
     <string name="tutorial_home_button_summary">If your device uses the classic 3-button navigation, press and hold the center home button for a moment. This action is typically reserved to open the digital assistant. If this action performs a different function, it may have been customized by your device\'s manufacturer</string>
     <string name="tutorial_power_button">Using the power button</string>
-    <string name="tutorial_power_button_summary">Many devices allow you to open the digital assistant by long-pressing the power button. If the power off/restart menu appears when you do this, the feature is likely disabled. You can often enable it in your system settings, typically under a path like <b>Settings > System > Gestures > Press and hold power button</b></string>
+    <string name="tutorial_power_button_summary">Many devices allow you to open the digital assistant by long-pressing the power button. If the power off/restart menu appears when you do this, the feature is likely disabled. You can often enable it in your system settings, typically under a path like <b>Settings &gt; System &gt; Gestures &gt; Press and hold power button</b></string>
+    <string name="tutorial_headset_button">Using wired and bluetooth headsets</string>
+    <string name="tutorial_headset_button_summary">Many wired and bluetooth headsets allow you to open the digital assistant by long-pressing the multifunction button. This button is usually used to control media playback or answer calls, but can also invoke the assistant depending on your headset model. Tap gestures on some wireless earbuds like <b>double-tap</b> may also activate the assistant if supported and configured in manager app</string>
 
     <!--app shortcut/tile-->
 

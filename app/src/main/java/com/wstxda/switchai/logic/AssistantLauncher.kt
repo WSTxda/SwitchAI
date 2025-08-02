@@ -5,21 +5,23 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.net.toUri
+import com.wstxda.switchai.data.AssistantItem
 import com.wstxda.switchai.ui.utils.VibrationService.openAssistantVibration
+import com.wstxda.switchai.utils.AssistantProperties
+import kotlin.reflect.full.companionObjectInstance
 
 fun Context.launchAssistant(
     intents: List<Intent>,
-    errorMessageResId: Int,
-    packageName: String? = null,
+    errorMessage: Int,
 ): Boolean {
     intents.forEach { intent ->
         if (launchAssistant(intent)) return true
     }
-    var handled = false
-    if (!packageName.isNullOrEmpty()) {
-        handled = launchOnStore(packageName)
-    }
-    showToast(errorMessageResId)
+
+    val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
+    val handled = pkg?.takeIf { it.isNotEmpty() }?.let { launchOnStore(it) } ?: false
+
+    showToast(errorMessage)
     return handled
 }
 
@@ -32,32 +34,33 @@ fun Context.launchAssistant(intent: Intent): Boolean = runCatching {
 
 fun Context.launchAssistantRoot(
     intents: List<Intent>,
-    rootAccessMessageResId: Int,
-    errorMessageResId: Int,
-    packageName: String? = null,
+    rootAccessMessage: Int,
+    errorMessage: Int,
 ): Boolean {
-    val hasRoot = runCatching {
-        RootChecker.isRootAvailable()
-    }.getOrElse { false }
+    val hasRoot = runCatching { isRootAvailable() }.getOrElse { false }
 
     if (!hasRoot) {
-        showToast(rootAccessMessageResId)
+        showToast(rootAccessMessage)
         return false
     }
 
     intents.forEach { intent ->
         val success = runCatching {
-            RootChecker.launchRootActivity(
+            launchRootActivity(
                 intent.component!!.packageName, intent.component!!.className
             )
         }.getOrElse { false }
 
-        if (success) return true
-        openAssistantVibration()
+        if (success) {
+            openAssistantVibration()
+            return true
+        }
     }
 
-    val handled = !packageName.isNullOrEmpty() && launchOnStore(packageName)
-    showToast(errorMessageResId)
+    val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
+    val handled = pkg?.takeIf { it.isNotEmpty() }?.let { launchOnStore(it) } ?: false
+
+    showToast(errorMessage)
     return handled
 }
 
@@ -66,10 +69,12 @@ fun Context.launchOnStore(packageName: String): Boolean {
     val goToMarket = Intent(Intent.ACTION_VIEW, uri).apply {
         flags = Intent.FLAG_ACTIVITY_NEW_TASK
     }
+
     val fallbackUri = "https://play.google.com/store/apps/details?id=$packageName".toUri()
     val fallbackIntent = Intent(Intent.ACTION_VIEW, fallbackUri).apply {
         flags = Intent.FLAG_ACTIVITY_NEW_TASK
     }
+
     return try {
         startActivity(goToMarket)
         true
@@ -81,6 +86,6 @@ fun Context.launchOnStore(packageName: String): Boolean {
     }
 }
 
-fun Context.showToast(messageResId: Int) {
-    Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show()
+fun Context.showToast(message: Int) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }

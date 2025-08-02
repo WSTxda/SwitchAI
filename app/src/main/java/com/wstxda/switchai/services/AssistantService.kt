@@ -1,11 +1,11 @@
 package com.wstxda.switchai.services
 
 import com.wstxda.switchai.activity.AssistantActivity
-import com.wstxda.switchai.utils.DigitalAssistantMap
+import com.wstxda.switchai.utils.Assistant
 
 class AssistantService : AssistantActivity() {
     override fun onCreateInternal() {
-        DigitalAssistantMap.launchSelectedAssistant(this)
+        Assistant.open(this)
         finish()
     }
 }

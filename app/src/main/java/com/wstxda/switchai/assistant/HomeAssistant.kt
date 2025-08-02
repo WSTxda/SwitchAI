@@ -4,20 +4,25 @@ import android.content.ComponentName
 import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
+import com.wstxda.switchai.utils.AssistantProperties
 import com.wstxda.switchai.logic.launchAssistant
 
 class HomeAssistant : AssistantActivity() {
+
+    companion object : AssistantProperties {
+        override val packageName = "io.homeassistant.companion.android"
+    }
+
     override fun onCreateInternal() {
         launchAssistant(
             intents = listOf(createHomeIntent()),
-            errorMessageResId = R.string.assistant_application_not_found,
-            packageName = "io.homeassistant.companion.android"
+            errorMessage = R.string.assistant_application_not_found
         )
     }
 
     private fun createHomeIntent() = Intent().apply {
         component = ComponentName(
-            "io.homeassistant.companion.android",
+            Companion.packageName,
             "io.homeassistant.companion.android.assist.AssistActivity"
         )
     }

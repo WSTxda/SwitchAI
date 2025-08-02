@@ -3,8 +3,8 @@ package com.wstxda.switchai.services
 import android.content.Intent
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.activity.AssistantSelectorActivity
-import com.wstxda.switchai.utils.DigitalAssistantMap
 import com.wstxda.switchai.logic.PreferenceHelper
+import com.wstxda.switchai.utils.Assistant
 import com.wstxda.switchai.utils.Constants
 
 class DigitalAssistantService : AssistantActivity() {
@@ -17,7 +17,7 @@ class DigitalAssistantService : AssistantActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
         } else {
-            DigitalAssistantMap.launchSelectedAssistant(this)
+            Assistant.open(this)
         }
         finish()
     }

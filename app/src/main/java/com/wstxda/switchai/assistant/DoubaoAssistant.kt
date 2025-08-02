@@ -4,20 +4,25 @@ import android.content.ComponentName
 import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
+import com.wstxda.switchai.utils.AssistantProperties
 import com.wstxda.switchai.logic.launchAssistant
 
 class DoubaoAssistant : AssistantActivity() {
+
+    companion object : AssistantProperties {
+        override val packageName = "com.larus.nova"
+    }
+
     override fun onCreateInternal() {
         launchAssistant(
-            intents = listOf(createAlexaIntent()),
-            errorMessageResId = R.string.assistant_application_not_found,
-            packageName = "com.larus.nova"
+            intents = listOf(createDoubaoIntent()),
+            errorMessage = R.string.assistant_application_not_found
         )
     }
 
-    private fun createAlexaIntent() = Intent().apply {
+    private fun createDoubaoIntent() = Intent().apply {
         component = ComponentName(
-            "com.larus.nova", "com.larus.home.impl.MainActivity"
+            Companion.packageName, "com.larus.home.impl.MainActivity"
         )
     }
 }

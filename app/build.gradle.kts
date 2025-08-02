@@ -44,6 +44,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.kotlin.reflect)
     implementation(libs.androidx.preference)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.navigation)

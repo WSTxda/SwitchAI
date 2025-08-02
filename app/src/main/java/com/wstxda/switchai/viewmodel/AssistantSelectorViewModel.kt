@@ -10,17 +10,19 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView
 import com.wstxda.switchai.utils.Constants
-import com.wstxda.switchai.utils.DigitalAssistantMap
+import com.wstxda.switchai.utils.AssistantProperties
+import com.wstxda.switchai.utils.AssistantsMap
 import org.json.JSONArray
 import org.json.JSONObject
 import androidx.core.content.edit
 import com.wstxda.switchai.data.AssistantItem
+import com.wstxda.switchai.logic.isPackageInstalled
 import com.wstxda.switchai.utils.Constants.CAT_PINNED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_MAX_RECENTLY_USED
 import com.wstxda.switchai.utils.Constants.PREFS_NAME
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
-import com.wstxda.switchai.logic.isPackageInstalled
+import kotlin.reflect.full.companionObjectInstance
 
 class AssistantSelectorViewModel(application: Application) : AndroidViewModel(application),
     SharedPreferences.OnSharedPreferenceChangeListener {
@@ -123,8 +125,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         val context = getApplication<Application>().applicationContext
         val resources = context.resources
 
-        val assistantsMap = DigitalAssistantMap.assistantsMap
-        val assistantPackages = DigitalAssistantMap.assistantsPackages
+        val assistantsMap = AssistantsMap.assistants
 
         val defaultVisibleAssistants =
             resources.getStringArray(R.array.assistant_visibility_values).toSet()
@@ -133,10 +134,11 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         )
 
         val allVisibleAssistantDetails =
-            assistantsMap.filterKeys { it in visibleAssistantKeys }.map { (key, _) ->
+            assistantsMap.filterKeys { it in visibleAssistantKeys }.map { (key, activityClass) ->
                 val name = assistantResourcesManager.getAssistantName(key)
                 val finalIconResId = assistantResourcesManager.getAssistantIcon(key)
-                val packageName = assistantPackages[key] ?: ""
+                val properties = activityClass.kotlin.companionObjectInstance as? AssistantProperties
+                val packageName = properties?.packageName ?: ""
                 val isInstalled = isPackageInstalled(context, packageName)
 
                 AssistantItem(

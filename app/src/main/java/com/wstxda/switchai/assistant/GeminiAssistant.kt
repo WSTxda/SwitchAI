@@ -5,14 +5,19 @@ import android.content.Intent
 import androidx.lifecycle.lifecycleScope
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
+import com.wstxda.switchai.utils.AssistantProperties
 import com.wstxda.switchai.logic.PreferenceHelper
-import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.logic.launchAssistant
 import com.wstxda.switchai.logic.launchAssistantRoot
+import com.wstxda.switchai.utils.Constants
 import kotlinx.coroutines.launch
 
 class GeminiAssistant : AssistantActivity() {
     private val preferences by lazy { PreferenceHelper(this) }
+
+    companion object : AssistantProperties {
+        override val packageName = "com.google.android.apps.bard"
+    }
 
     override fun onCreateInternal() {
         lifecycleScope.launch {
@@ -24,27 +29,24 @@ class GeminiAssistant : AssistantActivity() {
         }
     }
 
-    private  fun launchGeminiFloaty() {
+    private fun launchGeminiFloaty() {
         launchAssistantRoot(
             intents = listOf(createGeminiFloatyIntent()),
-            rootAccessMessageResId = R.string.root_access_warning,
-            errorMessageResId = R.string.assistant_application_not_found,
-            packageName = "com.google.android.googlequicksearchbox"
+            rootAccessMessage = R.string.root_access_warning,
+            errorMessage = R.string.assistant_application_not_found
         )
     }
 
     private fun launchGemini() {
         launchAssistant(
             intents = listOf(createGeminiIntent()),
-            errorMessageResId = R.string.assistant_application_not_found,
-            packageName = "com.google.android.apps.bard"
+            errorMessage = R.string.assistant_application_not_found
         )
     }
 
     private fun createGeminiIntent() = Intent().apply {
         component = ComponentName(
-            "com.google.android.apps.bard",
-            "com.google.android.apps.bard.shellapp.BardEntryPointActivity"
+            Companion.packageName, "com.google.android.apps.bard.shellapp.BardEntryPointActivity"
         )
     }
 

@@ -38,6 +38,10 @@ object Constants {
     const val IS_ASSIST_SETUP_DONE = "is_assist_setup_done"
     const val PREFS_NAME = "assistant_selector_prefs"
 
+    // Logs tags
+
+    const val ROOT_CHECKER = "RootChecker"
+
     // AssistantSelector recyclerView
 
     const val VIEW_TYPE_CATEGORY_HEADER = 0

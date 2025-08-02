@@ -4,20 +4,25 @@ import android.content.ComponentName
 import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
+import com.wstxda.switchai.utils.AssistantProperties
 import com.wstxda.switchai.logic.launchAssistant
 
 class GrokAssistant : AssistantActivity() {
+
+    companion object : AssistantProperties {
+        override val packageName = "ai.x.grok"
+    }
+
     override fun onCreateInternal() {
         launchAssistant(
             intents = listOf(createGrokIntent()),
-            errorMessageResId = R.string.assistant_application_not_found,
-            packageName = "ai.x.grok"
+            errorMessage = R.string.assistant_application_not_found
         )
     }
 
     private fun createGrokIntent() = Intent().apply {
         component = ComponentName(
-            "ai.x.grok", "ai.x.grok.main.GrokActivity"
+            Companion.packageName, "ai.x.grok.main.GrokActivity"
         )
     }
 }

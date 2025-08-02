@@ -96,6 +96,7 @@
     <string name="assistant_category_pin">مثبت</string>
     <string name="assistant_category_recent">المستخدمة مؤخرًا</string>
     <string name="assistant_category_all">المساعدين</string>
+    <string name="assistant_category_not_installed">غير مثبت</string>
     <!--open assistant messages-->
     <string name="assistant_open">افتح المساعد</string>
     <string name="assistant_open_error">خطأ في فتح المساعد</string>
@@ -116,6 +117,8 @@
     <string name="tutorial_home_button_summary">إذا كان جهازك يستخدم التنقل الكلاسيكي بثلاثة أزرار، فاضغط مع الاستمرار على زر الصفحة الرئيسية المركزي للحظة. هذا الإجراء مخصص عادةً لفتح المساعد الرقمي. إذا كان هذا الإجراء يؤدي وظيفة مختلفة، فربما يكون قد تم تخصيصه بواسطة الشركة المصنعة لجهازك</string>
     <string name="tutorial_power_button">استخدام زر الطاقة</string>
     <string name="tutorial_power_button_summary">تسمح العديد من الأجهزة بفتح المساعد الرقمي عن طريق الضغط لفترة طويلة على زر الطاقة. إذا ظهرت قائمة إيقاف التشغيل/إعادة التشغيل عند القيام بذلك، فمن المحتمل أن تكون الميزة معطلة. يمكنك غالبًا تمكينها في إعدادات نظامك، عادةً ضمن مسار مثل <b>الإعدادات > النظام > الإيماءات > الضغط مع الاستمرار على زر الطاقة</b></string>
+    <string name="tutorial_headset_button">استخدام سماعات الرأس السلكية واللاسلكية (بلوتوث)</string>
+    <string name="tutorial_headset_button_summary">تسمح العديد من سماعات الرأس السلكية واللاسلكية بفتح المساعد الرقمي عن طريق الضغط لفترة طويلة على الزر متعدد الوظائف. يُستخدم هذا الزر عادةً للتحكم في تشغيل الوسائط أو الرد على المكالمات، ولكن يمكنه أيضًا فتح المساعد حسب طراز سماعة الرأس. قد تفتح إيماءات النقر على بعض سماعات الأذن اللاسلكية مثل <b>النقر المزدوج</b> أيضًا المساعد الرقمي إذا كان مدعومًا ومُكوَّنًا في التطبيق</string>
 
     <!--app shortcut/tile-->
 

@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.net.toUri
-import com.wstxda.switchai.data.AssistantItem
 import com.wstxda.switchai.ui.utils.VibrationService.openAssistantVibration
 import com.wstxda.switchai.utils.AssistantProperties
 import kotlin.reflect.full.companionObjectInstance

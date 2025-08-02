@@ -96,6 +96,7 @@
     <string name="assistant_category_pin">Fixados</string>
     <string name="assistant_category_recent">Usados recentemente</string>
     <string name="assistant_category_all">Assistentes</string>
+    <string name="assistant_category_not_installed">Não instalado</string>
     <!--open assistant messages-->
     <string name="assistant_open">Abrir assistente</string>
     <string name="assistant_open_error">Erro ao abrir assistente</string>
@@ -116,6 +117,8 @@
     <string name="tutorial_home_button_summary">Se o seu dispositivo usa a navegação clássica de 3 botões, pressione e segure o botão home central por alguns segundos. Esta ação é normalmente reservada para abrir o assistente digital. Se esta ação realizar uma função diferente, pode ter sido personalizada pela fabricante do seu dispositivo</string>
     <string name="tutorial_power_button">Usando o botão liga/desliga</string>
     <string name="tutorial_power_button_summary">Muitos dispositivos permitem que você abra o assistente digital pressionando longamente o botão liga/desliga. Se o menu desligar/reiniciar aparecer quando você fizer isso, o recurso provavelmente está desabilitado. Muitas vezes você pode ativá-lo nas configurações do sistema, normalmente em: <b>Configurações > Sistema > Gestos > Pressionar e segurar o botão liga/desliga</b></string>
+    <string name="tutorial_headset_button">Usando fones de ouvido com fio e bluetooth</string>
+    <string name="tutorial_headset_button_summary">Muitos fones de ouvido com fio e bluetooth permitem abrir o assistente digital pressionando longamente o botão multifuncional. Este botão é geralmente usado para controlar a reprodução de mídia ou atender chamadas, mas também pode abrir o assistente, dependendo do modelo do seu fone de ouvido. Gestos de toque em alguns fones de ouvido sem fio, como <b>toque duplo</b>, também podem abrir o assistente digital se suportado e configurado no aplicativo</string>
 
     <!--app shortcut/tile-->
 

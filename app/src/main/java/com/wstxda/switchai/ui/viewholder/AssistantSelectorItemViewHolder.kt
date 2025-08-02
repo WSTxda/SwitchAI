@@ -1,6 +1,7 @@
 package com.wstxda.switchai.ui.viewholder
 
 import android.content.Intent
+import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.wstxda.switchai.R
@@ -27,10 +28,16 @@ class AssistantSelectorItemViewHolder(
             if (item.isPinned) R.drawable.ic_pin_filled else R.drawable.ic_pin_outline
         )
 
-        binding.pinButton.setOnClickListener {
-            onPinClicked(item.key)
-            it.context.buttonVibration()
+        if (item.isInstalled) {
+            binding.pinButton.visibility = View.VISIBLE
+            binding.pinButton.setOnClickListener {
+                onPinClicked(item.key)
+                it.context.buttonVibration()
+            }
+        } else {
+            binding.pinButton.visibility = View.GONE
         }
+
         itemView.setOnClickListener {
             val context = it.context
             DigitalAssistantMap.assistantsMap[item.key]?.let { cls ->

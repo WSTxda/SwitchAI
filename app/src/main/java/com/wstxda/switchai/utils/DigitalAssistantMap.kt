@@ -32,6 +32,32 @@ object DigitalAssistantMap {
         "zapia_assistant" to ZapiaAssistant::class.java,
     )
 
+    internal val assistantsPackages = mapOf(
+        "alexa_assistant" to "com.amazon.dee.app",
+        "alice_assistant" to "com.yandex.aliceapp",
+        "chatgpt_assistant" to "com.openai.chatgpt",
+        "claude_assistant" to "com.anthropic.claude",
+        "copilot_assistant" to "com.microsoft.copilot",
+        "deepseek_assistant" to "com.deepseek.chat",
+        "doubao_assistant" to "com.larus.nova",
+        "gemini_assistant" to "com.google.android.apps.bard",
+        "grok_assistant" to "ai.x.grok",
+        "home_assistant" to "io.homeassistant.companion.android",
+        "kimi_assistant" to "com.moonshot.kimichat",
+        "le_chat_assistant" to "ai.mistral.chat",
+        "manus_assistant" to "tech.butterfly.app",
+        "marusya_assistant" to "ru.mail.search.electroscope",
+        "meta_assistant" to "com.facebook.stella",
+        "minimax_assistant" to "com.minimax.ai",
+        "perplexity_assistant" to "ai.perplexity.app.android",
+        "qingyan_assistant" to "com.zhipuai.qingyan",
+        "qwen_assistant" to "ai.qwenlm.chat.android",
+        "ultimate_alexa_assistant" to "com.customsolutions.android.alexa",
+        "wenxin_yiyan_assistant" to "com.baidu.newapp",
+        "yuanbao_assistant" to "com.tencent.hunyuan.app.chat",
+        "zapia_assistant" to "com.brainlogic.zapia",
+    )
+
     fun launchSelectedAssistant(context: Context) {
         val preferenceHelper = PreferenceHelper(context)
         val selectedShortcut =

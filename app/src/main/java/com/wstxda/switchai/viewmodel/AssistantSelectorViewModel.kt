@@ -20,6 +20,7 @@ import com.wstxda.switchai.utils.Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY
 import com.wstxda.switchai.utils.Constants.CAT_MAX_RECENTLY_USED
 import com.wstxda.switchai.utils.Constants.PREFS_NAME
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
+import com.wstxda.switchai.logic.isPackageInstalled
 
 class AssistantSelectorViewModel(application: Application) : AndroidViewModel(application),
     SharedPreferences.OnSharedPreferenceChangeListener {
@@ -123,6 +124,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         val resources = context.resources
 
         val assistantsMap = DigitalAssistantMap.assistantsMap
+        val assistantPackages = DigitalAssistantMap.assistantsPackages
 
         val defaultVisibleAssistants =
             resources.getStringArray(R.array.assistant_visibility_values).toSet()
@@ -134,16 +136,25 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             assistantsMap.filterKeys { it in visibleAssistantKeys }.map { (key, _) ->
                 val name = assistantResourcesManager.getAssistantName(key)
                 val finalIconResId = assistantResourcesManager.getAssistantIcon(key)
+                val packageName = assistantPackages[key] ?: ""
+                val isInstalled = isPackageInstalled(context, packageName)
 
                 AssistantItem(
-                    key, name, finalIconResId, isPinned = false, lastUsedTimestamp = 0L
+                    key,
+                    name,
+                    finalIconResId,
+                    isInstalled = isInstalled,
+                    isPinned = false,
+                    lastUsedTimestamp = 0L
                 )
             }
+
+        val (installedAssistants, notInstalledAssistants) = allVisibleAssistantDetails.partition { it.isInstalled }
 
         val finalRecyclerViewItems = mutableListOf<AssistantSelectorRecyclerView>()
 
         val pinnedItems = mutableListOf<AssistantSelectorRecyclerView.AssistantSelector>()
-        allVisibleAssistantDetails.filter { it.key in pinnedAssistantKeys }.forEach { item ->
+        installedAssistants.filter { it.key in pinnedAssistantKeys }.forEach { item ->
             pinnedItems.add(AssistantSelectorRecyclerView.AssistantSelector(item.copy(isPinned = true)))
         }
         if (pinnedItems.isNotEmpty()) {
@@ -160,7 +171,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         val recentItems = mutableListOf<AssistantSelectorRecyclerView.AssistantSelector>()
         recentlyUsedAssistants.forEach { (key, timestamp) ->
             if (visibleAssistantKeys.contains(key) && !pinnedAssistantKeys.contains(key)) {
-                allVisibleAssistantDetails.find { it.key == key }?.let { item ->
+                installedAssistants.find { it.key == key }?.let { item ->
                     recentItems.add(
                         AssistantSelectorRecyclerView.AssistantSelector(
                             item.copy(
@@ -183,7 +194,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         }
 
         val otherItems = mutableListOf<AssistantSelectorRecyclerView.AssistantSelector>()
-        allVisibleAssistantDetails.forEach { item ->
+        installedAssistants.forEach { item ->
             val isPinned = pinnedAssistantKeys.contains(item.key)
             val isRecent = recentlyUsedAssistants.any { it.first == item.key }
             if (!isPinned && !isRecent) {
@@ -200,6 +211,19 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
                 )
             )
             finalRecyclerViewItems.addAll(otherItems)
+        }
+
+        if (notInstalledAssistants.isNotEmpty()) {
+            finalRecyclerViewItems.add(
+                AssistantSelectorRecyclerView.CategoryHeader(
+                    context.getString(
+                        R.string.assistant_category_not_installed
+                    )
+                )
+            )
+            finalRecyclerViewItems.addAll(notInstalledAssistants.map {
+                AssistantSelectorRecyclerView.AssistantSelector(it)
+            })
         }
 
         _assistantItems.value = finalRecyclerViewItems

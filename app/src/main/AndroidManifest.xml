@@ -7,6 +7,10 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <!--used to check if an assistant app is currently installed or not in (AssistantSelectorViewModel.kt)-->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
     <application
         android:name=".activity.AppActivity"
         android:allowBackup="false"

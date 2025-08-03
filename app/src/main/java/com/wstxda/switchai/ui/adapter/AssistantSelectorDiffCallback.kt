@@ -2,33 +2,18 @@ package com.wstxda.switchai.ui.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 
-class AssistantSelectorDiffCallback(
-    private val oldList: List<AssistantSelectorRecyclerView>,
-    private val newList: List<AssistantSelectorRecyclerView>,
-) : DiffUtil.Callback() {
+class AssistantSelectorDiffCallback : DiffUtil.ItemCallback<AssistantSelectorRecyclerView>() {
+    override fun areItemsTheSame(
+        oldItem: AssistantSelectorRecyclerView, newItem: AssistantSelectorRecyclerView
+    ): Boolean = when {
+        oldItem is AssistantSelectorRecyclerView.AssistantSelector && newItem is AssistantSelectorRecyclerView.AssistantSelector -> oldItem.assistantItem.key == newItem.assistantItem.key
 
-    override fun getOldListSize() = oldList.size
-
-    override fun getNewListSize() = newList.size
-
-    override fun areItemsTheSame(oldPos: Int, newPos: Int): Boolean = when {
-        oldList[oldPos] is AssistantSelectorRecyclerView.AssistantSelector && newList[newPos] is AssistantSelectorRecyclerView.AssistantSelector -> {
-            val oldItem =
-                (oldList[oldPos] as AssistantSelectorRecyclerView.AssistantSelector).assistantItem
-            val newItem =
-                (newList[newPos] as AssistantSelectorRecyclerView.AssistantSelector).assistantItem
-            oldItem.key == newItem.key
-        }
-
-        oldList[oldPos] is AssistantSelectorRecyclerView.CategoryHeader && newList[newPos] is AssistantSelectorRecyclerView.CategoryHeader -> {
-            val oldHeader = oldList[oldPos] as AssistantSelectorRecyclerView.CategoryHeader
-            val newHeader = newList[newPos] as AssistantSelectorRecyclerView.CategoryHeader
-            oldHeader.title == newHeader.title
-        }
+        oldItem is AssistantSelectorRecyclerView.CategoryHeader && newItem is AssistantSelectorRecyclerView.CategoryHeader -> oldItem.title == newItem.title
 
         else -> false
     }
 
-    override fun areContentsTheSame(oldPos: Int, newPos: Int): Boolean =
-        oldList[oldPos] == newList[newPos]
+    override fun areContentsTheSame(
+        oldItem: AssistantSelectorRecyclerView, newItem: AssistantSelectorRecyclerView
+    ): Boolean = oldItem == newItem
 }

@@ -5,10 +5,10 @@ import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.wstxda.switchai.R
-import com.wstxda.switchai.utils.AssistantsMap
 import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
 import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView
 import com.wstxda.switchai.ui.utils.VibrationService.buttonVibration
+import com.wstxda.switchai.utils.AssistantsMap
 
 class AssistantSelectorItemViewHolder(
     private val binding: ListItemAssistantViewBinding,
@@ -28,16 +28,12 @@ class AssistantSelectorItemViewHolder(
             if (item.isPinned) R.drawable.ic_pin_filled else R.drawable.ic_pin_outline
         )
 
-        if (item.isInstalled) {
-            binding.pinButton.visibility = View.VISIBLE
-            itemView.alpha = 1f
-            binding.pinButton.setOnClickListener {
-                onPinClicked(item.key)
-                it.context.buttonVibration()
-            }
-        } else {
-            binding.pinButton.visibility = View.GONE
-            itemView.alpha = 0.6f
+        binding.pinButton.visibility = View.VISIBLE
+        itemView.alpha = 1f
+
+        binding.pinButton.setOnClickListener {
+            onPinClicked(item.key)
+            it.context.buttonVibration()
         }
 
         itemView.setOnClickListener {

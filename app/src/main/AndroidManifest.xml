@@ -7,33 +7,6 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!--used to check if an assistant app is currently installed or not in (AssistantSelectorViewModel.kt)-->
-    <queries>
-        <package android:name="com.amazon.dee.app" />
-        <package android:name="com.yandex.aliceapp" />
-        <package android:name="com.openai.chatgpt" />
-        <package android:name="com.anthropic.claude" />
-        <package android:name="com.microsoft.copilot" />
-        <package android:name="com.deepseek.chat" />
-        <package android:name="com.larus.nova" />
-        <package android:name="com.google.android.apps.bard" />
-        <package android:name="ai.x.grok" />
-        <package android:name="io.homeassistant.companion.android" />
-        <package android:name="com.moonshot.kimichat" />
-        <package android:name="ai.mistral.chat" />
-        <package android:name="tech.butterfly.app" />
-        <package android:name="ru.mail.search.electroscope" />
-        <package android:name="com.facebook.stella" />
-        <package android:name="com.minimax.ai" />
-        <package android:name="ai.perplexity.app.android" />
-        <package android:name="com.zhipuai.qingyan" />
-        <package android:name="ai.qwenlm.chat.android" />
-        <package android:name="com.customsolutions.android.alexa" />
-        <package android:name="com.baidu.newapp" />
-        <package android:name="com.tencent.hunyuan.app.chat" />
-        <package android:name="com.brainlogic.zapia" />
-    </queries>
-
     <application
         android:name=".activity.AppActivity"
         android:allowBackup="false"

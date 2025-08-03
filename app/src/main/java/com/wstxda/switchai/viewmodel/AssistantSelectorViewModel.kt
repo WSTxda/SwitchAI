@@ -10,19 +10,12 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView
 import com.wstxda.switchai.utils.Constants
-import com.wstxda.switchai.utils.AssistantProperties
 import com.wstxda.switchai.utils.AssistantsMap
 import org.json.JSONArray
 import org.json.JSONObject
 import androidx.core.content.edit
 import com.wstxda.switchai.data.AssistantItem
-import com.wstxda.switchai.logic.isPackageInstalled
-import com.wstxda.switchai.utils.Constants.CAT_PINNED_ASSISTANTS_KEY
-import com.wstxda.switchai.utils.Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY
-import com.wstxda.switchai.utils.Constants.CAT_MAX_RECENTLY_USED
-import com.wstxda.switchai.utils.Constants.PREFS_NAME
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
-import kotlin.reflect.full.companionObjectInstance
 
 class AssistantSelectorViewModel(application: Application) : AndroidViewModel(application),
     SharedPreferences.OnSharedPreferenceChangeListener {
@@ -34,7 +27,9 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     private val recentlyUsedAssistants = mutableListOf<Pair<String, Long>>()
 
     private val assistantStatePreferences by lazy {
-        getApplication<Application>().getSharedPreferences(PREFS_NAME, Application.MODE_PRIVATE)
+        getApplication<Application>().getSharedPreferences(
+            Constants.PREFS_NAME, Application.MODE_PRIVATE
+        )
     }
 
     private var preferenceHelper: PreferenceHelper =
@@ -50,23 +45,21 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         defaultSharedPreferences.registerOnSharedPreferenceChangeListener(this)
 
         val loadedPinnedKeys =
-            assistantStatePreferences.getStringSet(CAT_PINNED_ASSISTANTS_KEY, emptySet())
+            assistantStatePreferences.getStringSet(Constants.CAT_PINNED_ASSISTANTS_KEY, emptySet())
                 ?: emptySet()
         pinnedAssistantKeys.clear()
         pinnedAssistantKeys.addAll(loadedPinnedKeys)
 
         val recentJsonString =
-            assistantStatePreferences.getString(CAT_RECENTLY_USED_ASSISTANTS_KEY, null)
+            assistantStatePreferences.getString(Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY, null)
         if (recentJsonString != null) {
             try {
                 val loadedRecentAssistants =
                     parseJsonStringToRecentlyUsedAssistants(recentJsonString)
                 recentlyUsedAssistants.clear()
                 recentlyUsedAssistants.addAll(loadedRecentAssistants)
-            } catch (_: org.json.JSONException) {
-                assistantStatePreferences.edit { remove(CAT_RECENTLY_USED_ASSISTANTS_KEY) }
             } catch (_: Exception) {
-                assistantStatePreferences.edit { remove(CAT_RECENTLY_USED_ASSISTANTS_KEY) }
+                assistantStatePreferences.edit { remove(Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY) }
             }
         }
 
@@ -80,9 +73,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             pinnedAssistantKeys.add(assistantKey)
         }
         assistantStatePreferences.edit {
-            putStringSet(
-                CAT_PINNED_ASSISTANTS_KEY, pinnedAssistantKeys
-            )
+            putStringSet(Constants.CAT_PINNED_ASSISTANTS_KEY, pinnedAssistantKeys)
         }
         loadAssistants()
     }
@@ -90,11 +81,15 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     fun assistantLaunched(assistantKey: String) {
         recentlyUsedAssistants.removeAll { it.first == assistantKey }
         recentlyUsedAssistants.add(0, Pair(assistantKey, System.currentTimeMillis()))
-        while (recentlyUsedAssistants.size > CAT_MAX_RECENTLY_USED) {
+        while (recentlyUsedAssistants.size > Constants.CAT_MAX_RECENTLY_USED) {
             recentlyUsedAssistants.removeAt(recentlyUsedAssistants.size - 1)
         }
         val jsonString = serializeRecentlyUsedAssistantsToJson(recentlyUsedAssistants)
-        assistantStatePreferences.edit { putString(CAT_RECENTLY_USED_ASSISTANTS_KEY, jsonString) }
+        assistantStatePreferences.edit {
+            putString(
+                Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY, jsonString
+            )
+        }
         loadAssistants()
     }
 
@@ -134,37 +129,29 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         )
 
         val allVisibleAssistantDetails =
-            assistantsMap.filterKeys { it in visibleAssistantKeys }.map { (key, activityClass) ->
+            assistantsMap.filterKeys { it in visibleAssistantKeys }.map { (key, _) ->
                 val name = assistantResourcesManager.getAssistantName(key)
                 val finalIconResId = assistantResourcesManager.getAssistantIcon(key)
-                val properties = activityClass.kotlin.companionObjectInstance as? AssistantProperties
-                val packageName = properties?.packageName ?: ""
-                val isInstalled = isPackageInstalled(context, packageName)
 
                 AssistantItem(
-                    key,
-                    name,
-                    finalIconResId,
-                    isInstalled = isInstalled,
+                    key = key,
+                    name = name,
+                    iconRes = finalIconResId,
                     isPinned = false,
                     lastUsedTimestamp = 0L
                 )
             }
 
-        val (installedAssistants, notInstalledAssistants) = allVisibleAssistantDetails.partition { it.isInstalled }
-
         val finalRecyclerViewItems = mutableListOf<AssistantSelectorRecyclerView>()
 
         val pinnedItems = mutableListOf<AssistantSelectorRecyclerView.AssistantSelector>()
-        installedAssistants.filter { it.key in pinnedAssistantKeys }.forEach { item ->
+        allVisibleAssistantDetails.filter { it.key in pinnedAssistantKeys }.forEach { item ->
             pinnedItems.add(AssistantSelectorRecyclerView.AssistantSelector(item.copy(isPinned = true)))
         }
         if (pinnedItems.isNotEmpty()) {
             finalRecyclerViewItems.add(
                 AssistantSelectorRecyclerView.CategoryHeader(
-                    context.getString(
-                        R.string.assistant_category_pin
-                    )
+                    context.getString(R.string.assistant_category_pin)
                 )
             )
             finalRecyclerViewItems.addAll(pinnedItems)
@@ -173,12 +160,10 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         val recentItems = mutableListOf<AssistantSelectorRecyclerView.AssistantSelector>()
         recentlyUsedAssistants.forEach { (key, timestamp) ->
             if (visibleAssistantKeys.contains(key) && !pinnedAssistantKeys.contains(key)) {
-                installedAssistants.find { it.key == key }?.let { item ->
+                allVisibleAssistantDetails.find { it.key == key }?.let { item ->
                     recentItems.add(
                         AssistantSelectorRecyclerView.AssistantSelector(
-                            item.copy(
-                                lastUsedTimestamp = timestamp
-                            )
+                            item.copy(lastUsedTimestamp = timestamp)
                         )
                     )
                 }
@@ -187,16 +172,14 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         if (recentItems.isNotEmpty()) {
             finalRecyclerViewItems.add(
                 AssistantSelectorRecyclerView.CategoryHeader(
-                    context.getString(
-                        R.string.assistant_category_recent
-                    )
+                    context.getString(R.string.assistant_category_recent)
                 )
             )
             finalRecyclerViewItems.addAll(recentItems)
         }
 
         val otherItems = mutableListOf<AssistantSelectorRecyclerView.AssistantSelector>()
-        installedAssistants.forEach { item ->
+        allVisibleAssistantDetails.forEach { item ->
             val isPinned = pinnedAssistantKeys.contains(item.key)
             val isRecent = recentlyUsedAssistants.any { it.first == item.key }
             if (!isPinned && !isRecent) {
@@ -207,25 +190,10 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         if (otherItems.isNotEmpty()) {
             finalRecyclerViewItems.add(
                 AssistantSelectorRecyclerView.CategoryHeader(
-                    context.getString(
-                        R.string.assistant_category_all
-                    )
+                    context.getString(R.string.assistant_category_all)
                 )
             )
             finalRecyclerViewItems.addAll(otherItems)
-        }
-
-        if (notInstalledAssistants.isNotEmpty()) {
-            finalRecyclerViewItems.add(
-                AssistantSelectorRecyclerView.CategoryHeader(
-                    context.getString(
-                        R.string.assistant_category_not_installed
-                    )
-                )
-            )
-            finalRecyclerViewItems.addAll(notInstalledAssistants.map {
-                AssistantSelectorRecyclerView.AssistantSelector(it)
-            })
         }
 
         _assistantItems.value = finalRecyclerViewItems

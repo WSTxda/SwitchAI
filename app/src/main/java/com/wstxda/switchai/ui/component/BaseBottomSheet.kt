@@ -16,19 +16,15 @@ abstract class BaseBottomSheet<VB : ViewBinding> : BottomSheetDialogFragment() {
     protected val binding get() = _binding!!
 
     protected abstract fun getBinding(inflater: LayoutInflater, container: ViewGroup?): VB
-
     protected abstract val topDivider: View
-
     protected abstract val bottomDivider: View
-
     protected abstract val titleTextView: TextView
 
     @get:StringRes
     protected abstract val titleResId: Int
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = getBinding(inflater, container)
         return binding.root

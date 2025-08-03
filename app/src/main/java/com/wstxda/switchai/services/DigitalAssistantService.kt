@@ -9,13 +9,13 @@ import com.wstxda.switchai.utils.Constants
 
 class DigitalAssistantService : AssistantActivity() {
     override fun onCreateInternal() {
-        val preferenceHelper = PreferenceHelper(this)
         val showSelector =
-            preferenceHelper.getBoolean(Constants.ASSISTANT_SELECTOR_DIALOG_PREF_KEY, true)
+            PreferenceHelper(this).getBoolean(Constants.ASSISTANT_SELECTOR_DIALOG_PREF_KEY, true)
+
         if (showSelector) {
-            val intent = Intent(this, AssistantSelectorActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            startActivity(intent)
+            startActivity(Intent(this, AssistantSelectorActivity::class.java).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            })
         } else {
             Assistant.open(this)
         }

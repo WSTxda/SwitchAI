@@ -96,7 +96,6 @@
     <string name="assistant_category_pin">مثبت</string>
     <string name="assistant_category_recent">المستخدمة مؤخرًا</string>
     <string name="assistant_category_all">المساعدين</string>
-    <string name="assistant_category_not_installed">غير مثبت</string>
     <!--open assistant messages-->
     <string name="assistant_open">افتح المساعد</string>
     <string name="assistant_open_error">خطأ في فتح المساعد</string>

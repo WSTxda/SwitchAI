@@ -2,8 +2,6 @@ package com.wstxda.switchai.logic
 
 import android.util.Log
 import com.wstxda.switchai.utils.Constants
-import kotlin.getOrElse
-import kotlin.runCatching
 
 fun isRootAvailable(): Boolean = runCatching {
     val process = ProcessBuilder("su", "-c", "id").start()

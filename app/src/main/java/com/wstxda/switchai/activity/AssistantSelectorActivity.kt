@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.wstxda.switchai.ui.component.AssistantSelectorBottomSheet
-import com.wstxda.switchai.utils.Constants.DIGITAL_ASSISTANT_SELECTOR_DIALOG
+import com.wstxda.switchai.utils.Constants
 
 class AssistantSelectorActivity : BaseActivity() {
 
@@ -13,7 +13,7 @@ class AssistantSelectorActivity : BaseActivity() {
 
         if (savedInstanceState == null) {
             val bottomSheet = AssistantSelectorBottomSheet()
-            bottomSheet.show(supportFragmentManager, DIGITAL_ASSISTANT_SELECTOR_DIALOG)
+            bottomSheet.show(supportFragmentManager, Constants.DIGITAL_ASSISTANT_SELECTOR_DIALOG)
         }
 
         supportFragmentManager.registerFragmentLifecycleCallbacks(object :

@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,17 +14,9 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.databinding.FragmentAssistantDialogBinding
 import com.wstxda.switchai.ui.adapter.AssistantSelectorAdapter
 import com.wstxda.switchai.utils.AssistantsMap
-import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.AssistantSelectorViewModel
 
 class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBinding>() {
-
-    companion object {
-        fun show(fragmentManager: FragmentManager) {
-            val bottomSheet = AssistantSelectorBottomSheet()
-            bottomSheet.show(fragmentManager, Constants.DIGITAL_ASSISTANT_SELECTOR_DIALOG)
-        }
-    }
 
     private val viewModel: AssistantSelectorViewModel by viewModels()
     private lateinit var assistantSelectorAdapter: AssistantSelectorAdapter
@@ -40,7 +31,6 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupRecyclerView()
         setupObservers()
     }
@@ -57,15 +47,6 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         binding.assistantsRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = assistantSelectorAdapter
-            addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                    val lm = recyclerView.layoutManager as? LinearLayoutManager ?: return
-                    val canScrollUp = lm.findFirstCompletelyVisibleItemPosition() > 0
-                    val canScrollDown =
-                        lm.findLastCompletelyVisibleItemPosition() < assistantSelectorAdapter.itemCount - 1
-                    updateDividerVisibility(canScrollUp, canScrollDown)
-                }
-            })
         }
     }
 
@@ -73,6 +54,19 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         viewModel.assistantItems.observe(viewLifecycleOwner) { items ->
             assistantSelectorAdapter.submitList(items)
         }
+    }
+
+    override fun setupScrollListenerIfAvailable() {
+        binding.assistantsRecyclerView.addOnScrollListener(object :
+            RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                val lm = recyclerView.layoutManager as? LinearLayoutManager ?: return
+                val canScrollUp = lm.findFirstCompletelyVisibleItemPosition() > 0
+                val canScrollDown =
+                    lm.findLastCompletelyVisibleItemPosition() < assistantSelectorAdapter.itemCount - 1
+                updateDividerVisibility(canScrollUp, canScrollDown)
+            }
+        })
     }
 
     private fun launchAssistant(assistantKey: String) {

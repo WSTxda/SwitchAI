@@ -2,7 +2,7 @@
     android:configure="com.wstxda.switchai.widget.WidgetConfigureActivity"
     android:description="@string/widget_assistant_invisible_description"
     android:initialLayout="@layout/widget_assistant_invisible_default"
+    android:previewImage="@drawable/widget_invisible_preview"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="0"
-    android:previewImage="@drawable/widget_invisible_preview"
     android:widgetCategory="home_screen" />

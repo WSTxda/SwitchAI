@@ -8,6 +8,7 @@
     android:layout_marginEnd="?attr/dialogPreferredPadding"
     android:layout_marginBottom="4dp"
     android:clickable="true"
+    android:focusable="false"
     app:cardBackgroundColor="?attr/colorSecondaryContainer"
     app:cardCornerRadius="18dp">
 
@@ -31,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
-            android:ellipsize="marquee"
+            android:ellipsize="end"
             android:maxLines="2"
             android:textAppearance="?attr/textAppearanceTitleMedium"
             android:textColor="?attr/colorOnSecondaryContainer"

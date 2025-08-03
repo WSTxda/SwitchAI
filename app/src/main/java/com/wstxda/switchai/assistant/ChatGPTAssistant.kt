@@ -4,8 +4,8 @@ import android.content.ComponentName
 import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
-import com.wstxda.switchai.utils.AssistantProperties
 import com.wstxda.switchai.logic.launchAssistant
+import com.wstxda.switchai.utils.AssistantProperties
 
 class ChatGPTAssistant : AssistantActivity() {
 
@@ -16,7 +16,7 @@ class ChatGPTAssistant : AssistantActivity() {
     override fun onCreateInternal() {
         launchAssistant(
             intents = listOf(createChatGPTIntent()),
-            errorMessage= R.string.assistant_application_not_found
+            errorMessage = R.string.assistant_application_not_found
         )
     }
 

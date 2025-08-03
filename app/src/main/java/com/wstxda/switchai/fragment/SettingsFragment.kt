@@ -14,19 +14,18 @@ import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceFragmentCompat
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.LibraryActivity
-import com.wstxda.switchai.fragment.preferences.MultiSelectListPreference
 import com.wstxda.switchai.fragment.preferences.DigitalAssistantPreference
+import com.wstxda.switchai.fragment.preferences.MultiSelectListPreference
 import com.wstxda.switchai.ui.TileManager
+import com.wstxda.switchai.ui.WidgetManager
 import com.wstxda.switchai.ui.component.AssistantManagerDialog
+import com.wstxda.switchai.ui.component.AssistantTutorialBottomSheet
 import com.wstxda.switchai.ui.component.DigitalAssistantSetupDialog
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
-import com.wstxda.switchai.ui.WidgetManager
-import com.wstxda.switchai.ui.component.AssistantTutorialBottomSheet
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.SettingsViewModel
 import com.wstxda.switchai.widget.utils.AssistantWidgetUpdater
 import kotlinx.coroutines.launch
-import kotlin.getValue
 
 class SettingsFragment : PreferenceFragmentCompat() {
 

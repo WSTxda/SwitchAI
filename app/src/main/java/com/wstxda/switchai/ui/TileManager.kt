@@ -12,9 +12,6 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.services.AssistantTileService
 import java.util.concurrent.Executors
 import java.util.function.Consumer
-import kotlin.jvm.java
-import kotlin.let
-import kotlin.text.isNotEmpty
 
 class TileManager(private val context: Context) {
     fun requestAddTile() {

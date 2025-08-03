@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.wstxda.switchai.ui.utils.TutorialItemList
 import com.wstxda.switchai.databinding.FragmentTutorialBinding
 import com.wstxda.switchai.ui.adapter.TutorialItemViewBuilder
+import com.wstxda.switchai.ui.utils.TutorialItemList
 
 class TutorialFragment : Fragment() {
 

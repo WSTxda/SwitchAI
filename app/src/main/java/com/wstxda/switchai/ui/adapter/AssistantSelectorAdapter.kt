@@ -4,11 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
 import com.wstxda.switchai.databinding.ListItemAssistantCategoryBinding
-import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView.*
-import com.wstxda.switchai.ui.viewholder.AssistantSelectorItemViewHolder
+import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
 import com.wstxda.switchai.ui.viewholder.AssistantSelectorCategoryViewHolder
+import com.wstxda.switchai.ui.viewholder.AssistantSelectorItemViewHolder
 import com.wstxda.switchai.utils.Constants
 
 class AssistantSelectorAdapter(
@@ -19,8 +18,8 @@ class AssistantSelectorAdapter(
 ) {
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
-        is CategoryHeader -> Constants.VIEW_TYPE_CATEGORY_HEADER
-        is AssistantSelector -> Constants.VIEW_TYPE_ASSISTANT_ITEM
+        is AssistantSelectorRecyclerView.CategoryHeader -> Constants.VIEW_TYPE_CATEGORY_HEADER
+        is AssistantSelectorRecyclerView.AssistantSelector -> Constants.VIEW_TYPE_ASSISTANT_ITEM
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = when (viewType) {
@@ -43,8 +42,11 @@ class AssistantSelectorAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, pos: Int) {
         when (val item = getItem(pos)) {
-            is CategoryHeader -> (holder as AssistantSelectorCategoryViewHolder).bind(item)
-            is AssistantSelector -> (holder as AssistantSelectorItemViewHolder).bind(
+            is AssistantSelectorRecyclerView.CategoryHeader -> (holder as AssistantSelectorCategoryViewHolder).bind(
+                item
+            )
+
+            is AssistantSelectorRecyclerView.AssistantSelector -> (holder as AssistantSelectorItemViewHolder).bind(
                 item, onAssistantLaunched, onPinClicked
             )
         }

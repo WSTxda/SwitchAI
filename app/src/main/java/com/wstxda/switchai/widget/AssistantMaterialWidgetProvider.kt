@@ -9,10 +9,10 @@ import android.os.Bundle
 import android.widget.RemoteViews
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantSelectorActivity
-import com.wstxda.switchai.services.AssistantService
 import com.wstxda.switchai.logic.PreferenceHelper
-import com.wstxda.switchai.utils.Constants
+import com.wstxda.switchai.services.AssistantService
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
+import com.wstxda.switchai.utils.Constants
 
 class AssistantMaterialWidgetProvider : AppWidgetProvider() {
 

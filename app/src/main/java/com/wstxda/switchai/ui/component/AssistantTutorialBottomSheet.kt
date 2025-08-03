@@ -13,24 +13,16 @@ import com.wstxda.switchai.utils.Constants
 
 class AssistantTutorialBottomSheet : BaseBottomSheet<FragmentTutorialDialogBinding>(),
     TutorialFragment.ScrollListener {
+
     override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
         FragmentTutorialDialogBinding.inflate(inflater, container, false)
-
-    companion object {
-        fun show(fragmentManager: FragmentManager) {
-            val tutorialSheet = AssistantTutorialBottomSheet()
-            tutorialSheet.show(fragmentManager, Constants.TUTORIAL_DIALOG)
-        }
-    }
 
     override val topDivider: View get() = binding.dividerTop
     override val bottomDivider: View get() = binding.dividerBottom
     override val titleTextView: TextView get() = binding.bottomSheetTitle
     override val titleResId: Int get() = R.string.digital_assistant_tutorial
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun setupContentFragment(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
             childFragmentManager.beginTransaction()
                 .replace(binding.tutorialFragmentContainer.id, TutorialFragment()).commit()
@@ -39,5 +31,11 @@ class AssistantTutorialBottomSheet : BaseBottomSheet<FragmentTutorialDialogBindi
 
     override fun onScrollChanged(canScrollUp: Boolean, canScrollDown: Boolean) {
         updateDividerVisibility(canScrollUp, canScrollDown)
+    }
+
+    companion object {
+        fun show(fragmentManager: FragmentManager) {
+            AssistantTutorialBottomSheet().show(fragmentManager, Constants.TUTORIAL_DIALOG)
+        }
     }
 }

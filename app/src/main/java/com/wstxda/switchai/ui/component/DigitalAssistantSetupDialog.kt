@@ -13,9 +13,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.wstxda.switchai.databinding.AssistantSetupDialogBinding
 import com.wstxda.switchai.fragment.preferences.DigitalAssistantPreference
 import com.wstxda.switchai.utils.Constants
-import kotlin.apply
-import kotlin.let
-import kotlin.runCatching
 
 class DigitalAssistantSetupDialog : DialogFragment() {
 

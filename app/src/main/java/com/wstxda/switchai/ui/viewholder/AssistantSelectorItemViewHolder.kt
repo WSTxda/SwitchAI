@@ -30,12 +30,14 @@ class AssistantSelectorItemViewHolder(
 
         if (item.isInstalled) {
             binding.pinButton.visibility = View.VISIBLE
+            itemView.alpha = 1f
             binding.pinButton.setOnClickListener {
                 onPinClicked(item.key)
                 it.context.buttonVibration()
             }
         } else {
             binding.pinButton.visibility = View.GONE
+            itemView.alpha = 0.6f
         }
 
         itemView.setOnClickListener {

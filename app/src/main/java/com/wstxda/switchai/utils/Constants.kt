@@ -11,6 +11,7 @@ object Constants {
     const val OPEN_ASSISTANT_TILE_PREF_KEY = "open_assistant_tile"
     const val OPEN_ASSISTANT_WIDGET_PREF_KEY = "open_assistant_widget"
     const val ASSISTANT_VIBRATION_PREF_KEY = "assistant_vibration"
+    const val ASSISTANT_SOUND_PREF_KEY = "assistant_sound"
     const val ASSISTANT_ROOT_PREF_KEY = "assistant_root"
     const val LIBRARY_PREF_KEY = "library"
     const val THEME_PREF_KEY = "select_theme"

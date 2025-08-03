@@ -72,6 +72,9 @@
     <string name="pref_assistant_vibration">Vibrate when opening</string>
     <string name="pref_assistant_vibration_summary">Provides haptic feedback when opening the assistant. This may be affected by system settings</string>
 
+    <string name="pref_assistant_sound">Sound when opening</string>
+    <string name="pref_assistant_sound_summary">Provides sound feedback when opening the assistant. May be muted by the device’s sound mode or active media playback</string>
+
     <string name="pref_assistant_root">Use root permission</string>
     <string name="pref_assistant_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
 

@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.net.toUri
+import com.wstxda.switchai.ui.utils.SoundService.openAssistantSound
 import com.wstxda.switchai.ui.utils.VibrationService.openAssistantVibration
 import com.wstxda.switchai.utils.AssistantProperties
 import kotlin.reflect.full.companionObjectInstance
@@ -27,6 +28,7 @@ fun Context.launchAssistant(
 fun Context.launchAssistant(intent: Intent): Boolean = runCatching {
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     openAssistantVibration()
+    openAssistantSound()
     startActivity(intent)
     true
 }.getOrElse { false }
@@ -52,6 +54,7 @@ fun Context.launchAssistantRoot(
 
         if (success) {
             openAssistantVibration()
+            openAssistantSound()
             return true
         }
     }

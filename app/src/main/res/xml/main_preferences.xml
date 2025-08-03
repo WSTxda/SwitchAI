@@ -59,6 +59,13 @@
         android:title="@string/pref_assistant_vibration" />
 
     <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="assistant_sound"
+        android:layout="@layout/preference_material_middle"
+        android:summary="@string/pref_assistant_sound_summary"
+        android:title="@string/pref_assistant_sound" />
+
+    <SwitchPreferenceCompat
         android:defaultValue="false"
         android:key="assistant_root"
         android:layout="@layout/preference_material_bottom"

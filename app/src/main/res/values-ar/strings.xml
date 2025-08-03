@@ -68,6 +68,9 @@
     <string name="pref_assistant_vibration">اهتزاز عند الفتح</string>
     <string name="pref_assistant_vibration_summary">يجعل الهاتف يهتز عند البدء. قد يتأثر بإعدادات الهاتف</string>
 
+    <string name="pref_assistant_sound">صوت عند الفتح</string>
+    <string name="pref_assistant_sound_summary">يوفر ملاحظات صوتية عند فتح المساعد. قد يتم كتم الصوت بواسطة وضع الصوت بالجهاز أو تشغيل الوسائط النشط</string>
+
     <string name="pref_assistant_root">استخدام صلاحيات الروت</string>
     <string name="pref_assistant_root_summary">استخدام الروت لتفعيل ميزة الإدخال الصوتي لبعض المساعدين لتسهيل الاستخدام</string>
 

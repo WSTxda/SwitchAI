@@ -1,7 +1,10 @@
 package com.wstxda.switchai.ui.utils
 
+import android.app.NotificationManager
 import android.content.Context
+import android.media.AudioManager
 import android.os.Build
+import android.os.PowerManager
 import android.os.VibrationAttributes
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -14,16 +17,13 @@ object VibrationService {
     private const val EFFECT_TICK = 2
 
     fun Context.openAssistantVibration() {
-        if (!isVibrationEnabled()) return
-        performVibration(
-            effectId = getEffectClick(), fallbackDuration = 12
-        )
+        if (!isVibrationAllowed()) return
+        performVibration(effectId = getEffectClick(), fallbackDuration = 12)
     }
 
     fun Context.buttonVibration() {
-        performVibration(
-            effectId = getEffectTick(), fallbackDuration = 8
-        )
+        if (!isVibrationAllowed()) return
+        performVibration(effectId = getEffectTick(), fallbackDuration = 8)
     }
 
     private fun Context.performVibration(
@@ -66,8 +66,30 @@ object VibrationService {
         }
     }
 
-    private fun Context.isVibrationEnabled(): Boolean {
+    private fun Context.isVibrationAllowed(): Boolean {
         val preferenceHelper = PreferenceHelper(this)
-        return preferenceHelper.getBoolean(Constants.ASSISTANT_VIBRATION_PREF_KEY, true)
+        if (!preferenceHelper.getBoolean(Constants.ASSISTANT_VIBRATION_PREF_KEY, true)) {
+            return false
+        }
+
+        val vibrator = getSystemService(Vibrator::class.java)
+        if (vibrator == null || !vibrator.hasVibrator()) {
+            return false
+        }
+
+        val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
+        if (powerManager.isPowerSaveMode) {
+            return false
+        }
+
+        val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
+        if (audioManager.ringerMode == AudioManager.RINGER_MODE_SILENT) {
+            return false
+        }
+
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        val currentFilter = notificationManager.currentInterruptionFilter
+        return currentFilter == NotificationManager.INTERRUPTION_FILTER_ALL
     }
 }

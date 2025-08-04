@@ -35,7 +35,7 @@ abstract class BaseBottomSheet<VB : ViewBinding> : BottomSheetDialogFragment() {
         titleTextView.setText(titleResId)
 
         setupContentFragment(savedInstanceState)
-        setupScrollListenerIfAvailable()
+        setupScrollListener()
     }
 
     override fun onDestroyView() {
@@ -45,7 +45,7 @@ abstract class BaseBottomSheet<VB : ViewBinding> : BottomSheetDialogFragment() {
 
     protected open fun setupContentFragment(savedInstanceState: Bundle?) {}
 
-    protected open fun setupScrollListenerIfAvailable() {}
+    protected open fun setupScrollListener() {}
 
     protected fun updateDividerVisibility(canScrollUp: Boolean, canScrollDown: Boolean) {
         topDivider.isVisible = canScrollUp

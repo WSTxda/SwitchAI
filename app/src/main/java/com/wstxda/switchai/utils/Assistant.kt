@@ -12,7 +12,7 @@ object Assistant {
             Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null
         ) ?: return
 
-        val activityClass = AssistantsMap.assistants[selectedShortcut] ?: return
+        val activityClass = AssistantsMap.assistantActivity[selectedShortcut] ?: return
         val intent = Intent(context, activityClass).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }

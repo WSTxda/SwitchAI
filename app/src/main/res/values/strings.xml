@@ -103,6 +103,7 @@
     <string name="assistant_category_pin">Pinned</string>
     <string name="assistant_category_recent">Recently used</string>
     <string name="assistant_category_all">Assistants</string>
+    <string name="assistant_category_not_installed">Not installed</string>
     <!--open assistant messages-->
     <string name="assistant_open">Open assistant</string>
     <string name="assistant_open_error">Error open assistant</string>

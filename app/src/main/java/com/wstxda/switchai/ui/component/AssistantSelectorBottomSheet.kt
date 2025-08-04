@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.isInvisible
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -36,8 +38,8 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
     }
 
     private fun setupRecyclerView() {
-        assistantSelectorAdapter = AssistantSelectorAdapter(onAssistantLaunched = { assistantKey ->
-            launchAssistant(assistantKey)
+        assistantSelectorAdapter = AssistantSelectorAdapter(onAssistantClicked = { assistantKey ->
+            openAssistant(assistantKey)
             viewModel.assistantLaunched(assistantKey)
             dismiss()
         }, onPinClicked = { assistantKey ->
@@ -54,24 +56,28 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         viewModel.assistantItems.observe(viewLifecycleOwner) { items ->
             assistantSelectorAdapter.submitList(items)
         }
+
+        viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+            binding.assistantLoading.isVisible = isLoading
+            binding.assistantsRecyclerView.isInvisible = isLoading
+        }
     }
 
-    override fun setupScrollListenerIfAvailable() {
+    override fun setupScrollListener() {
         binding.assistantsRecyclerView.addOnScrollListener(object :
             RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 val lm = recyclerView.layoutManager as? LinearLayoutManager ?: return
                 val canScrollUp = lm.findFirstCompletelyVisibleItemPosition() > 0
-                val canScrollDown =
-                    lm.findLastCompletelyVisibleItemPosition() < assistantSelectorAdapter.itemCount - 1
+                val canScrollDown = lm.findLastCompletelyVisibleItemPosition() < assistantSelectorAdapter.itemCount - 1
                 updateDividerVisibility(canScrollUp, canScrollDown)
             }
         })
     }
 
-    private fun launchAssistant(assistantKey: String) {
+    private fun openAssistant(assistantKey: String) {
         val context = this.context ?: return
-        AssistantsMap.assistants[assistantKey]?.let { activityClass ->
+        AssistantsMap.assistantActivity[assistantKey]?.let { activityClass ->
             val intent = Intent(context, activityClass).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK
             }

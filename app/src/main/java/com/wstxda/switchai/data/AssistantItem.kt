@@ -5,5 +5,6 @@ data class AssistantItem(
     val name: String,
     val iconRes: Int,
     val isPinned: Boolean,
-    val lastUsedTimestamp: Long,
+    val isInstalled: Boolean,
+    val lastUsedTimestamp: Long
 )

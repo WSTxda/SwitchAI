@@ -39,6 +39,18 @@
         android:scrollbars="vertical"
         tools:listitem="@layout/list_item_assistant_view" />
 
+    <com.google.android.material.loadingindicator.LoadingIndicator
+        android:id="@+id/assistant_loading"
+        style="@style/Widget.Material3.LoadingIndicator.Contained"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:visibility="gone"
+        app:containerHeight="80dp"
+        app:containerWidth="80dp"
+        app:indicatorSize="60dp" />
+
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_bottom"
         style="?attr/materialDividerStyle"

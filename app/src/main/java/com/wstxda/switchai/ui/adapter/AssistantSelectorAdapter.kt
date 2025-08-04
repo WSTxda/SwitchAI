@@ -11,7 +11,7 @@ import com.wstxda.switchai.ui.viewholder.AssistantSelectorItemViewHolder
 import com.wstxda.switchai.utils.Constants
 
 class AssistantSelectorAdapter(
-    private val onAssistantLaunched: (String) -> Unit,
+    private val onAssistantClicked: (String) -> Unit,
     private val onPinClicked: (String) -> Unit,
 ) : ListAdapter<AssistantSelectorRecyclerView, RecyclerView.ViewHolder>(
     AssistantSelectorDiffCallback()
@@ -47,7 +47,7 @@ class AssistantSelectorAdapter(
             )
 
             is AssistantSelectorRecyclerView.AssistantSelector -> (holder as AssistantSelectorItemViewHolder).bind(
-                item, onAssistantLaunched, onPinClicked
+                item, onAssistantClicked, onPinClicked
             )
         }
     }

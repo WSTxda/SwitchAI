@@ -10,22 +10,22 @@ import com.wstxda.switchai.ui.utils.VibrationService.openAssistantVibration
 import com.wstxda.switchai.utils.AssistantProperties
 import kotlin.reflect.full.companionObjectInstance
 
-fun Context.launchAssistant(
+fun Context.openAssistant(
     intents: List<Intent>,
     errorMessage: Int,
 ): Boolean {
     intents.forEach { intent ->
-        if (launchAssistant(intent)) return true
+        if (openAssistant(intent)) return true
     }
 
     val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
-    val handled = pkg?.takeIf { it.isNotEmpty() }?.let { launchOnStore(it) } ?: false
+    val handled = pkg?.takeIf { it.isNotEmpty() }?.let { openOnStore(it) } ?: false
 
     showToast(errorMessage)
     return handled
 }
 
-fun Context.launchAssistant(intent: Intent): Boolean = runCatching {
+fun Context.openAssistant(intent: Intent): Boolean = runCatching {
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     openAssistantVibration()
     openAssistantSound()
@@ -33,7 +33,7 @@ fun Context.launchAssistant(intent: Intent): Boolean = runCatching {
     true
 }.getOrElse { false }
 
-fun Context.launchAssistantRoot(
+fun Context.openAssistantRoot(
     intents: List<Intent>,
     rootAccessMessage: Int,
     errorMessage: Int,
@@ -60,13 +60,13 @@ fun Context.launchAssistantRoot(
     }
 
     val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
-    val handled = pkg?.takeIf { it.isNotEmpty() }?.let { launchOnStore(it) } ?: false
+    val handled = pkg?.takeIf { it.isNotEmpty() }?.let { openOnStore(it) } ?: false
 
     showToast(errorMessage)
     return handled
 }
 
-fun Context.launchOnStore(packageName: String): Boolean {
+fun Context.openOnStore(packageName: String): Boolean {
     val uri = "market://details?id=$packageName".toUri()
     val goToMarket = Intent(Intent.ACTION_VIEW, uri).apply {
         flags = Intent.FLAG_ACTIVITY_NEW_TASK

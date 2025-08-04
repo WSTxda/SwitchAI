@@ -104,7 +104,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         }
     }
 
-    fun assistantLaunched(assistantKey: String) {
+    fun updateRecentlyUsedAssistants(assistantKey: String) {
         viewModelScope.launch(Dispatchers.IO) {
             recentlyUsedAssistants.removeAll { it.first == assistantKey }
             recentlyUsedAssistants.add(0, Pair(assistantKey, System.currentTimeMillis()))
@@ -155,7 +155,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
                     iconRes = assistantResourcesManager.getAssistantIcon(key),
                     isInstalled = key in installedKeys,
                     isPinned = key in pinnedAssistantKeys,
-                    lastUsedTimestamp = recentlyUsedAssistants.find { it.first == key }?.second
+                    lastUsedTime = recentlyUsedAssistants.find { it.first == key }?.second
                         ?: 0L
                 )
             }
@@ -179,7 +179,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             }
             if (recentItems.isNotEmpty()) {
                 add(AssistantSelectorRecyclerView.CategoryHeader(context.getString(R.string.assistant_category_recent)))
-                val sortedRecent = recentItems.sortedByDescending { it.lastUsedTimestamp }
+                val sortedRecent = recentItems.sortedByDescending { it.lastUsedTime }
                     .map { AssistantSelectorRecyclerView.AssistantSelector(it) }
                 addAll(sortedRecent)
             }

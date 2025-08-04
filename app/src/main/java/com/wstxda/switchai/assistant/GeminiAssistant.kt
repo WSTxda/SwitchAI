@@ -6,8 +6,8 @@ import androidx.lifecycle.lifecycleScope
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.PreferenceHelper
-import com.wstxda.switchai.logic.launchAssistant
-import com.wstxda.switchai.logic.launchAssistantRoot
+import com.wstxda.switchai.logic.openAssistant
+import com.wstxda.switchai.logic.openAssistantRoot
 import com.wstxda.switchai.utils.AssistantProperties
 import com.wstxda.switchai.utils.Constants
 import kotlinx.coroutines.launch
@@ -22,23 +22,23 @@ class GeminiAssistant : AssistantActivity() {
     override fun onCreateInternal() {
         lifecycleScope.launch {
             if (preferences.getBoolean(Constants.ASSISTANT_ROOT_PREF_KEY)) {
-                launchGeminiFloaty()
+                openGeminiFloaty()
             } else {
-                launchGemini()
+                openGemini()
             }
         }
     }
 
-    private fun launchGeminiFloaty() {
-        launchAssistantRoot(
+    private fun openGeminiFloaty() {
+        openAssistantRoot(
             intents = listOf(createGeminiFloatyIntent()),
             rootAccessMessage = R.string.root_access_warning,
             errorMessage = R.string.assistant_application_not_found
         )
     }
 
-    private fun launchGemini() {
-        launchAssistant(
+    private fun openGemini() {
+        openAssistant(
             intents = listOf(createGeminiIntent()),
             errorMessage = R.string.assistant_application_not_found
         )

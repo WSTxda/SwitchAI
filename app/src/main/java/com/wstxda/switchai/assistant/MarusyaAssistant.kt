@@ -6,8 +6,8 @@ import androidx.lifecycle.lifecycleScope
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.PreferenceHelper
-import com.wstxda.switchai.logic.launchAssistant
-import com.wstxda.switchai.logic.launchAssistantRoot
+import com.wstxda.switchai.logic.openAssistant
+import com.wstxda.switchai.logic.openAssistantRoot
 import com.wstxda.switchai.utils.AssistantProperties
 import com.wstxda.switchai.utils.Constants
 import kotlinx.coroutines.launch
@@ -22,23 +22,23 @@ class MarusyaAssistant : AssistantActivity() {
     override fun onCreateInternal() {
         lifecycleScope.launch {
             if (preferences.getBoolean(Constants.ASSISTANT_ROOT_PREF_KEY)) {
-                launchMarusyaAssistant()
+                openMarusyaAssistant()
             } else {
-                launchMarusya()
+                openMarusya()
             }
         }
     }
 
-    private fun launchMarusyaAssistant() {
-        launchAssistantRoot(
+    private fun openMarusyaAssistant() {
+        openAssistantRoot(
             intents = listOf(createMarusyaAssistantIntent()),
             rootAccessMessage = R.string.root_access_warning,
             errorMessage = R.string.assistant_application_not_found
         )
     }
 
-    private fun launchMarusya() {
-        launchAssistant(
+    private fun openMarusya() {
+        openAssistant(
             intents = listOf(createMarusyaIntent()),
             errorMessage = R.string.assistant_application_not_found
         )
@@ -46,8 +46,7 @@ class MarusyaAssistant : AssistantActivity() {
 
     private fun createMarusyaIntent() = Intent().apply {
         component = ComponentName(
-            Companion.packageName,
-            "ru.mail.search.electroscope.ui.activity.AssistantActivity"
+            Companion.packageName, "ru.mail.search.electroscope.ui.activity.AssistantActivity"
         )
     }
 

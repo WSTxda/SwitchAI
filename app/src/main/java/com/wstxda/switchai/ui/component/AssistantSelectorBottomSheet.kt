@@ -40,7 +40,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
     private fun setupRecyclerView() {
         assistantSelectorAdapter = AssistantSelectorAdapter(onAssistantClicked = { assistantKey ->
             openAssistant(assistantKey)
-            viewModel.assistantLaunched(assistantKey)
+            viewModel.updateRecentlyUsedAssistants(assistantKey)
             dismiss()
         }, onPinClicked = { assistantKey ->
             viewModel.togglePinAssistant(assistantKey)

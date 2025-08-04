@@ -21,7 +21,7 @@
     <string name="manus">Manus</string>
     <string name="marusya">Marusya</string>
     <string name="meta">Meta AI</string>
-    <string name="minimax">MiniMax"</string>
+    <string name="minimax">MiniMax</string>
     <string name="perplexity">Perplexity</string>
     <string name="qingyan">Qingyan</string>
     <string name="qwen">Qwen</string>
@@ -60,7 +60,7 @@
     <string name="pref_assistant_manage_summary">Escolha quais assistentes serão exibidos no seletor</string>
 
     <string name="pref_assistant_tile">Adicionar bloco do assistente</string>
-    <string name="pref_assistant_tile_summary">Adicione um bloco para acessar o assistente no painel de configurações rápidas do seu dispositivo</string>
+    <string name="pref_assistant_tile_summary">Adicione um bloco nas configurações rápidas para acessar o assistente no seu dispositivo</string>
 
     <string name="pref_assistant_widget">Adicionar widget do assistente</string>
     <string name="pref_assistant_widget_summary">Adicione um widget para acessar o assistente na tela inicial do seu dispositivo</string>
@@ -99,6 +99,7 @@
     <string name="assistant_category_pin">Fixados</string>
     <string name="assistant_category_recent">Usados recentemente</string>
     <string name="assistant_category_all">Assistentes</string>
+    <string name="assistant_category_not_installed">Não instalados</string>
     <!--open assistant messages-->
     <string name="assistant_open">Abrir assistente</string>
     <string name="assistant_open_error">Erro ao abrir assistente</string>
@@ -107,7 +108,7 @@
     <!--setup digital assistant dialog-->
     <string name="digital_assistant_setup_title">Aplicativo de assistente digital padrão</string>
     <string name="digital_assistant_setup_message">Nas configurações, selecione o <b>SwitchAI</b> como o aplicativo de assistente digital padrão para acessar rapidamente o assistente selecionado usando gestos, botões e muito mais…</string>
-    <string name="digital_assistant_setup_button">Configurar agora</string>
+    <string name="digital_assistant_setup_button">Definir como padrão</string>
     <!--tutorial digital assistant dialog-->
     <string name="digital_assistant_tutorial">Como utilizar o assistente digital</string>
 

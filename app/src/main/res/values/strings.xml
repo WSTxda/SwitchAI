@@ -22,7 +22,7 @@
     <string name="manus">Manus</string>
     <string name="marusya">Marusya</string>
     <string name="meta">Meta AI</string>
-    <string name="minimax">MiniMax"</string>
+    <string name="minimax">MiniMax</string>
     <string name="perplexity">Perplexity</string>
     <string name="qingyan">Qingyan</string>
     <string name="qwen">Qwen</string>
@@ -64,7 +64,7 @@
     <string name="pref_assistant_manage_summary">Choose which assistants are displayed in the selector</string>
 
     <string name="pref_assistant_tile">Add assistant tile</string>
-    <string name="pref_assistant_tile_summary">Add tile to access the assistant in your device\'s quick settings panel</string>
+    <string name="pref_assistant_tile_summary">Add a quick settings tile to access the assistant on your device</string>
 
     <string name="pref_assistant_widget">Add assistant widget</string>
     <string name="pref_assistant_widget_summary">Add widget to access the assistant on your device\'s home screen</string>
@@ -112,7 +112,7 @@
     <!--setup digital assistant dialog-->
     <string name="digital_assistant_setup_title">Default digital assistant app</string>
     <string name="digital_assistant_setup_message">In the settings, select <b>SwitchAI</b> as your default digital assistant app to quickly access the selected assistant using gestures, buttons, and more…</string>
-    <string name="digital_assistant_setup_button">Setup now</string>
+    <string name="digital_assistant_setup_button">Set as default</string>
     <!--tutorial digital assistant dialog-->
     <string name="digital_assistant_tutorial">How to use the digital assistant</string>
 

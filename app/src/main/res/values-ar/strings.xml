@@ -21,7 +21,7 @@
     <string name="manus">Manus</string>
     <string name="marusya">Marusya</string>
     <string name="meta">Meta AI</string>
-    <string name="minimax">MiniMax"</string>
+    <string name="minimax">MiniMax</string>
     <string name="perplexity">Perplexity</string>
     <string name="qingyan">Qingyan</string>
     <string name="qwen">Qwen</string>
@@ -60,7 +60,7 @@
     <string name="pref_assistant_manage_summary">اختر المساعدات التي ستظهر في القائمة</string>
 
     <string name="pref_assistant_tile">اضافة زر المساعد في قائمة الإعدادات السريعة</string>
-    <string name="pref_assistant_tile_summary">اضف زرًا للوصول إلى المساعد في قائمة الإعدادات السريعة</string>
+    <string name="pref_assistant_tile_summary">أضف مربع إعدادات سريعة للوصول إلى المساعد على جهازك</string>
 
     <string name="pref_assistant_widget">إضافة ويدجيت المساعد</string>
     <string name="pref_assistant_widget_summary">أضف ويدجيت للوصول إلى المساعد عبر الشاشة الرئيسية للجهاز</string>
@@ -104,10 +104,11 @@
     <string name="assistant_open_error">خطأ في فتح المساعد</string>
     <string name="assistant_application_not_found">لم يتم العثور على التطبيق. برجاء تثبيته أولا.</string>
     <string name="assistant_not_implemented">لم يتم تنفيذ المساعد بعد…</string>
+    <string name="assistant_category_not_installed">غير مثبت</string>
     <!--setup digital assistant dialog-->
     <string name="digital_assistant_setup_title">تطبيق المساعد الرقمي الافتراضي</string>
     <string name="digital_assistant_setup_message">في الإعدادات قم باختيار <b>SwitchAI</b> للوصول سريعا إلي المساعد المحدد باستخدام الإيماءات و الأزرار و المزيد.</string>
-    <string name="digital_assistant_setup_button">قم بالإعداد الآن</string>
+    <string name="digital_assistant_setup_button">تعيين كافتراضي</string>
     <!--tutorial digital assistant dialog-->
     <string name="digital_assistant_tutorial">كيفية استخدام المساعد الرقمي</string>
 

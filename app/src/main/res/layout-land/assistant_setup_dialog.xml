@@ -4,44 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/colorSurfaceContainer"
-    android:fitsSystemWindows="false"
-    android:paddingStart="?attr/dialogPreferredPadding"
-    android:paddingTop="?attr/dialogPreferredPadding"
-    android:paddingEnd="?attr/dialogPreferredPadding"
-    android:paddingBottom="20dp"
-    tools:ignore="Overdraw">
+    android:padding="?attr/dialogPreferredPadding">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/dialog_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:contentDescription="@string/app_settings"
+        android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher" />
+        tools:srcCompat="@mipmap/ic_launcher" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/dialog_title"
         style="?attr/textAppearanceTitleLarge"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:maxLines="2"
-        android:text="@string/digital_assistant_setup_title"
+        android:layout_marginTop="16dp"
+        android:autoSizeMaxTextSize="22sp"
+        android:autoSizeMinTextSize="18sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dialog_icon" />
+        app:layout_constraintTop_toBottomOf="@id/dialog_icon"
+        tools:text="@string/digital_assistant_setup_title" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_container"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dialog_title">
@@ -52,9 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="8"
-            android:padding="14dp"
-            android:text="@string/digital_assistant_setup_message"
-            tools:ignore="VisualLintLongText" />
+            android:padding="16dp"
+            tools:text="@string/digital_assistant_setup_message" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
@@ -62,25 +60,23 @@
         style="@style/Widget.Material3Expressive.Button.TonalButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="8dp"
-        android:text="@android:string/cancel"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toStartOf="@id/positive_button"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/card_container"
-        tools:ignore="VisualLintButtonSize" />
+        tools:text="@android:string/cancel" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/positive_button"
         style="@style/Widget.Material3Expressive.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/digital_assistant_setup_button"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/negative_button"
         app:layout_constraintTop_toBottomOf="@id/card_container"
-        tools:ignore="VisualLintButtonSize" />
+        tools:text="@string/digital_assistant_setup_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

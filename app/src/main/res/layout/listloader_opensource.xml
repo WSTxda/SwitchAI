@@ -4,7 +4,7 @@
     android:layout_height="fill_parent">
 
     <com.google.android.material.loadingindicator.LoadingIndicator
-        android:id="@id/progressBar"
+        android:id="@+id/progressBar"
         style="@style/Widget.Material3.LoadingIndicator.Contained"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

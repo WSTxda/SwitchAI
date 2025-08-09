@@ -1,7 +1,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginTop="24dp"
@@ -9,47 +9,46 @@
     android:backgroundTint="?attr/colorSurfaceContainer"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="18dp"
+    app:cardCornerRadius="20dp"
     app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@id/content"
-        android:layout_width="fill_parent"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:orientation="vertical"
         android:padding="16dp">
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@id/libraryName"
+            android:id="@+id/libraryName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:textAppearance="?attr/textAppearanceTitleMedium"
-            app:layout_constraintBottom_toTopOf="@id/libraryCreator"
-            app:layout_constraintEnd_toStartOf="@id/libraryVersion"
+            app:layout_constraintBottom_toTopOf="@+id/libraryCreator"
+            app:layout_constraintEnd_toStartOf="@+id/libraryVersion"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="AboutLibraries Core Library" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@id/libraryCreator"
+            android:id="@+id/libraryCreator"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:textAppearance="?attr/textAppearanceBodySmall"
-            app:layout_constraintBottom_toTopOf="@id/libraryDescriptionDivider"
-            app:layout_constraintEnd_toStartOf="@id/libraryVersion"
+            app:layout_constraintBottom_toTopOf="@+id/libraryDescriptionDivider"
+            app:layout_constraintEnd_toStartOf="@+id/libraryVersion"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/libraryName"
             tools:text="Mike Penz" />
 
         <com.google.android.material.chip.Chip
-            android:id="@id/libraryVersion"
+            android:id="@+id/libraryVersion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -67,41 +66,42 @@
             tools:text="12.1.2" />
 
         <com.google.android.material.divider.MaterialDivider
-            android:id="@id/libraryDescriptionDivider"
-            android:layout_width="wrap_content"
+            android:id="@+id/libraryDescriptionDivider"
+            android:layout_width="0dp"
             android:layout_height="0dp"
             app:dividerColor="?attr/colorSurfaceContainerHighest"
-            app:layout_constraintBottom_toTopOf="@id/libraryDescription"
+            app:layout_constraintBottom_toTopOf="@+id/libraryDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/libraryCreator" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@id/libraryDescription"
+            android:id="@+id/libraryDescription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:maxLines="20"
             android:textAppearance="?attr/textAppearanceBodyMedium"
-            app:layout_constraintBottom_toTopOf="@id/libraryBottomDivider"
+            app:layout_constraintBottom_toTopOf="@+id/libraryBottomDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/libraryDescriptionDivider"
+            tools:ignore="VisualLintLongText"
             tools:text="AboutLibraries automatically detects all dependencies of a project and collects their information including the license. Optionally visualising it via the provided ui components." />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/libraryBottomDivider"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
             app:dividerColor="?attr/colorSurfaceContainerHighest"
-            app:layout_constraintBottom_toTopOf="@id/libraryLicense"
+            app:layout_constraintBottom_toTopOf="@+id/libraryLicense"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/libraryDescription" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@id/libraryLicense"
+            android:id="@+id/libraryLicense"
             style="@style/Widget.Material3Expressive.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -15,8 +15,8 @@
         style="?attr/textAppearanceHeadlineSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginBottom="24dp"
+        android:paddingHorizontal="14dp"
+        android:paddingBottom="24dp"
         android:textAlignment="center"
         tools:text="@string/digital_assistant_tutorial" />
 

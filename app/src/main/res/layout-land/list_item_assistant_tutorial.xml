@@ -13,11 +13,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="?attr/colorSurfaceContainerLowest"
-        app:cardCornerRadius="18dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.45">
+        app:layout_constraintWidth_percent="0.5">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/tutorial_image"
@@ -29,35 +29,46 @@
             tools:srcCompat="@drawable/tutorial_gestures_card" />
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tutorial_title"
-        style="?attr/textAppearanceTitleMedium"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/text_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:drawablePadding="8dp"
-        android:drawableTint="?attr/colorOnPrimaryContainer"
-        android:ellipsize="marquee"
-        android:maxLines="2"
-        android:textColor="?android:textColorPrimary"
+        app:layout_constraintBottom_toBottomOf="@id/tutorial_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tutorial_card"
-        app:layout_constraintTop_toTopOf="@id/tutorial_card"
-        tools:drawableStart="@drawable/ic_corners"
-        tools:text="@string/tutorial_edge_gestures" />
+        app:layout_constraintTop_toTopOf="@id/tutorial_card">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tutorial_summary"
-        style="?attr/textAppearanceBodyMedium"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:maxLines="10"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:textColor="?android:textColorSecondary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tutorial_title"
-        app:layout_constraintTop_toBottomOf="@id/tutorial_title"
-        tools:text="@string/tutorial_edge_gestures_summary" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tutorial_title"
+            style="?attr/textAppearanceTitleMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="8dp"
+            android:drawableTint="?attr/colorOnPrimaryContainer"
+            android:ellipsize="marquee"
+            android:maxLines="2"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:drawableStart="@drawable/ic_corners"
+            tools:text="@string/tutorial_edge_gestures" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tutorial_summary"
+            style="?attr/textAppearanceBodyMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:maxLines="10"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="?android:textColorSecondary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tutorial_title"
+            tools:text="@string/tutorial_edge_gestures_summary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

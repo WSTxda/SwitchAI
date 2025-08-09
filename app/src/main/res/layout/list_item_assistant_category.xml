@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="40dp"
-    android:paddingTop="14dp"
+    android:paddingTop="20dp"
     android:paddingEnd="40dp"
-    android:paddingBottom="14dp"
+    android:paddingBottom="12dp"
     android:textAppearance="?attr/textAppearanceLabelLarge"
     android:textColor="?attr/colorOnSurfaceVariant"
     tools:text="@string/assistant_category_recent" />

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- components theme styles -->
 
@@ -28,15 +28,5 @@
 
     <style name="Theme.Component.BottomSheet.Modal" parent="@style/Widget.Material3.BottomSheet">
         <item name="backgroundTint">?attr/colorSurface</item>
-    </style>
-
-    <style name="Widget.Material3Expressive.Button.TonalButton.Dialog">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Material3Expressive.Button.Tonal</item>
-        <item name="android:minWidth" tools:ignore="PrivateResource">@dimen/m3_btn_dialog_btn_min_width</item>
-        <item name="android:layout_marginLeft" tools:ignore="PrivateResource">@dimen/m3_btn_dialog_btn_spacing</item>
-        <item name="android:layout_marginStart" tools:ignore="PrivateResource">@dimen/m3_btn_dialog_btn_spacing</item>
-        <item name="android:maxLines">2</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:singleLine">false</item>
     </style>
 </resources>

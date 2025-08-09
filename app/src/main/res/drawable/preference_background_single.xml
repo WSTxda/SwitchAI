@@ -4,7 +4,7 @@
     tools:ignore="PrivateResource">
     <item>
         <shape>
-            <corners android:radius="18dp" />
+            <corners android:radius="20dp" />
             <solid android:color="?attr/colorSurfaceContainer" />
         </shape>
     </item>

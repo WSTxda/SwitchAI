@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="32dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginEnd="32dp"
-    android:layout_marginBottom="16dp">
+    android:paddingStart="32dp"
+    android:paddingTop="24dp"
+    android:paddingEnd="32dp"
+    android:paddingBottom="12dp">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@android:id/title"

@@ -10,6 +10,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.wstxda.switchai.R
 import com.wstxda.switchai.databinding.AssistantSetupDialogBinding
 import com.wstxda.switchai.fragment.preferences.DigitalAssistantPreference
 import com.wstxda.switchai.utils.Constants
@@ -33,6 +34,12 @@ class DigitalAssistantSetupDialog : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         _binding = AssistantSetupDialogBinding.inflate(requireActivity().layoutInflater)
+
+        binding.dialogIcon.setImageResource(R.mipmap.ic_launcher)
+        binding.dialogTitle.text = getString(R.string.digital_assistant_setup_title)
+        binding.dialogMessage.text = getString(R.string.digital_assistant_setup_message)
+        binding.positiveButton.text = getString(R.string.digital_assistant_setup_button)
+        binding.negativeButton.text = getString(android.R.string.cancel)
 
         binding.positiveButton.setOnClickListener {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {

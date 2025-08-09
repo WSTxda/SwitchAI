@@ -38,27 +38,29 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 
 ### Supported AI assistants apps
 
-*   **[Alexa](https://play.google.com/store/apps/details?id=com.amazon.dee.app)** by Amazon  
-*   **[ChatGPT](https://play.google.com/store/apps/details?id=com.openai.chatgpt)** by OpenAI  
-*   **[Claude](https://play.google.com/store/apps/details?id=com.anthropic.claude)** by Anthropic  
-*   **[Copilot](https://play.google.com/store/apps/details?id=com.microsoft.copilot)** by Microsoft  
-*   **[DeepSeek](https://play.google.com/store/apps/details?id=com.deepseek.chat)** by DeepSeek  
-*   **[Doubao](https://play.google.com/store/apps/details?id=com.larus.nova)** by ByteDance  
-*   **[Gemini](https://play.google.com/store/apps/details?id=com.google.android.apps.bard)** by Google  
-*   **[Grok](https://play.google.com/store/apps/details?id=ai.x.grok)** by xAI  
-*   **[Kimi](https://play.google.com/store/apps/details?id=com.moonshot.kimichat)** by Moonshot AI  
-*   **[Le Chat](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI  
-*   **[Manus](https://play.google.com/store/apps/details?id=tech.butterfly.app)** by Butterfly Tech  
-*   **[Marusya](https://play.google.com/store/apps/details?id=ru.mail.search.electroscope)** by VK  
-*   **[Meta AI](https://play.google.com/store/apps/details?id=com.facebook.stella)** by Meta  
-*   **[MiniMax](https://play.google.com/store/apps/details?id=com.minimax.ai)** by MiniMax AI  
-*   **[Perplexity](https://play.google.com/store/apps/details?id=ai.perplexity.app.android)** by Perplexity AI  
-*   **[Qingyan](https://chatglm.cn/download?fr=web_home)** by Baidu  
-*   **[Qwen](https://play.google.com/store/apps/details?id=ai.qwenlm.chat.android)** by Alibaba Cloud  
-*   **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions  
-*   **[Wenxin Yiyan](https://apkpure.com/cn/wen-xin-yi-yan/com.baidu.newapp)** by Baidu  
-*   **[Yuanbao](https://yuanbao.tencent.com/download)** by Tencent  
-
+*   **[Alexa](https://play.google.com/store/apps/details?id=com.amazon.dee.app)** by Amazon
+*   **[Alice](https://play.google.com/store/apps/details?id=com.yandex.aliceapp)** by Yandex
+*   **[ChatGPT](https://play.google.com/store/apps/details?id=com.openai.chatgpt)** by OpenAI
+*   **[Claude](https://play.google.com/store/apps/details?id=com.anthropic.claude)** by Anthropic
+*   **[Copilot](https://play.google.com/store/apps/details?id=com.microsoft.copilot)** by Microsoft
+*   **[DeepSeek](https://play.google.com/store/apps/details?id=com.deepseek.chat)** by DeepSeek
+*   **[Doubao](https://play.google.com/store/apps/details?id=com.larus.nova)** by ByteDance
+*   **[Gemini](https://play.google.com/store/apps/details?id=com.google.android.apps.bard)** by Google
+*   **[Grok](https://play.google.com/store/apps/details?id=ai.x.grok)** by xAI
+*   **[Home Assistant](https://play.google.com/store/apps/details?id=io.homeassistant.companion.android)** by Home Assistant
+*   **[Kimi](https://play.google.com/store/apps/details?id=com.moonshot.kimichat)** by Moonshot AI
+*   **[Le Chat](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI
+*   **[Manus](https://play.google.com/store/apps/details?id=tech.butterfly.app)** by Butterfly Tech
+*   **[Marusya](https://play.google.com/store/apps/details?id=ru.mail.search.electroscope)** by VK
+*   **[Meta AI](https://play.google.com/store/apps/details?id=com.facebook.stella)** by Meta
+*   **[MiniMax](https://play.google.com/store/apps/details?id=com.minimax.ai)** by MiniMax AI
+*   **[Perplexity](https://play.google.com/store/apps/details?id=ai.perplexity.app.android)** by Perplexity AI
+*   **[Qingyan](https://chatglm.cn/download?fr=web_home)** by Baidu
+*   **[Qwen](https://play.google.com/store/apps/details?id=ai.qwenlm.chat.android)** by Alibaba Cloud
+*   **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions
+*   **[Wenxin Yiyan](https://apkpure.com/cn/wen-xin-yi-yan/com.baidu.newapp)** by Baidu
+*   **[Yuanbao](https://yuanbao.tencent.com/download)** by Tencent
+*	**[Zapia](https://play.google.com/store/apps/details?id=com.brainlogic.zapia)** by BrainLogic AI
 -------
 
 > [!IMPORTANT]

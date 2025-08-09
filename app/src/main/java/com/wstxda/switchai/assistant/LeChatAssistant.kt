@@ -22,7 +22,7 @@ class LeChatAssistant : AssistantActivity() {
 
     private fun createLeChatIntent() = Intent().apply {
         component = ComponentName(
-            packageName, "ai.mistral.chat.MainActivity"
+            Companion.packageName, "ai.mistral.chat.MainActivity"
         )
     }
 }

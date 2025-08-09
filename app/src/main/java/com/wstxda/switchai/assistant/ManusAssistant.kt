@@ -22,7 +22,7 @@ class ManusAssistant : AssistantActivity() {
 
     private fun createManusIntent() = Intent().apply {
         component = ComponentName(
-            packageName, "tech.butterfly.app.MainActivity"
+            Companion.packageName, "tech.butterfly.app.MainActivity"
         )
     }
 }

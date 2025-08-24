@@ -32,6 +32,7 @@
         android:key="assistant_selector_dialog"
         android:summary="@string/pref_assistant_selector_summary"
         android:title="@string/pref_assistant_selector"
+        app:iconSpaceReserved="false"
         app:layout="@layout/preference_material_top" />
 
     <com.wstxda.switchai.fragment.preferences.MultiSelectListPreference
@@ -43,6 +44,7 @@
         android:title="@string/pref_assistant_manage"
         app:defaultValue="@array/assistant_visibility_values"
         app:dialogIcon="@drawable/ic_visibility"
+        app:iconSpaceReserved="false"
         app:minSelection="2"
         app:summary="@string/pref_assistant_manage_summary" />
 
@@ -56,21 +58,24 @@
         android:key="assistant_vibration"
         android:layout="@layout/preference_material_top"
         android:summary="@string/pref_assistant_vibration_summary"
-        android:title="@string/pref_assistant_vibration" />
+        android:title="@string/pref_assistant_vibration"
+        app:iconSpaceReserved="false" />
 
     <SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="assistant_sound"
         android:layout="@layout/preference_material_middle"
         android:summary="@string/pref_assistant_sound_summary"
-        android:title="@string/pref_assistant_sound" />
+        android:title="@string/pref_assistant_sound"
+        app:iconSpaceReserved="false" />
 
     <SwitchPreferenceCompat
         android:defaultValue="false"
         android:key="assistant_root"
         android:layout="@layout/preference_material_bottom"
         android:summary="@string/pref_assistant_root_summary"
-        android:title="@string/pref_assistant_root" />
+        android:title="@string/pref_assistant_root"
+        app:iconSpaceReserved="false" />
 
     <PreferenceCategory
         android:key="shortcuts"
@@ -82,13 +87,15 @@
         android:key="open_assistant_tile"
         android:layout="@layout/preference_material_top"
         android:summary="@string/pref_assistant_tile_summary"
-        android:title="@string/pref_assistant_tile" />
+        android:title="@string/pref_assistant_tile"
+        app:iconSpaceReserved="false" />
 
     <Preference
         android:key="open_assistant_widget"
         android:layout="@layout/preference_material_bottom"
         android:summary="@string/pref_assistant_widget_summary"
-        android:title="@string/pref_assistant_widget" />
+        android:title="@string/pref_assistant_widget"
+        app:iconSpaceReserved="false" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"
@@ -104,6 +111,7 @@
         android:title="@string/pref_theme"
         app:dialogIcon="@drawable/ic_theme_color"
         app:dialogTitle="@string/theme_select"
+        app:iconSpaceReserved="false"
         app:useSimpleSummaryProvider="true" />
 
     <PreferenceCategory
@@ -115,23 +123,27 @@
         android:key="developer"
         android:layout="@layout/preference_material_top"
         android:summary="@string/pref_developer"
-        android:title="@string/pref_wstxda" />
+        android:title="@string/pref_wstxda"
+        app:iconSpaceReserved="false" />
 
     <Preference
         android:key="github_repository"
         android:layout="@layout/preference_material_middle"
         android:summary="@string/pref_source_code"
-        android:title="@string/pref_github" />
+        android:title="@string/pref_github"
+        app:iconSpaceReserved="false" />
 
     <Preference
         android:key="library"
         android:layout="@layout/preference_material_middle"
         android:summary="@string/pref_used_library_summary"
-        android:title="@string/pref_used_library" />
+        android:title="@string/pref_used_library"
+        app:iconSpaceReserved="false" />
 
     <com.wstxda.switchai.fragment.preferences.UpdaterPreference
         android:key="version"
         android:summary="@string/pref_version_number"
         android:title="@string/pref_version"
-        app:allowDividerAbove="false" />
+        app:allowDividerAbove="false"
+        app:iconSpaceReserved="false" />
 </androidx.preference.PreferenceScreen>

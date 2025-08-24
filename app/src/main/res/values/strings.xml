@@ -13,6 +13,7 @@
     <string name="claude">Claude</string>
     <string name="copilot">Copilot</string>
     <string name="deepseek">DeepSeek</string>
+    <string name="delphi">oo.ai</string>
     <string name="doubao">Doubao</string>
     <string name="gemini">Gemini</string>
     <string name="grok">Grok</string>

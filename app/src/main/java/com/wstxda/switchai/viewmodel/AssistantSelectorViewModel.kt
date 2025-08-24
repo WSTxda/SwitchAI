@@ -28,6 +28,11 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     private val _assistantItems = MutableLiveData<List<AssistantSelectorRecyclerView>>()
     val assistantItems: LiveData<List<AssistantSelectorRecyclerView>> = _assistantItems
 
+    private var allAssistantItems: List<AssistantSelectorRecyclerView> = emptyList()
+
+    private val _searchResultEmpty = MutableLiveData<Boolean>()
+    val searchResultEmpty: LiveData<Boolean> = _searchResultEmpty
+
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -65,11 +70,28 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
                 val allVisibleAssistantDetails = getVisibleAssistantDetails(installedKeys)
                 val categorizedItems = buildCategorizedList(allVisibleAssistantDetails)
                 withContext(Dispatchers.Main) {
+                    allAssistantItems = categorizedItems
                     _assistantItems.value = categorizedItems
                 }
             }
             _isLoading.value = false
         }
+    }
+
+    fun searchAssistants(query: String?) {
+        if (query.isNullOrBlank()) {
+            _assistantItems.value = allAssistantItems
+            _searchResultEmpty.value = false
+            return
+        }
+
+        val filteredList = allAssistantItems.filterIsInstance<AssistantSelectorRecyclerView.AssistantSelector>()
+                .filter { assistant ->
+                    assistant.assistantItem.name.contains(query, ignoreCase = true)
+                }
+
+        _assistantItems.value = filteredList
+        _searchResultEmpty.value = filteredList.isEmpty()
     }
 
     fun togglePinAssistant(assistantKey: String) {
@@ -155,8 +177,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
                     iconRes = assistantResourcesManager.getAssistantIcon(key),
                     isInstalled = key in installedKeys,
                     isPinned = key in pinnedAssistantKeys,
-                    lastUsedTime = recentlyUsedAssistants.find { it.first == key }?.second
-                        ?: 0L
+                    lastUsedTime = recentlyUsedAssistants.find { it.first == key }?.second ?: 0L
                 )
             }
     }

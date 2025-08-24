@@ -35,6 +35,15 @@
         app:iconSpaceReserved="false"
         app:layout="@layout/preference_material_top" />
 
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:dependency="assistant_selector_dialog"
+        android:key="assistant_search_bar"
+        android:summary="@string/pref_assistant_search_bar_summary"
+        android:title="@string/pref_assistant_search_bar"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_middle" />
+
     <com.wstxda.switchai.fragment.preferences.MultiSelectListPreference
         android:dependency="assistant_selector_dialog"
         android:entries="@array/assistant_entries"

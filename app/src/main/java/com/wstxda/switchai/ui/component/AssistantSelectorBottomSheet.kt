@@ -9,18 +9,24 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.wstxda.switchai.R
 import com.wstxda.switchai.databinding.FragmentAssistantDialogBinding
+import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.ui.adapter.AssistantSelectorAdapter
 import com.wstxda.switchai.utils.AssistantsMap
+import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.AssistantSelectorViewModel
 
 class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBinding>() {
 
     private val viewModel: AssistantSelectorViewModel by viewModels()
+    private val preferenceHelper by lazy {
+        PreferenceHelper(requireContext())
+    }
     private lateinit var assistantSelectorAdapter: AssistantSelectorAdapter
 
     override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
@@ -35,6 +41,20 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         setupObservers()
+        setupSearch()
+    }
+
+    private fun setupSearch() {
+        val isSearchBarEnabled =
+            preferenceHelper.getBoolean(Constants.ASSISTANT_SEARCH_BAR_PREF_KEY, true)
+
+        binding.searchTextInputLayout.isVisible = isSearchBarEnabled
+
+        if (isSearchBarEnabled) {
+            binding.searchEditText.doOnTextChanged { text, _, _, _ ->
+                viewModel.searchAssistants(text?.toString())
+            }
+        }
     }
 
     private fun setupRecyclerView() {
@@ -60,6 +80,14 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
             binding.assistantLoading.isVisible = isLoading
             binding.assistantsRecyclerView.isInvisible = isLoading
+        }
+
+        viewModel.searchResultEmpty.observe(viewLifecycleOwner) { isResultEmpty ->
+            if (isResultEmpty) {
+                binding.searchTextInputLayout.error = getString(R.string.assistant_search_empty)
+            } else {
+                binding.searchTextInputLayout.error = null
+            }
         }
     }
 

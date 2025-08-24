@@ -25,6 +25,32 @@
         android:textAlignment="center"
         tools:text="@string/assistant_select" />
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_text_input_layout"
+        style="?attr/textInputOutlinedDenseStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="24dp"
+        android:paddingBottom="24dp"
+        app:boxBackgroundColor="?attr/colorOnSecondary"
+        app:boxStrokeColor="?attr/colorOnSecondary"
+        app:boxStrokeErrorColor="?attr/colorOnSecondary"
+        app:boxStrokeWidth="0dp"
+        app:endIconMode="clear_text"
+        app:placeholderText="@string/assistant_search_hint"
+        app:placeholderTextColor="?attr/colorOnSecondaryContainer"
+        app:shapeAppearance="?attr/shapeAppearanceCornerExtraExtraLarge"
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconTint="?attr/colorOnSecondaryContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:forceHasOverlappingRendering="false"
+            android:maxLines="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_top"
         style="?attr/materialDividerStyle"

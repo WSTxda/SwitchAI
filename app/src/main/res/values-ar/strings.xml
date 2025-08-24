@@ -56,6 +56,9 @@
     <string name="pref_assistant_selector">استخدام مُحدِّد المساعد</string>
     <string name="pref_assistant_selector_summary">اذا تم تفعيله اذن اختر مساعدًا في كل مرة يتم البدء. وإلا خيار <b>المساعد الرقمي</b> سيتم استخدامه</string>
 
+    <string name="pref_assistant_search_bar">شريط البحث</string>
+    <string name="pref_assistant_search_bar_summary">تمكين شريط البحث للعثور بسرعة على المساعدين في المحدد</string>
+
     <string name="pref_assistant_manage">إدارة المساعد</string>
     <string name="pref_assistant_manage_summary">اختر المساعدات التي ستظهر في القائمة</string>
 
@@ -95,6 +98,9 @@
     <!--digital/selector/open assistant-->
 
     <string name="assistant_select">اختيار المساعد</string>
+    <!--selector assistant search-->
+    <string name="assistant_search_hint">البحث في المساعدين</string>
+    <string name="assistant_search_empty">لم يتم العثور على مساعدين</string>
     <!--selector assistant categories-->
     <string name="assistant_category_pin">مثبت</string>
     <string name="assistant_category_recent">المستخدمة مؤخرًا</string>

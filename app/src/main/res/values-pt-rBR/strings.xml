@@ -53,6 +53,9 @@
     <string name="pref_setup_digital_assistant">Configurar assistente digital</string>
     <string name="pref_setup_digital_assistant_summary">Definir o SwitchAI como o aplicativo de assistente digital padrão</string>
 
+    <string name="pref_assistant_search_bar">Barra de pesquisa</string>
+    <string name="pref_assistant_search_bar_summary">Habilitar a barra de pesquisa para encontrar assistentes rapidamente no seletor</string>
+
     <string name="pref_assistant_selector">Usar seletor de assistente</string>
     <string name="pref_assistant_selector_summary">Se ativado, selecione um assistente toda vez que iniciar. Caso contrário, será usado a opção <b>Assistente digital</b></string>
 
@@ -95,6 +98,9 @@
     <!--digital/selector/open assistant-->
 
     <string name="assistant_select">Selecionar assistente</string>
+    <!--selector assistant search-->
+    <string name="assistant_search_hint">Pesquisar assistentes</string>
+    <string name="assistant_search_empty">Nenhum assistente encontrado</string>
     <!--selector assistant categories-->
     <string name="assistant_category_pin">Fixados</string>
     <string name="assistant_category_recent">Usados recentemente</string>

@@ -60,6 +60,9 @@
     <string name="pref_assistant_selector">Use assistant selector</string>
     <string name="pref_assistant_selector_summary">If enabled, select an assistant each time it starts. Otherwise, the <b>Digital assistant</b> option will be used</string>
 
+    <string name="pref_assistant_search_bar">Search bar</string>
+    <string name="pref_assistant_search_bar_summary">Enable the search bar to quickly find assistants in the selector</string>
+
     <string name="pref_assistant_manage">Manage assistants</string>
     <string name="pref_assistant_manage_summary">Choose which assistants are displayed in the selector</string>
 
@@ -67,7 +70,7 @@
     <string name="pref_assistant_tile_summary">Add a quick settings tile to access the assistant on your device</string>
 
     <string name="pref_assistant_widget">Add assistant widget</string>
-    <string name="pref_assistant_widget_summary">Add widget to access the assistant on your device\'s home screen</string>
+    <string name="pref_assistant_widget_summary">Add widget to access the assistant on your device\’s home screen</string>
 
     <string name="pref_assistant_vibration">Vibrate when opening</string>
     <string name="pref_assistant_vibration_summary">Provides haptic feedback when opening the assistant. This may be affected by system settings</string>
@@ -99,6 +102,9 @@
     <!--digital/selector/open assistant-->
 
     <string name="assistant_select">Select assistant</string>
+    <!--selector assistant search-->
+    <string name="assistant_search_hint">Search assistants</string>
+    <string name="assistant_search_empty">No assistants found</string>
     <!--selector assistant categories-->
     <string name="assistant_category_pin">Pinned</string>
     <string name="assistant_category_recent">Recently used</string>
@@ -119,9 +125,9 @@
     <!--tutorial digital assistant-->
 
     <string name="tutorial_edge_gestures">Using screen edge gestures</string>
-    <string name="tutorial_edge_gestures_summary">On devices using gesture navigation (Android 10+), swipe up and in from either of the bottom corners of the screen. A glowing arc will appear from the corner to confirm that the digital assistant is opening. For this to work, <b>Gesture navigation</b> must be selected as the system navigation mode in your device\'s settings</string>
+    <string name="tutorial_edge_gestures_summary">On devices using gesture navigation (Android 10+), swipe up and in from either of the bottom corners of the screen. A glowing arc will appear from the corner to confirm that the digital assistant is opening. For this to work, <b>Gesture navigation</b> must be selected as the system navigation mode in your device\’s settings</string>
     <string name="tutorial_home_button">Using the home navigation button</string>
-    <string name="tutorial_home_button_summary">If your device uses the classic 3-button navigation, press and hold the center home button for a moment. This action is typically reserved to open the digital assistant. If this action performs a different function, it may have been customized by your device\'s manufacturer</string>
+    <string name="tutorial_home_button_summary">If your device uses the classic 3-button navigation, press and hold the center home button for a moment. This action is typically reserved to open the digital assistant. If this action performs a different function, it may have been customized by your device\’s manufacturer</string>
     <string name="tutorial_power_button">Using the power button</string>
     <string name="tutorial_power_button_summary">Many devices allow you to open the digital assistant by long-pressing the power button. If the power off/restart menu appears when you do this, the feature is likely disabled. You can often enable it in your system settings, typically under a path like <b>Settings &gt; System &gt; Gestures &gt; Press and hold power button</b></string>
     <string name="tutorial_headset_button">Using wired and bluetooth headsets</string>

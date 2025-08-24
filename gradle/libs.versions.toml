@@ -1,11 +1,11 @@
 [versions]
-agp = "8.12.0"
-kotlin = "2.2.0"
-kotlinReflect = "2.1.20"
+agp = "8.12.1"
+kotlin = "2.2.10"
+kotlinReflect = "2.2.0"
 preference = "1.2.1"
 appcompat = "1.7.1"
 navigation = "2.9.3"
-material = "1.14.0-alpha03"
+material = "1.14.0-alpha04"
 aboutLibraries = "12.2.4"
 
 [libraries]

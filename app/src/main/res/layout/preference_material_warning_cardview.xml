@@ -10,7 +10,7 @@
     android:layout_marginBottom="14dp"
     android:clickable="true"
     app:cardBackgroundColor="?attr/colorErrorContainer"
-    app:cardCornerRadius="18dp">
+    app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

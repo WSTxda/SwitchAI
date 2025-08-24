@@ -15,6 +15,7 @@
         <item>@string/home</item>
         <item>@string/kimi</item>
         <item>@string/le_chat</item>
+        <item>@string/lumo</item>
         <item>@string/manus</item>
         <item>@string/marusya</item>
         <item>@string/meta</item>
@@ -41,6 +42,7 @@
         <item>home_assistant</item>
         <item>kimi_assistant</item>
         <item>le_chat_assistant</item>
+        <item>lumo_assistant</item>
         <item>manus_assistant</item>
         <item>marusya_assistant</item>
         <item>meta_assistant</item>
@@ -69,6 +71,7 @@
         <item>home_assistant</item>
         <item>kimi_assistant</item>
         <item>le_chat_assistant</item>
+        <item>lumo_assistant</item>
         <item>manus_assistant</item>
         <item>marusya_assistant</item>
         <item>meta_assistant</item>

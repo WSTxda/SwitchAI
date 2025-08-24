@@ -163,6 +163,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.LumoAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/lumo"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.ManusAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

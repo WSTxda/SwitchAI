@@ -50,10 +50,12 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 *   **[Home Assistant](https://play.google.com/store/apps/details?id=io.homeassistant.companion.android)** by Home Assistant
 *   **[Kimi](https://play.google.com/store/apps/details?id=com.moonshot.kimichat)** by Moonshot AI
 *   **[Le Chat](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI
+*   **[Lumo](https://play.google.com/store/apps/details?id=me.proton.android.lumo)** by Proton
 *   **[Manus](https://play.google.com/store/apps/details?id=tech.butterfly.app)** by Butterfly Tech
 *   **[Marusya](https://play.google.com/store/apps/details?id=ru.mail.search.electroscope)** by VK
 *   **[Meta AI](https://play.google.com/store/apps/details?id=com.facebook.stella)** by Meta
 *   **[MiniMax](https://play.google.com/store/apps/details?id=com.minimax.ai)** by MiniMax AI
+*   **[oo.ai](https://play.google.com/store/apps/details?id=ai.oo.delphi)** by Open Research
 *   **[Perplexity](https://play.google.com/store/apps/details?id=ai.perplexity.app.android)** by Perplexity AI
 *   **[Qingyan](https://chatglm.cn/download?fr=web_home)** by Baidu
 *   **[Qwen](https://play.google.com/store/apps/details?id=ai.qwenlm.chat.android)** by Alibaba Cloud

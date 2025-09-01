@@ -253,6 +253,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.VeniceAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/venice"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.WenxinYiyanAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

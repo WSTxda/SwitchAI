@@ -25,6 +25,7 @@
         <item>@string/qingyan</item>
         <item>@string/qwen</item>
         <item>@string/ultimate_alexa</item>
+        <item>@string/venice</item>
         <item>@string/wenxin_yiyan</item>
         <item>@string/yuanbao</item>
         <item>@string/zapia</item>
@@ -53,6 +54,7 @@
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>ultimate_alexa_assistant</item>
+        <item>venice_assistant</item>
         <item>wenxin_yiyan_assistant</item>
         <item>yuanbao_assistant</item>
         <item>zapia_assistant</item>
@@ -83,6 +85,7 @@
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>ultimate_alexa_assistant</item>
+        <item>venice_assistant</item>
         <item>wenxin_yiyan_assistant</item>
         <item>yuanbao_assistant</item>
         <item>zapia_assistant</item>

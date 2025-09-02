@@ -17,11 +17,14 @@
             style="?attr/collapsingToolbarLayoutLargeStyle"
             android:layout_width="match_parent"
             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
+            app:collapsedTitleTextAppearance="?attr/textAppearanceTitleLargeEmphasized"
+            app:collapsedTitleTextColor="?attr/colorOnSurface"
             app:expandedTitleMarginBottom="24dp"
             app:expandedTitleMarginEnd="24dp"
             app:expandedTitleMarginStart="24dp"
             app:expandedTitleMarginTop="96dp"
-            app:expandedTitleTextAppearance="?attr/collapsedTitleTextAppearance"
+            app:expandedTitleTextAppearance="?attr/textAppearanceHeadlineLargeEmphasized"
+            app:expandedTitleTextColor="?attr/colorOnSurface"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:maxLines="4"
             app:titleCollapseMode="scale">
@@ -32,6 +35,7 @@
                 android:layout_height="?attr/actionBarSize"
                 android:layout_marginHorizontal="4dp"
                 android:elevation="0dp"
+                android:theme="@style/ThemeOverlay.Material3.Toolbar.CircleNavigationButton"
                 app:layout_collapseMode="pin"
                 tools:title="@string/app_settings" />
 

@@ -4,6 +4,10 @@
 
     <color name="divider_color">#1FFFFFFF</color>
 
+    <!--app search bar-->
+
+    <color name="search_bar_background">#283041</color>
+
     <!--app widget-->
 
     <color name="widget_icon_color_primary">#0F2F60</color>

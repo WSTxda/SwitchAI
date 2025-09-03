@@ -1,5 +1,9 @@
 <resources>
 
+    <!--app search bar-->
+
+    <color name="search_bar_background">@android:color/system_accent2_800</color>
+
     <!--app widget-->
 
     <color name="widget_icon_color_primary">@android:color/system_accent1_800</color>

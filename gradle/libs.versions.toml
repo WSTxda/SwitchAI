@@ -1,5 +1,5 @@
 [versions]
-agp = "8.12.1"
+agp = "8.12.2"
 kotlin = "2.2.10"
 kotlinReflect = "2.2.0"
 preference = "1.2.1"

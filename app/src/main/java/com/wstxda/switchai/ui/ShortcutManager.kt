@@ -31,12 +31,14 @@ internal class ShortcutManager(private val context: Context) {
                 id = "assistant_shortcut",
                 label = prefs.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
                     ?.let { resources.getAssistantName(it) },
+                longLabel = null,
                 iconRes = prefs.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
                     ?.let { resources.getAssistantIcon(it) },
                 target = AssistantService::class.java
             ), createShortcut(
                 id = "assistant_selector_shortcut",
-                label = context.getString(R.string.assistant_label_select),
+                label = context.getString(R.string.assistant_label_selector),
+                longLabel = context.getString(R.string.assistant_label_long_selector),
                 iconRes = R.drawable.ic_select,
                 target = AssistantSelectorActivity::class.java
             )
@@ -46,13 +48,14 @@ internal class ShortcutManager(private val context: Context) {
     }
 
     private fun createShortcut(
-        id: String, label: String?, iconRes: Int?, target: Class<*>
+        id: String, label: String?, longLabel: String?, iconRes: Int?, target: Class<*>
     ): ShortcutInfo? {
         if (label.isNullOrEmpty() || iconRes == null) return null
 
         val intent = Intent(context, target).setAction(Intent.ACTION_VIEW)
-        return ShortcutInfo.Builder(context, id).setShortLabel(label).setLongLabel(label)
-            .setIcon(createAdaptiveIcon(iconRes)).setIntent(intent).build()
+        return ShortcutInfo.Builder(context, id).setShortLabel(label)
+            .setLongLabel(longLabel ?: label).setIcon(createAdaptiveIcon(iconRes)).setIntent(intent)
+            .build()
     }
 
     private fun createAdaptiveIcon(iconRes: Int): Icon {

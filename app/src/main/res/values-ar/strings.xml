@@ -135,9 +135,10 @@
     <!--app shortcut/tile-->
 
     <string name="assistant_label">المساعد</string>
-    <string name="assistant_label_long">فتح المساعد</string>
     <string name="assistant_label_open">افتح</string>
     <string name="assistant_label_select">اختر</string>
+    <string name="assistant_label_selector">المحدد</string>
+    <string name="assistant_label_long_selector">فتح المحدد</string>
 
     <!--app quick settings tile-->
 

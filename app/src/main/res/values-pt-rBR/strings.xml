@@ -135,9 +135,10 @@
     <!--app shortcut/tile-->
 
     <string name="assistant_label">Assistente</string>
-    <string name="assistant_label_long">Abrir assistente</string>
     <string name="assistant_label_open">Abrir</string>
     <string name="assistant_label_select">Selecionar</string>
+    <string name="assistant_label_selector">Seletor</string>
+    <string name="assistant_label_long_selector">Abrir seletor</string>
 
     <!--app quick settings tile-->
 

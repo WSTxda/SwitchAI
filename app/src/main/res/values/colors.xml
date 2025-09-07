@@ -3,6 +3,7 @@
     <!--app icon-->
 
     <color name="ic_shortcut_background">#FFFFFF</color>
+    <color name="ic_shortcut_foreground">#1A73E8</color>
 
     <!--app divider-->
 

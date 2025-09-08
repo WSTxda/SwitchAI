@@ -20,7 +20,6 @@
         app:layout="@layout/preference_material_assistant_cardview"
         app:useSimpleSummaryProvider="true" />
 
-
     <PreferenceCategory
         android:layout="@layout/preference_material_category"
         android:title="@string/pref_category_selector"

@@ -8,7 +8,6 @@ import com.wstxda.switchai.ui.ThemeManager
 import com.wstxda.switchai.utils.Constants
 
 class SwitchAI : Application(), SharedPreferences.OnSharedPreferenceChangeListener {
-
     private val prefs by lazy { PreferenceHelper(this) }
     private val shortcuts by lazy { ShortcutManager(this) }
 
@@ -18,8 +17,7 @@ class SwitchAI : Application(), SharedPreferences.OnSharedPreferenceChangeListen
             prefs.getString(Constants.THEME_PREF_KEY, Constants.THEME_SYSTEM)
                 ?: Constants.THEME_SYSTEM
         )
-
-        shortcuts.updateShortcuts()
+        shortcuts.updateDynamicShortcuts()
         prefs.registerListener(this)
     }
 
@@ -29,6 +27,8 @@ class SwitchAI : Application(), SharedPreferences.OnSharedPreferenceChangeListen
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        if (key == Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY) shortcuts.updateShortcuts()
+        if (key == Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY) {
+            shortcuts.updateDynamicShortcuts()
+        }
     }
 }

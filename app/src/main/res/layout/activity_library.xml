@@ -19,7 +19,7 @@
             android:layout_height="?attr/collapsingToolbarLayoutLargeSize"
             app:collapsedTitleTextAppearance="?attr/textAppearanceTitleLargeEmphasized"
             app:collapsedTitleTextColor="?attr/colorOnSurface"
-            app:expandedTitleMarginBottom="24dp"
+            app:expandedTitleMarginBottom="48dp"
             app:expandedTitleMarginEnd="24dp"
             app:expandedTitleMarginStart="24dp"
             app:expandedTitleMarginTop="96dp"

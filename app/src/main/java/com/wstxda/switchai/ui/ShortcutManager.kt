@@ -70,7 +70,7 @@ class ShortcutManager(private val context: Context) {
 
     private fun createAdaptiveIcon(iconRes: Int): IconCompat {
         val size = dp108
-        val inset = (size * 0.50f).toInt()
+        val inset = (size * 0.54f).toInt()
         val background =
             ContextCompat.getColor(context, R.color.ic_shortcut_background).toDrawable()
         val foreground = ContextCompat.getDrawable(context, iconRes) ?: ContextCompat.getDrawable(

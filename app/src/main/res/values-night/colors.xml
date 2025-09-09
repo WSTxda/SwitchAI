@@ -1,5 +1,14 @@
 <resources>
 
+    <!--app icon-->
+
+    <!--splash icon-->
+    <color name="ic_splash_stars">#FFFFFF</color>
+    <color name="ic_splash_dots">#8AB4F8</color>
+    <!--shortcuts icon-->
+    <color name="ic_shortcut_background">#202124</color>
+    <color name="ic_shortcut_icon">#8AB4F8</color>
+
     <!--app divider-->
 
     <color name="divider_color">#1FFFFFFF</color>

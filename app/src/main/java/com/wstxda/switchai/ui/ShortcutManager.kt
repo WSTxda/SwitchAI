@@ -76,7 +76,7 @@ class ShortcutManager(private val context: Context) {
         val foreground = ContextCompat.getDrawable(context, iconRes) ?: ContextCompat.getDrawable(
             context, R.drawable.ic_assistant_default
         )!!
-        foreground.mutate().setTint(ContextCompat.getColor(context, R.color.ic_shortcut_foreground))
+        foreground.mutate().setTint(ContextCompat.getColor(context, R.color.ic_shortcut_icon))
         val insetDrawable = InsetDrawable(foreground, inset)
         val adaptiveIcon = AdaptiveIconDrawable(background, insetDrawable)
         val bitmap = createBitmap(size, size).apply {

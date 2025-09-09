@@ -5,6 +5,7 @@ kotlinReflect = "2.2.0"
 preference = "1.2.1"
 appcompat = "1.7.1"
 navigation = "2.9.3"
+splashScreen = "1.0.1"
 material = "1.14.0-alpha04"
 aboutLibraries = "12.2.4"
 
@@ -13,6 +14,7 @@ kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref =
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-navigation = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigation" }
+androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 aboutlibraries-view = { module = "com.mikepenz:aboutlibraries", version.ref = "aboutLibraries" }
 

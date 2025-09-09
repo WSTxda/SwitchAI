@@ -48,6 +48,7 @@ dependencies {
     implementation(libs.androidx.preference)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.navigation)
+    implementation(libs.androidx.splashscreen)
     implementation(libs.google.material)
     implementation(libs.aboutlibraries.view)
 }

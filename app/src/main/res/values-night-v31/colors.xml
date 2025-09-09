@@ -1,5 +1,14 @@
 <resources>
 
+    <!--app icon-->
+
+    <!--splash icon-->
+    <color name="ic_splash_stars">@android:color/system_accent1_200</color>
+    <color name="ic_splash_dots">@android:color/system_accent1_700</color>
+    <!--shortcuts icon-->
+    <color name="ic_shortcut_background">@android:color/system_accent2_700</color>
+    <color name="ic_shortcut_icon">@android:color/system_accent2_100</color>
+
     <!--app search bar-->
 
     <color name="search_bar_background">@android:color/system_accent2_800</color>

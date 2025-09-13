@@ -1,10 +1,10 @@
 [versions]
-agp = "8.12.2"
-kotlin = "2.2.10"
+agp = "8.13.0"
+kotlin = "2.2.20"
 kotlinReflect = "2.2.0"
 preference = "1.2.1"
 appcompat = "1.7.1"
-navigation = "2.9.3"
+navigation = "2.9.4"
 splashScreen = "1.0.1"
 material = "1.14.0-alpha04"
 aboutLibraries = "12.2.4"

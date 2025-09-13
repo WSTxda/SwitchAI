@@ -8,7 +8,7 @@
     <!--used to check if an assistant app is currently installed or not in (PackageChecker.kt)-->
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
-        tools:ignore="QueryAllPackagesPermission" />
+        tools:ignore="PackageVisibilityPolicy,QueryAllPackagesPermission" />
 
     <uses-permission android:name="android.permission.VIBRATE" />
 

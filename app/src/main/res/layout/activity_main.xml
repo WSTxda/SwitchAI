@@ -23,7 +23,7 @@
             app:expandedTitleMarginEnd="24dp"
             app:expandedTitleMarginStart="24dp"
             app:expandedTitleMarginTop="96dp"
-            app:expandedTitleTextAppearance="?attr/textAppearanceHeadlineLargeEmphasized"
+            app:expandedTitleTextAppearance="?attr/textAppearanceDisplaySmallEmphasized"
             app:expandedTitleTextColor="?attr/colorOnSurface"
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
             app:maxLines="4"

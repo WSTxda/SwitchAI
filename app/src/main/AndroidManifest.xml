@@ -370,6 +370,13 @@
                 android:resource="@xml/widget_assistant_invisible" />
         </receiver>
 
+        <!--assistant widget list service-->
+
+        <service
+            android:name=".widget.utils.WidgetAssistantListService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <!--assistant quick settings tile service-->
 
         <service

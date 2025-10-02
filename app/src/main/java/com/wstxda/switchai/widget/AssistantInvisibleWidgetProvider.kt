@@ -15,7 +15,7 @@ class AssistantInvisibleWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(
         context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray,
     ) {
-        for (appWidgetId in appWidgetIds) {
+        appWidgetIds.forEach { appWidgetId ->
             updateWidget(context, appWidgetManager, appWidgetId)
         }
     }
@@ -24,6 +24,7 @@ class AssistantInvisibleWidgetProvider : AppWidgetProvider() {
         context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, newOptions: Bundle,
     ) {
         updateWidget(context, appWidgetManager, appWidgetId)
+        super.onAppWidgetOptionsChanged(context, appWidgetManager, appWidgetId, newOptions)
     }
 
     private fun updateWidget(
@@ -40,19 +41,22 @@ class AssistantInvisibleWidgetProvider : AppWidgetProvider() {
 
         val views = RemoteViews(context.packageName, layoutId)
 
+        val pendingIntent = createClickPendingIntent(context, appWidgetId)
+        views.setOnClickPendingIntent(R.id.widget_assistant_invisible, pendingIntent)
+
+        appWidgetManager.updateAppWidget(appWidgetId, views)
+    }
+
+    private fun createClickPendingIntent(context: Context, appWidgetId: Int): PendingIntent {
         val intent = Intent(context, DigitalAssistantService::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
 
-        val pendingIntent = PendingIntent.getActivity(
+        return PendingIntent.getActivity(
             context,
-            appWidgetId + 100000,
+            appWidgetId,
             intent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
-
-        views.setOnClickPendingIntent(R.id.widget_assistant_invisible, pendingIntent)
-
-        appWidgetManager.updateAppWidget(appWidgetId, views)
     }
 }

@@ -21,7 +21,8 @@
 
     <color name="widget_icon_color_primary">#0F2F60</color>
     <color name="widget_icon_color_secondary">#583E5B</color>
-    <color name="widget_background_color">#1E1F25</color>
+    <color name="widget_foreground_color">#1E1F25</color>
+    <color name="widget_background_color">#111318</color>
     <color name="widget_background_color_primary">#ADC7FF</color>
     <color name="widget_background_color_secondary">#FBD7FC</color>
 

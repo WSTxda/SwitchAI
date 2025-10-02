@@ -58,8 +58,7 @@ class AssistantTileService : TileService() {
                 subtitle = getString(R.string.assistant_label_select),
             )
         } else {
-            val assistantValue =
-                preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
+            val assistantValue = preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
             val iconRes = assistantResourcesManager.getAssistantIcon(assistantValue)
             val name = assistantResourcesManager.getAssistantName(assistantValue)
 
@@ -68,7 +67,11 @@ class AssistantTileService : TileService() {
             )
         }
 
-        tile.state = Tile.STATE_ACTIVE
+        tile.state = if (isDefaultAssistant()) {
+            Tile.STATE_ACTIVE
+        } else {
+            Tile.STATE_UNAVAILABLE
+        }
         tile.updateTile()
     }
 
@@ -81,4 +84,11 @@ class AssistantTileService : TileService() {
             tile.subtitle = subtitle
         }
     }
+
+    private fun isDefaultAssistant(): Boolean =
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getSystemService(android.app.role.RoleManager::class.java)?.isRoleHeld(android.app.role.RoleManager.ROLE_ASSISTANT) == true
+        } else {
+            preferenceHelper.getBoolean(Constants.IS_ASSIST_SETUP_DONE, false)
+        }
 }

@@ -2,6 +2,7 @@ package com.wstxda.switchai.logic
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 
 class PreferenceHelper(context: Context) {
@@ -15,6 +16,10 @@ class PreferenceHelper(context: Context) {
 
     fun getStringSet(key: String, defaultValue: Set<String>): Set<String> =
         preferences.getStringSet(key, defaultValue) ?: defaultValue
+
+    fun putString(key: String, value: String) {
+        preferences.edit { putString(key, value) }
+    }
 
     fun registerListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         preferences.registerOnSharedPreferenceChangeListener(listener)

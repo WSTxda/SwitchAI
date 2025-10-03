@@ -17,6 +17,7 @@
 
     <color name="widget_icon_color_primary">@android:color/system_accent1_800</color>
     <color name="widget_icon_color_secondary">@android:color/system_accent3_800</color>
+    <color name="widget_foreground_color">@android:color/system_accent2_700</color>
     <color name="widget_background_color">@android:color/system_accent2_800</color>
     <color name="widget_background_color_primary">@android:color/system_accent1_100</color>
     <color name="widget_background_color_secondary">@android:color/system_accent3_100</color>

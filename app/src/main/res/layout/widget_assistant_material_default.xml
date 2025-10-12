@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
-        android:background="@drawable/widget_button_background_primary"
+        android:background="@drawable/widget_button_material_primary"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center">
@@ -27,7 +27,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/assistant_open"
             android:src="@drawable/ic_assistant"
-            android:tint="@color/widget_icon_color_primary"
+            android:tint="@color/widget_primary_container"
             tools:ignore="UseAppTint" />
     </LinearLayout>
 
@@ -36,7 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.5"
-        android:background="@drawable/widget_button_background_secondary"
+        android:background="@drawable/widget_button_material_tertiary"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center">
@@ -47,7 +47,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/assistant_select"
             android:src="@drawable/ic_select"
-            android:tint="@color/widget_icon_color_secondary"
+            android:tint="@color/widget_tertiary_container"
             tools:ignore="UseAppTint" />
     </LinearLayout>
 </LinearLayout>

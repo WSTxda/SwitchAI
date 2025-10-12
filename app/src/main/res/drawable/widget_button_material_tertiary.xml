@@ -2,8 +2,8 @@
     android:color="?android:attr/colorControlHighlight">
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@color/widget_background_color_secondary" />
-            <corners android:radius="28dp" />
+            <solid android:color="@color/widget_tertiary" />
+            <corners android:radius="24dp" />
         </shape>
     </item>
 </ripple>

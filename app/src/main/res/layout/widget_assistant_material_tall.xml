@@ -1,24 +1,23 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/widget_assistant"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/widget_background_material"
-    android:baselineAligned="false"
-    android:gravity="center"
-    android:orientation="horizontal"
-    android:padding="12dp">
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp">
 
     <LinearLayout
         android:id="@+id/button_assistant"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/widget_button_material_primary"
         android:clickable="true"
         android:focusable="true"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/button_assistant_icon"
@@ -43,15 +42,34 @@
             android:textSize="16sp" />
     </LinearLayout>
 
+    <ListView
+        android:id="@+id/assistant_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_assistant"
+        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
+        android:divider="@null"
+        android:paddingBottom="82dp"
+        android:scrollbars="none"
+        tools:listitem="@layout/widget_list_item_assistant"
+        tools:visibility="visible" />
+
     <LinearLayout
         android:id="@+id/button_assistant_select"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.4"
-        android:background="@drawable/widget_button_material_tertiary"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/widget_button_material_tertiary_container"
         android:clickable="true"
+        android:elevation="4dp"
         android:focusable="true"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="12dp">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -59,7 +77,7 @@
             android:adjustViewBounds="true"
             android:contentDescription="@string/assistant_select"
             android:src="@drawable/ic_select"
-            android:tint="@color/widget_tertiary_container"
+            android:tint="@color/widget_on_tertiary_container"
             tools:ignore="UseAppTint" />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

@@ -8,15 +8,18 @@
     android:focusable="true"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:paddingStart="12dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="16dp">
 
     <ImageView
         android:id="@+id/assistant_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginEnd="8dp"
         android:importantForAccessibility="no"
-        android:tint="@color/widget_background_color_primary"
+        android:tint="@color/widget_secondary"
         tools:ignore="UseAppTint"
         tools:src="@drawable/ic_assistant_chatgpt" />
 
@@ -25,8 +28,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:fontFamily="sans-serif-medium"
-        android:textColor="@color/widget_background_color_primary"
-        android:textSize="16sp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/widget_on_secondary_container"
+        android:textSize="14sp"
         tools:text="@string/chatgpt" />
 </LinearLayout>

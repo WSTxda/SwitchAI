@@ -5,8 +5,8 @@
             android:insetTop="2dp"
             android:insetBottom="2dp">
             <shape android:shape="rectangle">
-                <solid android:color="@color/widget_foreground_color" />
-                <corners android:radius="12dp" />
+                <solid android:color="@color/widget_secondary_container" />
+                <corners android:radius="16dp" />
             </shape>
         </inset>
     </item>

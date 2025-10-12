@@ -6,7 +6,6 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.RemoteViews
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantSelectorActivity
@@ -65,6 +64,7 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
         val minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT)
 
         val layoutId = when {
+            minHeight >= 100 -> R.layout.widget_assistant_material_tall
             minWidth < 150 -> R.layout.widget_assistant_material_small
             minWidth >= 300 -> R.layout.widget_assistant_material_wide
             else -> R.layout.widget_assistant_material_default
@@ -85,7 +85,7 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
 
         setupClickIntents(context, appWidgetId, views)
 
-        setupAssistantList(context, appWidgetManager, appWidgetId, views, layoutId, minHeight)
+        setupAssistantList(context, appWidgetManager, appWidgetId, views, layoutId)
 
         appWidgetManager.updateAppWidget(appWidgetId, views)
     }
@@ -121,13 +121,9 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
         appWidgetId: Int,
         views: RemoteViews,
         layoutId: Int,
-        minHeight: Int
     ) {
-        val isWideAndTall = layoutId == R.layout.widget_assistant_material_wide && minHeight > 100
 
-        if (isWideAndTall) {
-            views.setViewVisibility(R.id.assistant_list, View.VISIBLE)
-
+        if (layoutId == R.layout.widget_assistant_material_tall) {
             val serviceIntent = Intent(context, WidgetAssistantListService::class.java)
             @Suppress("DEPRECATION") views.setRemoteAdapter(R.id.assistant_list, serviceIntent)
 
@@ -145,8 +141,6 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
             @Suppress("DEPRECATION") appWidgetManager.notifyAppWidgetViewDataChanged(
                 appWidgetId, R.id.assistant_list
             )
-        } else if (layoutId == R.layout.widget_assistant_material_wide) {
-            views.setViewVisibility(R.id.assistant_list, View.GONE)
         }
     }
 }

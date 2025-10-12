@@ -8,39 +8,42 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.logic.PackageChecker
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 import com.wstxda.switchai.utils.Constants
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
 import kotlinx.coroutines.runBlocking
 
-class WidgetAssistantListService : RemoteViewsService() {
+class WidgetAssistantList(private val context: Context) : RemoteViewsService.RemoteViewsFactory {
 
-    override fun onGetViewFactory(intent: Intent): RemoteViewsFactory {
-        return WidgetAssistantListFactory(this.applicationContext)
-    }
-}
-
-class WidgetAssistantListFactory(private val context: Context) : RemoteViewsService.RemoteViewsFactory {
-
+    @Volatile
     private var assistants: List<String> = emptyList()
-    private lateinit var packageChecker: PackageChecker
-    private lateinit var assistantResourcesManager: AssistantResourcesManager
+    private val packageChecker: PackageChecker by lazy { PackageChecker(context) }
+    private val assistantResourcesManager: AssistantResourcesManager by lazy {
+        AssistantResourcesManager(
+            context
+        )
+    }
+    private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
 
     override fun onCreate() {
-        packageChecker = PackageChecker(context)
-        assistantResourcesManager = AssistantResourcesManager(context)
     }
 
     override fun onDataSetChanged() {
         runBlocking {
-            assistants = packageChecker.installedAssistants().toList()
+            fetchAssistants()
         }
     }
 
-    override fun onDestroy() {
-        // Do nothing for now :)
+    private suspend fun fetchAssistants() {
+        assistants = packageChecker.installedAssistants().toList()
     }
 
-    override fun getCount(): Int {
-        return assistants.size
+    override fun onDestroy() {
+        scope.cancel()
     }
+
+    override fun getCount(): Int = assistants.size
 
     override fun getViewAt(position: Int): RemoteViews {
         val assistant = assistants[position]
@@ -58,19 +61,8 @@ class WidgetAssistantListFactory(private val context: Context) : RemoteViewsServ
         }
     }
 
-    override fun getLoadingView(): RemoteViews? {
-        return null
-    }
-
-    override fun getViewTypeCount(): Int {
-        return 1
-    }
-
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
-
-    override fun hasStableIds(): Boolean {
-        return true
-    }
+    override fun getLoadingView(): RemoteViews? = null
+    override fun getViewTypeCount(): Int = 1
+    override fun getItemId(position: Int): Long = position.toLong()
+    override fun hasStableIds(): Boolean = true
 }

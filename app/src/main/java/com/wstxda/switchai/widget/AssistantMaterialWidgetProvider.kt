@@ -14,6 +14,7 @@ import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.services.AssistantService
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 import com.wstxda.switchai.utils.Constants
+import com.wstxda.switchai.widget.utils.WidgetAssistantListService
 
 class AssistantMaterialWidgetProvider : AppWidgetProvider() {
 
@@ -29,28 +30,31 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
         context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int, newOptions: Bundle,
     ) {
         updateWidget(context, appWidgetManager, appWidgetId)
+        super.onAppWidgetOptionsChanged(context, appWidgetManager, appWidgetId, newOptions)
     }
 
     override fun onReceive(context: Context, intent: Intent) {
-        super.onReceive(context, intent)
         if (intent.action == Constants.ACTION_ASSISTANT_SELECTED) {
             val selectedAssistant =
                 intent.getStringExtra(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY)
-            if (selectedAssistant != null) {
+            val appWidgetId = intent.getIntExtra(
+                AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID
+            )
+
+            if (selectedAssistant != null && appWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
                 val preferenceHelper = PreferenceHelper(context)
                 preferenceHelper.putString(
                     Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, selectedAssistant
                 )
 
                 val appWidgetManager = AppWidgetManager.getInstance(context)
-                val thisAppWidget = intent.getIntExtra(
-                    AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID
+                updateWidget(context, appWidgetManager, appWidgetId)
+                @Suppress("DEPRECATION") appWidgetManager.notifyAppWidgetViewDataChanged(
+                    appWidgetId, R.id.assistant_list
                 )
-                if (thisAppWidget != AppWidgetManager.INVALID_APPWIDGET_ID) {
-                    updateWidget(context, appWidgetManager, thisAppWidget)
-                }
             }
         }
+        super.onReceive(context, intent)
     }
 
     private fun updateWidget(
@@ -67,42 +71,63 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
         }
 
         val views = RemoteViews(context.packageName, layoutId)
-
         val preferenceHelper = PreferenceHelper(context)
+        val assistantResourcesManager = AssistantResourcesManager(context)
+
         val assistantValue =
             preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
-        val assistantResourcesManager = AssistantResourcesManager(context)
-        val assistantIconRes = assistantResourcesManager.getAssistantIcon(assistantValue)
-        val assistantName = assistantResourcesManager.getAssistantName(assistantValue)
+        views.setImageViewResource(
+            R.id.button_assistant_icon, assistantResourcesManager.getAssistantIcon(assistantValue)
+        )
+        views.setTextViewText(
+            R.id.button_assistant_title, assistantResourcesManager.getAssistantName(assistantValue)
+        )
 
-        views.setImageViewResource(R.id.button_assistant_icon, assistantIconRes)
-        views.setTextViewText(R.id.button_assistant_title, assistantName)
+        setupClickIntents(context, appWidgetId, views)
 
+        setupAssistantList(context, appWidgetManager, appWidgetId, views, layoutId, minHeight)
+
+        appWidgetManager.updateAppWidget(appWidgetId, views)
+    }
+
+    private fun setupClickIntents(context: Context, appWidgetId: Int, views: RemoteViews) {
         val assistantIntent = Intent(context, AssistantService::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
         val assistantPendingIntent = PendingIntent.getActivity(
             context,
-            appWidgetId + 200000,
+            appWidgetId * 10 + 1,
             assistantIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        val assistantSelectorIntent = Intent(context, AssistantSelectorActivity::class.java).apply {
+        val selectorIntent = Intent(context, AssistantSelectorActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
-        val assistantSelectorPendingIntent = PendingIntent.getActivity(
+        val selectorPendingIntent = PendingIntent.getActivity(
             context,
-            appWidgetId + 210000,
-            assistantSelectorIntent,
+            appWidgetId * 10 + 2,
+            selectorIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
         views.setOnClickPendingIntent(R.id.button_assistant, assistantPendingIntent)
-        views.setOnClickPendingIntent(R.id.button_assistant_select, assistantSelectorPendingIntent)
+        views.setOnClickPendingIntent(R.id.button_assistant_select, selectorPendingIntent)
+    }
 
-        if (layoutId == R.layout.widget_assistant_material_wide && minHeight > 50) {
+    private fun setupAssistantList(
+        context: Context,
+        appWidgetManager: AppWidgetManager,
+        appWidgetId: Int,
+        views: RemoteViews,
+        layoutId: Int,
+        minHeight: Int
+    ) {
+        val isWideAndTall = layoutId == R.layout.widget_assistant_material_wide && minHeight > 100
+
+        if (isWideAndTall) {
             views.setViewVisibility(R.id.assistant_list, View.VISIBLE)
+
             val serviceIntent = Intent(context, WidgetAssistantListService::class.java)
             @Suppress("DEPRECATION") views.setRemoteAdapter(R.id.assistant_list, serviceIntent)
 
@@ -123,7 +148,5 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
         } else if (layoutId == R.layout.widget_assistant_material_wide) {
             views.setViewVisibility(R.id.assistant_list, View.GONE)
         }
-
-        appWidgetManager.updateAppWidget(appWidgetId, views)
     }
 }

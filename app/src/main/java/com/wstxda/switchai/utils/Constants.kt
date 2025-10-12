@@ -54,6 +54,7 @@ object Constants {
     const val CAT_PINNED_ASSISTANTS_KEY = "pinned_assistants"
     const val CAT_RECENTLY_USED_ASSISTANTS_KEY = "recently_used_assistants"
 
+    // Widget Material assistant action
 
     const val ACTION_ASSISTANT_SELECTED = "com.wstxda.switchai.ACTION_ASSISTANT_SELECTED"
 

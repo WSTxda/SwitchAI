@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/widget_background_material"
-    android:baselineAligned="false"
     android:orientation="vertical"
     android:padding="12dp">
 
@@ -18,13 +17,14 @@
         <LinearLayout
             android:id="@+id/button_assistant"
             android:layout_width="0dp"
-            android:layout_height="76dp"
+            android:layout_height="match_parent"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
             android:background="@drawable/widget_button_background_primary"
             android:clickable="true"
             android:focusable="true"
-            android:gravity="center">
+            android:gravity="center"
+            android:minHeight="72dp">
 
             <ImageView
                 android:id="@+id/button_assistant_icon"
@@ -52,12 +52,13 @@
         <LinearLayout
             android:id="@+id/button_assistant_select"
             android:layout_width="0dp"
-            android:layout_height="76dp"
+            android:layout_height="match_parent"
             android:layout_weight="0.4"
             android:background="@drawable/widget_button_background_secondary"
             android:clickable="true"
             android:focusable="true"
-            android:gravity="center">
+            android:gravity="center"
+            android:minHeight="72dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -78,6 +79,7 @@
         android:layout_weight="1"
         android:divider="@null"
         android:scrollbars="none"
+        android:visibility="gone"
         tools:listitem="@layout/widget_list_item_assistant"
         tools:visibility="visible" />
 </LinearLayout>

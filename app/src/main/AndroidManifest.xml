@@ -373,7 +373,7 @@
         <!--assistant widget list service-->
 
         <service
-            android:name=".widget.WidgetAssistantListService"
+            android:name=".widget.utils.WidgetAssistantListService"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 

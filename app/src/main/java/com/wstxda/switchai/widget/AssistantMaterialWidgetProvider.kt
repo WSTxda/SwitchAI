@@ -61,10 +61,11 @@ class AssistantMaterialWidgetProvider : AppWidgetProvider() {
     ) {
         val options = appWidgetManager.getAppWidgetOptions(appWidgetId)
         val minWidth = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH)
-        val minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT)
+//        val minHeight = options.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT)
 
         val layoutId = when {
-            minHeight >= 100 -> R.layout.widget_assistant_material_tall
+            // TODO: Need create logic for tall widget assistant list click action, current do nothing. so it's disabled for now
+//            minHeight >= 100 -> R.layout.widget_assistant_material_tall
             minWidth < 150 -> R.layout.widget_assistant_material_small
             minWidth >= 300 -> R.layout.widget_assistant_material_wide
             else -> R.layout.widget_assistant_material_default

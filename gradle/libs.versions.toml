@@ -4,10 +4,10 @@ kotlin = "2.2.20"
 kotlinReflect = "2.2.0"
 preference = "1.2.1"
 appcompat = "1.7.1"
-navigation = "2.9.4"
+navigation = "2.9.5"
 splashScreen = "1.0.1"
-material = "1.14.0-alpha04"
-aboutLibraries = "12.2.4"
+material = "1.14.0-alpha05"
+aboutLibraries = "13.0.0"
 
 [libraries]
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect"}
@@ -21,4 +21,4 @@ aboutlibraries-view = { module = "com.mikepenz:aboutlibraries", version.ref = "a
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-aboutLibraries = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "aboutLibraries" }
+aboutLibraries = { id = "com.mikepenz.aboutlibraries.plugin.android", version.ref = "aboutLibraries" }

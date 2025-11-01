@@ -36,7 +36,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    private val pinnedAssistantKeys = mutableSetOf<String>()
+    private val pinnedAssistantKeys = mutableListOf<String>()
     private val recentlyUsedAssistants = mutableListOf<Pair<String, Long>>()
 
     private val assistantStatePreferences by lazy {
@@ -116,13 +116,20 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
                 } else {
                     pinnedAssistantKeys.add(assistantKey)
                 }
-                assistantStatePreferences.edit {
-                    putStringSet(Constants.CAT_PINNED_ASSISTANTS_KEY, pinnedAssistantKeys)
-                }
+                savePinnedAssistantsOrder()
             }
 
             val newCategorizedList = buildCategorizedList(updatedAssistantItems)
+            allAssistantItems = newCategorizedList
             _assistantItems.value = newCategorizedList
+        }
+    }
+
+    fun updatePinnedAssistantsOrder(newOrder: List<AssistantItem>) {
+        viewModelScope.launch(Dispatchers.IO) {
+            pinnedAssistantKeys.clear()
+            pinnedAssistantKeys.addAll(newOrder.map { it.key })
+            savePinnedAssistantsOrder()
         }
     }
 
@@ -140,12 +147,33 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         }
     }
 
+    private fun savePinnedAssistantsOrder() {
+        assistantStatePreferences.edit {
+            putString(Constants.CAT_PINNED_ASSISTANTS_KEY, pinnedAssistantKeys.joinToString(","))
+        }
+    }
+
     private fun loadStateFromPreferences() {
-        val loadedPinnedKeys = assistantStatePreferences.getStringSet(
-            Constants.CAT_PINNED_ASSISTANTS_KEY, emptySet()
-        ) ?: emptySet()
-        pinnedAssistantKeys.clear()
-        pinnedAssistantKeys.addAll(loadedPinnedKeys)
+        val pinnedAssistantsValue =
+            assistantStatePreferences.all[Constants.CAT_PINNED_ASSISTANTS_KEY]
+
+        when (pinnedAssistantsValue) {
+            is Set<*> -> {
+                pinnedAssistantKeys.clear()
+                pinnedAssistantKeys.addAll(pinnedAssistantsValue.mapNotNull { it as? String })
+                savePinnedAssistantsOrder()
+            }
+
+            is String -> {
+                pinnedAssistantKeys.clear()
+                pinnedAssistantKeys.addAll(
+                    pinnedAssistantsValue.split(',').filter { it.isNotEmpty() })
+            }
+
+            else -> {
+                pinnedAssistantKeys.clear()
+            }
+        }
 
         val recentJsonString = assistantStatePreferences.getString(
             Constants.CAT_RECENTLY_USED_ASSISTANTS_KEY, null
@@ -186,11 +214,13 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         val context = getApplication<Application>().applicationContext
         val (installedAssistants, notInstalledAssistants) = assistants.partition { it.isInstalled }
         return buildList {
-            val groupedByPinned = installedAssistants.groupBy { it.isPinned }
-            val pinnedItems = (groupedByPinned[true] ?: emptyList()).sortedBy { it.name }
-                .map { AssistantSelectorRecyclerView.AssistantSelector(it) }
+            val pinnedAssistants = installedAssistants.filter { it.isPinned }
+            val unpinnedItems = installedAssistants.filterNot { it.isPinned }
 
-            val unpinnedItems = groupedByPinned[false] ?: emptyList()
+            val pinnedItems =
+                pinnedAssistantKeys.mapNotNull { key -> pinnedAssistants.find { it.key == key } }
+                    .map { AssistantSelectorRecyclerView.AssistantSelector(it) }
+
             val recentKeys = recentlyUsedAssistants.map { it.first }.toSet()
             val (recentItems, otherItems) = unpinnedItems.partition { it.key in recentKeys }
 

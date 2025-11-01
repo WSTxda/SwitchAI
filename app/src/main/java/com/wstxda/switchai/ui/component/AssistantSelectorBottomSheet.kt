@@ -11,12 +11,15 @@ import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.wstxda.switchai.data.AssistantItem
 import com.wstxda.switchai.R
 import com.wstxda.switchai.databinding.FragmentAssistantDialogBinding
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.ui.adapter.AssistantSelectorAdapter
+import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView
 import com.wstxda.switchai.utils.AssistantsMap
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.AssistantSelectorViewModel
@@ -42,6 +45,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         setupRecyclerView()
         setupObservers()
         setupSearch()
+        setupDragAndDrop()
     }
 
     private fun setupSearch() {
@@ -65,7 +69,6 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         }, onPinClicked = { assistantKey ->
             viewModel.togglePinAssistant(assistantKey)
         })
-
         binding.assistantsRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = assistantSelectorAdapter
@@ -101,6 +104,59 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
                 updateDividerVisibility(canScrollUp, canScrollDown)
             }
         })
+    }
+
+    private fun setupDragAndDrop() {
+        val callback = PinnedItemDragCallback(
+            assistantSelectorAdapter
+        ) { updatedList ->
+            viewModel.updatePinnedAssistantsOrder(updatedList)
+        }
+        ItemTouchHelper(callback).attachToRecyclerView(binding.assistantsRecyclerView)
+    }
+
+    private class PinnedItemDragCallback(
+        private val adapter: AssistantSelectorAdapter,
+        private val onDragFinished: (List<AssistantItem>) -> Unit
+    ) : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN, 0) {
+
+        override fun getDragDirs(
+            recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder
+        ): Int {
+            val item = adapter.currentList.getOrNull(viewHolder.bindingAdapterPosition)
+            return if (item is AssistantSelectorRecyclerView.AssistantSelector && item.assistantItem.isPinned) {
+                super.getDragDirs(recyclerView, viewHolder)
+            } else 0
+        }
+
+        override fun onMove(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
+            target: RecyclerView.ViewHolder
+        ): Boolean {
+            val fromPosition = viewHolder.bindingAdapterPosition
+            val toPosition = target.bindingAdapterPosition
+            val targetItem = adapter.currentList.getOrNull(toPosition)
+
+            return when {
+                fromPosition == RecyclerView.NO_POSITION || toPosition == RecyclerView.NO_POSITION -> false
+                targetItem is AssistantSelectorRecyclerView.AssistantSelector && targetItem.assistantItem.isPinned -> adapter.moveItem(
+                    fromPosition, toPosition
+                ).let { true }
+
+                else -> false
+            }
+        }
+
+        override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {}
+
+        override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
+            super.clearView(recyclerView, viewHolder)
+            val newPinnedOrder =
+                adapter.currentList.filterIsInstance<AssistantSelectorRecyclerView.AssistantSelector>()
+                    .filter { it.assistantItem.isPinned }.map { it.assistantItem }
+            onDragFinished(newPinnedOrder)
+        }
     }
 
     private fun openAssistant(assistantKey: String) {

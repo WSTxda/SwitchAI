@@ -9,6 +9,7 @@ import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
 import com.wstxda.switchai.ui.viewholder.AssistantSelectorCategoryViewHolder
 import com.wstxda.switchai.ui.viewholder.AssistantSelectorItemViewHolder
 import com.wstxda.switchai.utils.Constants
+import java.util.Collections
 
 class AssistantSelectorAdapter(
     private val onAssistantClicked: (String) -> Unit,
@@ -50,5 +51,11 @@ class AssistantSelectorAdapter(
                 item, onAssistantClicked, onPinClicked
             )
         }
+    }
+
+    fun moveItem(fromPosition: Int, toPosition: Int) {
+        submitList(currentList.toMutableList().apply {
+            Collections.swap(this, fromPosition, toPosition)
+        })
     }
 }

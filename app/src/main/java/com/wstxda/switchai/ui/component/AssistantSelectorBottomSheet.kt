@@ -45,7 +45,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         setupRecyclerView()
         setupObservers()
         setupSearch()
-        setupDragAndDrop()
+        setupReorder()
     }
 
     private fun setupSearch() {
@@ -108,8 +108,8 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         })
     }
 
-    private fun setupDragAndDrop() {
-        val callback = PinnedItemDragCallback(
+    private fun setupReorder() {
+        val callback = PinnedItemReorderCallback(
             assistantSelectorAdapter
         ) { updatedList ->
             viewModel.updatePinnedAssistantsOrder(updatedList)
@@ -117,9 +117,9 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         ItemTouchHelper(callback).attachToRecyclerView(binding.assistantsRecyclerView)
     }
 
-    private class PinnedItemDragCallback(
+    private class PinnedItemReorderCallback(
         private val adapter: AssistantSelectorAdapter,
-        private val onDragFinished: (List<AssistantItem>) -> Unit
+        private val onReorderFinished: (List<AssistantItem>) -> Unit
     ) : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN, 0) {
 
         override fun getDragDirs(
@@ -157,7 +157,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
             val newPinnedOrder =
                 adapter.currentList.filterIsInstance<AssistantSelectorRecyclerView.AssistantSelector>()
                     .filter { it.assistantItem.isPinned }.map { it.assistantItem }
-            onDragFinished(newPinnedOrder)
+            onReorderFinished(newPinnedOrder)
         }
     }
 

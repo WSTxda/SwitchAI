@@ -15,7 +15,11 @@ fun Context.openAssistant(
     errorMessage: Int,
 ): Boolean {
     intents.forEach { intent ->
-        if (openAssistant(intent)) return true
+        if (openAssistant(intent)) {
+            openAssistantVibration()
+            openAssistantSound()
+            return true
+        }
     }
 
     val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
@@ -27,8 +31,6 @@ fun Context.openAssistant(
 
 fun Context.openAssistant(intent: Intent): Boolean = runCatching {
     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    openAssistantVibration()
-    openAssistantSound()
     startActivity(intent)
     true
 }.getOrElse { false }

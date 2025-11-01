@@ -58,6 +58,28 @@
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"
+        android:title="@string/pref_category_voice_input"
+        app:allowDividerAbove="false" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="assistant_voice_input"
+        android:layout="@layout/preference_material_top"
+        android:summary="@string/pref_assistant_voice_input_summary"
+        android:title="@string/pref_assistant_voice_input"
+        app:iconSpaceReserved="false" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:dependency="assistant_voice_input"
+        android:key="assistant_root"
+        android:layout="@layout/preference_material_bottom"
+        android:summary="@string/pref_assistant_root_summary"
+        android:title="@string/pref_assistant_root"
+        app:iconSpaceReserved="false" />
+
+    <PreferenceCategory
+        android:layout="@layout/preference_material_category"
         android:title="@string/pref_category_behavior"
         app:allowDividerAbove="false" />
 
@@ -72,17 +94,9 @@
     <SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="assistant_sound"
-        android:layout="@layout/preference_material_middle"
+        android:layout="@layout/preference_material_bottom"
         android:summary="@string/pref_assistant_sound_summary"
         android:title="@string/pref_assistant_sound"
-        app:iconSpaceReserved="false" />
-
-    <SwitchPreferenceCompat
-        android:defaultValue="false"
-        android:key="assistant_root"
-        android:layout="@layout/preference_material_bottom"
-        android:summary="@string/pref_assistant_root_summary"
-        android:title="@string/pref_assistant_root"
         app:iconSpaceReserved="false" />
 
     <PreferenceCategory

@@ -40,6 +40,7 @@
     <string name="pref_category_shortcuts">Atalhos</string>
     <string name="pref_category_about">Sobre</string>
     <string name="pref_category_behavior">Comportamento</string>
+    <string name="pref_category_voice_input">Entrada de voz</string>
 
     <string name="pref_developer">Desenvolvedor</string>
     <string name="pref_source_code">Repositório com o código fonte</string>
@@ -79,6 +80,9 @@
 
     <string name="pref_assistant_root">Usar permissão root</string>
     <string name="pref_assistant_root_summary">Usar permissão root para ativar a entrada de voz em assistentes específicos e melhorar a usabilidade</string>
+
+    <string name="pref_assistant_voice_input">Usar entrada de voz</string>
+    <string name="pref_assistant_voice_input_summary">Quando ativado, a entrada de voz será utilizada em vez da atividade principal em assistentes suportados</string>
 
     <!--theme selector-->
 

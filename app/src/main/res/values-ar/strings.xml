@@ -40,6 +40,7 @@
     <string name="pref_category_shortcuts">الاختصارات</string>
     <string name="pref_category_about">حول</string>
     <string name="pref_category_behavior">السلوك</string>
+    <string name="pref_category_voice_input">الإدخال الصوتي</string>
 
     <string name="pref_developer">المطور</string>
     <string name="pref_source_code">مستودع كود المصدر</string>
@@ -79,6 +80,9 @@
 
     <string name="pref_assistant_root">استخدام صلاحيات الروت</string>
     <string name="pref_assistant_root_summary">استخدام الروت لتفعيل ميزة الإدخال الصوتي لبعض المساعدين لتسهيل الاستخدام</string>
+
+    <string name="pref_assistant_voice_input">استخدام الإدخال الصوتي</string>
+    <string name="pref_assistant_voice_input_summary">عند التمكين، سيتم استخدام الإدخال الصوتي بدلاً من الواجهة الرئيسية في المساعدين المدعومين</string>
 
     <!--theme selector-->
 

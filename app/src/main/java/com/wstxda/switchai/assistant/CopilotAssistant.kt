@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,10 +18,9 @@ class CopilotAssistant : AssistantActivity() {
         )
     }
 
-    private fun createCopilotIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName,
-            "com.microsoft.copilotn.features.digitalassistant.AssistantOverlayActivity"
-        )
-    }
+    private fun createCopilotIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.microsoft.copilotn.MainActivity",
+        voiceInputActivity = "com.microsoft.copilotn.features.digitalassistant.AssistantOverlayActivity"
+    )
 }

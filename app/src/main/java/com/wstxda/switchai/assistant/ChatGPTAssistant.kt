@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class ChatGPTAssistant : AssistantActivity() {
         )
     }
 
-    private fun createChatGPTIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.openai.voice.assistant.AssistantActivity"
-        )
-    }
+    private fun createChatGPTIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.openai.chatgpt.MainActivity",
+        voiceInputActivity = "com.openai.voice.assistant.AssistantActivity"
+    )
 }

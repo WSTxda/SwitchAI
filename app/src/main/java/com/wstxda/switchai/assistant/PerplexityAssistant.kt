@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class PerplexityAssistant : AssistantActivity() {
         )
     }
 
-    private fun createPerplexityIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "ai.perplexity.app.android.assistant.AssistantActivity"
-        )
-    }
+    private fun createPerplexityIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "ai.perplexity.app.android.ui.main.MainActivity",
+        voiceInputActivity = "ai.perplexity.app.android.assistant.AssistantActivity"
+    )
 }

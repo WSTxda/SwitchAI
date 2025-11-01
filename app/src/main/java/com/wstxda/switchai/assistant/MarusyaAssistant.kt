@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import androidx.lifecycle.lifecycleScope
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
@@ -44,16 +42,15 @@ class MarusyaAssistant : AssistantActivity() {
         )
     }
 
-    private fun createMarusyaIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "ru.mail.search.electroscope.ui.activity.AssistantActivity"
-        )
-    }
+    private fun createMarusyaIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "ru.mail.search.electroscope.ui.InputTextActivity",
+        voiceInputActivity = "ru.mail.search.electroscope.ui.activity.AssistantActivity"
+    )
 
-    private fun createMarusyaAssistantIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName,
-            "ru.mail.search.electroscope.defaultassistant.presentation.keyguard.DefaultAssistantSessionActivity"
-        )
-    }
+    private fun createMarusyaAssistantIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "ru.mail.search.electroscope.ui.InputTextActivity",
+        voiceInputActivity = "ru.mail.search.electroscope.defaultassistant.presentation.keyguard.DefaultAssistantSessionActivity"
+    )
 }

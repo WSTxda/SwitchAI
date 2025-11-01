@@ -6,14 +6,17 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.wstxda.switchai.databinding.ListItemAssistantCategoryBinding
 import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
+import com.wstxda.switchai.databinding.ListItemReorderTipBinding
 import com.wstxda.switchai.ui.viewholder.AssistantSelectorCategoryViewHolder
 import com.wstxda.switchai.ui.viewholder.AssistantSelectorItemViewHolder
+import com.wstxda.switchai.ui.viewholder.ReorderTipViewHolder
 import com.wstxda.switchai.utils.Constants
 import java.util.Collections
 
 class AssistantSelectorAdapter(
     private val onAssistantClicked: (String) -> Unit,
     private val onPinClicked: (String) -> Unit,
+    private val onDismissTipClicked: () -> Unit,
 ) : ListAdapter<AssistantSelectorRecyclerView, RecyclerView.ViewHolder>(
     AssistantSelectorDiffCallback()
 ) {
@@ -21,6 +24,7 @@ class AssistantSelectorAdapter(
     override fun getItemViewType(position: Int) = when (getItem(position)) {
         is AssistantSelectorRecyclerView.CategoryHeader -> Constants.VIEW_TYPE_CATEGORY_HEADER
         is AssistantSelectorRecyclerView.AssistantSelector -> Constants.VIEW_TYPE_ASSISTANT_ITEM
+        is AssistantSelectorRecyclerView.ReorderTip -> Constants.VIEW_TYPE_REORDER_TIP
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = when (viewType) {
@@ -38,6 +42,13 @@ class AssistantSelectorAdapter(
             AssistantSelectorItemViewHolder(binding)
         }
 
+        Constants.VIEW_TYPE_REORDER_TIP -> {
+            val binding = ListItemReorderTipBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+            ReorderTipViewHolder(binding)
+        }
+
         else -> throw IllegalArgumentException("Unknown viewType $viewType")
     }
 
@@ -49,6 +60,10 @@ class AssistantSelectorAdapter(
 
             is AssistantSelectorRecyclerView.AssistantSelector -> (holder as AssistantSelectorItemViewHolder).bind(
                 item, onAssistantClicked, onPinClicked
+            )
+
+            is AssistantSelectorRecyclerView.ReorderTip -> (holder as ReorderTipViewHolder).bind(
+                onDismissTipClicked
             )
         }
     }

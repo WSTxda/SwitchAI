@@ -113,6 +113,9 @@
     <string name="assistant_category_recent">Usados recentemente</string>
     <string name="assistant_category_all">Assistentes</string>
     <string name="assistant_category_not_installed">Não instalados</string>
+    <!--selector assistant tips-->
+    <string name="assistant_tip_reorder">Para reordenar, pressione e segure um assistente, e então o arraste para a posição desejada</string>
+    <string name="assistant_tip_close">Fechar dica</string>
     <!--open assistant messages-->
     <string name="assistant_open">Abrir assistente</string>
     <string name="assistant_open_error">Erro ao abrir assistente</string>

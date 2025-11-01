@@ -68,6 +68,8 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
             dismiss()
         }, onPinClicked = { assistantKey ->
             viewModel.togglePinAssistant(assistantKey)
+        }, onDismissTipClicked = {
+            viewModel.dismissReorderTip()
         })
         binding.assistantsRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)

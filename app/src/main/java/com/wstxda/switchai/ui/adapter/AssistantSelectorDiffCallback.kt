@@ -10,6 +10,8 @@ class AssistantSelectorDiffCallback : DiffUtil.ItemCallback<AssistantSelectorRec
 
         oldItem is AssistantSelectorRecyclerView.CategoryHeader && newItem is AssistantSelectorRecyclerView.CategoryHeader -> oldItem.title == newItem.title
 
+        oldItem is AssistantSelectorRecyclerView.ReorderTip && newItem is AssistantSelectorRecyclerView.ReorderTip -> true
+
         else -> false
     }
 

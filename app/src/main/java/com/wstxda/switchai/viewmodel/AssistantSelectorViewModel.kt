@@ -226,6 +226,12 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
 
             if (pinnedItems.isNotEmpty()) {
                 add(AssistantSelectorRecyclerView.CategoryHeader(context.getString(R.string.assistant_category_pin)))
+                val tipDismissed = assistantStatePreferences.getBoolean(
+                    Constants.REORDER_TIP_DISMISSED_KEY, false
+                )
+                if (pinnedItems.size >= 2 && !tipDismissed) {
+                    add(AssistantSelectorRecyclerView.ReorderTip)
+                }
                 addAll(pinnedItems)
             }
             if (recentItems.isNotEmpty()) {
@@ -281,5 +287,20 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     override fun onCleared() {
         super.onCleared()
         defaultSharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
+    }
+
+    fun dismissReorderTip() {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                assistantStatePreferences.edit {
+                    putBoolean(Constants.REORDER_TIP_DISMISSED_KEY, true)
+                }
+            }
+            val currentItems = _assistantItems.value ?: return@launch
+            val updatedItems =
+                currentItems.filterNot { it is AssistantSelectorRecyclerView.ReorderTip }
+            allAssistantItems = updatedItems
+            _assistantItems.value = updatedItems
+        }
     }
 }

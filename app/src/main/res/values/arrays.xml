@@ -22,6 +22,7 @@
         <item>@string/minimax</item>
         <item>@string/delphi</item>
         <item>@string/perplexity</item>
+        <item>@string/pi</item>
         <item>@string/qingyan</item>
         <item>@string/qwen</item>
         <item>@string/ultimate_alexa</item>
@@ -51,6 +52,7 @@
         <item>minimax_assistant</item>
         <item>delphi_assistant</item>
         <item>perplexity_assistant</item>
+        <item>pi_assistant</item>
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>ultimate_alexa_assistant</item>
@@ -82,6 +84,7 @@
         <item>minimax_assistant</item>
         <item>delphi_assistant</item>
         <item>perplexity_assistant</item>
+        <item>pi_assistant</item>
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>ultimate_alexa_assistant</item>

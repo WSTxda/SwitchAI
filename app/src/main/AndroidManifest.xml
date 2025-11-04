@@ -225,6 +225,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.PiAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/pi"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.QingyanAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

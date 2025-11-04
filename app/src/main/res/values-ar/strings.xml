@@ -113,7 +113,7 @@
     <string name="assistant_category_recent">المستخدمة مؤخرًا</string>
     <string name="assistant_category_all">المساعدين</string>
     <!--selector assistant tips-->
-    <string name="assistant_tip_reorder">لإعادة الترتيب، اضغط مع الاستمرار على المساعد، ثم اسحبه إلى الموضع المطلوب</string>
+    <string name="assistant_tip_reorder">لإعادة ترتيب مساعديك المثبتين، انقر مع الاستمرار فوق أحدها، ثم اسحبه إلى الموضع الذي تفضله</string>
     <string name="assistant_tip_close">إغلاق النصيحة</string>
     <!--open assistant messages-->
     <string name="assistant_open">افتح المساعد</string>

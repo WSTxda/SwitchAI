@@ -118,7 +118,7 @@
     <string name="assistant_category_all">Assistants</string>
     <string name="assistant_category_not_installed">Not installed</string>
     <!--selector assistant tips-->
-    <string name="assistant_tip_reorder">To reorder, press and hold an assistant, then drag it to the desired position</string>
+    <string name="assistant_tip_reorder">To rearrange your pinned assistants, tap and hold one, then drag it to the position you prefer</string>
     <string name="assistant_tip_close">Close tip</string>
     <!--open assistant messages-->
     <string name="assistant_open">Open assistant</string>

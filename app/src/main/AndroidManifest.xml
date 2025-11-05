@@ -71,6 +71,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.BixbyAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/bixby"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.ChatGPTAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

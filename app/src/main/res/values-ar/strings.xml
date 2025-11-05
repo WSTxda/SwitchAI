@@ -8,6 +8,7 @@
 
     <string name="alexa">Alexa</string>
     <string name="alice">Alice</string>
+    <string name="bixby">Bixby</string>
     <string name="chatgpt">ChatGPT</string>
     <string name="claude">Claude</string>
     <string name="copilot">Copilot</string>

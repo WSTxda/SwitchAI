@@ -7,6 +7,7 @@ object AssistantsMap {
     internal val assistantActivity = mapOf(
         "alexa_assistant" to AlexaAssistant::class.java,
         "alice_assistant" to AliceAssistant::class.java,
+        "bixby_assistant" to BixbyAssistant::class.java,
         "chatgpt_assistant" to ChatGPTAssistant::class.java,
         "claude_assistant" to ClaudeAssistant::class.java,
         "copilot_assistant" to CopilotAssistant::class.java,
@@ -37,6 +38,7 @@ object AssistantsMap {
     internal val assistantPackage = mapOf(
         "alexa_assistant" to "com.amazon.dee.app",
         "alice_assistant" to "com.yandex.aliceapp",
+        "bixby_assistant" to "com.samsung.android.bixby.agent",
         "chatgpt_assistant" to "com.openai.chatgpt",
         "claude_assistant" to "com.anthropic.claude",
         "copilot_assistant" to "com.microsoft.copilot",

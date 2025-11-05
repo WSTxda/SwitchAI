@@ -171,6 +171,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.KrutiAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/kruti"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.LeChatAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

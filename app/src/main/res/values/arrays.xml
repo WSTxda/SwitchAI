@@ -15,6 +15,7 @@
         <item>@string/grok</item>
         <item>@string/home</item>
         <item>@string/kimi</item>
+        <item>@string/kruti</item>
         <item>@string/le_chat</item>
         <item>@string/lumo</item>
         <item>@string/manus</item>
@@ -46,6 +47,7 @@
         <item>grok_assistant</item>
         <item>home_assistant</item>
         <item>kimi_assistant</item>
+        <item>kruti_assistant</item>
         <item>le_chat_assistant</item>
         <item>lumo_assistant</item>
         <item>manus_assistant</item>
@@ -79,6 +81,7 @@
         <item>grok_assistant</item>
         <item>home_assistant</item>
         <item>kimi_assistant</item>
+        <item>kruti_assistant</item>
         <item>le_chat_assistant</item>
         <item>lumo_assistant</item>
         <item>manus_assistant</item>

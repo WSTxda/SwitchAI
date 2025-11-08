@@ -32,6 +32,7 @@ object AssistantsMap {
         "ultimate_alexa_assistant" to UltimateAlexaAssistant::class.java,
         "venice_assistant" to VeniceAssistant::class.java,
         "wenxin_yiyan_assistant" to WenxinYiyanAssistant::class.java,
+        "xiaoai_assistant" to XiaoAiAssistant::class.java,
         "yuanbao_assistant" to YuanbaoAssistant::class.java,
         "zapia_assistant" to ZapiaAssistant::class.java,
     )
@@ -64,6 +65,7 @@ object AssistantsMap {
         "ultimate_alexa_assistant" to "com.customsolutions.android.alexa",
         "venice_assistant" to "com.ai.venice",
         "wenxin_yiyan_assistant" to "com.baidu.newapp",
+        "xiaoai_assistant" to "com.miui.voiceassist",
         "yuanbao_assistant" to "com.tencent.hunyuan.app.chat",
         "zapia_assistant" to "com.brainlogic.zapia"
     )

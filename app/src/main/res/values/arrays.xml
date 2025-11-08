@@ -30,6 +30,7 @@
         <item>@string/ultimate_alexa</item>
         <item>@string/venice</item>
         <item>@string/wenxin_yiyan</item>
+        <item>@string/xiaoai</item>
         <item>@string/yuanbao</item>
         <item>@string/zapia</item>
     </string-array>
@@ -62,6 +63,7 @@
         <item>ultimate_alexa_assistant</item>
         <item>venice_assistant</item>
         <item>wenxin_yiyan_assistant</item>
+        <item>xiaoai_assistant</item>
         <item>yuanbao_assistant</item>
         <item>zapia_assistant</item>
     </string-array>
@@ -96,6 +98,7 @@
         <item>ultimate_alexa_assistant</item>
         <item>venice_assistant</item>
         <item>wenxin_yiyan_assistant</item>
+        <item>xiaoai_assistant</item>
         <item>yuanbao_assistant</item>
         <item>zapia_assistant</item>
     </string-array>

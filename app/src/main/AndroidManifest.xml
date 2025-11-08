@@ -297,6 +297,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.XiaoAiAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/xiaoai"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.YuanbaoAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import androidx.lifecycle.lifecycleScope
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
@@ -44,16 +42,15 @@ class GeminiAssistant : AssistantActivity() {
         )
     }
 
-    private fun createGeminiIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.google.android.apps.bard.shellapp.BardEntryPointActivity"
-        )
-    }
+    private fun createGeminiIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.google.android.apps.bard.shellapp.BardEntryPointActivity",
+        voiceInputActivity = "com.google.android.apps.bard.shellapp.BardEntryPointActivity"
+    )
 
-    private fun createGeminiRootIntent() = Intent().apply {
-        component = ComponentName(
-            "com.google.android.googlequicksearchbox",
-            "com.google.android.apps.search.assistant.surfaces.voice.robin.ui.floaty.activity.FloatyActivity"
-        )
-    }
+    private fun createGeminiRootIntent() = createAssistantIntent(
+        packageName = "com.google.android.googlequicksearchbox",
+        defaultActivity = "com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity",
+        voiceInputActivity = "com.google.android.apps.search.assistant.surfaces.voice.robin.ui.floaty.activity.FloatyActivity"
+    )
 }

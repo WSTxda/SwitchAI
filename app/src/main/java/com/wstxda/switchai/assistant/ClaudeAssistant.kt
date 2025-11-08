@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class ClaudeAssistant : AssistantActivity() {
         )
     }
 
-    private fun createClaudeIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.anthropic.claude.mainactivity.MainActivity"
-        )
-    }
+    private fun createClaudeIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.anthropic.claude.mainactivity.MainActivity",
+        voiceInputActivity = "com.anthropic.claude.mainactivity.MainActivity"
+    )
 }

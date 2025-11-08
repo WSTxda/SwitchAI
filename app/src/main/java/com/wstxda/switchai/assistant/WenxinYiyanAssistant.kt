@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class WenxinYiyanAssistant : AssistantActivity() {
         )
     }
 
-    private fun createWenxinYiyanIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.baidu.newapp.home.MainActivity"
-        )
-    }
+    private fun createWenxinYiyanIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.baidu.newapp.home.MainActivity",
+        voiceInputActivity = "com.baidu.newapp.home.MainActivity"
+    )
 }

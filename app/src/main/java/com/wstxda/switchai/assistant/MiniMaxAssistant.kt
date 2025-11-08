@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class MiniMaxAssistant : AssistantActivity() {
         )
     }
 
-    private fun createMiniMaxIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.xproducer.yingshi.app.MainSplashActivity"
-        )
-    }
+    private fun createMiniMaxIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.xproducer.yingshi.app.MainSplashActivity",
+        voiceInputActivity = "com.xproducer.yingshi.app.MainSplashActivity"
+    )
 }

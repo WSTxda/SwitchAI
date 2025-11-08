@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -15,14 +13,14 @@ class KrutiAssistant : AssistantActivity() {
 
     override fun onCreateInternal() {
         openAssistant(
-            intents = listOf(createDeepSeekIntent()),
+            intents = listOf(createKrutiIntent()),
             errorMessage = R.string.assistant_application_not_found
         )
     }
 
-    private fun createDeepSeekIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.app.krutrim.presentation.ui.screens.SiliconActivity"
-        )
-    }
+    private fun createKrutiIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.app.krutrim.presentation.ui.screens.SiliconActivity",
+        voiceInputActivity = "com.app.krutrim.presentation.ui.screens.SiliconActivity"
+    )
 }

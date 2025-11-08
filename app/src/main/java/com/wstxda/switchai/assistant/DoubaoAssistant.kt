@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class DoubaoAssistant : AssistantActivity() {
         )
     }
 
-    private fun createDoubaoIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.larus.home.impl.MainActivity"
-        )
-    }
+    private fun createDoubaoIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.larus.home.impl.MainActivity",
+        voiceInputActivity = "com.larus.home.impl.MainActivity"
+    )
 }

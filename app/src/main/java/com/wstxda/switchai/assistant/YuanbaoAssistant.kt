@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class YuanbaoAssistant : AssistantActivity() {
         )
     }
 
-    private fun createYuanbaoIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.tencent.hunyuan.app.chat.biz.login.v2.HYLoginMainActivity"
-        )
-    }
+    private fun createYuanbaoIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.tencent.hunyuan.app.chat.biz.login.v2.HYLoginMainActivity",
+        voiceInputActivity = "com.tencent.hunyuan.app.chat.biz.login.v2.HYLoginMainActivity"
+    )
 }

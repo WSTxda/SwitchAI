@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class DeepSeekAssistant : AssistantActivity() {
         )
     }
 
-    private fun createDeepSeekIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.deepseek.chat.MainActivity"
-        )
-    }
+    private fun createDeepSeekIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.deepseek.chat.MainActivity",
+        voiceInputActivity = "com.deepseek.chat.MainActivity"
+    )
 }

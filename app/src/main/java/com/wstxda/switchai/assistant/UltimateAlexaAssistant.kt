@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class UltimateAlexaAssistant : AssistantActivity() {
         )
     }
 
-    private fun createUltimateAlexaIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.customsolutions.android.alexa.MainActivity"
-        )
-    }
+    private fun createUltimateAlexaIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.customsolutions.android.alexa.MainActivity",
+        voiceInputActivity = "com.customsolutions.android.alexa.MainActivity"
+    )
 }

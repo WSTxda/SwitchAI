@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class QingyanAssistant : AssistantActivity() {
         )
     }
 
-    private fun createQingyanIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.zhipuai.qingyan.MainActivity"
-        )
-    }
+    private fun createQingyanIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.zhipuai.qingyan.MainActivity",
+        voiceInputActivity = "com.zhipuai.qingyan.MainActivity"
+    )
 }

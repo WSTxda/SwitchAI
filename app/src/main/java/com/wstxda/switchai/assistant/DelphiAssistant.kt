@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class DelphiAssistant : AssistantActivity() {
         )
     }
 
-    private fun createDelphiIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "ai.oo.delphi.MainActivity"
-        )
-    }
+    private fun createDelphiIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "ai.oo.delphi.MainActivity",
+        voiceInputActivity = "ai.oo.delphi.MainActivity"
+    )
 }

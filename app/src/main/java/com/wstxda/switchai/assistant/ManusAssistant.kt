@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class ManusAssistant : AssistantActivity() {
         )
     }
 
-    private fun createManusIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "tech.butterfly.app.MainActivity"
-        )
-    }
+    private fun createManusIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "tech.butterfly.app.MainActivity",
+        voiceInputActivity = "tech.butterfly.app.MainActivity"
+    )
 }

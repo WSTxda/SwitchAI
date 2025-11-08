@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class MetaAssistant : AssistantActivity() {
         )
     }
 
-    private fun createMetaIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.facebook.stella.main.view.MainActivity"
-        )
-    }
+    private fun createMetaIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.facebook.stella.main.view.MainActivity",
+        voiceInputActivity = "com.facebook.stella.main.view.MainActivity"
+    )
 }

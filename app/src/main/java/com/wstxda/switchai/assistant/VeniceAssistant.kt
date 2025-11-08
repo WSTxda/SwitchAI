@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class VeniceAssistant : AssistantActivity() {
         )
     }
 
-    private fun createVeniceIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "com.ai.venice.MainActivity"
-        )
-    }
+    private fun createVeniceIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "com.ai.venice.MainActivity",
+        voiceInputActivity = "com.ai.venice.MainActivity"
+    )
 }

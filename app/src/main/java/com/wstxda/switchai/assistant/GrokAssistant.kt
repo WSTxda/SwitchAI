@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class GrokAssistant : AssistantActivity() {
         )
     }
 
-    private fun createGrokIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "ai.x.grok.main.GrokActivity"
-        )
-    }
+    private fun createGrokIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "ai.x.grok.main.GrokActivity",
+        voiceInputActivity = "ai.x.grok.main.GrokActivity"
+    )
 }

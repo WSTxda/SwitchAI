@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class LeChatAssistant : AssistantActivity() {
         )
     }
 
-    private fun createLeChatIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "ai.mistral.chat.MainActivity"
-        )
-    }
+    private fun createLeChatIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "ai.mistral.chat.MainActivity",
+        voiceInputActivity = "ai.mistral.chat.MainActivity"
+    )
 }

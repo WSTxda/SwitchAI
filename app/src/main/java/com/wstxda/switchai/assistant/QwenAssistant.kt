@@ -1,7 +1,5 @@
 package com.wstxda.switchai.assistant
 
-import android.content.ComponentName
-import android.content.Intent
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
@@ -20,9 +18,9 @@ class QwenAssistant : AssistantActivity() {
         )
     }
 
-    private fun createQwenIntent() = Intent().apply {
-        component = ComponentName(
-            Companion.packageName, "ai.qwenlm.chat.android.MainActivity"
-        )
-    }
+    private fun createQwenIntent() = createAssistantIntent(
+        packageName = Companion.packageName,
+        defaultActivity = "ai.qwenlm.chat.android.MainActivity",
+        voiceInputActivity = "ai.qwenlm.chat.android.MainActivity"
+    )
 }

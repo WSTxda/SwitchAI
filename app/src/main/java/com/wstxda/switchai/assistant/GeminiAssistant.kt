@@ -22,16 +22,16 @@ class GeminiAssistant : AssistantActivity() {
     override fun onCreateInternal() {
         lifecycleScope.launch {
             if (preferences.getBoolean(Constants.ASSISTANT_ROOT_PREF_KEY)) {
-                openGeminiFloaty()
+                openGeminiRoot()
             } else {
                 openGemini()
             }
         }
     }
 
-    private fun openGeminiFloaty() {
+    private fun openGeminiRoot() {
         openAssistantRoot(
-            intents = listOf(createGeminiFloatyIntent()),
+            intents = listOf(createGeminiRootIntent()),
             rootAccessMessage = R.string.root_access_warning,
             errorMessage = R.string.assistant_application_not_found
         )
@@ -50,7 +50,7 @@ class GeminiAssistant : AssistantActivity() {
         )
     }
 
-    private fun createGeminiFloatyIntent() = Intent().apply {
+    private fun createGeminiRootIntent() = Intent().apply {
         component = ComponentName(
             "com.google.android.googlequicksearchbox",
             "com.google.android.apps.search.assistant.surfaces.voice.robin.ui.floaty.activity.FloatyActivity"

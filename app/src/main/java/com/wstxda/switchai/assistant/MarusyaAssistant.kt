@@ -20,16 +20,16 @@ class MarusyaAssistant : AssistantActivity() {
     override fun onCreateInternal() {
         lifecycleScope.launch {
             if (preferences.getBoolean(Constants.ASSISTANT_ROOT_PREF_KEY)) {
-                openMarusyaAssistant()
+                openMarusyaRoot()
             } else {
                 openMarusya()
             }
         }
     }
 
-    private fun openMarusyaAssistant() {
+    private fun openMarusyaRoot() {
         openAssistantRoot(
-            intents = listOf(createMarusyaAssistantIntent()),
+            intents = listOf(createMarusyaRootIntent()),
             rootAccessMessage = R.string.root_access_warning,
             errorMessage = R.string.assistant_application_not_found
         )
@@ -48,7 +48,7 @@ class MarusyaAssistant : AssistantActivity() {
         voiceInputActivity = "ru.mail.search.electroscope.ui.activity.AssistantActivity"
     )
 
-    private fun createMarusyaAssistantIntent() = createAssistantIntent(
+    private fun createMarusyaRootIntent() = createAssistantIntent(
         packageName = Companion.packageName,
         defaultActivity = "ru.mail.search.electroscope.ui.InputTextActivity",
         voiceInputActivity = "ru.mail.search.electroscope.defaultassistant.presentation.keyguard.DefaultAssistantSessionActivity"

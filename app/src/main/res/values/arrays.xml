@@ -10,6 +10,7 @@
         <item>@string/claude</item>
         <item>@string/copilot</item>
         <item>@string/deepseek</item>
+        <item>@string/dola</item>
         <item>@string/doubao</item>
         <item>@string/gemini</item>
         <item>@string/grok</item>
@@ -45,6 +46,7 @@
         <item>claude_assistant</item>
         <item>copilot_assistant</item>
         <item>deepseek_assistant</item>
+        <item>dola_assistant</item>
         <item>doubao_assistant</item>
         <item>gemini_assistant</item>
         <item>grok_assistant</item>
@@ -82,6 +84,7 @@
         <item>claude_assistant</item>
         <item>copilot_assistant</item>
         <item>deepseek_assistant</item>
+        <item>dola_assistant</item>
         <item>doubao_assistant</item>
         <item>gemini_assistant</item>
         <item>grok_assistant</item>

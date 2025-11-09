@@ -125,6 +125,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.DolaAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/dola"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.DoubaoAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

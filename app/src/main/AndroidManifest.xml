@@ -216,6 +216,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.LuziaAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/luzia"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.ManusAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

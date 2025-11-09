@@ -315,6 +315,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.YouAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/you"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.YuanbaoAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

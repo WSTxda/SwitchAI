@@ -12,6 +12,7 @@
         <item>@string/deepseek</item>
         <item>@string/dola</item>
         <item>@string/doubao</item>
+        <item>@string/euria</item>
         <item>@string/gemini</item>
         <item>@string/grok</item>
         <item>@string/home</item>
@@ -50,6 +51,7 @@
         <item>deepseek_assistant</item>
         <item>dola_assistant</item>
         <item>doubao_assistant</item>
+        <item>euria_assistant</item>
         <item>gemini_assistant</item>
         <item>grok_assistant</item>
         <item>home_assistant</item>
@@ -90,6 +92,7 @@
         <item>deepseek_assistant</item>
         <item>dola_assistant</item>
         <item>doubao_assistant</item>
+        <item>euria_assistant</item>
         <item>gemini_assistant</item>
         <item>grok_assistant</item>
         <item>home_assistant</item>

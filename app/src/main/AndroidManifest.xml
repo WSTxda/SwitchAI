@@ -143,6 +143,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.EuriaAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/euria"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.GeminiAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

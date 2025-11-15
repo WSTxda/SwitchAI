@@ -261,6 +261,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.MotoAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/moto"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.PerplexityAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

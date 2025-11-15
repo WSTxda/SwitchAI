@@ -172,6 +172,9 @@
     <string name="error_min_selection">اختر %1$d على الأقل</string>
     <string name="error_max_selection">اختر %1$d كحد أقصى</string>
 
+    <string name="auto_select_assistant">تلقائي</string>
+    <string name="auto_select_assistant_result">تم تحديد %1$d مساعد، %2$d مخفي</string>
+
     <!--app widgets-->
 
     <string name="widget_assistant_label">تصميم Material</string>

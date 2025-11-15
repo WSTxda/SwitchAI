@@ -176,6 +176,9 @@
     <string name="error_min_selection">Select at least %1$d options</string>
     <string name="error_max_selection">Select a maximum of %1$d options</string>
 
+    <string name="auto_select_assistant">Auto</string>
+    <string name="auto_select_assistant_result">%1$d assistants selected, %2$d hidden</string>
+
     <!--app widgets-->
 
     <string name="widget_assistant_label">Material style</string>

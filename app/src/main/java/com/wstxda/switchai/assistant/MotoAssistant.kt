@@ -20,7 +20,7 @@ class MotoAssistant : AssistantActivity() {
 
     private fun createMotoIntent() = createAssistantIntent(
         packageName = Companion.packageName,
-        defaultActivity = "com.motorola.foryou.MainActivity",
-        voiceInputActivity = "com.motorola.eldin.DoublePressMotoAI"
+        defaultActivity = "com.motorola.eldin.launcher.MotoAIDashboardActivity",
+        voiceInputActivity = "com.motorola.eldin.overlay.PromptOverlayActivity"
     )
 }

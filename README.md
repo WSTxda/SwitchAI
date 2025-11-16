@@ -38,31 +38,43 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 
 ### Supported AI assistants apps
 
-*   **[Alexa](https://play.google.com/store/apps/details?id=com.amazon.dee.app)** by Amazon
-*   **[Alice](https://play.google.com/store/apps/details?id=com.yandex.aliceapp)** by Yandex
-*   **[ChatGPT](https://play.google.com/store/apps/details?id=com.openai.chatgpt)** by OpenAI
-*   **[Claude](https://play.google.com/store/apps/details?id=com.anthropic.claude)** by Anthropic
-*   **[Copilot](https://play.google.com/store/apps/details?id=com.microsoft.copilot)** by Microsoft
-*   **[DeepSeek](https://play.google.com/store/apps/details?id=com.deepseek.chat)** by DeepSeek
-*   **[Doubao](https://play.google.com/store/apps/details?id=com.larus.nova)** by ByteDance
-*   **[Gemini](https://play.google.com/store/apps/details?id=com.google.android.apps.bard)** by Google
-*   **[Grok](https://play.google.com/store/apps/details?id=ai.x.grok)** by xAI
-*   **[Home Assistant](https://play.google.com/store/apps/details?id=io.homeassistant.companion.android)** by Home Assistant
-*   **[Kimi](https://play.google.com/store/apps/details?id=com.moonshot.kimichat)** by Moonshot AI
-*   **[Le Chat](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI
-*   **[Lumo](https://play.google.com/store/apps/details?id=me.proton.android.lumo)** by Proton
-*   **[Manus](https://play.google.com/store/apps/details?id=tech.butterfly.app)** by Butterfly Tech
-*   **[Marusya](https://play.google.com/store/apps/details?id=ru.mail.search.electroscope)** by VK
-*   **[Meta AI](https://play.google.com/store/apps/details?id=com.facebook.stella)** by Meta
-*   **[MiniMax](https://play.google.com/store/apps/details?id=com.minimax.ai)** by MiniMax AI
-*   **[oo.ai](https://play.google.com/store/apps/details?id=ai.oo.delphi)** by Open Research
-*   **[Perplexity](https://play.google.com/store/apps/details?id=ai.perplexity.app.android)** by Perplexity AI
-*   **[Qingyan](https://chatglm.cn/download?fr=web_home)** by Baidu
-*   **[Qwen](https://play.google.com/store/apps/details?id=ai.qwenlm.chat.android)** by Alibaba Cloud
-*   **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions
-*   **[Wenxin Yiyan](https://apkpure.com/cn/wen-xin-yi-yan/com.baidu.newapp)** by Baidu
-*   **[Yuanbao](https://yuanbao.tencent.com/download)** by Tencent
-*	**[Zapia](https://play.google.com/store/apps/details?id=com.brainlogic.zapia)** by BrainLogic AI
+* **[Alexa](https://play.google.com/store/apps/details?id=com.amazon.dee.app)** by Amazon
+* **[Alice](https://play.google.com/store/apps/details?id=com.yandex.aliceapp)** by Yandex
+* **[Bixby](https://www.samsung.com/bixby)** by Samsung
+* **[ChatGPT](https://play.google.com/store/apps/details?id=com.openai.chatgpt)** by OpenAI
+* **[Claude](https://play.google.com/store/apps/details?id=com.anthropic.claude)** by Anthropic
+* **[Copilot](https://play.google.com/store/apps/details?id=com.microsoft.copilot)** by Microsoft
+* **[DeepSeek](https://play.google.com/store/apps/details?id=com.deepseek.chat)** by DeepSeek
+* **[Dicio](https://play.google.com/store/apps/details?id=org.stypox.dicio)** by Stypox
+* **[Dola](https://play.google.com/store/apps/details?id=com.larus.wolf)** by ByteDance
+* **[Doubao](https://play.google.com/store/apps/details?id=com.larus.nova)** by ByteDance
+* **[Euria](https://play.google.com/store/apps/details?id=com.infomaniak.euria)** by Infomaniak
+* **[Gemini](https://play.google.com/store/apps/details?id=com.google.android.apps.bard)** by Google
+* **[Grok](https://play.google.com/store/apps/details?id=ai.x.grok)** by xAI
+* **[Home Assistant](https://play.google.com/store/apps/details?id=io.homeassistant.companion.android)** by Home Assistant
+* **[Kimi](https://play.google.com/store/apps/details?id=com.moonshot.kimichat)** by Moonshot AI
+* **[Kruti](https://play.google.com/store/apps/details?id=com.app.krutrim.prod)** by Ola Krutrim
+* **[Le Chat](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI
+* **[Liner](https://play.google.com/store/apps/details?id=com.getliner.liner)** by Liner
+* **[Lumo](https://play.google.com/store/apps/details?id=me.proton.android.lumo)** by Proton
+* **[Luzia](https://play.google.com/store/apps/details?id=co.thewordlab.luzia)** by Luzia AI
+* **[Manus](https://play.google.com/store/apps/details?id=tech.butterfly.app)** by Butterfly Tech
+* **[Marusya](https://play.google.com/store/apps/details?id=ru.mail.search.electroscope)** by VK
+* **[Meta AI](https://play.google.com/store/apps/details?id=com.facebook.stella)** by Meta
+* **[MiniMax](https://play.google.com/store/apps/details?id=com.minimax.ai)** by MiniMax AI
+* **[Moto AI](https://play.google.com/store/apps/details?id=com.motorola.uxcore)** by Motorola
+* **[oo.ai](https://play.google.com/store/apps/details?id=ai.oo.delphi)** by Open Research
+* **[Perplexity](https://play.google.com/store/apps/details?id=ai.perplexity.app.android)** by Perplexity AI
+* **[Pi](https://play.google.com/store/apps/details?id=ai.inflection.pi)** by Inflection AI
+* **[Qingyan](https://chatglm.cn/download?fr=web_home)** by Baidu
+* **[Qwen](https://play.google.com/store/apps/details?id=ai.qwenlm.chat.android)** by Alibaba Cloud
+* **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions
+* **[Venice AI](https://play.google.com/store/apps/details?id=com.ai.venice)** by Venice AI
+* **[Wenxin Yiyan](https://apkpure.com/cn/wen-xin-yi-yan/com.baidu.newapp)** by Baidu
+* **[XiaoAI](https://xiaoai.mi.com/)** by Xiaomi
+* **[You](https://play.google.com/store/apps/details?id=com.you.browser)** by You.com
+* **[Yuanbao](https://yuanbao.tencent.com/download)** by Tencent
+* **[Zapia](https://play.google.com/store/apps/details?id=com.brainlogic.zapia)** by BrainLogic AI
 -------
 
 > [!IMPORTANT]

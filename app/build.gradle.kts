@@ -12,8 +12,8 @@ android {
         applicationId = "com.wstxda.switchai"
         minSdk = 26
         targetSdk = 36
-        versionCode = 340
-        versionName = "3.4"
+        versionCode = 341
+        versionName = "3.4.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

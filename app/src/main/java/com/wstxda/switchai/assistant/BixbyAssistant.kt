@@ -20,7 +20,7 @@ class BixbyAssistant : AssistantActivity() {
 
     private fun createBixbyIntent() = createAssistantIntent(
         packageName = Companion.packageName,
-        defaultActivity = "com.samsung.android.bixby.assistanthome.deeplink.DeepLinkPublicActivity",
+        defaultActivity = "com.samsung.android.bixby.assistanthome.AssistantHomeLauncherActivity",
         voiceInputActivity = "com.samsung.android.bixby.assistanthome.AssistantHomeLauncherActivity"
     )
 }

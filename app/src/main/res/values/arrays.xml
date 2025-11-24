@@ -8,6 +8,7 @@
         <item>@string/bixby</item>
         <item>@string/chatgpt</item>
         <item>@string/claude</item>
+        <item>@string/conduit</item>
         <item>@string/copilot</item>
         <item>@string/deepseek</item>
         <item>@string/dicio</item>
@@ -48,6 +49,7 @@
         <item>bixby_assistant</item>
         <item>chatgpt_assistant</item>
         <item>claude_assistant</item>
+        <item>conduit_assistant</item>
         <item>copilot_assistant</item>
         <item>deepseek_assistant</item>
         <item>dicio_assistant</item>
@@ -90,6 +92,7 @@
         <item>bixby_assistant</item>
         <item>chatgpt_assistant</item>
         <item>claude_assistant</item>
+        <item>conduit_assistant</item>
         <item>copilot_assistant</item>
         <item>deepseek_assistant</item>
         <item>dicio_assistant</item>

@@ -98,6 +98,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.ConduitAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/conduit"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.CopilotAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

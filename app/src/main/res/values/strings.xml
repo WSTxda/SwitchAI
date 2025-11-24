@@ -12,6 +12,7 @@
     <string name="bixby">Bixby</string>
     <string name="chatgpt">ChatGPT</string>
     <string name="claude">Claude</string>
+    <string name="conduit">Conduit</string>
     <string name="copilot">Copilot</string>
     <string name="deepseek">DeepSeek</string>
     <string name="delphi">oo.ai</string>

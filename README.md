@@ -1,6 +1,6 @@
 # SwitchAI – Switch AI Digital Assistant
 
-Easily select, start, and manage your preferred AI digital assistants. SwitchAI offers a fresh approach to managing and selecting your preferred AI digital assistants on your Android device.
+Easily select, start, and manage your preferred AI digital assistants on Android. A fresh, streamlined way to choose and control AI assistants on your device.
 
 [![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/WSTxda/SwitchAI/.github%2Fworkflows%2Fandroid.yml?style=for-the-badge&logo=github-actions&labelColor=21262D&color=3FB950)](https://github.com/WSTxda/SwitchAI/actions)
 [![Platform](https://img.shields.io/badge/android-platform?style=for-the-badge&label=platform&labelColor=21262d&color=6e7681)](https://www.android.com)

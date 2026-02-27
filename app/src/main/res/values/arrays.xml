@@ -28,6 +28,7 @@
         <item>@string/marusya</item>
         <item>@string/meta</item>
         <item>@string/minimax</item>
+        <item>@string/monica</item>
         <item>@string/moto</item>
         <item>@string/perplexity</item>
         <item>@string/pi</item>
@@ -68,6 +69,7 @@
         <item>marusya_assistant</item>
         <item>meta_assistant</item>
         <item>minimax_assistant</item>
+        <item>monica_assistant</item>
         <item>moto_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>
@@ -110,6 +112,7 @@
         <item>marusya_assistant</item>
         <item>meta_assistant</item>
         <item>minimax_assistant</item>
+        <item>monica_assistant</item>
         <item>moto_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>

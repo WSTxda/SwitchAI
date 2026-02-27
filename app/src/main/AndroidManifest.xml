@@ -279,6 +279,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.MonicaAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/monica"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.MotoAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

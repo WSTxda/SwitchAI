@@ -29,14 +29,13 @@
         <item>@string/meta</item>
         <item>@string/minimax</item>
         <item>@string/moto</item>
-        <item>@string/delphi</item>
         <item>@string/perplexity</item>
         <item>@string/pi</item>
         <item>@string/qingyan</item>
         <item>@string/qwen</item>
         <item>@string/ultimate_alexa</item>
         <item>@string/venice</item>
-        <item>@string/wenxin_yiyan</item>
+        <item>@string/wenxiaoyan</item>
         <item>@string/xiaoai</item>
         <item>@string/you</item>
         <item>@string/yuanbao</item>
@@ -70,14 +69,13 @@
         <item>meta_assistant</item>
         <item>minimax_assistant</item>
         <item>moto_assistant</item>
-        <item>delphi_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>ultimate_alexa_assistant</item>
         <item>venice_assistant</item>
-        <item>wenxin_yiyan_assistant</item>
+        <item>wenxiaoyan_assistant</item>
         <item>xiaoai_assistant</item>
         <item>you_assistant</item>
         <item>yuanbao_assistant</item>
@@ -113,14 +111,13 @@
         <item>meta_assistant</item>
         <item>minimax_assistant</item>
         <item>moto_assistant</item>
-        <item>delphi_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>ultimate_alexa_assistant</item>
         <item>venice_assistant</item>
-        <item>wenxin_yiyan_assistant</item>
+        <item>wenxiaoyan_assistant</item>
         <item>xiaoai_assistant</item>
         <item>you_assistant</item>
         <item>yuanbao_assistant</item>

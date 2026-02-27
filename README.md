@@ -66,7 +66,7 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 * **[oo.ai](https://play.google.com/store/apps/details?id=ai.oo.delphi)** by Open Research
 * **[Perplexity](https://play.google.com/store/apps/details?id=ai.perplexity.app.android)** by Perplexity AI
 * **[Pi](https://play.google.com/store/apps/details?id=ai.inflection.pi)** by Inflection AI
-* **[Qingyan](https://chatglm.cn/download?fr=web_home)** by Baidu
+* **[Qingyan](https://chatglm.cn/download?fr=web_home)** by Zhipu AI
 * **[Qwen](https://play.google.com/store/apps/details?id=ai.qwenlm.chat.android)** by Alibaba Cloud
 * **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions
 * **[Venice AI](https://play.google.com/store/apps/details?id=com.ai.venice)** by Venice AI

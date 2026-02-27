@@ -14,7 +14,6 @@
     <string name="conduit">Conduit</string>
     <string name="copilot">Copilot</string>
     <string name="deepseek">DeepSeek</string>
-    <string name="delphi">oo.ai</string>
     <string name="dicio">Dicio</string>
     <string name="dola">Dola</string>
     <string name="doubao">Doubao</string>
@@ -39,7 +38,7 @@
     <string name="qwen">Qwen</string>
     <string name="ultimate_alexa">Ultimate Alexa</string>
     <string name="venice">Venice AI</string>
-    <string name="wenxin_yiyan">Wenxin Yiyan</string>
+    <string name="wenxiaoyan">Wenxiaoyan</string>
     <string name="xiaoai">XiaoAI</string>
     <string name="you">You</string>
     <string name="yuanbao">Yuanbao</string>

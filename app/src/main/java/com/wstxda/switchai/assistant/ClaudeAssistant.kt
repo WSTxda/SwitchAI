@@ -21,6 +21,6 @@ class ClaudeAssistant : AssistantActivity() {
     private fun createClaudeIntent() = createAssistantIntent(
         packageName = Companion.packageName,
         defaultActivity = "com.anthropic.claude.mainactivity.MainActivity",
-        voiceInputActivity = "com.anthropic.claude.mainactivity.MainActivity"
+        voiceInputActivity = "com.anthropic.claude.mainactivity.AssistantOverlayActivity"
     )
 }

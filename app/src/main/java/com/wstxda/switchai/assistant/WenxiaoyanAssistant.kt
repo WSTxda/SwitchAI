@@ -5,22 +5,22 @@ import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
 import com.wstxda.switchai.utils.AssistantProperties
 
-class DelphiAssistant : AssistantActivity() {
+class WenxiaoyanAssistant : AssistantActivity() {
 
     companion object : AssistantProperties {
-        override val packageName = "ai.oo.delphi"
+        override val packageName = "com.baidu.newapp"
     }
 
     override fun onCreateInternal() {
         openAssistant(
-            intents = listOf(createDelphiIntent()),
+            intents = listOf(createWenxiaoyanIntent()),
             errorMessage = R.string.assistant_application_not_found
         )
     }
 
-    private fun createDelphiIntent() = createAssistantIntent(
+    private fun createWenxiaoyanIntent() = createAssistantIntent(
         packageName = Companion.packageName,
-        defaultActivity = "ai.oo.delphi.MainActivity",
-        voiceInputActivity = "ai.oo.delphi.MainActivity"
+        defaultActivity = "com.baidu.newapp.home.MainActivity",
+        voiceInputActivity = "com.baidu.newapp.home.MainActivity"
     )
 }

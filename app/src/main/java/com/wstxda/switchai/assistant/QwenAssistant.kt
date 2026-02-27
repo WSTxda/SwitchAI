@@ -5,7 +5,7 @@ import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
 import com.wstxda.switchai.utils.AssistantProperties
 
-class QwenAssistant : AssistantActivity() {
+class  QwenAssistant : AssistantActivity() {
 
     companion object : AssistantProperties {
         override val packageName = "ai.qwenlm.chat.android"

@@ -125,15 +125,6 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
-            android:name=".assistant.DelphiAssistant"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:label="@string/delphi"
-            android:launchMode="singleTop"
-            android:noHistory="true"
-            android:theme="@style/AppTheme.Transparent" />
-
-        <activity
             android:name=".assistant.DicioAssistant"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -351,10 +342,10 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
-            android:name=".assistant.WenxinYiyanAssistant"
+            android:name=".assistant.WenxiaoyanAssistant"
             android:excludeFromRecents="true"
             android:exported="false"
-            android:label="@string/wenxin_yiyan"
+            android:label="@string/wenxiaoyan"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />

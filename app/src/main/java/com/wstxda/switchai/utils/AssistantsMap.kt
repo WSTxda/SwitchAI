@@ -5,6 +5,7 @@ import com.wstxda.switchai.assistant.*
 object AssistantsMap {
 
     internal val assistantActivity = mapOf(
+        "accio_assistant" to AccioAssistant::class.java,
         "alexa_assistant" to AlexaAssistant::class.java,
         "alice_assistant" to AliceAssistant::class.java,
         "bixby_assistant" to BixbyAssistant::class.java,
@@ -46,6 +47,7 @@ object AssistantsMap {
     )
 
     internal val assistantPackage = mapOf(
+        "accio_assistant" to "com.accio.android.app",
         "alexa_assistant" to "com.amazon.dee.app",
         "alice_assistant" to "com.yandex.aliceapp",
         "bixby_assistant" to "com.samsung.android.bixby.agent",

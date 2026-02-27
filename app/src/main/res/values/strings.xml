@@ -7,6 +7,7 @@
 
     <!--assistant names-->
 
+    <string name="accio">Accio</string>
     <string name="alexa">Alexa</string>
     <string name="alice">Alice</string>
     <string name="bixby">Bixby</string>

@@ -3,6 +3,7 @@
     <!--assistant selector-->
 
     <string-array name="assistant_entries">
+        <item>@string/accio</item>
         <item>@string/alexa</item>
         <item>@string/alice</item>
         <item>@string/bixby</item>
@@ -44,6 +45,7 @@
     </string-array>
 
     <string-array name="assistant_values">
+        <item>accio_assistant</item>
         <item>alexa_assistant</item>
         <item>alice_assistant</item>
         <item>bixby_assistant</item>
@@ -87,6 +89,7 @@
     <!--assistant visibility multi-choice-->
 
     <string-array name="assistant_visibility_values">
+        <item>accio_assistant</item>
         <item>alexa_assistant</item>
         <item>alice_assistant</item>
         <item>bixby_assistant</item>

@@ -52,6 +52,16 @@
 
         <!--assistants activity's-->
 
+
+        <activity
+            android:name=".assistant.AccioAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/accio"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
         <activity
             android:name=".assistant.AlexaAssistant"
             android:excludeFromRecents="true"

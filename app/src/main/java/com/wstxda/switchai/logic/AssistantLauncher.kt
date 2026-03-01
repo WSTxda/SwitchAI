@@ -1,6 +1,5 @@
 package com.wstxda.switchai.logic
 
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
@@ -30,8 +29,7 @@ fun Context.openAssistant(
 }
 
 fun Context.openAssistant(intent: Intent): Boolean = runCatching {
-    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    startActivity(intent)
+    startActivity(Intent(intent).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK })
     true
 }.getOrElse { false }
 
@@ -48,10 +46,9 @@ fun Context.openAssistantRoot(
     }
 
     intents.forEach { intent ->
+        val component = intent.component ?: return@forEach
         val success = runCatching {
-            launchRootActivity(
-                intent.component!!.packageName, intent.component!!.className
-            )
+            launchRootActivity(component.packageName, component.className)
         }.getOrElse { false }
 
         if (success) {
@@ -69,22 +66,20 @@ fun Context.openAssistantRoot(
 }
 
 fun Context.openOnStore(packageName: String): Boolean {
-    val uri = "market://details?id=$packageName".toUri()
-    val goToMarket = Intent(Intent.ACTION_VIEW, uri).apply {
-        flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    }
+    val marketIntent = Intent(
+        Intent.ACTION_VIEW, "market://details?id=$packageName".toUri()
+    ).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
 
-    val fallbackUri = "https://play.google.com/store/apps/details?id=$packageName".toUri()
-    val fallbackIntent = Intent(Intent.ACTION_VIEW, fallbackUri).apply {
-        flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    }
+    val webSearchIntent = Intent(
+        Intent.ACTION_VIEW, "https://www.google.com/search?q=$packageName+android+app".toUri()
+    ).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
 
-    return try {
-        startActivity(goToMarket)
+    return runCatching {
+        startActivity(marketIntent)
         true
-    } catch (_: ActivityNotFoundException) {
+    }.getOrElse {
         runCatching {
-            startActivity(fallbackIntent)
+            startActivity(webSearchIntent)
             true
         }.getOrElse { false }
     }

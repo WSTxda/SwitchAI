@@ -35,6 +35,7 @@
         <item>@string/moto</item>
         <item>@string/perplexity</item>
         <item>@string/pi</item>
+        <item>@string/poe</item>
         <item>@string/qingyan</item>
         <item>@string/qwen</item>
         <item>@string/ultimate_alexa</item>
@@ -79,6 +80,7 @@
         <item>moto_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>
+        <item>poe_assistant</item>
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>ultimate_alexa_assistant</item>
@@ -125,6 +127,7 @@
         <item>moto_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>
+        <item>poe_assistant</item>
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>ultimate_alexa_assistant</item>

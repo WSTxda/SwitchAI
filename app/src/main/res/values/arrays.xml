@@ -33,6 +33,7 @@
         <item>@string/minimax</item>
         <item>@string/monica</item>
         <item>@string/moto</item>
+        <item>@string/oxproxion</item>
         <item>@string/perplexity</item>
         <item>@string/pi</item>
         <item>@string/poe</item>
@@ -80,6 +81,7 @@
         <item>minimax_assistant</item>
         <item>monica_assistant</item>
         <item>moto_assistant</item>
+        <item>oxproxion_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>
         <item>poe_assistant</item>
@@ -129,6 +131,7 @@
         <item>minimax_assistant</item>
         <item>monica_assistant</item>
         <item>moto_assistant</item>
+        <item>oxproxion_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>
         <item>poe_assistant</item>

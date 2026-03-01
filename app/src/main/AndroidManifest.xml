@@ -205,6 +205,14 @@
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />
 
+        <activity
+            android:name=".assistant.ImaAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/ima"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
 
         <activity
             android:name=".assistant.KimiAssistant"

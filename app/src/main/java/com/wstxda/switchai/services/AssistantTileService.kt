@@ -68,7 +68,7 @@ class AssistantTileService : TileService() {
             )
         }
 
-        tile.state = Tile.STATE_ACTIVE
+        tile.state = Tile.STATE_INACTIVE
         tile.updateTile()
     }
 

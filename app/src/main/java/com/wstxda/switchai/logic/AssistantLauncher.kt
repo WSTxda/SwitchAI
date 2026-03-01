@@ -33,7 +33,7 @@ fun Context.openAssistant(intent: Intent): Boolean = runCatching {
     true
 }.getOrElse { false }
 
-fun Context.openAssistantRoot(
+suspend fun Context.openAssistantRoot(
     intents: List<Intent>,
     rootAccessMessage: Int,
     errorMessage: Int,

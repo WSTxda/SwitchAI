@@ -83,7 +83,7 @@ object UpdaterService {
             setAction(R.string.update_checker_download_button) {
                 val intent = Intent(
                     Intent.ACTION_VIEW,
-                    Constants.GITHUB_RELEASE_URL.replace("api.", "").replace("/repos", "").toUri()
+                    Constants.GITHUB_RELEASE_PAGE_URL.toUri()
                 )
                 anchorView.context.startActivity(intent)
             }

@@ -27,7 +27,7 @@ class YuanbaoAssistant : AssistantActivity() {
         }
     }
 
-    private fun openYuanbaoRoot() {
+    private suspend fun openYuanbaoRoot() {
         openAssistantRoot(
             intents = listOf(createYuanbaoRootIntent()),
             rootAccessMessage = R.string.root_access_warning,

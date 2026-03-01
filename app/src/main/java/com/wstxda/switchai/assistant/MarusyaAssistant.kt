@@ -27,7 +27,7 @@ class MarusyaAssistant : AssistantActivity() {
         }
     }
 
-    private fun openMarusyaRoot() {
+    private suspend fun openMarusyaRoot() {
         openAssistantRoot(
             intents = listOf(createMarusyaRootIntent()),
             rootAccessMessage = R.string.root_access_warning,

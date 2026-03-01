@@ -64,16 +64,14 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     private fun loadAssistants() {
         viewModelScope.launch {
             _isLoading.value = true
-            withContext(Dispatchers.IO) {
+            val installedKeys = withContext(Dispatchers.IO) {
                 loadStateFromPreferences()
-                val installedKeys = packageChecker.installedAssistants()
-                val allVisibleAssistantDetails = getVisibleAssistantDetails(installedKeys)
-                val categorizedItems = buildCategorizedList(allVisibleAssistantDetails)
-                withContext(Dispatchers.Main) {
-                    allAssistantItems = categorizedItems
-                    _assistantItems.value = categorizedItems
-                }
+                packageChecker.installedAssistants()
             }
+            val allVisibleAssistantDetails = getVisibleAssistantDetails(installedKeys)
+            val categorizedItems = buildCategorizedList(allVisibleAssistantDetails)
+            allAssistantItems = categorizedItems
+            _assistantItems.value = categorizedItems
             _isLoading.value = false
         }
     }

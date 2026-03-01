@@ -8,7 +8,7 @@ import com.wstxda.switchai.utils.Constants
 
 abstract class AssistantActivity : BaseActivity() {
 
-    private lateinit var preferenceHelper: PreferenceHelper
+    private val preferenceHelper by lazy { PreferenceHelper(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,9 +21,7 @@ abstract class AssistantActivity : BaseActivity() {
     fun createAssistantIntent(
         packageName: String, voiceInputActivity: String, defaultActivity: String
     ): Intent {
-        preferenceHelper = PreferenceHelper(this)
         val useVoiceInput = preferenceHelper.getBoolean(Constants.ASSISTANT_VOICE_PREF_KEY, true)
-
         val className = if (useVoiceInput) voiceInputActivity else defaultActivity
 
         return Intent().apply {

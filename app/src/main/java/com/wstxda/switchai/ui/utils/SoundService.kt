@@ -16,8 +16,12 @@ object SoundService {
     }
 
     private fun Context.performSound() {
-        val mediaPlayer = MediaPlayer.create(this, R.raw.open_sound)
+        val mediaPlayer = MediaPlayer.create(this, R.raw.open_sound) ?: return
         mediaPlayer.setOnCompletionListener { it.release() }
+        mediaPlayer.setOnErrorListener { mp, _, _ ->
+            mp.release()
+            true
+        }
         mediaPlayer.start()
     }
 

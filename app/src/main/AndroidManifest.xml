@@ -377,6 +377,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.StepFunAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/stepfun"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.UltimateAlexaAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

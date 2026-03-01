@@ -39,6 +39,7 @@
         <item>@string/qingyan</item>
         <item>@string/qwen</item>
         <item>@string/spark</item>
+        <item>@string/stepfun</item>
         <item>@string/ultimate_alexa</item>
         <item>@string/venice</item>
         <item>@string/wenxiaoyan</item>
@@ -85,6 +86,7 @@
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>spark_assistant</item>
+        <item>stepfun_assistant</item>
         <item>ultimate_alexa_assistant</item>
         <item>venice_assistant</item>
         <item>wenxiaoyan_assistant</item>
@@ -133,6 +135,7 @@
         <item>qingyan_assistant</item>
         <item>qwen_assistant</item>
         <item>spark_assistant</item>
+        <item>stepfun_assistant</item>
         <item>ultimate_alexa_assistant</item>
         <item>venice_assistant</item>
         <item>wenxiaoyan_assistant</item>

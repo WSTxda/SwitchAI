@@ -192,7 +192,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     private fun getVisibleAssistantDetails(installedKeys: Set<String>): List<AssistantItem> {
         val context = getApplication<Application>().applicationContext
         val defaultVisibleAssistants =
-            context.resources.getStringArray(R.array.assistant_visibility_values).toSet()
+            context.resources.getStringArray(R.array.assistant_values).toSet()
         val visibleAssistantKeys = preferenceHelper.getStringSet(
             Constants.ASSISTANT_MANAGER_DIALOG_PREF_KEY, defaultVisibleAssistants
         )

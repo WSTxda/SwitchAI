@@ -50,7 +50,7 @@
         android:key="assistant_selector_manager"
         android:layout="@layout/preference_material_bottom"
         android:title="@string/pref_assistant_manage"
-        app:defaultValue="@array/assistant_visibility_values"
+        app:defaultValue="@array/assistant_values"
         app:dialogIcon="@drawable/ic_visibility"
         app:iconSpaceReserved="false"
         app:minSelection="2"

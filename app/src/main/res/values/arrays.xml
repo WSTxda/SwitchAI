@@ -98,56 +98,6 @@
         <item>zapia_assistant</item>
     </string-array>
 
-    <!--assistant visibility multi-choice-->
-
-    <string-array name="assistant_visibility_values">
-        <item>accio_assistant</item>
-        <item>alexa_assistant</item>
-        <item>alice_assistant</item>
-        <item>bixby_assistant</item>
-        <item>brenno_assistant</item>
-        <item>chatgpt_assistant</item>
-        <item>claude_assistant</item>
-        <item>conduit_assistant</item>
-        <item>copilot_assistant</item>
-        <item>deepseek_assistant</item>
-        <item>dicio_assistant</item>
-        <item>dola_assistant</item>
-        <item>doubao_assistant</item>
-        <item>euria_assistant</item>
-        <item>gemini_assistant</item>
-        <item>grok_assistant</item>
-        <item>home_assistant</item>
-        <item>ima_assistant</item>
-        <item>kimi_assistant</item>
-        <item>kruti_assistant</item>
-        <item>le_chat_assistant</item>
-        <item>liner_assistant</item>
-        <item>lumo_assistant</item>
-        <item>luzia_assistant</item>
-        <item>manus_assistant</item>
-        <item>marusya_assistant</item>
-        <item>meta_assistant</item>
-        <item>minimax_assistant</item>
-        <item>monica_assistant</item>
-        <item>moto_assistant</item>
-        <item>oxproxion_assistant</item>
-        <item>perplexity_assistant</item>
-        <item>pi_assistant</item>
-        <item>poe_assistant</item>
-        <item>qingyan_assistant</item>
-        <item>qwen_assistant</item>
-        <item>spark_assistant</item>
-        <item>stepfun_assistant</item>
-        <item>ultimate_alexa_assistant</item>
-        <item>venice_assistant</item>
-        <item>wenxiaoyan_assistant</item>
-        <item>xiaoai_assistant</item>
-        <item>you_assistant</item>
-        <item>yuanbao_assistant</item>
-        <item>zapia_assistant</item>
-    </string-array>
-
     <!--theme selector-->
 
     <string-array name="theme_entries">

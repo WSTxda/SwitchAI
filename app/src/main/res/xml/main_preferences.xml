@@ -47,14 +47,24 @@
         android:dependency="assistant_selector_dialog"
         android:entries="@array/assistant_entries"
         android:entryValues="@array/assistant_values"
-        android:key="assistant_selector_manager"
-        android:layout="@layout/preference_material_bottom"
-        android:title="@string/pref_assistant_manage"
+        android:key="assistant_manager_manual"
+        android:layout="@layout/preference_material_middle"
+        android:title="@string/pref_assistant_manager_manual"
         app:defaultValue="@array/assistant_values"
         app:dialogIcon="@drawable/ic_visibility"
         app:iconSpaceReserved="false"
         app:minSelection="2"
-        app:summary="@string/pref_assistant_manage_summary" />
+        app:summary="@string/pref_assistant_manager_manual_summary" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:dependency="assistant_selector_dialog"
+        android:key="assistant_manager_dynamic"
+        android:summaryOff="@string/pref_assistant_manager_dynamic_summary_off"
+        android:summaryOn="@string/pref_assistant_manager_dynamic_summary_on"
+        android:title="@string/pref_assistant_manager_dynamic"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_bottom" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"

@@ -23,6 +23,7 @@ import com.wstxda.switchai.ui.component.AssistantTutorialBottomSheet
 import com.wstxda.switchai.ui.component.DigitalAssistantSetupDialog
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 import com.wstxda.switchai.utils.Constants
+import com.wstxda.switchai.viewmodel.AssistantSelectorViewModel
 import com.wstxda.switchai.viewmodel.SettingsViewModel
 import com.wstxda.switchai.widget.utils.AssistantWidgetUpdater
 import kotlinx.coroutines.launch
@@ -30,6 +31,10 @@ import kotlinx.coroutines.launch
 class SettingsFragment : PreferenceFragmentCompat() {
 
     private val viewModel: SettingsViewModel by viewModels {
+        ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
+    }
+
+    private val assistantSelectorViewModel: AssistantSelectorViewModel by viewModels {
         ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
     }
 
@@ -60,6 +65,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
         viewModel.isAssistSetupDone.observe(this) { isDone ->
             findPreference<Preference>(Constants.DIGITAL_ASSISTANT_SETUP_PREF_KEY)?.isVisible =
                 !isDone
+        }
+        assistantSelectorViewModel.isDynamicModeEnabled.observe(this) { isDynamic ->
+            findPreference<MultiSelectListPreference>(Constants.ASSISTANT_MANAGER_MANUAL_PREF_KEY)?.isVisible =
+                !isDynamic
         }
     }
 

@@ -86,8 +86,12 @@
     <string name="pref_assistant_search_bar">Search bar</string>
     <string name="pref_assistant_search_bar_summary">Enable the search bar to quickly find assistants in the selector</string>
 
-    <string name="pref_assistant_manage">Manage assistants</string>
-    <string name="pref_assistant_manage_summary">Choose which assistants are displayed in the selector</string>
+    <string name="pref_assistant_manager_manual">Manage assistants</string>
+    <string name="pref_assistant_manager_manual_summary">Choose which assistants are displayed in the selector</string>
+
+    <string name="pref_assistant_manager_dynamic">Dynamic manager</string>
+    <string name="pref_assistant_manager_dynamic_summary_off">Manage which assistants are displayed in the selector dynamically based on app availability</string>
+    <string name="pref_assistant_manager_dynamic_summary_on">Only installed assistants are shown in the selector</string>
 
     <string name="pref_assistant_tile">Add assistant tile</string>
     <string name="pref_assistant_tile_summary">Add a quick settings tile to access the assistant on your device</string>
@@ -183,9 +187,6 @@
 
     <string name="error_min_selection">Select at least %1$d options</string>
     <string name="error_max_selection">Select a maximum of %1$d options</string>
-
-    <string name="auto_select_assistant">Auto</string>
-    <string name="auto_select_assistant_result">%1$d assistants selected, %2$d hidden</string>
 
     <!--app widgets-->
 

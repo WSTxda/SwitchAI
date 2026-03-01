@@ -82,8 +82,12 @@
     <string name="pref_assistant_selector">Usar seletor de assistente</string>
     <string name="pref_assistant_selector_summary">Se ativado, selecione um assistente toda vez que iniciar. Caso contrário, será usado a opção <b>Assistente digital</b></string>
 
-    <string name="pref_assistant_manage">Gerenciar assistentes</string>
-    <string name="pref_assistant_manage_summary">Escolha quais assistentes serão exibidos no seletor</string>
+    <string name="pref_assistant_manager_manual">Gerenciar assistentes</string>
+    <string name="pref_assistant_manager_manual_summary">Escolha quais assistentes serão exibidos no seletor</string>
+
+    <string name="pref_assistant_manager_dynamic">Gerenciador dinâmico</string>
+    <string name="pref_assistant_manager_dynamic_summary_off">Gerencie quais assistentes serão exibidos no seletor dinamicamente com base na disponibilidade do aplicativo</string>
+    <string name="pref_assistant_manager_dynamic_summary_on">Apenas assistentes instalados são exibidos no seletor</string>
 
     <string name="pref_assistant_tile">Adicionar bloco do assistente</string>
     <string name="pref_assistant_tile_summary">Adicione um bloco nas configurações rápidas para acessar o assistente no seu dispositivo</string>
@@ -179,9 +183,6 @@
 
     <string name="error_min_selection">Selecione pelo menos %1$d opções</string>
     <string name="error_max_selection">Selecione no máximo %1$d opções</string>
-
-    <string name="auto_select_assistant">Auto</string>
-    <string name="auto_select_assistant_result">%1$d assistentes selecionados, %2$d ocultos</string>
 
     <!--app widget-->
 

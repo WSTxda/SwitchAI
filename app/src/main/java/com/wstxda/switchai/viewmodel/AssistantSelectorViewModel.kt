@@ -1,6 +1,10 @@
 package com.wstxda.switchai.viewmodel
 
 import android.app.Application
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import androidx.lifecycle.AndroidViewModel
@@ -36,6 +40,9 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
+    private val _isDynamicModeEnabled = MutableLiveData<Boolean>()
+    val isDynamicModeEnabled: LiveData<Boolean> = _isDynamicModeEnabled
+
     private val pinnedAssistantKeys = mutableListOf<String>()
     private val recentlyUsedAssistants = mutableListOf<Pair<String, Long>>()
 
@@ -56,8 +63,30 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
 
     private val packageChecker: PackageChecker = PackageChecker(application.applicationContext)
 
+    private val packageChangeReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            if (isDynamicMode) {
+                loadAssistants()
+            }
+        }
+    }
+
+    private val isDynamicMode: Boolean
+        get() = defaultSharedPreferences.getBoolean(
+            Constants.ASSISTANT_MANAGER_DYNAMIC_PREF_KEY, false
+        )
+
     init {
         defaultSharedPreferences.registerOnSharedPreferenceChangeListener(this)
+        _isDynamicModeEnabled.value = isDynamicMode
+
+        val intentFilter = IntentFilter().apply {
+            addAction(Intent.ACTION_PACKAGE_ADDED)
+            addAction(Intent.ACTION_PACKAGE_REMOVED)
+            addDataScheme("package")
+        }
+        getApplication<Application>().registerReceiver(packageChangeReceiver, intentFilter)
+
         loadAssistants()
     }
 
@@ -83,7 +112,8 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             return
         }
 
-        val filteredList = allAssistantItems.filterIsInstance<AssistantSelectorRecyclerView.AssistantSelector>()
+        val filteredList =
+            allAssistantItems.filterIsInstance<AssistantSelectorRecyclerView.AssistantSelector>()
                 .filter { assistant ->
                     assistant.assistantItem.name.contains(query, ignoreCase = true)
                 }
@@ -189,28 +219,35 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
 
     private fun getVisibleAssistantDetails(installedKeys: Set<String>): List<AssistantItem> {
         val context = getApplication<Application>().applicationContext
-        val defaultVisibleAssistants =
-            context.resources.getStringArray(R.array.assistant_values).toSet()
-        val visibleAssistantKeys = preferenceHelper.getStringSet(
-            Constants.ASSISTANT_MANAGER_DIALOG_PREF_KEY, defaultVisibleAssistants
-        )
 
-        return AssistantsMap.assistantActivity.filterKeys { it in visibleAssistantKeys }
-            .map { (key, _) ->
-                AssistantItem(
-                    key = key,
-                    name = assistantResourcesManager.getAssistantName(key),
-                    iconRes = assistantResourcesManager.getAssistantIcon(key),
-                    isInstalled = key in installedKeys,
-                    isPinned = key in pinnedAssistantKeys,
-                    lastUsedTime = recentlyUsedAssistants.find { it.first == key }?.second ?: 0L
-                )
-            }
+        val keysToShow: Set<String> = if (isDynamicMode) {
+            installedKeys
+        } else {
+            val defaultVisibleAssistants =
+                context.resources.getStringArray(R.array.assistant_values).toSet()
+            preferenceHelper.getStringSet(
+                Constants.ASSISTANT_MANAGER_MANUAL_PREF_KEY, defaultVisibleAssistants
+            )
+        }
+
+        return AssistantsMap.assistantActivity.filterKeys { it in keysToShow }.map { (key, _) ->
+            AssistantItem(
+                key = key,
+                name = assistantResourcesManager.getAssistantName(key),
+                iconRes = assistantResourcesManager.getAssistantIcon(key),
+                isInstalled = key in installedKeys,
+                isPinned = key in pinnedAssistantKeys,
+                lastUsedTime = recentlyUsedAssistants.find { it.first == key }?.second ?: 0L
+            )
+        }
     }
 
     private fun buildCategorizedList(assistants: List<AssistantItem>): List<AssistantSelectorRecyclerView> {
         val context = getApplication<Application>().applicationContext
         val (installedAssistants, notInstalledAssistants) = assistants.partition { it.isInstalled }
+        val nameComparator =
+            compareBy(String.CASE_INSENSITIVE_ORDER) { it: AssistantItem -> it.name }
+
         return buildList {
             val pinnedAssistants = installedAssistants.filter { it.isPinned }
             val unpinnedItems = installedAssistants.filterNot { it.isPinned }
@@ -223,7 +260,12 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             val (recentItems, otherItems) = unpinnedItems.partition { it.key in recentKeys }
 
             if (pinnedItems.isNotEmpty()) {
-                add(AssistantSelectorRecyclerView.CategoryHeader(context.getString(R.string.assistant_category_pin)))
+                add(
+                    AssistantSelectorRecyclerView.CategoryHeader(
+                        title = context.getString(R.string.assistant_category_pin),
+                        count = pinnedItems.size
+                    )
+                )
                 val tipDismissed = assistantStatePreferences.getBoolean(
                     Constants.REORDER_TIP_DISMISSED_KEY, false
                 )
@@ -233,20 +275,35 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
                 addAll(pinnedItems)
             }
             if (recentItems.isNotEmpty()) {
-                add(AssistantSelectorRecyclerView.CategoryHeader(context.getString(R.string.assistant_category_recent)))
+                add(
+                    AssistantSelectorRecyclerView.CategoryHeader(
+                        title = context.getString(R.string.assistant_category_recent),
+                        count = recentItems.size
+                    )
+                )
                 val sortedRecent = recentItems.sortedByDescending { it.lastUsedTime }
                     .map { AssistantSelectorRecyclerView.AssistantSelector(it) }
                 addAll(sortedRecent)
             }
             if (otherItems.isNotEmpty()) {
-                add(AssistantSelectorRecyclerView.CategoryHeader(context.getString(R.string.assistant_category_all)))
-                val sortedOthers = otherItems.sortedBy { it.name }
+                add(
+                    AssistantSelectorRecyclerView.CategoryHeader(
+                        title = context.getString(R.string.assistant_category_all),
+                        count = otherItems.size
+                    )
+                )
+                val sortedOthers = otherItems.sortedWith(nameComparator)
                     .map { AssistantSelectorRecyclerView.AssistantSelector(it) }
                 addAll(sortedOthers)
             }
             if (notInstalledAssistants.isNotEmpty()) {
-                add(AssistantSelectorRecyclerView.CategoryHeader(context.getString(R.string.assistant_category_not_installed)))
-                val sortedNotInstalled = notInstalledAssistants.sortedBy { it.name }
+                add(
+                    AssistantSelectorRecyclerView.CategoryHeader(
+                        title = context.getString(R.string.assistant_category_not_installed),
+                        count = notInstalledAssistants.size
+                    )
+                )
+                val sortedNotInstalled = notInstalledAssistants.sortedWith(nameComparator)
                     .map { AssistantSelectorRecyclerView.AssistantSelector(it) }
                 addAll(sortedNotInstalled)
             }
@@ -277,14 +334,19 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
-        if (key == Constants.ASSISTANT_MANAGER_DIALOG_PREF_KEY) {
-            loadAssistants()
+        when (key) {
+            Constants.ASSISTANT_MANAGER_MANUAL_PREF_KEY -> loadAssistants()
+            Constants.ASSISTANT_MANAGER_DYNAMIC_PREF_KEY -> {
+                _isDynamicModeEnabled.value = isDynamicMode
+                loadAssistants()
+            }
         }
     }
 
     override fun onCleared() {
         super.onCleared()
         defaultSharedPreferences.unregisterOnSharedPreferenceChangeListener(this)
+        getApplication<Application>().unregisterReceiver(packageChangeReceiver)
     }
 
     fun dismissReorderTip() {

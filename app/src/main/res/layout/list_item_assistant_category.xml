@@ -1,12 +1,42 @@
-<com.google.android.material.textview.MaterialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/category_title_text_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="40dp"
-    android:paddingTop="20dp"
-    android:paddingEnd="40dp"
-    android:paddingBottom="12dp"
-    android:textAppearance="?attr/textAppearanceLabelLarge"
-    android:textColor="?attr/colorOnSurfaceVariant"
-    tools:text="@string/assistant_category_recent" />
+    android:paddingTop="12dp"
+    android:paddingEnd="28dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/category_title_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/category_count_chip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/assistant_category_recent" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/category_count_chip"
+        style="@style/Widget.Material3.Chip.Assist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="false"
+        android:clickable="false"
+        android:focusable="false"
+        android:textAppearance="?attr/textAppearanceLabelSmall"
+        android:textColor="?attr/colorOnTertiaryContainer"
+        app:chipBackgroundColor="?attr/colorTertiaryContainer"
+        app:chipEndPadding="0dp"
+        app:chipMinHeight="24dp"
+        app:chipStartPadding="0dp"
+        app:chipStrokeWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

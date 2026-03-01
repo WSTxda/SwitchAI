@@ -10,5 +10,6 @@ class AssistantSelectorCategoryViewHolder(
 
     fun bind(categoryHeader: AssistantSelectorRecyclerView.CategoryHeader) {
         binding.categoryTitleTextView.text = categoryHeader.title
+        binding.categoryCountChip.text = categoryHeader.count.toString()
     }
 }

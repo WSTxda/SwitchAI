@@ -127,7 +127,7 @@
     <string name="tutorial_edge_gestures">화면 가장자리 제스처 사용</string>
     <string name="tutorial_edge_gestures_summary">제스처 내비게이션(Android 10+)을 사용하는 기기에서는 화면 하단의 왼쪽 또는 오른쪽 모서리에서 위쪽 안쪽으로 스와이프하세요. 디지털 어시스턴트가 열릴 때 모서리에서 빛나는 아치형 표시가 나타나며 실행을 확인할 수 있습니다. 이 기능을 사용하려면 기기 설정에서 시스템 내비게이션 모드를 제스처 내비게이션으로 선택해야 합니다</string>
     <string name="tutorial_home_button">홈 내비게이션 버튼 사용</string>
-    <string name="tutorial_home_button_summary">기기에서 클래식 3버튼 내비게이션을 사용하는 경우에는 가운데 홈 버튼을 잠시 길게 누르세요. 이 동작은 일반적으로 디지털 어시스턴트를 여는 데 사용됩니다. 만약 다른 기능이 실행된다면, 기기 제조사에서 해당 동작을 커스터마이즈했을 수 있습니다</string>
+    <string name="tutorial_home_button_summary">기기에서 클래식 3-버튼 내비게이션을 사용하는 경우에는 가운데 홈 버튼을 잠시 길게 누르세요. 이 동작은 일반적으로 디지털 어시스턴트를 여는 데 사용됩니다. 만약 다른 기능이 실행된다면, 기기 제조사에서 해당 동작을 커스터마이즈했을 수 있습니다</string>
     <string name="tutorial_power_button">전원 버튼 사용</string>
     <string name="tutorial_power_button_summary">일부 기기에서는 전원 버튼을 길게 눌러 디지털 어시스턴트를 열 수 있습니다. 이때 전원 끄기/재시작 메뉴가 나타난다면, 해당 기능이 비활성화되어 있을 가능성이 큽니다. 보통 시스템 설정에서 이 기능을 활성화할 수 있으며, 일반적으로 &lt;b&gt;설정 &gt; 시스템 &gt; 제스처 &gt; 전원 버튼 길게 누르기&lt;b&gt; 경로에서 찾을 수 있습니다</string>
     <string name="tutorial_headset_button">유선 및 블루투스 헤드셋 사용</string>
@@ -150,7 +150,7 @@
     <string name="widget_assistant_label">머티리얼 스타일</string>
     <string name="widget_assistant_invisible_label">투명</string>
     <!--widget description-->
-    <string name="widget_assistant_description">어시스턴트에 빠르게 접근할 수 있는 머티리얼 스타일 위젯</string>
+    <string name="widget_assistant_description">어시스턴트에 접근할 수 있는 머티리얼 스타일 위젯</string>
     <string name="widget_assistant_invisible_description">어시스턴트에 접근할 수 있는 투명 위젯</string>
     <!--pinning widget-->
     <string name="widget_launcher_not_supported">사용 중인 런처는 위젯 고정을 지원하지 않습니다</string>

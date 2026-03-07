@@ -29,14 +29,15 @@
         android:clickable="false"
         android:focusable="false"
         android:textAppearance="?attr/textAppearanceLabelSmall"
-        android:textColor="?attr/colorOnTertiaryContainer"
-        app:chipBackgroundColor="?attr/colorTertiaryContainer"
+        android:textColor="?attr/colorOnSecondaryContainer"
+        app:chipBackgroundColor="?attr/colorSecondaryContainer"
+        app:chipCornerRadius="28dp"
         app:chipEndPadding="0dp"
-        app:chipMinHeight="24dp"
+        app:chipMinHeight="20dp"
         app:chipStartPadding="0dp"
         app:chipStrokeWidth="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="5" />
+        tools:text="50" />
 </androidx.constraintlayout.widget.ConstraintLayout>

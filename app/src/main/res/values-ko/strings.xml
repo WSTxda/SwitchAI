@@ -1,0 +1,196 @@
+<resources>
+
+    <!--app names-->
+
+    <string name="app_settings">어시스턴트 설정</string>
+
+    <!--assistant names-->
+
+    <string name="accio">Accio</string>
+    <string name="alexa">Alexa</string>
+    <string name="alice">Alice</string>
+    <string name="bixby">Bixby</string>
+    <string name="brenno">Brenno</string>
+    <string name="chatgpt">ChatGPT</string>
+    <string name="claude">Claude</string>
+    <string name="conduit">Conduit</string>
+    <string name="copilot">Copilot</string>
+    <string name="deepseek">DeepSeek</string>
+    <string name="dicio">Dicio</string>
+    <string name="dola">Dola</string>
+    <string name="doubao">Doubao</string>
+    <string name="euria">Euria</string>
+    <string name="gemini">Gemini</string>
+    <string name="grok">Grok</string>
+    <string name="home">Home Assistant</string>
+    <string name="ima">ima</string>
+    <string name="kimi">Kimi</string>
+    <string name="kruti">Kruti</string>
+    <string name="le_chat">Le Chat</string>
+    <string name="liner">Liner</string>
+    <string name="lumo">Lumo</string>
+    <string name="luzia">Luzia</string>
+    <string name="manus">Manus</string>
+    <string name="marusya">Marusya</string>
+    <string name="meta">Meta AI</string>
+    <string name="minimax">MiniMax</string>
+    <string name="monica">Monica</string>
+    <string name="moto">Moto AI</string>
+    <string name="oxproxion">oxproxion</string>
+    <string name="perplexity">Perplexity</string>
+    <string name="pi">Pi</string>
+    <string name="poe">Poe</string>
+    <string name="qingyan">Qingyan</string>
+    <string name="qwen">Qwen</string>
+    <string name="spark">Spark</string>
+    <string name="stepfun">StepFun</string>
+    <string name="ultimate_alexa">Ultimate Alexa</string>
+    <string name="venice">Venice AI</string>
+    <string name="wenxiaoyan">Wenxiaoyan</string>
+    <string name="xiaoai">XiaoAI</string>
+    <string name="you">You</string>
+    <string name="yuanbao">Yuanbao</string>
+    <string name="zapia">Zapia</string>
+
+    <!--preferences-->
+
+    <string name="pref_category_appearance">디자인</string>
+    <string name="pref_category_selector">선택기</string>
+    <string name="pref_category_shortcuts">바로가기</string>
+    <string name="pref_category_about">정보</string>
+    <string name="pref_category_behavior">동작</string>
+    <string name="pref_category_voice_input">음성 입력</string>
+
+    <string name="pref_developer">개발자</string>
+    <string name="pref_source_code">소스 코드 리포지토리</string>
+
+    <string name="pref_theme">테마</string>
+
+    <string name="pref_used_library">라이브러리</string>
+    <string name="pref_used_library_summary">오픈 소스 라이선스</string>
+
+    <string name="pref_version">버전</string>
+
+    <string name="pref_digital_assistant">디지털 어시스턴트</string>
+
+    <string name="pref_setup_digital_assistant">디지털 어시스턴트 설정</string>
+    <string name="pref_setup_digital_assistant_summary">SwitchAl을 기본 디지털 어시스턴트 앱으로 설정합니다</string>
+
+    <string name="pref_assistant_selector">어시스턴트 선택기 사용</string>
+    <string name="pref_assistant_selector_summary">활성화되면 시작할 때마다 사용할 어시스턴트를 선택합니다. 그렇지 않으면 <b>디지털 어시스턴트</b> 옵션이 사용됩니다</string>
+
+    <string name="pref_assistant_search_bar">검색창</string>
+    <string name="pref_assistant_search_bar_summary">선택기에서 어시스턴트를 빠르게 찾을 수 있도록 검색창을 활성화합니다</string>
+
+    <string name="pref_assistant_manager_manual">어시스턴트 관리</string>
+    <string name="pref_assistant_manager_manual_summary">선택기에 표시될 어시스턴트를 선택하세요</string>
+
+    <string name="pref_assistant_manager_dynamic">동적 관리자</string>
+    <string name="pref_assistant_manager_dynamic_summary_off">앱 사용 가능 여부에 따라 선택기에 표시되는 어시스턴트를 동적으로 관리합니다</string>
+    <string name="pref_assistant_manager_dynamic_summary_on">선택기에는 설치된 어시스턴트만 표시됩니다</string>
+
+    <string name="pref_assistant_tile">어시스턴트 타일 추가</string>
+    <string name="pref_assistant_tile_summary">빠른 설정 타일을 추가하여 어시스턴트를 빠르게 실행할 수 있습니다</string>
+
+    <string name="pref_assistant_widget">어시스턴트 위젯 추가</string>
+    <string name="pref_assistant_widget_summary">홈 화면에 위젯을 추가하여 어시스턴트를 빠르게 실행할 수 있습니다</string>
+
+    <string name="pref_assistant_vibration">열 때 진동 피드백</string>
+    <string name="pref_assistant_vibration_summary">어시스턴트를 열 때 진동 피드백을 제공합니다. 시스템 설정에 따라 동작이 달라질 수 있습니다</string>
+
+    <string name="pref_assistant_sound">열 때 소리 피드백</string>
+    <string name="pref_assistant_sound_summary">어시스턴트를 열 때 소리 피드백을 제공합니다. 기기의 사운드 모드나 미디어 재생 상태에 따라 소리가 들리지 않을 수 있습니다</string>
+
+    <string name="pref_assistant_root">루트 권한 사용</string>
+    <string name="pref_assistant_root_summary">특정 어시스턴트에서 음성 입력을 활성화하고 사용성을 개선하기 위해 루트 권한을 사용합니다</string>
+
+    <string name="pref_assistant_voice_input">음성 입력 사용</string>
+    <string name="pref_assistant_voice_input_summary">활성화되면 지원되는 어시스턴트에서 기본 화면 대신 음성 입력을 사용합니다</string>
+
+    <!--theme selector-->
+
+    <string name="theme_select">테마 선택</string>
+    <!--themes modes-->
+    <string name="theme_system">기기 테마 사용</string>
+    <string name="theme_light">밝은 테마</string>
+    <string name="theme_dark">어두운 테마</string>
+
+    <!--update checker-->
+
+    <string name="update_checker_button">업데이트 확인</string>
+    <string name="update_checker_download_button">다운로드</string>
+    <!--updater messages-->
+    <string name="update_checker_no_update">새로운 업데이트가 없습니다</string>
+    <string name="update_checker_update_available">새 업데이트 가능: %s</string>
+    <string name="update_checker_no_internet">인터넷에 연결되어 있지 않습니다</string>
+    <string name="update_checker_generic_error">오류가 발생했습니다… 나중에 다시 시도해 주세요</string>
+
+    <!--digital/selector/open assistant-->
+
+    <string name="assistant_select">어시스턴트 선택</string>
+    <!--selector assistant search-->
+    <string name="assistant_search_hint">어시스턴트 검색</string>
+    <string name="assistant_search_empty">어시스턴트를 찾을 수 없습니다</string>
+    <!--selector assistant categories-->
+    <string name="assistant_category_pin">고정됨</string>
+    <string name="assistant_category_recent">최근 사용됨</string>
+    <string name="assistant_category_all">어시스턴트</string>
+    <string name="assistant_category_not_installed">설치되지 않음</string>
+    <!--selector assistant tips-->
+    <string name="assistant_tip_reorder">고정된 어시스턴트를 길게 탭하여 원하는 위치로 드래그해 순서를 변경하세요</string>
+    <string name="assistant_tip_close">팁 닫기</string>
+    <!--open assistant messages-->
+    <string name="assistant_open">어시스턴트 열기</string>
+    <string name="assistant_open_error">어시스턴트 열기 오류</string>
+    <string name="assistant_application_not_found">애플리케이션을 찾을 수 없습니다. 먼저 설치하세요</string>
+    <string name="assistant_not_implemented">어시스턴트가 아직 구현되지 않았습니다…</string>
+    <!--setup digital assistant dialog-->
+    <string name="digital_assistant_setup_title">기본 디지털 어시스턴트 앱</string>
+    <string name="digital_assistant_setup_message">설정에서 기본 디지털 어시스턴트 앱으로 <b>SwitchAI</b>를 선택하면, 제스처, 버튼 등 다양한 방법으로 선택된 어시스턴트에 빠르게 접근할 수 있습니다</string>
+    <string name="digital_assistant_setup_button">기본값으로 설정</string>
+    <!--tutorial digital assistant dialog-->
+    <string name="digital_assistant_tutorial">디지털 어시스턴트 사용 방법</string>
+
+    <!--tutorial digital assistant-->
+
+    <string name="tutorial_edge_gestures">화면 가장자리 제스처 사용</string>
+    <string name="tutorial_edge_gestures_summary">제스처 내비게이션(Android 10+)을 사용하는 기기에서는 화면 하단의 왼쪽 또는 오른쪽 모서리에서 위쪽 안쪽으로 스와이프하세요. 디지털 어시스턴트가 열릴 때 모서리에서 빛나는 아치형 표시가 나타나며 실행을 확인할 수 있습니다. 이 기능을 사용하려면 기기 설정에서 시스템 내비게이션 모드를 제스처 내비게이션으로 선택해야 합니다</string>
+    <string name="tutorial_home_button">홈 내비게이션 버튼 사용</string>
+    <string name="tutorial_home_button_summary">기기에서 클래식 3-버튼 내비게이션을 사용하는 경우에는 가운데 홈 버튼을 잠시 길게 누르세요. 이 동작은 일반적으로 디지털 어시스턴트를 여는 데 사용됩니다. 만약 다른 기능이 실행된다면, 기기 제조사에서 해당 동작을 커스터마이즈했을 수 있습니다</string>
+    <string name="tutorial_power_button">전원 버튼 사용</string>
+    <string name="tutorial_power_button_summary">일부 기기에서는 전원 버튼을 길게 눌러 디지털 어시스턴트를 열 수 있습니다. 이때 전원 끄기/재시작 메뉴가 나타난다면, 해당 기능이 비활성화되어 있을 가능성이 큽니다. 보통 시스템 설정에서 이 기능을 활성화할 수 있으며, 일반적으로 &lt;b&gt;설정 &gt; 시스템 &gt; 제스처 &gt; 전원 버튼 길게 누르기&lt;b&gt; 경로에서 찾을 수 있습니다</string>
+    <string name="tutorial_headset_button">유선 및 블루투스 헤드셋 사용</string>
+    <string name="tutorial_headset_button_summary">유선 및 블루투스 헤드셋 중 일부는 다기능 버튼을 길게 눌러 디지털 어시스턴트를 실행할 수 있습니다. 이 버튼은 보통 미디어 재생 제어나 통화 응답에 사용되지만, 헤드셋 모델에 따라 어시스턴트를 여는 기능으로도 사용할 수 있습니다. 또한 일부 무선 이어폰에서는 <b>두 번 탭</b>과 같은 제스처로 디지털 어시스턴트를 실행할 수 있으며, 해당 기능이 지원되고 앱에서 설정된 경우에 한해 동작합니다</string>
+
+    <!--app shortcut/tile-->
+
+    <string name="assistant_label">어시스턴트</string>
+    <string name="assistant_label_open">열기</string>
+    <string name="assistant_label_select">선택</string>
+    <string name="assistant_label_selector">선택기</string>
+    <string name="assistant_label_long_selector">선택기 열기</string>
+
+    <!--app quick settings tile-->
+
+    <string name="tile_added_success">빠른 설정에 성공적으로 추가되었습니다</string>
+    <string name="tile_already_added">빠른 설정에 이미 추가되었습니다</string>
+
+    <!--root permission-->
+
+    <string name="root_access_warning">먼저 루트 권한을 부여하세요</string>
+
+    <!--multi select list preference selection-->
+
+    <string name="error_min_selection">최소 %1$d 개의 옵션을 선택하세요</string>
+    <string name="error_max_selection">최대 %1$d 개의 옵션을 선택하세요</string>
+
+    <!--app widgets-->
+
+    <string name="widget_assistant_label">머티리얼 스타일</string>
+    <string name="widget_assistant_invisible_label">투명</string>
+    <!--widget description-->
+    <string name="widget_assistant_description">어시스턴트에 접근할 수 있는 머티리얼 스타일 위젯</string>
+    <string name="widget_assistant_invisible_description">어시스턴트에 접근할 수 있는 투명 위젯</string>
+    <!--pinning widget-->
+    <string name="widget_launcher_not_supported">사용 중인 런처는 위젯 고정을 지원하지 않습니다</string>
+</resources>

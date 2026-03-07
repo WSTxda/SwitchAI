@@ -2,6 +2,7 @@ package com.wstxda.switchai.services
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
+import android.app.role.RoleManager
 import android.content.Intent
 import android.os.Build
 import android.service.quicksettings.Tile
@@ -46,10 +47,29 @@ class AssistantTileService : TileService() {
     private fun refreshTileContent() {
         val tile = qsTile ?: return
 
+        val isSetupDone = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getSystemService(RoleManager::class.java)?.isRoleHeld(RoleManager.ROLE_ASSISTANT) == true
+        } else {
+            preferenceHelper.getBoolean(Constants.IS_ASSIST_SETUP_DONE, false)
+        }
+
+        if (!isSetupDone) {
+            tile.state = Tile.STATE_UNAVAILABLE
+            tile.updateTile()
+            return
+        }
+
         val isSelectorEnabled =
             preferenceHelper.getBoolean(Constants.ASSISTANT_SELECTOR_DIALOG_PREF_KEY, false)
 
-        val assistantSubtitle = getString(R.string.assistant_label_open)
+        val assistantValue =
+            preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
+
+        tile.state = if (isSelectorEnabled || assistantValue != null) {
+            Tile.STATE_ACTIVE
+        } else {
+            Tile.STATE_INACTIVE
+        }
 
         if (isSelectorEnabled) {
             applyTileResources(
@@ -58,24 +78,22 @@ class AssistantTileService : TileService() {
                 subtitle = getString(R.string.assistant_label_select),
             )
         } else {
-            val assistantValue =
-                preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
             val iconRes = assistantResourcesManager.getAssistantIcon(assistantValue)
             val name = assistantResourcesManager.getAssistantName(assistantValue)
 
             applyTileResources(
-                icon = iconRes, title = name, subtitle = assistantSubtitle
+                icon = iconRes,
+                title = name,
+                subtitle = getString(R.string.assistant_label_open),
             )
         }
 
-        tile.state = Tile.STATE_INACTIVE
         tile.updateTile()
     }
 
     private fun applyTileResources(icon: Int, title: String, subtitle: String) {
         val tile = qsTile ?: return
         tile.icon = IconCompat.createWithResource(this, icon).toIcon(this)
-
         tile.label = title
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             tile.subtitle = subtitle

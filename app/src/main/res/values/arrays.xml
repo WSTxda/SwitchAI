@@ -20,6 +20,7 @@
         <item>@string/gemini</item>
         <item>@string/grok</item>
         <item>@string/home</item>
+        <item>@string/home_minimal</item>
         <item>@string/ima</item>
         <item>@string/kimi</item>
         <item>@string/kruti</item>
@@ -68,6 +69,7 @@
         <item>gemini_assistant</item>
         <item>grok_assistant</item>
         <item>home_assistant</item>
+        <item>home_minimal_assistant</item>
         <item>ima_assistant</item>
         <item>kimi_assistant</item>
         <item>kruti_assistant</item>

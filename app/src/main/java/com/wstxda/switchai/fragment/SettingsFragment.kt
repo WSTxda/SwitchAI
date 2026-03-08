@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -30,10 +31,7 @@ import kotlinx.coroutines.launch
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
-    private val viewModel: SettingsViewModel by viewModels {
-        ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
-    }
-
+    private val viewModel: SettingsViewModel by activityViewModels()
     private val assistantSelectorViewModel: AssistantSelectorViewModel by viewModels {
         ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
     }

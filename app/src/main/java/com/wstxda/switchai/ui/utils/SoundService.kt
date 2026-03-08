@@ -1,12 +1,12 @@
 package com.wstxda.switchai.ui.utils
 
-import android.app.NotificationManager
 import android.content.Context
-import android.media.AudioManager
+import android.media.AudioAttributes
 import android.media.MediaPlayer
 import com.wstxda.switchai.R
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.utils.Constants
+import androidx.core.net.toUri
 
 object SoundService {
 
@@ -16,32 +16,24 @@ object SoundService {
     }
 
     private fun Context.performSound() {
-        val mediaPlayer = MediaPlayer.create(this, R.raw.open_sound) ?: return
-        mediaPlayer.setOnCompletionListener { it.release() }
-        mediaPlayer.setOnErrorListener { mp, _, _ ->
-            mp.release()
-            true
+        val usage = AudioAttributes.USAGE_ASSISTANT
+
+        val attrs = AudioAttributes.Builder().setUsage(usage)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION).build()
+
+        MediaPlayer().apply {
+            setAudioAttributes(attrs)
+            setDataSource(
+                this@performSound, "android.resource://${packageName}/${R.raw.open_sound}".toUri()
+            )
+            setOnPreparedListener { it.start() }
+            setOnCompletionListener { it.release() }
+            setOnErrorListener { mp, _, _ -> mp.release(); true }
+            prepareAsync()
         }
-        mediaPlayer.start()
     }
 
     private fun Context.canPlaySound(): Boolean {
-        val preferenceHelper = PreferenceHelper(this)
-
-        val isAppSoundEnabled =
-            preferenceHelper.getBoolean(Constants.ASSISTANT_SOUND_PREF_KEY, false)
-        if (!isAppSoundEnabled) {
-            return false
-        }
-
-        val audioManager = getSystemService(Context.AUDIO_SERVICE) as AudioManager
-        if (audioManager.ringerMode != AudioManager.RINGER_MODE_NORMAL) {
-            return false
-        }
-
-        val notificationManager =
-            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        val currentFilter = notificationManager.currentInterruptionFilter
-        return currentFilter == NotificationManager.INTERRUPTION_FILTER_ALL
+        return PreferenceHelper(this).getBoolean(Constants.ASSISTANT_SOUND_PREF_KEY, false)
     }
 }

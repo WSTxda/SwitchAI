@@ -472,7 +472,7 @@
 
         <activity
             android:name=".widget.WidgetConfigureActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>

@@ -2,13 +2,13 @@ package com.wstxda.switchai.services
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
-import android.app.role.RoleManager
 import android.content.Intent
 import android.os.Build
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import androidx.core.graphics.drawable.IconCompat
 import com.wstxda.switchai.R
+import com.wstxda.switchai.logic.DigitalAssistantChecker
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 import com.wstxda.switchai.utils.Constants
@@ -47,13 +47,7 @@ class AssistantTileService : TileService() {
     private fun refreshTileContent() {
         val tile = qsTile ?: return
 
-        val isSetupDone = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            getSystemService(RoleManager::class.java)?.isRoleHeld(RoleManager.ROLE_ASSISTANT) == true
-        } else {
-            preferenceHelper.getBoolean(Constants.IS_ASSIST_SETUP_DONE, false)
-        }
-
-        if (!isSetupDone) {
+        if (!DigitalAssistantChecker.isSetupDone(this)) {
             tile.state = Tile.STATE_UNAVAILABLE
             tile.updateTile()
             return

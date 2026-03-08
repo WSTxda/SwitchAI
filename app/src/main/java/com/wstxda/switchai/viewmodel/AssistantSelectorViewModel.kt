@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.SharedPreferences
+import android.os.Build
 import androidx.core.content.edit
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -85,7 +86,13 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             addAction(Intent.ACTION_PACKAGE_REMOVED)
             addDataScheme("package")
         }
-        getApplication<Application>().registerReceiver(packageChangeReceiver, intentFilter)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            getApplication<Application>().registerReceiver(
+                packageChangeReceiver, intentFilter, Context.RECEIVER_NOT_EXPORTED
+            )
+        } else {
+            getApplication<Application>().registerReceiver(packageChangeReceiver, intentFilter)
+        }
 
         loadAssistants()
     }

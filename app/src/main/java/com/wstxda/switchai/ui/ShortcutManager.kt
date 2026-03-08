@@ -87,6 +87,5 @@ class ShortcutManager(private val context: Context) {
         return IconCompat.createWithAdaptiveBitmap(bitmap)
     }
 
-    private val dp108: Int
-        get() = (108 * context.resources.displayMetrics.density).toInt()
+    private val dp108: Int = (108 * context.resources.displayMetrics.density).toInt()
 }

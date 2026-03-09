@@ -11,6 +11,7 @@ import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,10 +43,17 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupTitle()
         setupRecyclerView()
         setupObservers()
         setupSearch()
         setupReorder()
+    }
+
+    private fun setupTitle() {
+        val isTitleVisible =
+            preferenceHelper.getBoolean(Constants.ASSISTANT_SELECTOR_TITLE_PREF_KEY, true)
+        titleTextView.isVisible = isTitleVisible
     }
 
     private fun setupSearch() {
@@ -62,6 +70,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
     }
 
     private fun setupRecyclerView() {
+        val isGridMode = preferenceHelper.getBoolean(Constants.ASSISTANT_GRID_VIEW_PREF_KEY, false)
         assistantSelectorAdapter = AssistantSelectorAdapter(onAssistantClicked = { assistantKey ->
             openAssistant(assistantKey)
             viewModel.updateRecentlyUsedAssistants(assistantKey)
@@ -70,9 +79,28 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
             viewModel.togglePinAssistant(assistantKey)
         }, onDismissTipClicked = {
             viewModel.dismissReorderTip()
-        })
+        }, isGridMode = isGridMode)
         binding.assistantsRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
+            if (isGridMode) {
+                val gridLayoutManager = GridLayoutManager(context, Constants.GRID_SPAN_COUNT)
+                gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int): Int {
+                        return when (assistantSelectorAdapter.getItemViewType(position)) {
+                            Constants.VIEW_TYPE_ASSISTANT_GRID_ITEM -> 1
+                            else -> Constants.GRID_SPAN_COUNT
+                        }
+                    }
+                }
+                val tv = android.util.TypedValue()
+                context.theme.resolveAttribute(android.R.attr.dialogPreferredPadding, tv, true)
+                val dialogPadding = android.util.TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
+                val itemMargin = (3 * resources.displayMetrics.density).toInt()
+                val horizontalPadding = dialogPadding - itemMargin
+                setPadding(horizontalPadding, 0, horizontalPadding, paddingBottom)
+                layoutManager = gridLayoutManager
+            } else {
+                layoutManager = LinearLayoutManager(context)
+            }
             adapter = assistantSelectorAdapter
         }
     }
@@ -120,7 +148,9 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
     private class PinnedItemReorderCallback(
         private val adapter: AssistantSelectorAdapter,
         private val onReorderFinished: (List<AssistantItem>) -> Unit
-    ) : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN, 0) {
+    ) : ItemTouchHelper.SimpleCallback(
+        ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT, 0
+    ) {
 
         override fun getDragDirs(
             recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder

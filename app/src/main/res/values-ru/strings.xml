@@ -86,8 +86,13 @@
     <string name="pref_assistant_grid_view">Вид сеткой</string>
     <string name="pref_assistant_grid_view_summary">Отображать ассистентов в компактном виде сеткой</string>
 
+    <string name="pref_assistant_grid_columns">Столбцов в сетке</string>
+    <string name="pref_assistant_grid_columns_summary">Количество столбцов в сетке</string>
+    <string name="pref_assistant_grid_columns_land">Столбцов в сетке (альбомная)</string>
+    <string name="grid_columns_auto">Автоматически</string>
+
     <string name="pref_assistant_selector_title">Показывать заголовок</string>
-    <string name="pref_assistant_selector_title_summary">Показывать заголовок «Выбор ассистента» в меню</string>
+    <string name="pref_assistant_selector_title_summary">Показывать заголовок «Выберите ассистента» в меню</string>
 
     <string name="pref_assistant_manager_manual">Управление ассистентами</string>
     <string name="pref_assistant_manager_manual_summary">Выберите, какие ассистенты отображаются в меню выбора</string>

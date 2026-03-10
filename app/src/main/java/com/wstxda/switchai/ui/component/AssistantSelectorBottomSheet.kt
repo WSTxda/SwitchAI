@@ -82,12 +82,34 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
         }, isGridMode = isGridMode)
         binding.assistantsRecyclerView.apply {
             if (isGridMode) {
-                val gridLayoutManager = GridLayoutManager(context, Constants.GRID_SPAN_COUNT)
+                val isLandscape = resources.configuration.orientation ==
+                    android.content.res.Configuration.ORIENTATION_LANDSCAPE
+                val userPref = if (isLandscape) {
+                    preferenceHelper.getString(
+                        Constants.ASSISTANT_GRID_COLUMNS_LAND_PREF_KEY, "0"
+                    )?.toIntOrNull() ?: 0
+                } else {
+                    preferenceHelper.getString(
+                        Constants.ASSISTANT_GRID_COLUMNS_PREF_KEY, "0"
+                    )?.toIntOrNull() ?: 0
+                }
+                val autoSpan = run {
+                    val isLowDensity = resources.displayMetrics.densityDpi <=
+                        android.util.DisplayMetrics.DENSITY_MEDIUM
+                    when {
+                        isLandscape && isLowDensity -> 3
+                        isLandscape -> 4
+                        isLowDensity -> 2
+                        else -> 3
+                    }
+                }
+                val spanCount = if (userPref > 0) userPref else autoSpan
+                val gridLayoutManager = GridLayoutManager(context, spanCount)
                 gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int): Int {
                         return when (assistantSelectorAdapter.getItemViewType(position)) {
                             Constants.VIEW_TYPE_ASSISTANT_GRID_ITEM -> 1
-                            else -> Constants.GRID_SPAN_COUNT
+                            else -> spanCount
                         }
                     }
                 }
@@ -97,6 +119,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
                 val itemMargin = (3 * resources.displayMetrics.density).toInt()
                 val horizontalPadding = dialogPadding - itemMargin
                 setPadding(horizontalPadding, 0, horizontalPadding, paddingBottom)
+                scrollBarStyle = View.SCROLLBARS_OUTSIDE_INSET
                 layoutManager = gridLayoutManager
             } else {
                 layoutManager = LinearLayoutManager(context)

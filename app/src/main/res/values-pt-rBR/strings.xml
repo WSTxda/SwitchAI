@@ -83,8 +83,13 @@
     <string name="pref_assistant_grid_view">Visualização em grade</string>
     <string name="pref_assistant_grid_view_summary">Exibir assistentes em um layout de grade compacto</string>
 
+    <string name="pref_assistant_grid_columns">Colunas da grade</string>
+    <string name="pref_assistant_grid_columns_summary">Número de colunas na grade</string>
+    <string name="pref_assistant_grid_columns_land">Colunas da grade (paisagem)</string>
+    <string name="grid_columns_auto">Automático</string>
+
     <string name="pref_assistant_selector_title">Mostrar título</string>
-    <string name="pref_assistant_selector_title_summary">Mostrar o título "Escolher assistente" no seletor</string>
+    <string name="pref_assistant_selector_title_summary">Mostrar o título "Selecionar assistente" no seletor</string>
 
     <string name="pref_assistant_selector">Usar seletor de assistente</string>
     <string name="pref_assistant_selector_summary">Se ativado, selecione um assistente toda vez que iniciar. Caso contrário, será usado a opção <b>Assistente digital</b></string>

@@ -9,6 +9,8 @@ object Constants {
     const val ASSISTANT_SELECTOR_DIALOG_PREF_KEY = "assistant_selector_dialog"
     const val ASSISTANT_SEARCH_BAR_PREF_KEY = "assistant_search_bar"
     const val ASSISTANT_GRID_VIEW_PREF_KEY = "assistant_grid_view"
+    const val ASSISTANT_GRID_COLUMNS_PREF_KEY = "assistant_grid_columns"
+    const val ASSISTANT_GRID_COLUMNS_LAND_PREF_KEY = "assistant_grid_columns_land"
     const val ASSISTANT_SELECTOR_TITLE_PREF_KEY = "assistant_selector_title"
     const val ASSISTANT_MANAGER_MANUAL_PREF_KEY = "assistant_manager_manual"
     const val ASSISTANT_MANAGER_DYNAMIC_PREF_KEY = "assistant_manager_dynamic"

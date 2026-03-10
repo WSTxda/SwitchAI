@@ -68,6 +68,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
             findPreference<MultiSelectListPreference>(Constants.ASSISTANT_MANAGER_MANUAL_PREF_KEY)?.isVisible =
                 !isDynamic
         }
+        assistantSelectorViewModel.isGridViewEnabled.observe(this) { isGrid ->
+            findPreference<ListPreference>(Constants.ASSISTANT_GRID_COLUMNS_PREF_KEY)?.isVisible = isGrid
+            findPreference<ListPreference>(Constants.ASSISTANT_GRID_COLUMNS_LAND_PREF_KEY)?.isVisible = isGrid
+        }
     }
 
     override fun onResume() {

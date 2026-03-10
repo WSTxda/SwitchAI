@@ -86,8 +86,13 @@
     <string name="pref_assistant_grid_view">Вигляд сіткою</string>
     <string name="pref_assistant_grid_view_summary">Відображати асистентів у компактному вигляді сіткою</string>
 
+    <string name="pref_assistant_grid_columns">Стовпців у сітці</string>
+    <string name="pref_assistant_grid_columns_summary">Кількість стовпців у сітці</string>
+    <string name="pref_assistant_grid_columns_land">Стовпців у сітці (альбомна)</string>
+    <string name="grid_columns_auto">Автоматично</string>
+
     <string name="pref_assistant_selector_title">Показувати заголовок</string>
-    <string name="pref_assistant_selector_title_summary">Показувати заголовок «Вибір асистента» у меню</string>
+    <string name="pref_assistant_selector_title_summary">Показувати заголовок «Виберіть асистента» у меню</string>
 
     <string name="pref_assistant_manager_manual">Керування асистентами</string>
     <string name="pref_assistant_manager_manual_summary">Оберіть, які асистенти відображаються у меню вибору</string>

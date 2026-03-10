@@ -76,7 +76,7 @@ class AssistantSelectorAdapter(
             }
 
             is AssistantSelectorRecyclerView.ReorderTip -> (holder as ReorderTipViewHolder).bind(
-                onDismissTipClicked
+                onDismissTipClicked, isGridMode
             )
         }
     }

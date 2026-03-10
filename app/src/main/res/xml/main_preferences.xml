@@ -44,6 +44,15 @@
         app:layout="@layout/preference_material_middle" />
 
     <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:dependency="assistant_selector_dialog"
+        android:key="assistant_selector_title"
+        android:summary="@string/pref_assistant_selector_title_summary"
+        android:title="@string/pref_assistant_selector_title"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_middle" />
+
+    <SwitchPreferenceCompat
         android:defaultValue="false"
         android:dependency="assistant_selector_dialog"
         android:key="assistant_grid_view"
@@ -52,14 +61,31 @@
         app:iconSpaceReserved="false"
         app:layout="@layout/preference_material_middle" />
 
-    <SwitchPreferenceCompat
-        android:defaultValue="true"
-        android:dependency="assistant_selector_dialog"
-        android:key="assistant_selector_title"
-        android:summary="@string/pref_assistant_selector_title_summary"
-        android:title="@string/pref_assistant_selector_title"
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/grid_columns_entries"
+        android:entryValues="@array/grid_columns_values"
+        android:key="assistant_grid_columns"
+        android:title="@string/pref_assistant_grid_columns"
+        app:dialogIcon="@drawable/ic_grid"
+        app:dialogTitle="@string/pref_assistant_grid_columns"
+        app:isPreferenceVisible="false"
         app:iconSpaceReserved="false"
-        app:layout="@layout/preference_material_middle" />
+        app:layout="@layout/preference_material_middle"
+        app:useSimpleSummaryProvider="true" />
+
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/grid_columns_entries"
+        android:entryValues="@array/grid_columns_values"
+        android:key="assistant_grid_columns_land"
+        android:title="@string/pref_assistant_grid_columns_land"
+        app:dialogIcon="@drawable/ic_grid"
+        app:dialogTitle="@string/pref_assistant_grid_columns_land"
+        app:isPreferenceVisible="false"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_middle"
+        app:useSimpleSummaryProvider="true" />
 
     <com.wstxda.switchai.fragment.preferences.MultiSelectListPreference
         android:dependency="assistant_selector_dialog"

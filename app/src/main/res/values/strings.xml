@@ -87,6 +87,17 @@
     <string name="pref_assistant_search_bar">Search bar</string>
     <string name="pref_assistant_search_bar_summary">Enable the search bar to quickly find assistants in the selector</string>
 
+    <string name="pref_assistant_grid_view">Grid view</string>
+    <string name="pref_assistant_grid_view_summary">Display assistants in a compact grid layout</string>
+
+    <string name="pref_assistant_grid_columns">Grid columns</string>
+    <string name="pref_assistant_grid_columns_summary">Number of columns in the grid</string>
+    <string name="pref_assistant_grid_columns_land">Grid columns (landscape)</string>
+    <string name="grid_columns_auto">Automatic</string>
+
+    <string name="pref_assistant_selector_title">Show title</string>
+    <string name="pref_assistant_selector_title_summary">Show the "Select assistant" title in the selector</string>
+
     <string name="pref_assistant_manager_manual">Manage assistants</string>
     <string name="pref_assistant_manager_manual_summary">Choose which assistants are displayed in the selector</string>
 

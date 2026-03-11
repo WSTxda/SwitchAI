@@ -8,6 +8,10 @@ object Constants {
     const val DIGITAL_ASSISTANT_SELECT_PREF_KEY = "digital_assistant_select"
     const val ASSISTANT_SELECTOR_DIALOG_PREF_KEY = "assistant_selector_dialog"
     const val ASSISTANT_SEARCH_BAR_PREF_KEY = "assistant_search_bar"
+    const val ASSISTANT_GRID_VIEW_PREF_KEY = "assistant_grid_view"
+    const val ASSISTANT_GRID_COLUMNS_PREF_KEY = "assistant_grid_columns"
+    const val ASSISTANT_GRID_COLUMNS_LAND_PREF_KEY = "assistant_grid_columns_land"
+    const val ASSISTANT_SELECTOR_TITLE_PREF_KEY = "assistant_selector_title"
     const val ASSISTANT_MANAGER_MANUAL_PREF_KEY = "assistant_manager_manual"
     const val ASSISTANT_MANAGER_DYNAMIC_PREF_KEY = "assistant_manager_dynamic"
     const val OPEN_ASSISTANT_TILE_PREF_KEY = "open_assistant_tile"
@@ -51,6 +55,8 @@ object Constants {
     const val VIEW_TYPE_CATEGORY_HEADER = 0
     const val VIEW_TYPE_ASSISTANT_ITEM = 1
     const val VIEW_TYPE_REORDER_TIP = 2
+    const val VIEW_TYPE_ASSISTANT_GRID_ITEM = 3
+    const val GRID_SPAN_COUNT = 3
     // Maximum number of recently used assistants
     const val CAT_MAX_RECENTLY_USED = 3
     // Category for AssistantSelectorBottomSheet

@@ -44,6 +44,9 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     private val _isDynamicModeEnabled = MutableLiveData<Boolean>()
     val isDynamicModeEnabled: LiveData<Boolean> = _isDynamicModeEnabled
 
+    private val _isGridViewEnabled = MutableLiveData<Boolean>()
+    val isGridViewEnabled: LiveData<Boolean> = _isGridViewEnabled
+
     private val pinnedAssistantKeys = mutableListOf<String>()
     private val recentlyUsedAssistants = mutableListOf<Pair<String, Long>>()
 
@@ -77,9 +80,15 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             Constants.ASSISTANT_MANAGER_DYNAMIC_PREF_KEY, false
         )
 
+    private val isGridView: Boolean
+        get() = defaultSharedPreferences.getBoolean(
+            Constants.ASSISTANT_GRID_VIEW_PREF_KEY, false
+        )
+
     init {
         defaultSharedPreferences.registerOnSharedPreferenceChangeListener(this)
         _isDynamicModeEnabled.value = isDynamicMode
+        _isGridViewEnabled.value = isGridView
 
         val intentFilter = IntentFilter().apply {
             addAction(Intent.ACTION_PACKAGE_ADDED)
@@ -347,6 +356,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
                 _isDynamicModeEnabled.value = isDynamicMode
                 loadAssistants()
             }
+            Constants.ASSISTANT_GRID_VIEW_PREF_KEY -> _isGridViewEnabled.value = isGridView
         }
     }
 

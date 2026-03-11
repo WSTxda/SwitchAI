@@ -83,6 +83,17 @@
     <string name="pref_assistant_search_bar">شريط البحث</string>
     <string name="pref_assistant_search_bar_summary">تمكين شريط البحث للعثور بسرعة على المساعدين في المحدد</string>
 
+    <string name="pref_assistant_grid_view">عرض الشبكة</string>
+    <string name="pref_assistant_grid_view_summary">عرض المساعدين في تخطيط شبكي مدمج</string>
+
+    <string name="pref_assistant_grid_columns">أعمدة الشبكة</string>
+    <string name="pref_assistant_grid_columns_summary">عدد الأعمدة في الشبكة</string>
+    <string name="pref_assistant_grid_columns_land">أعمدة الشبكة (أفقي)</string>
+    <string name="grid_columns_auto">تلقائي</string>
+
+    <string name="pref_assistant_selector_title">إظهار العنوان</string>
+    <string name="pref_assistant_selector_title_summary">إظهار عنوان "حدد المساعد" في المحدد</string>
+
     <string name="pref_assistant_manager_manual">إدارة المساعدين</string>
     <string name="pref_assistant_manager_manual_summary">اختر المساعدين الذين يظهرون في القائمة</string>
 

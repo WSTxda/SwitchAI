@@ -5,9 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.wstxda.switchai.databinding.ListItemAssistantCategoryBinding
+import com.wstxda.switchai.databinding.ListItemAssistantGridViewBinding
 import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
 import com.wstxda.switchai.databinding.ListItemReorderTipBinding
 import com.wstxda.switchai.ui.viewholder.AssistantSelectorCategoryViewHolder
+import com.wstxda.switchai.ui.viewholder.AssistantSelectorGridItemViewHolder
 import com.wstxda.switchai.ui.viewholder.AssistantSelectorItemViewHolder
 import com.wstxda.switchai.ui.viewholder.ReorderTipViewHolder
 import com.wstxda.switchai.utils.Constants
@@ -17,13 +19,15 @@ class AssistantSelectorAdapter(
     private val onAssistantClicked: (String) -> Unit,
     private val onPinClicked: (String) -> Unit,
     private val onDismissTipClicked: () -> Unit,
+    val isGridMode: Boolean = false,
 ) : ListAdapter<AssistantSelectorRecyclerView, RecyclerView.ViewHolder>(
     AssistantSelectorDiffCallback()
 ) {
 
     override fun getItemViewType(position: Int) = when (getItem(position)) {
         is AssistantSelectorRecyclerView.CategoryHeader -> Constants.VIEW_TYPE_CATEGORY_HEADER
-        is AssistantSelectorRecyclerView.AssistantSelector -> Constants.VIEW_TYPE_ASSISTANT_ITEM
+        is AssistantSelectorRecyclerView.AssistantSelector ->
+            if (isGridMode) Constants.VIEW_TYPE_ASSISTANT_GRID_ITEM else Constants.VIEW_TYPE_ASSISTANT_ITEM
         is AssistantSelectorRecyclerView.ReorderTip -> Constants.VIEW_TYPE_REORDER_TIP
     }
 
@@ -42,6 +46,13 @@ class AssistantSelectorAdapter(
             AssistantSelectorItemViewHolder(binding)
         }
 
+        Constants.VIEW_TYPE_ASSISTANT_GRID_ITEM -> {
+            val binding = ListItemAssistantGridViewBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+            AssistantSelectorGridItemViewHolder(binding)
+        }
+
         Constants.VIEW_TYPE_REORDER_TIP -> {
             val binding = ListItemReorderTipBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
@@ -55,15 +66,17 @@ class AssistantSelectorAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, pos: Int) {
         when (val item = getItem(pos)) {
             is AssistantSelectorRecyclerView.CategoryHeader -> (holder as AssistantSelectorCategoryViewHolder).bind(
-                item
+                item, isGridMode
             )
 
-            is AssistantSelectorRecyclerView.AssistantSelector -> (holder as AssistantSelectorItemViewHolder).bind(
-                item, onAssistantClicked, onPinClicked
-            )
+            is AssistantSelectorRecyclerView.AssistantSelector -> when (holder) {
+                is AssistantSelectorItemViewHolder -> holder.bind(item, onAssistantClicked, onPinClicked)
+                is AssistantSelectorGridItemViewHolder -> holder.bind(item, onAssistantClicked, onPinClicked)
+                else -> Unit
+            }
 
             is AssistantSelectorRecyclerView.ReorderTip -> (holder as ReorderTipViewHolder).bind(
-                onDismissTipClicked
+                onDismissTipClicked, isGridMode
             )
         }
     }

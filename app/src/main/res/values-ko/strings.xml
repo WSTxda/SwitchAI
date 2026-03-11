@@ -83,6 +83,17 @@
     <string name="pref_assistant_search_bar">검색창</string>
     <string name="pref_assistant_search_bar_summary">선택기에서 어시스턴트를 빠르게 찾을 수 있도록 검색창을 활성화합니다</string>
 
+    <string name="pref_assistant_grid_view">그리드 보기</string>
+    <string name="pref_assistant_grid_view_summary">어시스턴트를 콤팩트한 그리드 레이아웃으로 표시합니다</string>
+
+    <string name="pref_assistant_grid_columns">그리드 열 수</string>
+    <string name="pref_assistant_grid_columns_summary">그리드의 열 수</string>
+    <string name="pref_assistant_grid_columns_land">그리드 열 수 (가로)</string>
+    <string name="grid_columns_auto">자동</string>
+
+    <string name="pref_assistant_selector_title">제목 표시</string>
+    <string name="pref_assistant_selector_title_summary">선택기에서 "어시스턴트 선택" 제목을 표시합니다</string>
+
     <string name="pref_assistant_manager_manual">어시스턴트 관리</string>
     <string name="pref_assistant_manager_manual_summary">선택기에 표시될 어시스턴트를 선택하세요</string>
 

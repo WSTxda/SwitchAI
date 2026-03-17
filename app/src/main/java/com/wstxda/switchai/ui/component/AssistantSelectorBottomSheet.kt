@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.wstxda.switchai.data.AssistantItem
 import com.wstxda.switchai.R
-import com.wstxda.switchai.databinding.FragmentAssistantDialogBinding
+import com.wstxda.switchai.data.AssistantItem
+import com.wstxda.switchai.databinding.DialogAssistantSelectorBinding
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.ui.adapter.AssistantSelectorAdapter
 import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView
@@ -25,43 +25,44 @@ import com.wstxda.switchai.utils.AssistantsMap
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.AssistantSelectorViewModel
 
-class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBinding>() {
+class AssistantSelectorBottomSheet : BaseBottomSheet<DialogAssistantSelectorBinding>() {
 
     private val viewModel: AssistantSelectorViewModel by viewModels()
-    private val preferenceHelper by lazy {
-        PreferenceHelper(requireContext())
-    }
+    private val preferenceHelper by lazy { PreferenceHelper(requireContext()) }
     private lateinit var assistantSelectorAdapter: AssistantSelectorAdapter
-
-    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
-        FragmentAssistantDialogBinding.inflate(inflater, container, false)
 
     override val topDivider: View get() = binding.dividerTop
     override val bottomDivider: View get() = binding.dividerBottom
     override val titleTextView: TextView get() = binding.bottomSheetTitle
-    override val titleResId: Int get() = R.string.assistant_select
+    override val titleResId: Int get() = R.string.assistant_selector_title
+
+    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        DialogAssistantSelectorBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupTitle()
+        setupSearch()
         setupRecyclerView()
         setupObservers()
-        setupSearch()
         setupReorder()
     }
 
+    private fun activeComponents(): Set<String> = preferenceHelper.getStringSet(
+        Constants.SELECTOR_COMPONENTS_PREF_KEY, setOf(
+            Constants.SELECTOR_COMPONENT_SEARCH_BAR,
+            Constants.SELECTOR_COMPONENT_SELECTOR_TITLE,
+            Constants.SELECTOR_COMPONENT_COUNTER
+        )
+    )
+
     private fun setupTitle() {
-        val isTitleVisible =
-            preferenceHelper.getBoolean(Constants.ASSISTANT_SELECTOR_TITLE_PREF_KEY, true)
-        titleTextView.isVisible = isTitleVisible
+        titleTextView.isVisible = Constants.SELECTOR_COMPONENT_SELECTOR_TITLE in activeComponents()
     }
 
     private fun setupSearch() {
-        val isSearchBarEnabled =
-            preferenceHelper.getBoolean(Constants.ASSISTANT_SEARCH_BAR_PREF_KEY, true)
-
+        val isSearchBarEnabled = Constants.SELECTOR_COMPONENT_SEARCH_BAR in activeComponents()
         binding.searchTextInputLayout.isVisible = isSearchBarEnabled
-
         if (isSearchBarEnabled) {
             binding.searchEditText.doOnTextChanged { text, _, _, _ ->
                 viewModel.searchAssistants(text?.toString())
@@ -70,62 +71,46 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
     }
 
     private fun setupRecyclerView() {
-        val isGridMode = preferenceHelper.getBoolean(Constants.ASSISTANT_GRID_VIEW_PREF_KEY, false)
-        assistantSelectorAdapter = AssistantSelectorAdapter(onAssistantClicked = { assistantKey ->
-            openAssistant(assistantKey)
-            viewModel.updateRecentlyUsedAssistants(assistantKey)
-            dismiss()
-        }, onPinClicked = { assistantKey ->
-            viewModel.togglePinAssistant(assistantKey)
-        }, onDismissTipClicked = {
-            viewModel.dismissReorderTip()
-        }, isGridMode = isGridMode)
-        binding.assistantsRecyclerView.apply {
-            if (isGridMode) {
-                val isLandscape = resources.configuration.orientation ==
-                    android.content.res.Configuration.ORIENTATION_LANDSCAPE
-                val userPref = if (isLandscape) {
-                    preferenceHelper.getString(
-                        Constants.ASSISTANT_GRID_COLUMNS_LAND_PREF_KEY, "0"
-                    )?.toIntOrNull() ?: 0
-                } else {
-                    preferenceHelper.getString(
-                        Constants.ASSISTANT_GRID_COLUMNS_PREF_KEY, "0"
-                    )?.toIntOrNull() ?: 0
+        val isLandscape =
+            resources.configuration.orientation == android.content.res.Configuration.ORIENTATION_LANDSCAPE
+
+        val columnPrefKey = if (isLandscape) Constants.GRID_COLUMNS_LAND
+        else Constants.GRID_COLUMNS_PORT
+
+        val defaultColumns = if (isLandscape) Constants.DEFAULT_GRID_COLUMNS_LAND
+        else Constants.DEFAULT_GRID_COLUMNS_PORT
+
+        val columnCount =
+            preferenceHelper.getString(columnPrefKey, defaultColumns.toString())?.toIntOrNull()
+                ?: defaultColumns
+
+        val isGridMode = columnCount > 1
+
+        assistantSelectorAdapter = AssistantSelectorAdapter(
+            onAssistantClicked = { key ->
+                openAssistant(key)
+                viewModel.updateRecentlyUsedAssistants(key)
+                dismiss()
+            },
+            onPinClicked = { key -> viewModel.togglePinAssistant(key) },
+            onDismissTipClicked = { viewModel.dismissReorderTip() },
+            isGridMode = isGridMode,
+            showCounter = Constants.SELECTOR_COMPONENT_COUNTER in activeComponents(),
+            columnCount = columnCount,
+        )
+
+        binding.assistantsRecyclerView.layoutManager = if (isGridMode) {
+            GridLayoutManager(requireContext(), columnCount).also { glm ->
+                glm.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int) =
+                        if (assistantSelectorAdapter.getItemViewType(position) == Constants.VIEW_TYPE_ASSISTANT_GRID_ITEM) 1
+                        else columnCount
                 }
-                val autoSpan = run {
-                    val isLowDensity = resources.displayMetrics.densityDpi <=
-                        android.util.DisplayMetrics.DENSITY_MEDIUM
-                    when {
-                        isLandscape && isLowDensity -> 3
-                        isLandscape -> 4
-                        isLowDensity -> 2
-                        else -> 3
-                    }
-                }
-                val spanCount = if (userPref > 0) userPref else autoSpan
-                val gridLayoutManager = GridLayoutManager(context, spanCount)
-                gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-                    override fun getSpanSize(position: Int): Int {
-                        return when (assistantSelectorAdapter.getItemViewType(position)) {
-                            Constants.VIEW_TYPE_ASSISTANT_GRID_ITEM -> 1
-                            else -> spanCount
-                        }
-                    }
-                }
-                val tv = android.util.TypedValue()
-                context.theme.resolveAttribute(android.R.attr.dialogPreferredPadding, tv, true)
-                val dialogPadding = android.util.TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
-                val itemMargin = (3 * resources.displayMetrics.density).toInt()
-                val horizontalPadding = dialogPadding - itemMargin
-                setPadding(horizontalPadding, 0, horizontalPadding, paddingBottom)
-                scrollBarStyle = View.SCROLLBARS_OUTSIDE_INSET
-                layoutManager = gridLayoutManager
-            } else {
-                layoutManager = LinearLayoutManager(context)
             }
-            adapter = assistantSelectorAdapter
+        } else {
+            LinearLayoutManager(requireContext())
         }
+        binding.assistantsRecyclerView.adapter = assistantSelectorAdapter
     }
 
     private fun setupObservers() {
@@ -138,12 +123,9 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
             binding.assistantsRecyclerView.isInvisible = isLoading
         }
 
-        viewModel.searchResultEmpty.observe(viewLifecycleOwner) { isResultEmpty ->
-            if (isResultEmpty) {
-                binding.searchTextInputLayout.error = getString(R.string.assistant_search_empty)
-            } else {
-                binding.searchTextInputLayout.error = null
-            }
+        viewModel.searchResultEmpty.observe(viewLifecycleOwner) { isEmpty ->
+            binding.searchTextInputLayout.error =
+                if (isEmpty) getString(R.string.selector_search_empty) else null
         }
     }
 
@@ -153,50 +135,50 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 val lm = recyclerView.layoutManager as? LinearLayoutManager ?: return
                 val canScrollUp = lm.findFirstCompletelyVisibleItemPosition() > 0
-                val canScrollDown = lm.findLastCompletelyVisibleItemPosition() < assistantSelectorAdapter.itemCount - 1
+                val canScrollDown =
+                    lm.findLastCompletelyVisibleItemPosition() < assistantSelectorAdapter.itemCount - 1
                 updateDividerVisibility(canScrollUp, canScrollDown)
             }
         })
     }
 
     private fun setupReorder() {
-        val callback = PinnedItemReorderCallback(
-            assistantSelectorAdapter
-        ) { updatedList ->
-            viewModel.updatePinnedAssistantsOrder(updatedList)
-        }
-        ItemTouchHelper(callback).attachToRecyclerView(binding.assistantsRecyclerView)
+        ItemTouchHelper(
+            PinnedItemReorderCallback(assistantSelectorAdapter) { updatedList ->
+                viewModel.updatePinnedAssistantsOrder(updatedList)
+            }).attachToRecyclerView(binding.assistantsRecyclerView)
     }
 
     private class PinnedItemReorderCallback(
         private val adapter: AssistantSelectorAdapter,
-        private val onReorderFinished: (List<AssistantItem>) -> Unit
+        private val onReorderFinished: (List<AssistantItem>) -> Unit,
     ) : ItemTouchHelper.SimpleCallback(
-        ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT, 0
+        ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT,
+        0
     ) {
 
         override fun getDragDirs(
-            recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder,
         ): Int {
             val item = adapter.currentList.getOrNull(viewHolder.bindingAdapterPosition)
-            return if (item is AssistantSelectorRecyclerView.AssistantSelector && item.assistantItem.isPinned) {
-                super.getDragDirs(recyclerView, viewHolder)
-            } else 0
+            return if (item is AssistantSelectorRecyclerView.AssistantSelector && item.assistantItem.isPinned) super.getDragDirs(
+                recyclerView, viewHolder
+            ) else 0
         }
 
         override fun onMove(
             recyclerView: RecyclerView,
             viewHolder: RecyclerView.ViewHolder,
-            target: RecyclerView.ViewHolder
+            target: RecyclerView.ViewHolder,
         ): Boolean {
-            val fromPosition = viewHolder.bindingAdapterPosition
-            val toPosition = target.bindingAdapterPosition
-            val targetItem = adapter.currentList.getOrNull(toPosition)
-
+            val from = viewHolder.bindingAdapterPosition
+            val to = target.bindingAdapterPosition
+            val targetItem = adapter.currentList.getOrNull(to)
             return when {
-                fromPosition == RecyclerView.NO_POSITION || toPosition == RecyclerView.NO_POSITION -> false
+                from == RecyclerView.NO_POSITION || to == RecyclerView.NO_POSITION -> false
                 targetItem is AssistantSelectorRecyclerView.AssistantSelector && targetItem.assistantItem.isPinned -> adapter.moveItem(
-                    fromPosition, toPosition
+                    from, to
                 ).let { true }
 
                 else -> false
@@ -207,20 +189,18 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<FragmentAssistantDialogBind
 
         override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
             super.clearView(recyclerView, viewHolder)
-            val newPinnedOrder =
+            val newOrder =
                 adapter.currentList.filterIsInstance<AssistantSelectorRecyclerView.AssistantSelector>()
                     .filter { it.assistantItem.isPinned }.map { it.assistantItem }
-            onReorderFinished(newPinnedOrder)
+            onReorderFinished(newOrder)
         }
     }
 
     private fun openAssistant(assistantKey: String) {
         val context = this.context ?: return
         AssistantsMap.assistantActivity[assistantKey]?.let { activityClass ->
-            val intent = Intent(context, activityClass).apply {
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK
-            }
-            context.startActivity(intent)
+            context.startActivity(
+                Intent(context, activityClass).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK })
         } ?: Toast.makeText(context, R.string.assistant_open_error, Toast.LENGTH_SHORT).show()
     }
 }

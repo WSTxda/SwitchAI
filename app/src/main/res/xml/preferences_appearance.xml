@@ -1,0 +1,20 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:icon="@drawable/header_appearance"
+        android:selectable="false"
+        android:layout="@layout/preference_material_header" />
+
+    <ListPreference
+        android:defaultValue="system"
+        android:entries="@array/theme_entries"
+        android:entryValues="@array/theme_values"
+        android:key="select_theme"
+        android:title="@string/pref_theme"
+        app:dialogIcon="@drawable/ic_theme_color"
+        app:dialogTitle="@string/theme_select"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_single"
+        app:useSimpleSummaryProvider="true" />
+</androidx.preference.PreferenceScreen>

@@ -8,6 +8,7 @@ import com.wstxda.switchai.ui.ThemeManager
 import com.wstxda.switchai.utils.Constants
 
 class SwitchAI : Application(), SharedPreferences.OnSharedPreferenceChangeListener {
+
     private val prefs by lazy { PreferenceHelper(this) }
     private val shortcuts by lazy { ShortcutManager(this) }
 

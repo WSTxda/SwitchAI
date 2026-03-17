@@ -1,4 +1,4 @@
-package com.wstxda.switchai.fragment.preferences
+package com.wstxda.switchai.preference
 
 import android.content.Context
 import android.util.AttributeSet
@@ -17,7 +17,7 @@ class MultiSelectListPreference @JvmOverloads constructor(
     init {
         context.withStyledAttributes(attrs, R.styleable.CustomMultiSelectListPreference) {
             minSelection =
-                getInt(R.styleable.CustomMultiSelectListPreference_minSelection, 1).coerceAtLeast(1)
+                getInt(R.styleable.CustomMultiSelectListPreference_minSelection, 0).coerceAtLeast(0)
             maxSelection = getInt(
                 R.styleable.CustomMultiSelectListPreference_maxSelection, Int.MAX_VALUE
             ).coerceAtLeast(minSelection)

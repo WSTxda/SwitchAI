@@ -15,6 +15,7 @@
     <application
         android:name=".SwitchAI"
         android:allowBackup="false"
+        android:appCategory="productivity"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="false"
@@ -490,7 +491,7 @@
         <!--digital assistant service-->
 
         <activity
-            android:name=".services.DigitalAssistantService"
+            android:name=".service.DigitalAssistantService"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:excludeFromRecents="true"
             android:exported="true"
@@ -506,7 +507,7 @@
         <!--assistant service-->
 
         <activity
-            android:name=".services.AssistantService"
+            android:name=".service.AssistantService"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:excludeFromRecents="true"
             android:exported="true"
@@ -521,12 +522,33 @@
             </intent-filter>
         </activity>
 
+        <!--assistant quick settings tile service-->
+
+        <service
+            android:name=".service.AssistantTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_assistant"
+            android:label="@string/assistant_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+
+        <!--assistant widget list service-->
+
+        <service
+            android:name=".widget.utils.WidgetAssistantListService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <!--assistant material widget-->
 
         <receiver
             android:name=".widget.AssistantMaterialWidgetProvider"
             android:exported="true"
-            android:label="@string/widget_assistant_label">
+            android:label="@string/widget_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -540,7 +562,7 @@
         <receiver
             android:name=".widget.AssistantInvisibleWidgetProvider"
             android:exported="true"
-            android:label="@string/widget_assistant_invisible_label">
+            android:label="@string/widget_invisible_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -548,25 +570,5 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_assistant_invisible" />
         </receiver>
-
-        <!--assistant widget list service-->
-
-        <service
-            android:name=".widget.utils.WidgetAssistantListService"
-            android:exported="false"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
-
-        <!--assistant quick settings tile service-->
-
-        <service
-            android:name="com.wstxda.switchai.services.AssistantTileService"
-            android:exported="true"
-            android:icon="@drawable/ic_assistant"
-            android:label="@string/assistant_label"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
-            </intent-filter>
-        </service>
     </application>
 </manifest>

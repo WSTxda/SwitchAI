@@ -3,6 +3,7 @@ package com.wstxda.switchai.ui.adapter
 import androidx.recyclerview.widget.DiffUtil
 
 class AssistantSelectorDiffCallback : DiffUtil.ItemCallback<AssistantSelectorRecyclerView>() {
+
     override fun areItemsTheSame(
         oldItem: AssistantSelectorRecyclerView, newItem: AssistantSelectorRecyclerView
     ): Boolean = when (oldItem) {

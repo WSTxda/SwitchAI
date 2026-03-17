@@ -7,20 +7,26 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import com.wstxda.switchai.R
-import com.wstxda.switchai.databinding.FragmentTutorialDialogBinding
+import com.wstxda.switchai.databinding.DialogAssistantTutorialBinding
 import com.wstxda.switchai.fragment.TutorialFragment
 import com.wstxda.switchai.utils.Constants
 
-class AssistantTutorialBottomSheet : BaseBottomSheet<FragmentTutorialDialogBinding>(),
+class AssistantTutorialBottomSheet : BaseBottomSheet<DialogAssistantTutorialBinding>(),
     TutorialFragment.ScrollListener {
-
-    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
-        FragmentTutorialDialogBinding.inflate(inflater, container, false)
 
     override val topDivider: View get() = binding.dividerTop
     override val bottomDivider: View get() = binding.dividerBottom
     override val titleTextView: TextView get() = binding.bottomSheetTitle
-    override val titleResId: Int get() = R.string.digital_assistant_tutorial
+    override val titleResId: Int get() = R.string.digital_assistant_tutorial_title
+
+    companion object {
+        fun show(fragmentManager: FragmentManager) {
+            AssistantTutorialBottomSheet().show(fragmentManager, Constants.TUTORIAL_DIALOG)
+        }
+    }
+
+    override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
+        DialogAssistantTutorialBinding.inflate(inflater, container, false)
 
     override fun setupContentFragment(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
@@ -31,11 +37,5 @@ class AssistantTutorialBottomSheet : BaseBottomSheet<FragmentTutorialDialogBindi
 
     override fun onScrollChanged(canScrollUp: Boolean, canScrollDown: Boolean) {
         updateDividerVisibility(canScrollUp, canScrollDown)
-    }
-
-    companion object {
-        fun show(fragmentManager: FragmentManager) {
-            AssistantTutorialBottomSheet().show(fragmentManager, Constants.TUTORIAL_DIALOG)
-        }
     }
 }

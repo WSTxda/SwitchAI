@@ -1,6 +1,6 @@
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:configure="com.wstxda.switchai.widget.WidgetConfigureActivity"
-    android:description="@string/widget_assistant_description"
+    android:description="@string/widget_description"
     android:initialLayout="@layout/widget_assistant_material_default"
     android:previewImage="@drawable/widget_material_preview"
     android:resizeMode="horizontal|vertical"

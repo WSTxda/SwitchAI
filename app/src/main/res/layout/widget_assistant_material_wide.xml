@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:contentDescription="@string/assistant_select"
+            android:contentDescription="@string/assistant_selector_title"
             android:src="@drawable/ic_select"
             android:tint="@color/widget_tertiary_container"
             tools:ignore="UseAppTint" />

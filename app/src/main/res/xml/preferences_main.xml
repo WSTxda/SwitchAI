@@ -1,0 +1,58 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:icon="@drawable/ic_open"
+        android:key="digital_assistant_setup"
+        android:summary="@string/pref_setup_digital_assistant_summary"
+        android:title="@string/pref_setup_digital_assistant"
+        app:layout="@layout/preference_material_warning_setup" />
+
+    <ListPreference
+        android:defaultValue="chatgpt_assistant"
+        android:entries="@array/assistant_entries"
+        android:entryValues="@array/assistant_values"
+        android:icon="@drawable/ic_assistant_default"
+        android:key="digital_assistant_select"
+        android:title="@string/pref_digital_assistant"
+        app:dialogIcon="@drawable/ic_assistant"
+        app:dialogTitle="@string/assistant_selector_title"
+        app:layout="@layout/preference_material_assistant_select"
+        app:useSimpleSummaryProvider="true" />
+
+    <Preference
+        android:icon="@drawable/ic_appearance"
+        android:key="nav_appearance"
+        android:title="@string/pref_screen_appearance"
+        app:layout="@layout/preference_material_top" />
+
+    <Preference
+        android:icon="@drawable/ic_select"
+        android:key="nav_selector"
+        android:title="@string/pref_screen_selector"
+        app:layout="@layout/preference_material_middle" />
+
+    <Preference
+        android:icon="@drawable/ic_voice_input"
+        android:key="nav_voice_input"
+        android:title="@string/pref_screen_voice_input"
+        app:layout="@layout/preference_material_middle" />
+
+    <Preference
+        android:icon="@drawable/ic_accessibility"
+        android:key="nav_accessibility"
+        android:title="@string/pref_screen_accessibility"
+        app:layout="@layout/preference_material_middle" />
+
+    <Preference
+        android:icon="@drawable/ic_shortcut"
+        android:key="nav_shortcuts"
+        android:title="@string/pref_screen_shortcuts"
+        app:layout="@layout/preference_material_middle" />
+
+    <Preference
+        android:icon="@drawable/ic_info"
+        android:key="nav_about"
+        android:title="@string/pref_screen_about"
+        app:layout="@layout/preference_material_bottom" />
+</androidx.preference.PreferenceScreen>

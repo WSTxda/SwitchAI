@@ -1,0 +1,74 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:icon="@drawable/header_selector"
+        android:selectable="false"
+        android:layout="@layout/preference_material_header" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="assistant_selector"
+        android:title="@string/pref_selector"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_switch_bar" />
+
+    <PreferenceCategory
+        android:layout="@layout/preference_material_category"
+        android:title="@string/pref_category_manager"
+        app:allowDividerAbove="false" />
+
+    <MultiSelectListPreference
+        android:dependency="assistant_selector"
+        android:entries="@array/selector_components_entries"
+        android:entryValues="@array/selector_components_values"
+        android:key="selector_components"
+        android:layout="@layout/preference_material_top"
+        android:title="@string/pref_selector_components"
+        app:defaultValue="@array/selector_components_default_values"
+        app:dialogIcon="@drawable/ic_visibility"
+        app:iconSpaceReserved="false"
+        app:summary="@string/pref_selector_components_summary" />
+
+    <com.wstxda.switchai.preference.MultiSelectListPreference
+        android:dependency="assistant_selector"
+        android:entries="@array/assistant_entries"
+        android:entryValues="@array/assistant_values"
+        android:key="selector_manager_manual"
+        android:layout="@layout/preference_material_middle"
+        android:title="@string/pref_selector_manager_manual"
+        app:defaultValue="@array/assistant_values"
+        app:dialogIcon="@drawable/ic_visibility"
+        app:iconSpaceReserved="false"
+        app:minSelection="2"
+        app:summary="@string/pref_selector_manager_manual_summary" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:dependency="assistant_selector"
+        android:key="selector_manager_dynamic"
+        android:summaryOff="@string/pref_selector_manager_dynamic_summary_off"
+        android:summaryOn="@string/pref_selector_manager_dynamic_summary_on"
+        android:title="@string/pref_selector_manager_dynamic"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_bottom" />
+
+    <PreferenceCategory
+        android:layout="@layout/preference_material_category"
+        android:title="@string/pref_category_appearance"
+        app:allowDividerAbove="false" />
+
+    <Preference
+        android:dependency="assistant_selector"
+        android:key="selector_grid"
+        android:summary="@string/pref_selector_grid_summary"
+        android:title="@string/pref_selector_grid"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_single" />
+
+    <Preference
+        android:icon="@drawable/ic_info"
+        android:layout="@layout/preference_material_info_top"
+        android:selectable="false"
+        android:title="@string/pref_selector_summary" />
+</androidx.preference.PreferenceScreen>

@@ -8,10 +8,10 @@
     <group>
         <path
             android:fillAlpha="0.4"
-            android:fillColor="?colorSecondaryContainer"
+            android:fillColor="?attr/colorSecondaryContainer"
             android:pathData="M234 74A36 36 0 1 0 234 146 36 36 0 1 0 234 74z" />
         <path
-            android:fillColor="?colorSecondaryContainer"
+            android:fillColor="?attr/colorSecondaryContainer"
             android:pathData="M234 98A12 12 0 1 0 234 122 12 12 0 1 0 234 98z" />
         <path
             android:fillColor="?attr/colorPrimary"

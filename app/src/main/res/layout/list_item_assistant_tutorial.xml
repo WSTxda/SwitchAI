@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tutorial_card"
         tools:drawableStart="@drawable/ic_corners"
-        tools:text="@string/tutorial_edge_gestures" />
+        tools:text="@string/assistant_tutorial_edge_gestures" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tutorial_summary"
@@ -58,5 +58,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tutorial_title"
-        tools:text="@string/tutorial_edge_gestures_summary" />
+        tools:text="@string/assistant_tutorial_edge_gestures_summary" />
 </androidx.constraintlayout.widget.ConstraintLayout>

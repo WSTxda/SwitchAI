@@ -33,7 +33,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_marginHorizontal="4dp"
+                android:layout_marginHorizontal="8dp"
                 android:elevation="0dp"
                 android:theme="@style/ThemeOverlay.Material3.Toolbar.CircleNavigationButton"
                 app:layout_collapseMode="pin"

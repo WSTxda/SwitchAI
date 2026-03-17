@@ -19,7 +19,7 @@ class YuanbaoAssistant : AssistantActivity() {
 
     override fun onCreateInternal() {
         lifecycleScope.launch {
-            if (preferences.getBoolean(Constants.ASSISTANT_ROOT_PREF_KEY)) {
+            if (preferences.getBoolean(Constants.VOICE_INPUT_ROOT_PREF_KEY)) {
                 openYuanbaoRoot()
             } else {
                 openYuanbao()

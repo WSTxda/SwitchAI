@@ -47,7 +47,7 @@ object VibrationService {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) VibrationEffect.EFFECT_TICK else 2
 
     private fun Context.isVibrationAllowed(): Boolean {
-        if (!PreferenceHelper(this).getBoolean(Constants.ASSISTANT_VIBRATION_PREF_KEY, true)) {
+        if (!PreferenceHelper(this).getBoolean(Constants.ACCESSIBILITY_VIBRATION_PREF_KEY, true)) {
             return false
         }
 

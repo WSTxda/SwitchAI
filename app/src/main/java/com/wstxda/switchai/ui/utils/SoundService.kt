@@ -34,6 +34,6 @@ object SoundService {
     }
 
     private fun Context.canPlaySound(): Boolean {
-        return PreferenceHelper(this).getBoolean(Constants.ASSISTANT_SOUND_PREF_KEY, false)
+        return PreferenceHelper(this).getBoolean(Constants.ACCESSIBILITY_SOUND_PREF_KEY, false)
     }
 }

@@ -3,12 +3,12 @@ package com.wstxda.switchai.ui.viewholder
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.wstxda.switchai.R
-import com.wstxda.switchai.databinding.ListItemAssistantViewBinding
+import com.wstxda.switchai.databinding.ListItemAssistantListViewBinding
 import com.wstxda.switchai.ui.adapter.AssistantSelectorRecyclerView
 import com.wstxda.switchai.ui.utils.VibrationService.buttonVibration
 
 class AssistantSelectorItemViewHolder(
-    private val binding: ListItemAssistantViewBinding,
+    private val binding: ListItemAssistantListViewBinding,
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(
@@ -17,7 +17,7 @@ class AssistantSelectorItemViewHolder(
         onPinClicked: (String) -> Unit,
     ) {
         val item = wrapper.assistantItem
-        binding.assistantCheckedTextView.text = item.name
+        binding.assistantName.text = item.name
 
         val isItemEnabled = item.isInstalled
         binding.pinButton.visibility = if (isItemEnabled) View.VISIBLE else View.GONE

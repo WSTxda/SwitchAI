@@ -4,8 +4,6 @@
     style="?attr/materialCardViewFilledStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="?attr/dialogPreferredPadding"
-    android:layout_marginEnd="?attr/dialogPreferredPadding"
     android:layout_marginBottom="4dp"
     android:clickable="true"
     android:focusable="false"
@@ -28,7 +26,7 @@
             tools:src="@drawable/ic_assistant_chatgpt" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/assistant_checked_text_view"
+            android:id="@+id/assistant_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"

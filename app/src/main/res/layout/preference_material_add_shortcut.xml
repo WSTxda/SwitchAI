@@ -6,9 +6,9 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="?attr/listPreferredItemPaddingStart"
     android:layout_marginEnd="?attr/listPreferredItemPaddingEnd"
-    android:layout_marginBottom="12dp"
+    android:layout_marginBottom="16dp"
     android:clickable="true"
-    app:cardBackgroundColor="?attr/colorErrorContainer"
+    app:cardBackgroundColor="?attr/colorPrimaryContainer"
     app:cardCornerRadius="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,11 +21,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:importantForAccessibility="no"
-            android:tint="?attr/colorOnErrorContainer"
+            android:tint="?attr/colorOnPrimaryContainer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_open" />
+            tools:src="@drawable/ic_tile" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/text_container"
@@ -45,11 +45,11 @@
                 android:ellipsize="marquee"
                 android:maxLines="2"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:textColor="?attr/colorOnErrorContainer"
+                android:textColor="?attr/colorOnPrimaryContainer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/pref_setup_digital_assistant" />
+                tools:text="@string/pref_shortcut_tile" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@android:id/summary"
@@ -59,12 +59,12 @@
                 android:ellipsize="marquee"
                 android:maxLines="8"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?attr/colorOnErrorContainer"
+                android:textColor="?attr/colorPrimary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@android:id/title"
-                tools:text="@string/pref_setup_digital_assistant_summary" />
+                tools:visibility="gone" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat

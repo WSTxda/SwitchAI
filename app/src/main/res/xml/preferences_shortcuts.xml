@@ -1,0 +1,37 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:icon="@drawable/header_tile"
+        android:selectable="false"
+        android:layout="@layout/preference_material_header" />
+
+    <Preference
+        android:icon="@drawable/ic_tile"
+        android:key="shortcut_tile"
+        android:title="@string/pref_shortcut_tile"
+        app:layout="@layout/preference_material_add_shortcut" />
+
+    <Preference
+        android:icon="@drawable/ic_info"
+        android:layout="@layout/preference_material_info_bottom"
+        android:selectable="false"
+        android:title="@string/pref_shortcut_tile_summary" />
+
+    <Preference
+        android:icon="@drawable/header_widget"
+        android:selectable="false"
+        android:layout="@layout/preference_material_header" />
+
+    <Preference
+        android:icon="@drawable/ic_widget"
+        android:key="shortcut_widget"
+        android:title="@string/pref_shortcut_widget"
+        app:layout="@layout/preference_material_add_shortcut" />
+
+    <Preference
+        android:icon="@drawable/ic_info"
+        android:layout="@layout/preference_material_info_bottom"
+        android:selectable="false"
+        android:title="@string/pref_shortcut_widget_summary" />
+</androidx.preference.PreferenceScreen>

@@ -8,5 +8,66 @@
         android:id="@+id/settingsFragment"
         android:name="com.wstxda.switchai.fragment.SettingsFragment"
         android:label="@string/app_settings"
+        tools:layout="@layout/activity_main">
+
+        <action
+            android:id="@+id/settingsFragmentSelector"
+            app:destination="@id/selectorPreferencesFragment" />
+
+        <action
+            android:id="@+id/settingsFragmentVoiceInput"
+            app:destination="@id/voiceInputPreferencesFragment" />
+
+        <action
+            android:id="@+id/settingsFragmentAccessibility"
+            app:destination="@id/accessibilityPreferencesFragment" />
+
+        <action
+            android:id="@+id/settingsFragmentShortcuts"
+            app:destination="@id/shortcutsPreferencesFragment" />
+
+        <action
+            android:id="@+id/settingsFragmentAppearance"
+            app:destination="@id/appearancePreferencesFragment" />
+
+        <action
+            android:id="@+id/settingsFragmentAbout"
+            app:destination="@id/aboutPreferencesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectorPreferencesFragment"
+        android:name="com.wstxda.switchai.fragment.preferences.SelectorPreferencesFragment"
+        android:label="@string/pref_screen_selector"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/voiceInputPreferencesFragment"
+        android:name="com.wstxda.switchai.fragment.preferences.VoiceInputPreferencesFragment"
+        android:label="@string/pref_screen_voice_input"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/accessibilityPreferencesFragment"
+        android:name="com.wstxda.switchai.fragment.preferences.AccessibilityPreferencesFragment"
+        android:label="@string/pref_screen_accessibility"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/shortcutsPreferencesFragment"
+        android:name="com.wstxda.switchai.fragment.preferences.ShortcutsPreferencesFragment"
+        android:label="@string/pref_screen_shortcuts"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/appearancePreferencesFragment"
+        android:name="com.wstxda.switchai.fragment.preferences.AppearancePreferencesFragment"
+        android:label="@string/pref_screen_appearance"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/aboutPreferencesFragment"
+        android:name="com.wstxda.switchai.fragment.preferences.AboutPreferencesFragment"
+        android:label="@string/pref_screen_about"
         tools:layout="@layout/activity_main" />
 </navigation>

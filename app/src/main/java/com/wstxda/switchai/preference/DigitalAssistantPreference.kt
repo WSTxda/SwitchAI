@@ -1,8 +1,11 @@
-package com.wstxda.switchai.fragment.preferences
+package com.wstxda.switchai.preference
 
 import android.content.Context
 import androidx.core.content.edit
+import androidx.preference.ListPreference
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 import com.wstxda.switchai.logic.DigitalAssistantChecker
 import com.wstxda.switchai.utils.Constants
 
@@ -13,14 +16,14 @@ class DigitalAssistantPreference(private val fragment: PreferenceFragmentCompat)
     fun checkDigitalAssistSetupStatus(): Boolean = DigitalAssistantChecker.isSetupDone(context)
 
     fun setDigitalAssistSetupStatus(isSetupDone: Boolean) {
-        val prefs = androidx.preference.PreferenceManager.getDefaultSharedPreferences(context)
+        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
         prefs.edit { putBoolean(Constants.IS_ASSIST_SETUP_DONE, isSetupDone) }
     }
 
     fun updateDigitalAssistantPreferences(isAssistSetupDone: Boolean) {
-        fragment.findPreference<androidx.preference.Preference>(Constants.DIGITAL_ASSISTANT_SETUP_PREF_KEY)?.isVisible =
+        fragment.findPreference<Preference>(Constants.DIGITAL_ASSISTANT_SETUP_PREF_KEY)?.isVisible =
             !isAssistSetupDone
-        fragment.findPreference<androidx.preference.ListPreference>(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY)
+        fragment.findPreference<ListPreference>(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY)
             ?.apply {
                 isVisible = isAssistSetupDone
                 isEnabled = isAssistSetupDone

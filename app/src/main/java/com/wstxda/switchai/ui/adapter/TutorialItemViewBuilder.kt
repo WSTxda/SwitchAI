@@ -7,6 +7,7 @@ import com.wstxda.switchai.data.TutorialItem
 import com.wstxda.switchai.databinding.ListItemAssistantTutorialBinding
 
 object TutorialItemViewBuilder {
+
     fun build(context: Context, item: TutorialItem): View {
         val binding = ListItemAssistantTutorialBinding.inflate(LayoutInflater.from(context))
         binding.tutorialImage.setImageResource(item.imageRes)

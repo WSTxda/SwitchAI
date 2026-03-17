@@ -1,4 +1,0 @@
-<resources>
-    <!-- Default: portrait, hdpi+ = 3 columns -->
-    <integer name="grid_span_count">3</integer>
-</resources>

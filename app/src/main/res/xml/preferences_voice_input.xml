@@ -1,0 +1,37 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        android:icon="@drawable/header_voice_input"
+        android:selectable="false"
+        android:layout="@layout/preference_material_header" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="true"
+        android:key="voice_input"
+        android:summary="@string/pref_voice_input_summary"
+        android:title="@string/pref_voice_input"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_switch_bar" />
+
+
+    <PreferenceCategory
+        android:layout="@layout/preference_material_category"
+        android:title="@string/pref_category_advanced"
+        app:allowDividerAbove="false" />
+
+    <SwitchPreferenceCompat
+        android:defaultValue="false"
+        android:dependency="voice_input"
+        android:key="voice_input_root"
+        android:summary="@string/pref_voice_input_root_summary"
+        android:title="@string/pref_voice_input_root"
+        app:iconSpaceReserved="false"
+        app:layout="@layout/preference_material_single" />
+
+    <Preference
+        android:icon="@drawable/ic_info"
+        android:layout="@layout/preference_material_info_top"
+        android:selectable="false"
+        android:title="@string/pref_voice_input_summary" />
+</androidx.preference.PreferenceScreen>

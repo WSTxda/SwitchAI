@@ -1,0 +1,38 @@
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.wstxda.switchai.preference.UpdaterPreference
+        android:icon="@mipmap/ic_launcher"
+        android:key="version"
+        android:summary="@string/pref_version_number"
+        android:title="@string/app_name"
+        app:allowDividerAbove="false" />
+
+    <Preference
+        android:icon="@drawable/ic_developer"
+        android:key="developer"
+        android:summary="@string/pref_developer"
+        android:title="@string/pref_wstxda"
+        app:layout="@layout/preference_material_top" />
+
+    <Preference
+        android:icon="@drawable/ic_github"
+        android:key="github_repository"
+        android:summary="@string/pref_source_code"
+        android:title="@string/pref_github"
+        app:layout="@layout/preference_material_middle" />
+
+    <Preference
+        android:icon="@drawable/ic_library"
+        android:key="library"
+        android:summary="@string/pref_used_library_summary"
+        android:title="@string/pref_used_library"
+        app:layout="@layout/preference_material_middle" />
+
+    <Preference
+        android:icon="@drawable/ic_balance"
+        android:key="license"
+        android:summary="@string/pref_license_gnu"
+        android:title="@string/pref_license"
+        app:layout="@layout/preference_material_bottom" />
+</androidx.preference.PreferenceScreen>

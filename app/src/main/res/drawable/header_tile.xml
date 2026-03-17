@@ -1,0 +1,42 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160"
+    tools:ignore="VectorRaster">
+    <group>
+        <path
+            android:fillColor="@android:color/black"
+            android:pathData="M230 92c2.2 0 4 1.8 4 4v29c0 2.2-1.8 4-4 4V92Z" />
+        <path
+            android:fillColor="?attr/colorSurfaceContainerLowest"
+            android:pathData="M56 43c0-13.81 11.19-25 25-25h120c13.81 0 25 11.19 25 25v306c0 13.81-11.19 25-25 25h-120c-13.81 0-25-11.19-25-25z"
+            android:strokeWidth="10"
+            android:strokeColor="@android:color/black" />
+        <path
+            android:fillColor="?attr/colorSurfaceContainerHigh"
+            android:pathData="M69 111c0-7.18 5.82-13 13-13h42c7.18 0 13 5.82 13 13v0c0 7.18-5.82 13-13 13h-42c-7.18 0-13-5.82-13-13z" />
+        <path
+            android:fillColor="?attr/colorPrimary"
+            android:pathData="M141 111c0-7.18 5.82-13 13-13h42c7.18 0 13 5.82 13 13v0c0 7.18-5.82 13-13 13h-42c-7.18 0-13-5.82-13-13z" />
+        <path
+            android:fillColor="?attr/colorSurfaceContainerHigh"
+            android:pathData="M69 141c0-7.18 5.82-13 13-13h42c7.18 0 13 5.82 13 13v0c0 7.18-5.82 13-13 13h-42c-7.18 0-13-5.82-13-13z" />
+        <path
+            android:fillColor="?attr/colorSurfaceContainerHigh"
+            android:pathData="M141 141c0-7.18 5.82-13 13-13h42c7.18 0 13 5.82 13 13v0c0 7.18-5.82 13-13 13h-42c-7.18 0-13-5.82-13-13z" />
+        <path
+            android:fillColor="?attr/colorSurfaceContainerLow"
+            android:pathData="M69 41c0-3.87 3.13-7 7-7h25c3.87 0 7 3.13 7 7v0c0 3.87-3.13 7-7 7h-25c-3.87 0-7-3.13-7-7z" />
+        <path
+            android:fillColor="?attr/colorSurfaceContainerHigh"
+            android:pathData="M69 80c0-4.97 4.03-9 9-9h122c4.97 0 9 4.03 9 9v0c0 4.97-4.03 9-9 9h-122c-4.97 0-9-4.03-9-9z" />
+        <path
+            android:fillColor="?attr/colorTertiaryContainer"
+            android:pathData="M202 34A7 7 0 1 0 202 48 7 7 0 1 0 202 34z" />
+        <path
+            android:fillColor="?attr/colorOnPrimary"
+            android:pathData="M154.58 115.61l0.31-0.7c0.54-1.25 1.53-2.26 2.78-2.82l0.94-0.42c0.52-0.23 0.52-0.98 0-1.2l-0.9-0.4c-1.27-0.57-2.28-1.61-2.8-2.9l-0.32-0.77c-0.05-0.12-0.13-0.22-0.24-0.3-0.1-0.06-0.22-0.1-0.35-0.1-0.13 0-0.25 0.04-0.35 0.1-0.11 0.08-0.2 0.18-0.24 0.3l-0.31 0.76c-0.53 1.3-1.54 2.34-2.82 2.9l-0.9 0.4c-0.5 0.23-0.5 0.98 0 1.21l0.96 0.42c1.24 0.56 2.23 1.56 2.77 2.82l0.3 0.7c0.06 0.12 0.14 0.22 0.24 0.28 0.1 0.07 0.23 0.11 0.35 0.11 0.12 0 0.25-0.04 0.35-0.1 0.1-0.07 0.19-0.17 0.23-0.29Z" />
+    </group>
+</vector>

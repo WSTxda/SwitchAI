@@ -1,4 +1,4 @@
-package com.wstxda.switchai.services
+package com.wstxda.switchai.service
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
@@ -54,7 +54,7 @@ class AssistantTileService : TileService() {
         }
 
         val isSelectorEnabled =
-            preferenceHelper.getBoolean(Constants.ASSISTANT_SELECTOR_DIALOG_PREF_KEY, false)
+            preferenceHelper.getBoolean(Constants.SELECTOR_PREF_KEY, false)
 
         val assistantValue =
             preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)

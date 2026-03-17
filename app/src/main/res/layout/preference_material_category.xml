@@ -17,5 +17,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/pref_category_about" />
+        tools:text="@string/pref_screen_about" />
 </androidx.constraintlayout.widget.ConstraintLayout>

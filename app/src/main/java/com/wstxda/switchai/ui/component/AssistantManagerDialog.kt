@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.PreferenceDialogFragmentCompat
 import com.wstxda.switchai.R
-import com.wstxda.switchai.fragment.preferences.MultiSelectListPreference
+import com.wstxda.switchai.preference.MultiSelectListPreference
 import com.wstxda.switchai.utils.Constants
 
 class AssistantManagerDialog : PreferenceDialogFragmentCompat() {

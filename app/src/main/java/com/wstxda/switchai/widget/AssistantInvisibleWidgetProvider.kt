@@ -8,7 +8,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.RemoteViews
 import com.wstxda.switchai.R
-import com.wstxda.switchai.services.DigitalAssistantService
+import com.wstxda.switchai.service.DigitalAssistantService
 
 class AssistantInvisibleWidgetProvider : AppWidgetProvider() {
 

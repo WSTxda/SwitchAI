@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.wstxda.switchai.databinding.FragmentTutorialBinding
+import com.wstxda.switchai.databinding.FragmentAssistantTutorialBinding
 import com.wstxda.switchai.ui.adapter.TutorialItemViewBuilder
 import com.wstxda.switchai.ui.utils.TutorialItemList
 
@@ -16,7 +16,7 @@ class TutorialFragment : Fragment() {
         fun onScrollChanged(canScrollUp: Boolean, canScrollDown: Boolean)
     }
 
-    private var _binding: FragmentTutorialBinding? = null
+    private var _binding: FragmentAssistantTutorialBinding? = null
     private val binding get() = _binding!!
     private var scrollListener: ScrollListener? = null
 
@@ -30,7 +30,7 @@ class TutorialFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
-        _binding = FragmentTutorialBinding.inflate(inflater, container, false)
+        _binding = FragmentAssistantTutorialBinding.inflate(inflater, container, false)
         return binding.root
     }
 

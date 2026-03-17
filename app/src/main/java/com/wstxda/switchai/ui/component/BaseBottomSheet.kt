@@ -14,11 +14,10 @@ abstract class BaseBottomSheet<VB : ViewBinding> : BottomSheetDialogFragment() {
 
     private var _binding: VB? = null
     protected val binding get() = _binding!!
-
-    protected abstract fun getBinding(inflater: LayoutInflater, container: ViewGroup?): VB
     protected abstract val topDivider: View
     protected abstract val bottomDivider: View
     protected abstract val titleTextView: TextView
+    protected abstract fun getBinding(inflater: LayoutInflater, container: ViewGroup?): VB
 
     @get:StringRes
     protected abstract val titleResId: Int

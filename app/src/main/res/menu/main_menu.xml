@@ -3,8 +3,8 @@
 
     <item
         android:id="@+id/action_show_tutorial"
-        android:contentDescription="@string/digital_assistant_tutorial"
+        android:contentDescription="@string/digital_assistant_tutorial_title"
         android:icon="@drawable/ic_help"
-        android:title="@string/digital_assistant_tutorial"
+        android:title="@string/digital_assistant_tutorial_title"
         app:showAsAction="always" />
 </menu>

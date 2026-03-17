@@ -44,9 +44,6 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
     private val _isDynamicModeEnabled = MutableLiveData<Boolean>()
     val isDynamicModeEnabled: LiveData<Boolean> = _isDynamicModeEnabled
 
-    private val _isGridViewEnabled = MutableLiveData<Boolean>()
-    val isGridViewEnabled: LiveData<Boolean> = _isGridViewEnabled
-
     private val pinnedAssistantKeys = mutableListOf<String>()
     private val recentlyUsedAssistants = mutableListOf<Pair<String, Long>>()
 
@@ -77,18 +74,12 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
 
     private val isDynamicMode: Boolean
         get() = defaultSharedPreferences.getBoolean(
-            Constants.ASSISTANT_MANAGER_DYNAMIC_PREF_KEY, false
-        )
-
-    private val isGridView: Boolean
-        get() = defaultSharedPreferences.getBoolean(
-            Constants.ASSISTANT_GRID_VIEW_PREF_KEY, false
+            Constants.SELECTOR_MANAGER_DYNAMIC_PREF_KEY, false
         )
 
     init {
         defaultSharedPreferences.registerOnSharedPreferenceChangeListener(this)
         _isDynamicModeEnabled.value = isDynamicMode
-        _isGridViewEnabled.value = isGridView
 
         val intentFilter = IntentFilter().apply {
             addAction(Intent.ACTION_PACKAGE_ADDED)
@@ -242,7 +233,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             val defaultVisibleAssistants =
                 context.resources.getStringArray(R.array.assistant_values).toSet()
             preferenceHelper.getStringSet(
-                Constants.ASSISTANT_MANAGER_MANUAL_PREF_KEY, defaultVisibleAssistants
+                Constants.SELECTOR_MANAGER_MANUAL_PREF_KEY, defaultVisibleAssistants
             )
         }
 
@@ -278,7 +269,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             if (pinnedItems.isNotEmpty()) {
                 add(
                     AssistantSelectorRecyclerView.CategoryHeader(
-                        title = context.getString(R.string.assistant_category_pin),
+                        title = context.getString(R.string.selector_category_pin),
                         count = pinnedItems.size
                     )
                 )
@@ -293,7 +284,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             if (recentItems.isNotEmpty()) {
                 add(
                     AssistantSelectorRecyclerView.CategoryHeader(
-                        title = context.getString(R.string.assistant_category_recent),
+                        title = context.getString(R.string.selector_category_recent),
                         count = recentItems.size
                     )
                 )
@@ -304,7 +295,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             if (otherItems.isNotEmpty()) {
                 add(
                     AssistantSelectorRecyclerView.CategoryHeader(
-                        title = context.getString(R.string.assistant_category_all),
+                        title = context.getString(R.string.selector_category_all),
                         count = otherItems.size
                     )
                 )
@@ -315,7 +306,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
             if (notInstalledAssistants.isNotEmpty()) {
                 add(
                     AssistantSelectorRecyclerView.CategoryHeader(
-                        title = context.getString(R.string.assistant_category_not_installed),
+                        title = context.getString(R.string.selector_category_not_installed),
                         count = notInstalledAssistants.size
                     )
                 )
@@ -351,12 +342,11 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when (key) {
-            Constants.ASSISTANT_MANAGER_MANUAL_PREF_KEY -> loadAssistants()
-            Constants.ASSISTANT_MANAGER_DYNAMIC_PREF_KEY -> {
+            Constants.SELECTOR_MANAGER_MANUAL_PREF_KEY -> loadAssistants()
+            Constants.SELECTOR_MANAGER_DYNAMIC_PREF_KEY -> {
                 _isDynamicModeEnabled.value = isDynamicMode
                 loadAssistants()
             }
-            Constants.ASSISTANT_GRID_VIEW_PREF_KEY -> _isGridViewEnabled.value = isGridView
         }
     }
 

@@ -56,72 +56,71 @@
 
     <!--preferences-->
 
+    <string name="pref_screen_appearance">Appearance</string>
+    <string name="pref_screen_selector">Selector</string>
+    <string name="pref_screen_shortcuts">Shortcuts</string>
+    <string name="pref_screen_about">About</string>
+    <string name="pref_screen_accessibility">Accessibility</string>
+    <string name="pref_screen_voice_input">Voice input</string>
+
+    <string name="pref_category_manager">Manager</string>
     <string name="pref_category_appearance">Appearance</string>
-    <string name="pref_category_selector">Selector</string>
-    <string name="pref_category_shortcuts">Shortcuts</string>
-    <string name="pref_category_about">About</string>
-    <string name="pref_category_behavior">Behavior</string>
-    <string name="pref_category_voice_input">Voice input</string>
+    <string name="pref_category_advanced">Advanced</string>
 
     <string name="pref_wstxda" translatable="false">WSTxda</string>
     <string name="pref_github" translatable="false">GitHub</string>
+
     <string name="pref_developer">Developer</string>
     <string name="pref_source_code">Source code repository</string>
 
     <string name="pref_theme">Theme</string>
 
+    <string name="pref_version_number">Version %s</string>
+
     <string name="pref_used_library">Libraries</string>
     <string name="pref_used_library_summary">Open source licenses</string>
-
-    <string name="pref_version">Version</string>
-    <string name="pref_version_number" translatable="false">%s</string>
+    
+    <string name="pref_license">License</string>
+    <string name="pref_license_gnu">GNU General Public License v3.0</string>
 
     <string name="pref_digital_assistant">Digital assistant</string>
 
     <string name="pref_setup_digital_assistant">Setup digital assistant</string>
     <string name="pref_setup_digital_assistant_summary">Set SwitchAI as default digital assistant app</string>
 
-    <string name="pref_assistant_selector">Use assistant selector</string>
-    <string name="pref_assistant_selector_summary">If enabled, select an assistant each time it starts. Otherwise, the <b>Digital assistant</b> option will be used</string>
+    <string name="pref_selector">Use assistant selector</string>
+    <string name="pref_selector_summary">When enabled, select an assistant each time you start the device\'s digital assistant. Otherwise, the <b>Digital Assistant</b> option will be used with the currently set assistant</string>
 
-    <string name="pref_assistant_search_bar">Search bar</string>
-    <string name="pref_assistant_search_bar_summary">Enable the search bar to quickly find assistants in the selector</string>
+    <string name="pref_selector_components">Manage components</string>
+    <string name="pref_selector_components_summary">Choose which components elements are displayed in the selector</string>
 
-    <string name="pref_assistant_grid_view">Grid view</string>
-    <string name="pref_assistant_grid_view_summary">Display assistants in a compact grid layout</string>
+    <string name="pref_selector_manager_manual">Manage assistants</string>
+    <string name="pref_selector_manager_manual_summary">Choose which assistants are displayed in the selector</string>
 
-    <string name="pref_assistant_grid_columns">Grid columns</string>
-    <string name="pref_assistant_grid_columns_summary">Number of columns in the grid</string>
-    <string name="pref_assistant_grid_columns_land">Grid columns (landscape)</string>
-    <string name="grid_columns_auto">Automatic</string>
+    <string name="pref_selector_manager_dynamic">Dynamic manager</string>
+    <string name="pref_selector_manager_dynamic_summary_off">Manage which assistants are displayed in the selector dynamically based on app availability</string>
+    <string name="pref_selector_manager_dynamic_summary_on">Only installed assistants are shown in the selector</string>
 
-    <string name="pref_assistant_selector_title">Show title</string>
-    <string name="pref_assistant_selector_title_summary">Show the "Select assistant" title in the selector</string>
+    <string name="pref_selector_grid">Assistants grid</string>
+    <string name="pref_selector_grid_summary">Customize assistants grid list columns</string>
 
-    <string name="pref_assistant_manager_manual">Manage assistants</string>
-    <string name="pref_assistant_manager_manual_summary">Choose which assistants are displayed in the selector</string>
+    <string name="pref_voice_input">Use voice input</string>
+    <string name="pref_voice_input_summary">When enabled, the voice input activity will be used instead of the main activity in supported assistants</string>
 
-    <string name="pref_assistant_manager_dynamic">Dynamic manager</string>
-    <string name="pref_assistant_manager_dynamic_summary_off">Manage which assistants are displayed in the selector dynamically based on app availability</string>
-    <string name="pref_assistant_manager_dynamic_summary_on">Only installed assistants are shown in the selector</string>
+    <string name="pref_voice_input_root">Use root permission</string>
+    <string name="pref_voice_input_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
 
-    <string name="pref_assistant_tile">Add assistant tile</string>
-    <string name="pref_assistant_tile_summary">Add a quick settings tile to access the assistant on your device</string>
+    <string name="pref_accessibility_vibration">Vibrate when opening</string>
+    <string name="pref_accessibility_vibration_summary">Provides haptic feedback when opening the assistant. This may be affected by system settings</string>
 
-    <string name="pref_assistant_widget">Add assistant widget</string>
-    <string name="pref_assistant_widget_summary">Add widget to access the assistant on your device\’s home screen</string>
+    <string name="pref_accessibility_sound">Sound when opening</string>
+    <string name="pref_accessibility_sound_summary">Provides sound feedback when opening the assistant. May be muted by the device’s sound mode or active media playback</string>
 
-    <string name="pref_assistant_vibration">Vibrate when opening</string>
-    <string name="pref_assistant_vibration_summary">Provides haptic feedback when opening the assistant. This may be affected by system settings</string>
+    <string name="pref_shortcut_tile">Add assistant tile</string>
+    <string name="pref_shortcut_tile_summary">Add a tile to the quick settings panel for easy access to your assistants</string>
 
-    <string name="pref_assistant_sound">Sound when opening</string>
-    <string name="pref_assistant_sound_summary">Provides sound feedback when opening the assistant. May be muted by the device’s sound mode or active media playback</string>
-
-    <string name="pref_assistant_root">Use root permission</string>
-    <string name="pref_assistant_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
-
-    <string name="pref_assistant_voice_input">Use voice input</string>
-    <string name="pref_assistant_voice_input_summary">When enabled, the voice input will be used instead of the main activity in supported assistants</string>
+    <string name="pref_shortcut_widget">Add assistant widget</string>
+    <string name="pref_shortcut_widget_summary">Add a widget to your home screen for quick access to your assistants</string>
 
     <!--theme selector-->
 
@@ -143,18 +142,26 @@
 
     <!--digital/selector/open assistant-->
 
-    <string name="assistant_select">Select assistant</string>
-    <!--selector assistant search-->
-    <string name="assistant_search_hint">Search assistants</string>
-    <string name="assistant_search_empty">No assistants found</string>
-    <!--selector assistant categories-->
-    <string name="assistant_category_pin">Pinned</string>
-    <string name="assistant_category_recent">Recently used</string>
-    <string name="assistant_category_all">Assistants</string>
-    <string name="assistant_category_not_installed">Not installed</string>
-    <!--selector assistant tips-->
-    <string name="assistant_tip_reorder">To rearrange your pinned assistants, tap and hold one, then drag it to the position you prefer</string>
-    <string name="assistant_tip_close">Close tip</string>
+    <string name="assistant_selector_title">Select assistant</string>
+    <!--assistant selector search-->
+    <string name="selector_search_hint">Search assistants</string>
+    <string name="selector_search_empty">No assistants found</string>
+    <!--assistant selector categories-->
+    <string name="selector_category_pin">Pinned</string>
+    <string name="selector_category_recent">Recently used</string>
+    <string name="selector_category_all">Assistants</string>
+    <string name="selector_category_not_installed">Not installed</string>
+    <!--assistant selector tips-->
+    <string name="selector_tip_reorder">To rearrange your pinned assistants, tap and hold one, then drag it to the position you prefer</string>
+    <string name="selector_tip_close">Close tip</string>
+    <!--assistant selector components-->
+    <string name="selector_component_title">Title</string>
+    <string name="selector_component_search_bar">Search bar</string>
+    <string name="selector_component_counter">Counter</string>
+    <!--assistant selector grid-->
+    <string name="selector_grid_title">Customize grid</string>
+    <string name="selector_grid_portrait_button">Portrait</string>
+    <string name="selector_grid_landscape_button">Landscape</string>
     <!--open assistant messages-->
     <string name="assistant_open">Open assistant</string>
     <string name="assistant_open_error">Error open assistant</string>
@@ -165,18 +172,16 @@
     <string name="digital_assistant_setup_message">In the settings, select <b>SwitchAI</b> as your default digital assistant app to quickly access the selected assistant using gestures, buttons, and more…</string>
     <string name="digital_assistant_setup_button">Set as default</string>
     <!--tutorial digital assistant dialog-->
-    <string name="digital_assistant_tutorial">How to use the digital assistant</string>
-
+    <string name="digital_assistant_tutorial_title">How to use the digital assistant</string>
     <!--tutorial digital assistant-->
-
-    <string name="tutorial_edge_gestures">Using screen edge gestures</string>
-    <string name="tutorial_edge_gestures_summary">On devices using gesture navigation (Android 10+), swipe up and in from either of the bottom corners of the screen. A glowing arc will appear from the corner to confirm that the digital assistant is opening. For this to work, <b>Gesture navigation</b> must be selected as the system navigation mode in your device\’s settings</string>
-    <string name="tutorial_home_button">Using the home navigation button</string>
-    <string name="tutorial_home_button_summary">If your device uses the classic 3-button navigation, press and hold the center home button for a moment. This action is typically reserved to open the digital assistant. If this action performs a different function, it may have been customized by your device\’s manufacturer</string>
-    <string name="tutorial_power_button">Using the power button</string>
-    <string name="tutorial_power_button_summary">Many devices allow you to open the digital assistant by long-pressing the power button. If the power off/restart menu appears when you do this, the feature is likely disabled. You can often enable it in your system settings, typically under a path like <b>Settings &gt; System &gt; Gestures &gt; Press and hold power button</b></string>
-    <string name="tutorial_headset_button">Using wired and bluetooth headsets</string>
-    <string name="tutorial_headset_button_summary">Many wired and bluetooth headsets allow you to open the digital assistant by long-pressing the multifunction button. This button is usually used to control media playback or answer calls, but can also open the assistant depending on your headset model. Tap gestures on some wireless earbuds like <b>double-tap</b> may also open the digital assistant if supported and configured in app</string>
+    <string name="assistant_tutorial_edge_gestures">Using screen edge gestures</string>
+    <string name="assistant_tutorial_edge_gestures_summary">On devices using gesture navigation (Android 10+), swipe up and in from either of the bottom corners of the screen. A glowing arc will appear from the corner to confirm that the digital assistant is opening. For this to work, <b>Gesture navigation</b> must be selected as the system navigation mode in your device\’s settings</string>
+    <string name="assistant_tutorial_home_button">Using the home navigation button</string>
+    <string name="assistant_tutorial_home_button_summary">If your device uses the classic 3-button navigation, press and hold the center home button for a moment. This action is typically reserved to open the digital assistant. If this action performs a different function, it may have been customized by your device\’s manufacturer</string>
+    <string name="assistant_tutorial_power_button">Using the power button</string>
+    <string name="assistant_tutorial_power_button_summary">Many devices allow you to open the digital assistant by long-pressing the power button. If the power off/restart menu appears when you do this, the feature is likely disabled. You can often enable it in your system settings, typically under a path like <b>Settings &gt; System &gt; Gestures &gt; Press and hold power button</b></string>
+    <string name="assistant_tutorial_headset_button">Using wired and bluetooth headsets</string>
+    <string name="assistant_tutorial_headset_button_summary">Many wired and bluetooth headsets allow you to open the digital assistant by long-pressing the multifunction button. This button is usually used to control media playback or answer calls, but can also open the assistant depending on your headset model. Tap gestures on some wireless earbuds like <b>double-tap</b> may also open the digital assistant if supported and configured in app</string>
 
     <!--app shortcut/tile-->
 
@@ -202,11 +207,11 @@
 
     <!--app widgets-->
 
-    <string name="widget_assistant_label">Material style</string>
-    <string name="widget_assistant_invisible_label">Invisible</string>
+    <string name="widget_label">Material style</string>
+    <string name="widget_invisible_label">Invisible</string>
     <!--widget description-->
-    <string name="widget_assistant_description">A material styled widget to access your assistant</string>
-    <string name="widget_assistant_invisible_description">An invisible widget to access your assistant</string>
+    <string name="widget_description">A material styled widget to access your assistant</string>
+    <string name="widget_invisible_description">An invisible widget to access your assistant</string>
     <!--pinning widget-->
     <string name="widget_launcher_not_supported">Your launcher does not support widget pinning</string>
 </resources>

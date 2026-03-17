@@ -102,24 +102,6 @@
 
     <!--theme selector-->
 
-    <string-array name="grid_columns_entries">
-        <item>@string/grid_columns_auto</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
-    <string-array name="grid_columns_values">
-        <item>0</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-    </string-array>
-
-    <!--theme selector-->
-
     <string-array name="theme_entries">
         <item>@string/theme_system</item>
         <item>@string/theme_light</item>
@@ -130,5 +112,25 @@
         <item>system</item>
         <item>light</item>
         <item>dark</item>
+    </string-array>
+
+    <!--assistant selector components-->
+
+    <string-array name="selector_components_entries">
+        <item>@string/selector_component_search_bar</item>
+        <item>@string/selector_component_title</item>
+        <item>@string/selector_component_counter</item>
+    </string-array>
+
+    <string-array name="selector_components_values">
+        <item>selector_search_bar</item>
+        <item>selector_title</item>
+        <item>selector_counter</item>
+    </string-array>
+
+    <string-array name="selector_components_default_values">
+        <item>selector_search_bar</item>
+        <item>selector_title</item>
+        <item>selector_counter</item>
     </string-array>
 </resources>

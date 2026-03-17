@@ -55,69 +55,68 @@
 
     <!--preferences-->
 
+    <string name="pref_screen_appearance">Aparência</string>
+    <string name="pref_screen_selector">Seletor</string>
+    <string name="pref_screen_shortcuts">Atalhos</string>
+    <string name="pref_screen_about">Sobre</string>
+    <string name="pref_screen_accessibility">Acessibilidade</string>
+    <string name="pref_screen_voice_input">Entrada de voz</string>
+
+    <string name="pref_category_manager">Gerenciador</string>
     <string name="pref_category_appearance">Aparência</string>
-    <string name="pref_category_selector">Seletor</string>
-    <string name="pref_category_shortcuts">Atalhos</string>
-    <string name="pref_category_about">Sobre</string>
-    <string name="pref_category_behavior">Comportamento</string>
-    <string name="pref_category_voice_input">Entrada de voz</string>
+    <string name="pref_category_advanced">Avançado</string>
 
     <string name="pref_developer">Desenvolvedor</string>
-    <string name="pref_source_code">Repositório com o código fonte</string>
+    <string name="pref_source_code">Repositório do código fonte</string>
 
     <string name="pref_theme">Tema</string>
+
+    <string name="pref_version_number">Versão %s</string>
 
     <string name="pref_used_library">Bibliotecas</string>
     <string name="pref_used_library_summary">Licenças de código aberto</string>
 
-    <string name="pref_version">Versão</string>
+    <string name="pref_license">Licença</string>
+    <string name="pref_license_gnu">GNU General Public License v3.0</string>
 
     <string name="pref_digital_assistant">Assistente digital</string>
 
     <string name="pref_setup_digital_assistant">Configurar assistente digital</string>
     <string name="pref_setup_digital_assistant_summary">Definir o SwitchAI como o aplicativo de assistente digital padrão</string>
 
-    <string name="pref_assistant_search_bar">Barra de pesquisa</string>
-    <string name="pref_assistant_search_bar_summary">Habilitar a barra de pesquisa para encontrar assistentes rapidamente no seletor</string>
+    <string name="pref_selector">Usar seletor de assistente</string>
+    <string name="pref_selector_summary">Quando ativado, selecione um assistente cada vez que iniciar o assistente digital do dispositivo. Caso contrário, a opção <b>Assistente Digital</b> será usada com o assistente definido atualmente</string>
 
-    <string name="pref_assistant_grid_view">Visualização em grade</string>
-    <string name="pref_assistant_grid_view_summary">Exibir assistentes em um layout de grade compacto</string>
+    <string name="pref_selector_components">Gerenciar componentes</string>
+    <string name="pref_selector_components_summary">Escolha quais elementos de componentes são exibidos no seletor</string>
 
-    <string name="pref_assistant_grid_columns">Colunas da grade</string>
-    <string name="pref_assistant_grid_columns_summary">Número de colunas na grade</string>
-    <string name="pref_assistant_grid_columns_land">Colunas da grade (paisagem)</string>
-    <string name="grid_columns_auto">Automático</string>
+    <string name="pref_selector_manager_manual">Gerenciar assistentes</string>
+    <string name="pref_selector_manager_manual_summary">Escolha quais assistentes serão exibidos no seletor</string>
 
-    <string name="pref_assistant_selector_title">Mostrar título</string>
-    <string name="pref_assistant_selector_title_summary">Mostrar o título "Selecionar assistente" no seletor</string>
+    <string name="pref_selector_manager_dynamic">Gerenciador dinâmico</string>
+    <string name="pref_selector_manager_dynamic_summary_off">Gerencie quais assistentes serão exibidos no seletor dinamicamente com base na disponibilidade do aplicativo</string>
+    <string name="pref_selector_manager_dynamic_summary_on">Apenas assistentes instalados são mostrados no seletor</string>
 
-    <string name="pref_assistant_selector">Usar seletor de assistente</string>
-    <string name="pref_assistant_selector_summary">Se ativado, selecione um assistente toda vez que iniciar. Caso contrário, será usado a opção <b>Assistente digital</b></string>
+    <string name="pref_selector_grid">Grade de assistentes</string>
+    <string name="pref_selector_grid_summary">Personalize as colunas da lista em grade dos assistentes</string>
 
-    <string name="pref_assistant_manager_manual">Gerenciar assistentes</string>
-    <string name="pref_assistant_manager_manual_summary">Escolha quais assistentes serão exibidos no seletor</string>
+    <string name="pref_voice_input">Usar entrada de voz</string>
+    <string name="pref_voice_input_summary">Quando ativado, a atividade de entrada de voz será usada em vez da atividade principal nos assistentes suportados</string>
 
-    <string name="pref_assistant_manager_dynamic">Gerenciador dinâmico</string>
-    <string name="pref_assistant_manager_dynamic_summary_off">Gerencie quais assistentes serão exibidos no seletor dinamicamente com base na disponibilidade do aplicativo</string>
-    <string name="pref_assistant_manager_dynamic_summary_on">Apenas assistentes instalados são exibidos no seletor</string>
+    <string name="pref_voice_input_root">Usar permissão root</string>
+    <string name="pref_voice_input_root_summary">Usar permissão root para ativar a entrada de voz em assistentes específicos e melhorar a usabilidade</string>
 
-    <string name="pref_assistant_tile">Adicionar bloco do assistente</string>
-    <string name="pref_assistant_tile_summary">Adicione um bloco nas configurações rápidas para acessar o assistente no seu dispositivo</string>
+    <string name="pref_accessibility_vibration">Vibrar ao abrir</string>
+    <string name="pref_accessibility_vibration_summary">Fornece feedback tátil ao abrir o assistente. Isso pode ser afetado pelas configurações do sistema</string>
 
-    <string name="pref_assistant_widget">Adicionar widget do assistente</string>
-    <string name="pref_assistant_widget_summary">Adicione um widget para acessar o assistente na tela inicial do seu dispositivo</string>
+    <string name="pref_accessibility_sound">Som ao abrir</string>
+    <string name="pref_accessibility_sound_summary">Fornece feedback sonoro ao abrir o assistente. Pode ser silenciado pelo modo de som do dispositivo ou pela reprodução de mídia ativa</string>
 
-    <string name="pref_assistant_vibration">Vibrar ao abrir</string>
-    <string name="pref_assistant_vibration_summary">Fornecer um feedback tátil ao abrir o assistente. As configurações do sistema podem afetar esta opção</string>
+    <string name="pref_shortcut_tile">Adicionar bloco do assistente</string>
+    <string name="pref_shortcut_tile_summary">Adicione um bloco ao painel de configurações rápidas para fácil acesso aos seus assistentes</string>
 
-    <string name="pref_assistant_sound">Som ao abrir</string>
-    <string name="pref_assistant_sound_summary">Fornecer um feedback sonoro ao abrir o assistente. Pode ser silenciado pelo modo de som do dispositivo ou pela reprodução de mídia ativa</string>
-
-    <string name="pref_assistant_root">Usar permissão root</string>
-    <string name="pref_assistant_root_summary">Usar permissão root para ativar a entrada de voz em assistentes específicos e melhorar a usabilidade</string>
-
-    <string name="pref_assistant_voice_input">Usar entrada de voz</string>
-    <string name="pref_assistant_voice_input_summary">Quando ativado, a entrada de voz será utilizada em vez da atividade principal em assistentes suportados</string>
+    <string name="pref_shortcut_widget">Adicionar widget do assistente</string>
+    <string name="pref_shortcut_widget_summary">Adicione um widget à sua tela inicial para acesso rápido aos seus assistentes</string>
 
     <!--theme selector-->
 
@@ -139,18 +138,26 @@
 
     <!--digital/selector/open assistant-->
 
-    <string name="assistant_select">Selecionar assistente</string>
-    <!--selector assistant search-->
-    <string name="assistant_search_hint">Pesquisar assistentes</string>
-    <string name="assistant_search_empty">Nenhum assistente encontrado</string>
-    <!--selector assistant categories-->
-    <string name="assistant_category_pin">Fixados</string>
-    <string name="assistant_category_recent">Usados recentemente</string>
-    <string name="assistant_category_all">Assistentes</string>
-    <string name="assistant_category_not_installed">Não instalados</string>
-    <!--selector assistant tips-->
-    <string name="assistant_tip_reorder">Para reorganizar seus assistentes fixados, toque e segure um deles e arraste-o para a posição que preferir</string>
-    <string name="assistant_tip_close">Fechar dica</string>
+    <string name="assistant_selector_title">Selecionar assistente</string>
+    <!--assistant selector search-->
+    <string name="selector_search_hint">Pesquisar assistentes</string>
+    <string name="selector_search_empty">Nenhum assistente encontrado</string>
+    <!--assistant selector categories-->
+    <string name="selector_category_pin">Fixados</string>
+    <string name="selector_category_recent">Usados recentemente</string>
+    <string name="selector_category_all">Assistentes</string>
+    <string name="selector_category_not_installed">Não instalados</string>
+    <!--assistant selector tips-->
+    <string name="selector_tip_reorder">Para reorganizar os seus assistentes fixados, toque e segure um deles e arraste-o para a posição que preferir</string>
+    <string name="selector_tip_close">Fechar dica</string>
+    <!--assistant selector components-->
+    <string name="selector_component_title">Título</string>
+    <string name="selector_component_search_bar">Barra de pesquisa</string>
+    <string name="selector_component_counter">Contador</string>
+    <!--assistant selector grid-->
+    <string name="selector_grid_title">Personalizar grade</string>
+    <string name="selector_grid_portrait_button">Retrato</string>
+    <string name="selector_grid_landscape_button">Paisagem</string>
     <!--open assistant messages-->
     <string name="assistant_open">Abrir assistente</string>
     <string name="assistant_open_error">Erro ao abrir assistente</string>
@@ -161,18 +168,16 @@
     <string name="digital_assistant_setup_message">Nas configurações, selecione o <b>SwitchAI</b> como o aplicativo de assistente digital padrão para acessar rapidamente o assistente selecionado usando gestos, botões e muito mais…</string>
     <string name="digital_assistant_setup_button">Definir como padrão</string>
     <!--tutorial digital assistant dialog-->
-    <string name="digital_assistant_tutorial">Como utilizar o assistente digital</string>
-
+    <string name="digital_assistant_tutorial_title">Como usar o assistente digital</string>
     <!--tutorial digital assistant-->
-
-    <string name="tutorial_edge_gestures">Usando gestos na borda da tela</string>
-    <string name="tutorial_edge_gestures_summary">Em dispositivos que usam navegação por gestos (Android 10+), deslize para cima e para dentro a partir de um dos cantos inferiores da tela. Um arco brilhante aparecerá no canto para confirmar que o assistente digital está abrindo. Para que isso funcione, a <b>Navegação por gestos</b> deve estar selecionada como o modo de navegação do sistema nas configurações do seu dispositivo</string>
-    <string name="tutorial_home_button">Usando o botão de navegação home</string>
-    <string name="tutorial_home_button_summary">Se o seu dispositivo usa a navegação clássica de 3 botões, pressione e segure o botão home central por alguns segundos. Esta ação é normalmente reservada para abrir o assistente digital. Se esta ação realizar uma função diferente, pode ter sido personalizada pela fabricante do seu dispositivo</string>
-    <string name="tutorial_power_button">Usando o botão liga/desliga</string>
-    <string name="tutorial_power_button_summary">Muitos dispositivos permitem que você abra o assistente digital pressionando longamente o botão liga/desliga. Se o menu desligar/reiniciar aparecer quando você fizer isso, o recurso provavelmente está desabilitado. Muitas vezes você pode ativá-lo nas configurações do sistema, normalmente em: <b>Configurações > Sistema > Gestos > Pressionar e segurar o botão liga/desliga</b></string>
-    <string name="tutorial_headset_button">Usando fones de ouvido com fio e bluetooth</string>
-    <string name="tutorial_headset_button_summary">Muitos fones de ouvido com fio e bluetooth permitem abrir o assistente digital pressionando longamente o botão multifuncional. Este botão é geralmente usado para controlar a reprodução de mídia ou atender chamadas, mas também pode abrir o assistente, dependendo do modelo do seu fone de ouvido. Gestos de toque em alguns fones de ouvido sem fio, como <b>toque duplo</b>, também podem abrir o assistente digital se suportado e configurado no aplicativo</string>
+    <string name="assistant_tutorial_edge_gestures">Usando gestos na borda da tela</string>
+    <string name="assistant_tutorial_edge_gestures_summary">Em dispositivos que usam navegação por gestos (Android 10+), deslize para cima e para dentro a partir de um dos cantos inferiores da tela. Um arco brilhante aparecerá no canto para confirmar que o assistente digital está abrindo. Para que isso funcione, a <b>Navegação por gestos</b> deve estar selecionada como o modo de navegação do sistema nas configurações do seu dispositivo</string>
+    <string name="assistant_tutorial_home_button">Usando o botão de navegação home</string>
+    <string name="assistant_tutorial_home_button_summary">Se o seu dispositivo usa a navegação clássica de 3 botões, pressione e segure o botão home central por alguns segundos. Esta ação é normalmente reservada para abrir o assistente digital. Se esta ação realizar uma função diferente, pode ter sido personalizada pela fabricante do seu dispositivo</string>
+    <string name="assistant_tutorial_power_button">Usando o botão liga/desliga</string>
+    <string name="assistant_tutorial_power_button_summary">Muitos dispositivos permitem que você abra o assistente digital pressionando longamente o botão liga/desliga. Se o menu desligar/reiniciar aparecer quando você fizer isso, o recurso provavelmente está desabilitado. Muitas vezes você pode ativá-lo nas configurações do sistema, normalmente em: <b>Configurações > Sistema > Gestos > Pressionar e segurar o botão liga/desliga</b></string>
+    <string name="assistant_tutorial_headset_button">Usando fones de ouvido com fio e bluetooth</string>
+    <string name="assistant_tutorial_headset_button_summary">Muitos fones de ouvido com fio e bluetooth permitem abrir o assistente digital pressionando longamente o botão multifuncional. Este botão é geralmente usado para controlar a reprodução de mídia ou atender chamadas, mas também pode abrir o assistente, dependendo do modelo do seu fone de ouvido. Gestos de toque em alguns fones de ouvido sem fio, como <b>toque duplo</b>, também podem abrir o assistente digital se suportado e configurado no aplicativo</string>
 
     <!--app shortcut/tile-->
 
@@ -196,13 +201,13 @@
     <string name="error_min_selection">Selecione pelo menos %1$d opções</string>
     <string name="error_max_selection">Selecione no máximo %1$d opções</string>
 
-    <!--app widget-->
+    <!--app widgets-->
 
-    <string name="widget_assistant_label">Estilo material</string>
-    <string name="widget_assistant_invisible_label">Invisível</string>
+    <string name="widget_label">Estilo Material</string>
+    <string name="widget_invisible_label">Invisível</string>
     <!--widget description-->
-    <string name="widget_assistant_description">Um widget estilo material para acessar rapidamente seu assistente</string>
-    <string name="widget_assistant_invisible_description">Um widget invisível para acessar rapidamente seu assistente</string>
+    <string name="widget_description">Um widget estilo Material para acessar seu assistente</string>
+    <string name="widget_invisible_description">Um widget invisível para acessar seu assistente</string>
     <!--pinning widget-->
     <string name="widget_launcher_not_supported">Seu launcher não suporta a fixação de widgets</string>
 </resources>

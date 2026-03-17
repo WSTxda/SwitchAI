@@ -6,6 +6,7 @@ import androidx.core.content.edit
 import androidx.preference.PreferenceManager
 
 class PreferenceHelper(context: Context) {
+
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
 
     fun getBoolean(key: String, defaultValue: Boolean = false): Boolean =

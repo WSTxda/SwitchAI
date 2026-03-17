@@ -1,4 +1,4 @@
-package com.wstxda.switchai.services
+package com.wstxda.switchai.service
 
 import android.content.Context
 import android.content.Intent
@@ -18,6 +18,7 @@ import org.json.JSONObject
 import java.net.URL
 
 object UpdaterService {
+
     fun checkForUpdates(context: Context, anchorView: View) {
         CoroutineScope(Dispatchers.Main).launch {
             if (!isNetworkAvailable(context)) {
@@ -82,8 +83,7 @@ object UpdaterService {
         ).apply {
             setAction(R.string.update_checker_download_button) {
                 val intent = Intent(
-                    Intent.ACTION_VIEW,
-                    Constants.GITHUB_RELEASE_PAGE_URL.toUri()
+                    Intent.ACTION_VIEW, Constants.GITHUB_RELEASE_PAGE_URL.toUri()
                 )
                 anchorView.context.startActivity(intent)
             }

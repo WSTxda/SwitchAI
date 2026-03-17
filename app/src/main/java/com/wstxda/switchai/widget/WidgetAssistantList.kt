@@ -54,7 +54,7 @@ class WidgetAssistantList(private val context: Context) : RemoteViewsService.Rem
             putExtra(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, assistant)
         }
 
-        return RemoteViews(context.packageName, R.layout.widget_list_item_assistant).apply {
+        return RemoteViews(context.packageName, R.layout.widget_assistant_list_item).apply {
             setTextViewText(R.id.assistant_name, assistantName)
             setImageViewResource(R.id.assistant_icon, assistantIcon)
             setOnClickFillInIntent(R.id.assistant_item_container, fillInIntent)

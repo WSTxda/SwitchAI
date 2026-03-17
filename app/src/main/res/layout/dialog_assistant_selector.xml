@@ -23,7 +23,7 @@
         android:paddingHorizontal="14dp"
         android:paddingBottom="24dp"
         android:textAlignment="center"
-        tools:text="@string/assistant_select" />
+        tools:text="@string/assistant_selector_title" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/search_text_input_layout"
@@ -36,7 +36,7 @@
         app:boxStrokeColor="@color/search_bar_background"
         app:boxStrokeWidth="0dp"
         app:endIconMode="clear_text"
-        app:placeholderText="@string/assistant_search_hint"
+        app:placeholderText="@string/selector_search_hint"
         app:placeholderTextColor="?attr/colorOnSecondaryContainer"
         app:shapeAppearance="?attr/shapeAppearanceCornerExtraExtraLarge"
         app:startIconDrawable="@drawable/ic_search"
@@ -64,10 +64,11 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:clipToPadding="false"
+        android:paddingStart="?attr/dialogPreferredPadding"
+        android:paddingEnd="?attr/dialogPreferredPadding"
         android:paddingBottom="24dp"
-        android:scrollbarSize="2dp"
-        android:scrollbars="vertical"
-        tools:listitem="@layout/list_item_assistant_view" />
+        android:scrollbars="none"
+        tools:listitem="@layout/list_item_assistant_list_view" />
 
     <com.google.android.material.loadingindicator.LoadingIndicator
         android:id="@+id/assistant_loading"

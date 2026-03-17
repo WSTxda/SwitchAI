@@ -1,0 +1,34 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:width="280dp"
+    android:height="160dp"
+    android:viewportWidth="280"
+    android:viewportHeight="160"
+    tools:ignore="VectorRaster">
+    <group>
+        <path
+            android:fillColor="?attr/colorSurfaceContainerLowest"
+            android:pathData="M51 33c0-11.05 8.95-20 20-20h140c11.05 0 20 8.95 20 20v127H51V33Z" />
+        <path
+            android:fillColor="?attr/colorOutline"
+            android:pathData="M129 18.5c0-0.83 0.67-1.5 1.5-1.5h21c0.83 0 1.5 0.67 1.5 1.5v0c0 0.83-0.67 1.5-1.5 1.5h-21c-0.83 0-1.5-0.67-1.5-1.5z" />
+        <path
+            android:fillAlpha="0.4"
+            android:fillColor="?attr/colorSecondaryContainer"
+            android:pathData="M64 62c0-4.42 3.58-8 8-8h138c4.42 0 8 3.58 8 8v8c0 4.42-3.58 8-8 8h-138c-4.42 0-8-3.58-8-8z" />
+        <path
+            android:fillAlpha="0.4"
+            android:fillColor="?attr/colorSecondaryContainer"
+            android:pathData="M64 88c0-4.42 3.58-8 8-8h138c4.42 0 8 3.58 8 8v8c0 4.42-3.58 8-8 8h-138c-4.42 0-8-3.58-8-8z" />
+        <path
+            android:fillColor="?attr/colorPrimaryContainer"
+            android:pathData="M64 114c0-4.42 3.58-8 8-8h138c4.42 0 8 3.58 8 8v8c0 4.42-3.58 8-8 8h-138c-4.42 0-8-3.58-8-8z" />
+        <path
+            android:fillAlpha="0.4"
+            android:fillColor="?attr/colorSecondaryContainer"
+            android:pathData="M64 140c0-4.42 3.58-8 8-8h138c4.42 0 8 3.58 8 8v8c0 4.42-3.58 8-8 8h-138c-4.42 0-8-3.58-8-8z" />
+        <path
+            android:fillColor="?attr/colorPrimary"
+            android:pathData="M77.58 122.61l0.31-0.7c0.54-1.25 1.53-2.26 2.78-2.82l0.94-0.42c0.52-0.23 0.52-0.98 0-1.2l-0.9-0.4c-1.27-0.57-2.28-1.61-2.8-2.9l-0.32-0.77c-0.05-0.12-0.13-0.22-0.24-0.3-0.1-0.06-0.22-0.1-0.35-0.1-0.13 0-0.25 0.04-0.35 0.1-0.11 0.08-0.2 0.18-0.24 0.3l-0.31 0.76c-0.53 1.3-1.54 2.34-2.82 2.9l-0.9 0.4c-0.5 0.23-0.5 0.98 0 1.21l0.95 0.42c1.25 0.56 2.24 1.56 2.78 2.82l0.3 0.7c0.06 0.12 0.14 0.22 0.24 0.28 0.1 0.07 0.23 0.11 0.35 0.11 0.12 0 0.25-0.04 0.35-0.1 0.1-0.07 0.18-0.17 0.23-0.29Z" />
+    </group>
+</vector>

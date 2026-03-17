@@ -21,7 +21,7 @@ abstract class AssistantActivity : BaseActivity() {
     fun createAssistantIntent(
         packageName: String, voiceInputActivity: String, defaultActivity: String
     ): Intent {
-        val useVoiceInput = preferenceHelper.getBoolean(Constants.ASSISTANT_VOICE_PREF_KEY, true)
+        val useVoiceInput = preferenceHelper.getBoolean(Constants.VOICE_INPUT_PREF_KEY, true)
         val className = if (useVoiceInput) voiceInputActivity else defaultActivity
 
         return Intent().apply {

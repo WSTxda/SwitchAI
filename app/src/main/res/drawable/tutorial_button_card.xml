@@ -13,10 +13,10 @@
             android:strokeColor="?attr/colorSurfaceVariant" />
         <path
             android:fillAlpha="0.4"
-            android:fillColor="?colorSecondaryContainer"
+            android:fillColor="?attr/colorSecondaryContainer"
             android:pathData="M140 106A18 18 0 1 0 140 142 18 18 0 1 0 140 106z" />
         <path
-            android:fillColor="?colorSecondaryContainer"
+            android:fillColor="?attr/colorSecondaryContainer"
             android:pathData="M140 115A9 9 0 1 0 140 133 9 9 0 1 0 140 115z" />
         <path
             android:fillColor="?attr/colorOnSurface"

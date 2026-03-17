@@ -55,69 +55,68 @@
 
     <!--preferences-->
 
+    <string name="pref_screen_appearance">Зовнішній вигляд</string>
+    <string name="pref_screen_selector">Вибір асистента</string>
+    <string name="pref_screen_shortcuts">Ярлики</string>
+    <string name="pref_screen_about">Про додаток</string>
+    <string name="pref_screen_accessibility">Спеціальні можливості</string>
+    <string name="pref_screen_voice_input">Голосове введення</string>
+
+    <string name="pref_category_manager">Керування</string>
     <string name="pref_category_appearance">Зовнішній вигляд</string>
-    <string name="pref_category_selector">Вибір асистента</string>
-    <string name="pref_category_shortcuts">Ярлики</string>
-    <string name="pref_category_about">Про додаток</string>
-    <string name="pref_category_behavior">Поведінка</string>
-    <string name="pref_category_voice_input">Голосове введення</string>
+    <string name="pref_category_advanced">Додатково</string>
 
     <string name="pref_developer">Розробник</string>
     <string name="pref_source_code">Репозиторій вихідного коду</string>
 
     <string name="pref_theme">Тема</string>
 
+    <string name="pref_version_number">Версія %s</string>
+
     <string name="pref_used_library">Бібліотеки</string>
     <string name="pref_used_library_summary">Ліцензії з відкритим вихідним кодом</string>
 
-    <string name="pref_version">Версія</string>
+    <string name="pref_license">Ліцензія</string>
+    <string name="pref_license_gnu">GNU General Public License v3.0</string>
 
     <string name="pref_digital_assistant">Цифровий асистент</string>
 
     <string name="pref_setup_digital_assistant">Налаштування цифрового асистента</string>
     <string name="pref_setup_digital_assistant_summary">Встановіть SwitchAI як стандартний застосунок цифрового асистента</string>
 
-    <string name="pref_assistant_selector">Використовувати вибір асистента</string>
-    <string name="pref_assistant_selector_summary">Якщо увімкнено, обирайте асистента щоразу при запуску. Інакше буде використано параметр <b>Цифровий асистент</b></string>
+    <string name="pref_selector">Використовувати вибір асистента</string>
+    <string name="pref_selector_summary">Коли увімкнено, обирайте асистента щоразу, коли запускаєте цифрового асистента пристрою. Інакше буде використано параметр <b>Цифровий асистент</b> із поточним встановленим асистентом</string>
 
-    <string name="pref_assistant_search_bar">Рядок пошуку</string>
-    <string name="pref_assistant_search_bar_summary">Увімкнути рядок пошуку для швидкого пошуку асистентів у меню вибору</string>
+    <string name="pref_selector_components">Керування компонентами</string>
+    <string name="pref_selector_components_summary">Оберіть, які елементи компонентів відображаються в меню вибору</string>
 
-    <string name="pref_assistant_grid_view">Вигляд сіткою</string>
-    <string name="pref_assistant_grid_view_summary">Відображати асистентів у компактному вигляді сіткою</string>
+    <string name="pref_selector_manager_manual">Керування асистентами</string>
+    <string name="pref_selector_manager_manual_summary">Оберіть, які асистенти відображаються у меню вибору</string>
 
-    <string name="pref_assistant_grid_columns">Стовпців у сітці</string>
-    <string name="pref_assistant_grid_columns_summary">Кількість стовпців у сітці</string>
-    <string name="pref_assistant_grid_columns_land">Стовпців у сітці (альбомна)</string>
-    <string name="grid_columns_auto">Автоматично</string>
+    <string name="pref_selector_manager_dynamic">Динамічне керування</string>
+    <string name="pref_selector_manager_dynamic_summary_off">Динамічно керуйте відображуваними асистентами у меню вибору залежно від наявності застосунків</string>
+    <string name="pref_selector_manager_dynamic_summary_on">У меню вибору відображаються лише встановлені асистенти</string>
 
-    <string name="pref_assistant_selector_title">Показувати заголовок</string>
-    <string name="pref_assistant_selector_title_summary">Показувати заголовок «Виберіть асистента» у меню</string>
+    <string name="pref_selector_grid">Сітка асистентів</string>
+    <string name="pref_selector_grid_summary">Налаштування стовпців сітки списку асистентів</string>
 
-    <string name="pref_assistant_manager_manual">Керування асистентами</string>
-    <string name="pref_assistant_manager_manual_summary">Оберіть, які асистенти відображаються у меню вибору</string>
+    <string name="pref_voice_input">Використовувати голосове введення</string>
+    <string name="pref_voice_input_summary">Якщо увімкнено, замість головного екрана в підтримуваних асистентах буде використовуватися активність голосового введення</string>
 
-    <string name="pref_assistant_manager_dynamic">Динамічне керування</string>
-    <string name="pref_assistant_manager_dynamic_summary_off">Динамічно керуйте відображуваними асистентами залежно від встановлених застосунків</string>
-    <string name="pref_assistant_manager_dynamic_summary_on">У меню відображаються лише встановлені асистенти</string>
+    <string name="pref_voice_input_root">Використовувати права root</string>
+    <string name="pref_voice_input_root_summary">Використовувати права root для увімкнення голосового введення для окремих асистентів і покращення зручності використання</string>
 
-    <string name="pref_assistant_tile">Додати плитку асистента</string>
-    <string name="pref_assistant_tile_summary">Додати плитку швидких налаштувань для доступу до асистента на пристрої</string>
+    <string name="pref_accessibility_vibration">Вібрація при відкритті</string>
+    <string name="pref_accessibility_vibration_summary">Тактильний зворотний зв\'язок при відкритті асистента. На нього можуть впливати системні налаштування</string>
 
-    <string name="pref_assistant_widget">Додати віджет асистента</string>
-    <string name="pref_assistant_widget_summary">Додати віджет для доступу до асистента з головного екрана пристрою</string>
+    <string name="pref_accessibility_sound">Звук при відкритті</string>
+    <string name="pref_accessibility_sound_summary">Звуковий зворотний зв\'язок при відкритті асистента. Може бути вимкнено режимом звуку пристрою або активним відтворенням медіа</string>
 
-    <string name="pref_assistant_vibration">Вібрація при відкритті</string>
-    <string name="pref_assistant_vibration_summary">Тактильний зворотний зв\'язок при відкритті асистента. На нього можуть впливати системні налаштування</string>
+    <string name="pref_shortcut_tile">Додати плитку асистента</string>
+    <string name="pref_shortcut_tile_summary">Додати плитку до панелі швидких налаштувань для зручного доступу до ваших асистентів</string>
 
-    <string name="pref_assistant_sound">Звук при відкритті</string>
-    <string name="pref_assistant_sound_summary">Звуковий зворотний зв\'язок при відкритті асистента. Може бути вимкнено режимом звуку пристрою або активним відтворенням медіа</string>
-
-    <string name="pref_assistant_root">Використовувати права root</string>
-    <string name="pref_assistant_root_summary">Використовувати права root для увімкнення голосового введення для окремих асистентів і покращення зручності використання</string>
-
-    <string name="pref_assistant_voice_input">Використовувати голосове введення</string>
-    <string name="pref_assistant_voice_input_summary">Якщо увімкнено, замість головного екрана буде використовуватися голосове введення в підтримуваних асистентах</string>
+    <string name="pref_shortcut_widget">Додати віджет асистента</string>
+    <string name="pref_shortcut_widget_summary">Додати віджет на головний екран для швидкого доступу до ваших асистентів</string>
 
     <!--theme selector-->
 
@@ -139,18 +138,26 @@
 
     <!--digital/selector/open assistant-->
 
-    <string name="assistant_select">Оберіть асистента</string>
-    <!--selector assistant search-->
-    <string name="assistant_search_hint">Пошук асистентів</string>
-    <string name="assistant_search_empty">Асистентів не знайдено</string>
-    <!--selector assistant categories-->
-    <string name="assistant_category_pin">Закріплені</string>
-    <string name="assistant_category_recent">Нещодавно використані</string>
-    <string name="assistant_category_all">Асистенти</string>
-    <string name="assistant_category_not_installed">Не встановлені</string>
-    <!--selector assistant tips-->
-    <string name="assistant_tip_reorder">Щоб змінити порядок закріплених асистентів, натисніть і утримуйте одного з них, а потім перетягніть на потрібне місце</string>
-    <string name="assistant_tip_close">Закрити підказку</string>
+    <string name="assistant_selector_title">Оберіть асистента</string>
+    <!--assistant selector search-->
+    <string name="selector_search_hint">Пошук асистентів</string>
+    <string name="selector_search_empty">Асистентів не знайдено</string>
+    <!--assistant selector categories-->
+    <string name="selector_category_pin">Закреплені</string>
+    <string name="selector_category_recent">Нещодавно використані</string>
+    <string name="selector_category_all">Асистенти</string>
+    <string name="selector_category_not_installed">Не встановлені</string>
+    <!--assistant selector tips-->
+    <string name="selector_tip_reorder">Щоб змінити порядок закріплених асистентів, натисніть і утримуйте одного з них, а потім перетягніть на потрібне місце</string>
+    <string name="selector_tip_close">Закрити підказку</string>
+    <!--assistant selector components-->
+    <string name="selector_component_title">Заголовок</string>
+    <string name="selector_component_search_bar">Рядок пошуку</string>
+    <string name="selector_component_counter">Лічильник</string>
+    <!--assistant selector grid-->
+    <string name="selector_grid_title">Налаштування сітки</string>
+    <string name="selector_grid_portrait_button">Портретна</string>
+    <string name="selector_grid_landscape_button">Альбомна</string>
     <!--open assistant messages-->
     <string name="assistant_open">Відкрити асистента</string>
     <string name="assistant_open_error">Помилка відкриття асистента</string>
@@ -161,18 +168,16 @@
     <string name="digital_assistant_setup_message">У налаштуваннях оберіть <b>SwitchAI</b> як стандартний застосунок цифрового асистента для швидкого доступу до обраного асистента за допомогою жестів, кнопок тощо…</string>
     <string name="digital_assistant_setup_button">Встановити за замовчуванням</string>
     <!--tutorial digital assistant dialog-->
-    <string name="digital_assistant_tutorial">Як користуватися цифровим асистентом</string>
-
+    <string name="digital_assistant_tutorial_title">Як користуватися цифровим асистентом</string>
     <!--tutorial digital assistant-->
-
-    <string name="tutorial_edge_gestures">Використання жестів по краях екрана</string>
-    <string name="tutorial_edge_gestures_summary">На пристроях із навігацією жестами (Android 10+) проведіть вгору та всередину з будь-якого нижнього кута екрана. З кута з\'явиться світна дуга, що підтверджує відкриття цифрового асистента. Для цього в налаштуваннях системної навігації пристрою має бути обрано <b>Навігація жестами</b></string>
-    <string name="tutorial_home_button">Використання кнопки «Додому»</string>
-    <string name="tutorial_home_button_summary">Якщо ваш пристрій використовує класичну навігацію з трьома кнопками, натисніть і утримуйте центральну кнопку «Додому» на мить. Зазвичай ця дія призначена для відкриття цифрового асистента. Якщо дія виконує іншу функцію, її міг налаштувати виробник пристрою</string>
-    <string name="tutorial_power_button">Використання кнопки живлення</string>
-    <string name="tutorial_power_button_summary">На багатьох пристроях можна відкрити цифрового асистента, утримуючи кнопку живлення. Якщо при цьому з\'являється меню вимкнення/перезавантаження, функція, ймовірно, вимкнена. Її можна увімкнути в системних налаштуваннях, як правило за шляхом <b>Налаштування > Система > Жести > Натискання і утримання кнопки живлення</b></string>
-    <string name="tutorial_headset_button">Використання дротових і бездротових гарнітур</string>
-    <string name="tutorial_headset_button_summary">Багато дротових і Bluetooth-гарнітур дозволяють відкрити цифрового асистента, утримуючи багатофункціональну кнопку. Зазвичай вона використовується для керування відтворенням або відповіді на дзвінки, але також може відкривати асистента залежно від моделі гарнітури. Жести натискання на деяких бездротових навушниках, наприклад <b>подвійне натискання</b>, також можуть відкривати цифрового асистента, якщо це підтримується та налаштовано в застосунку</string>
+    <string name="assistant_tutorial_edge_gestures">Використання жестів по краях екрана</string>
+    <string name="assistant_tutorial_edge_gestures_summary">На пристроях із навігацією жестами (Android 10+) проведіть вгору та всередину з будь-якого нижнього кута екрана. З кута з\'явиться світна дуга, що підтверджує відкриття цифрового асистента. Для цього в налаштуваннях системної навігації пристрою має бути обрано <b>Навігація жестами</b></string>
+    <string name="assistant_tutorial_home_button">Використання кнопки «Додому»</string>
+    <string name="assistant_tutorial_home_button_summary">Якщо ваш пристрій використовує класичну навігацію з трьома кнопками, натисніть і утримуйте центральну кнопку «Додому» на мить. Зазвичай ця дія призначена для відкриття цифрового асистента. Якщо дія виконує іншу функцію, її міг налаштувати виробник пристрою</string>
+    <string name="assistant_tutorial_power_button">Використання кнопки живлення</string>
+    <string name="assistant_tutorial_power_button_summary">На багатьох пристроях можна відкрити цифрового асистента, утримуючи кнопку живлення. Якщо при цьому з\'являється меню вимкнення/перезавантаження, функція, ймовірно, вимкнена. Її можна увімкнути в системних налаштуваннях, як правило за шляхом <b>Налаштування > Система > Жести > Натискання і утримання кнопки живлення</b></string>
+    <string name="assistant_tutorial_headset_button">Використання дротових і Bluetooth-гарнітур</string>
+    <string name="assistant_tutorial_headset_button_summary">Багато дротових і Bluetooth-гарнітур дозволяють відкрити цифрового асистента, утримуючи багатофункціональну кнопку. Зазвичай вона використовується для керування відтворенням або відповіді на дзвінки, але також може відкривати асистента залежно від моделі гарнітури. Жести натискання на деяких бездротових навушниках, наприклад <b>подвійне натискання</b>, також можуть відкривати цифрового асистента, якщо це підтримується та налаштовано в застосунку</string>
 
     <!--app shortcut/tile-->
 
@@ -198,12 +203,11 @@
 
     <!--app widgets-->
 
-    <string name="widget_assistant_label">Material-стиль</string>
-    <string name="widget_assistant_invisible_label">Невидимий</string>
+    <string name="widget_label">Material-стиль</string>
+    <string name="widget_invisible_label">Невидимий</string>
     <!--widget description-->
-    <string name="widget_assistant_description">Віджет у стилі Material для доступу до асистента</string>
-    <string name="widget_assistant_invisible_description">Невидимий віджет для доступу до асистента</string>
+    <string name="widget_description">Віджет у стилі Material для доступу до вашого асистента</string>
+    <string name="widget_invisible_description">Невидимий віджет для доступу до вашого асистента</string>
     <!--pinning widget-->
     <string name="widget_launcher_not_supported">Ваш лаунчер не підтримує закріплення віджетів</string>
-
 </resources>

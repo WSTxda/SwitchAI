@@ -89,7 +89,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         navActions.forEach { (key, actionId) ->
             findPreference<Preference>(key)?.setOnPreferenceClickListener {
-                findNavController().navigate(actionId)
+                val navController = findNavController()
+                if (navController.currentDestination?.id == R.id.settingsFragment) {
+                    navController.navigate(actionId)
+                }
                 true
             }
         }

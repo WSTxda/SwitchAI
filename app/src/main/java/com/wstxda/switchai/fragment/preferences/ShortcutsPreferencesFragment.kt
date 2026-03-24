@@ -1,18 +1,19 @@
 package com.wstxda.switchai.fragment.preferences
 
-import android.os.Bundle
 import androidx.preference.Preference
 import com.wstxda.switchai.R
+import com.wstxda.switchai.fragment.BasePreferenceFragment
 import com.wstxda.switchai.ui.TileManager
 import com.wstxda.switchai.ui.WidgetManager
 import com.wstxda.switchai.utils.Constants
 
-class ShortcutsPreferencesFragment : BasePreferencesFragment() {
+class ShortcutsPreferencesFragment : BasePreferenceFragment() {
 
     private val widgetManager by lazy { WidgetManager(requireContext()) }
 
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.preferences_shortcuts, rootKey)
+    override val preferencesResId: Int get() = R.xml.preferences_shortcuts
+
+    override fun setupListeners() {
         setupTilePreference()
         setupWidgetPreference()
     }

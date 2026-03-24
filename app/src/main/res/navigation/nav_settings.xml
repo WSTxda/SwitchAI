@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.wstxda.switchai.fragment.SettingsFragment"
+        android:name="com.wstxda.switchai.fragment.preferences.MainPreferencesFragment"
         android:label="@string/app_settings"
         tools:layout="@layout/activity_main">
 

@@ -25,7 +25,7 @@
             android:adjustViewBounds="true"
             android:importantForAccessibility="no"
             android:scaleType="centerCrop"
-            tools:srcCompat="@drawable/tutorial_gestures_card" />
+            tools:srcCompat="@drawable/tutorial_gestures" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.textview.MaterialTextView

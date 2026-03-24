@@ -29,7 +29,7 @@
 
         <activity
             android:name=".activity.MainActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:configChanges="screenSize|keyboard|keyboardHidden"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/AppThemeSplash">
@@ -46,7 +46,7 @@
 
         <activity
             android:name=".activity.LibraryActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:configChanges="screenSize|keyboard|keyboardHidden"
             android:exported="false"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.Library" />
@@ -471,7 +471,7 @@
 
         <activity
             android:name=".activity.AssistantSelectorActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:configChanges="screenSize|keyboard|keyboardHidden"
             android:excludeFromRecents="true"
             android:exported="false"
             android:launchMode="singleTop"

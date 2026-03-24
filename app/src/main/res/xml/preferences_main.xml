@@ -6,6 +6,7 @@
         android:key="digital_assistant_setup"
         android:summary="@string/pref_setup_digital_assistant_summary"
         android:title="@string/pref_setup_digital_assistant"
+        app:isPreferenceVisible="false"
         app:layout="@layout/preference_material_warning_setup" />
 
     <ListPreference

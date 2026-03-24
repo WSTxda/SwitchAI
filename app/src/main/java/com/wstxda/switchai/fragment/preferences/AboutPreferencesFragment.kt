@@ -1,21 +1,22 @@
 package com.wstxda.switchai.fragment.preferences
 
 import android.content.Intent
-import android.os.Bundle
 import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
 import androidx.preference.Preference
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.LibraryActivity
+import com.wstxda.switchai.fragment.BasePreferenceFragment
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.AboutViewModel
 
-class AboutPreferencesFragment : BasePreferencesFragment() {
+class AboutPreferencesFragment : BasePreferenceFragment() {
 
     private val aboutViewModel: AboutViewModel by viewModels()
 
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.preferences_about, rootKey)
+    override val preferencesResId: Int get() = R.xml.preferences_about
+
+    override fun setupListeners() {
         setupLibraryPreference()
         setupLinkPreferences()
     }

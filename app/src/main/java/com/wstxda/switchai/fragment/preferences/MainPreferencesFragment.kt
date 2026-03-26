@@ -1,18 +1,17 @@
-package com.wstxda.switchai.fragment
+package com.wstxda.switchai.fragment.preferences
 
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.preference.ListPreference
 import androidx.preference.Preference
-import androidx.preference.PreferenceFragmentCompat
-import com.google.android.material.color.MaterialColors
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.transition.MaterialSharedAxis
 import com.wstxda.switchai.R
+import com.wstxda.switchai.fragment.BasePreferenceFragment
 import com.wstxda.switchai.preference.DigitalAssistantPreference
 import com.wstxda.switchai.ui.component.AssistantTutorialBottomSheet
 import com.wstxda.switchai.ui.component.DigitalAssistantSetupDialog
@@ -22,7 +21,7 @@ import com.wstxda.switchai.viewmodel.SettingsViewModel
 import com.wstxda.switchai.widget.utils.AssistantWidgetUpdater
 import kotlinx.coroutines.launch
 
-class SettingsFragment : PreferenceFragmentCompat() {
+class MainPreferencesFragment : BasePreferenceFragment() {
 
     private val settingsViewModel: SettingsViewModel by activityViewModels()
     private lateinit var assistantResourcesManager: AssistantResourcesManager
@@ -43,23 +42,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.preferences_main, rootKey)
-        assistantResourcesManager = AssistantResourcesManager(requireContext())
-        setupInitialVisibility()
-        setupPreferences()
-        observeViewModel()
-    }
+    override val preferencesResId: Int get() = R.xml.preferences_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enterTransition = null
+        returnTransition = null
         exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
         reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        view.setBackgroundColor(MaterialColors.getColor(view, android.R.attr.colorBackground))
     }
 
     override fun onResume() {
@@ -71,10 +61,40 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-    private fun setupPreferences() {
+    override fun setupViews() {
+        assistantResourcesManager = AssistantResourcesManager(requireContext())
+        setupInitialVisibility()
+    }
+
+    override fun setupListeners() {
         setupDigitalAssistantClickListener()
         setupDigitalAssistantIconPreferenceListener()
         setupNavigationPreferences()
+    }
+
+    override fun setupObservers() {
+        settingsViewModel.isAssistSetupDone.observe(viewLifecycleOwner) { isDone ->
+            findPreference<Preference>(Constants.DIGITAL_ASSISTANT_SETUP_PREF_KEY)?.isVisible =
+                !isDone
+        }
+    }
+
+    override fun getToolbarTitle(): String = getString(R.string.app_settings)
+
+    override fun showNavigationIcon(): Boolean = false
+
+    override fun onToolbarCreated(toolbar: MaterialToolbar) {
+        toolbar.inflateMenu(R.menu.main_menu)
+        toolbar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.action_show_tutorial -> {
+                    AssistantTutorialBottomSheet.show(childFragmentManager)
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     private fun setupNavigationPreferences() {
@@ -116,22 +136,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
             findPreference<ListPreference>(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY)
         listPreference?.setOnPreferenceChangeListener { preference, newValue ->
             if (preference is ListPreference) {
-                assistantResourcesManager.updatePreferenceIcon(
-                    preference, newValue.toString()
-                )
+                assistantResourcesManager.updatePreferenceIcon(preference, newValue.toString())
             }
             AssistantWidgetUpdater.updateAllWidgets(requireContext())
             true
         }
-        listPreference?.let { pref ->
-            assistantResourcesManager.updatePreferenceIcon(pref, pref.value)
-        }
-    }
-
-    private fun observeViewModel() {
-        settingsViewModel.isAssistSetupDone.observe(this) { isDone ->
-            findPreference<Preference>(Constants.DIGITAL_ASSISTANT_SETUP_PREF_KEY)?.isVisible =
-                !isDone
-        }
+        listPreference?.let { assistantResourcesManager.updatePreferenceIcon(it, it.value) }
     }
 }

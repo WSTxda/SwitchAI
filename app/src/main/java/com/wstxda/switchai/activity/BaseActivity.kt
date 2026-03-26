@@ -5,14 +5,11 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.pm.ShortcutManagerCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +22,9 @@ abstract class BaseActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(showBackButton)
         if (showBackButton) {
-            toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+            toolbar.setNavigationOnClickListener {
+                onBackPressedDispatcher.onBackPressed()
+            }
         }
     }
 
@@ -35,16 +34,8 @@ abstract class BaseActivity : AppCompatActivity() {
                 navigationBarStyle = SystemBarStyle.auto(Color.TRANSPARENT, Color.TRANSPARENT)
             )
             window.isNavigationBarContrastEnforced = false
-        }
-    }
-
-    protected fun applySystemBarInsets(target: View) {
-        ViewCompat.setOnApplyWindowInsetsListener(target) { view, insets ->
-            val systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.setPadding(
-                systemBarsInsets.left, 0, systemBarsInsets.right, systemBarsInsets.bottom
-            )
-            WindowInsetsCompat.CONSUMED
+        } else {
+            enableEdgeToEdge()
         }
     }
 

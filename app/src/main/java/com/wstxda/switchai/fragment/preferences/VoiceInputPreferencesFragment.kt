@@ -1,11 +1,10 @@
 package com.wstxda.switchai.fragment.preferences
 
-import android.os.Bundle
 import com.wstxda.switchai.R
+import com.wstxda.switchai.fragment.BasePreferenceFragment
 
-class VoiceInputPreferencesFragment : BasePreferencesFragment() {
+class VoiceInputPreferencesFragment : BasePreferenceFragment() {
 
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        setPreferencesFromResource(R.xml.preferences_voice_input, rootKey)
-    }
+    override val preferencesResId: Int get() = R.xml.preferences_voice_input
+
 }

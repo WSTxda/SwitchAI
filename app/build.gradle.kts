@@ -56,9 +56,12 @@ android {
 
 dependencies {
     implementation(libs.kotlin.reflect)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.fragment)
     implementation(libs.androidx.preference)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.navigation)
+    implementation(libs.androidx.transition)
     implementation(libs.androidx.splashscreen)
     implementation(libs.google.material)
     implementation(libs.aboutlibraries.view)

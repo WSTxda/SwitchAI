@@ -9,7 +9,7 @@ object TutorialItemList {
         // Gestures tutorial
         TutorialItem(
             iconRes = R.drawable.ic_corners,
-            imageRes = R.drawable.tutorial_gestures_card,
+            imageRes = R.drawable.tutorial_gestures,
             titleRes = R.string.assistant_tutorial_edge_gestures,
             summaryRes = R.string.assistant_tutorial_edge_gestures_summary
         ),
@@ -17,7 +17,7 @@ object TutorialItemList {
         // Home button tutorial
         TutorialItem(
             iconRes = R.drawable.ic_home,
-            imageRes = R.drawable.tutorial_button_card,
+            imageRes = R.drawable.tutorial_button,
             titleRes = R.string.assistant_tutorial_home_button,
             summaryRes = R.string.assistant_tutorial_home_button_summary
         ),
@@ -25,7 +25,7 @@ object TutorialItemList {
         // Power button tutorial
         TutorialItem(
             iconRes = R.drawable.ic_power,
-            imageRes = R.drawable.tutorial_power_card,
+            imageRes = R.drawable.tutorial_power,
             titleRes = R.string.assistant_tutorial_power_button,
             summaryRes = R.string.assistant_tutorial_power_button_summary
         ),
@@ -33,7 +33,7 @@ object TutorialItemList {
         // Headset button tutorial
         TutorialItem(
             iconRes = R.drawable.ic_headset,
-            imageRes = R.drawable.tutorial_headset_card,
+            imageRes = R.drawable.tutorial_headset,
             titleRes = R.string.assistant_tutorial_headset_button,
             summaryRes = R.string.assistant_tutorial_headset_button_summary
         )

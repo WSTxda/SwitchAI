@@ -40,6 +40,7 @@
         app:defaultValue="@array/assistant_values"
         app:dialogIcon="@drawable/ic_visibility"
         app:iconSpaceReserved="false"
+        app:isPreferenceVisible="false"
         app:minSelection="2"
         app:summary="@string/pref_selector_manager_manual_summary" />
 

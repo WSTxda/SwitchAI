@@ -24,7 +24,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_assistant_chatgpt" />
+            tools:src="@drawable/ic_assistant" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/text_container"
@@ -63,7 +63,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@android:id/title"
-                tools:text="@string/chatgpt" />
+                tools:text="@string/assistant_label" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat

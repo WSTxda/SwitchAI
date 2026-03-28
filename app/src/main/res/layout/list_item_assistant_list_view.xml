@@ -23,7 +23,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_assistant_chatgpt" />
+            tools:src="@drawable/ic_assistant" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/assistant_name"
@@ -38,7 +38,7 @@
             app:layout_constraintEnd_toStartOf="@id/pin_button"
             app:layout_constraintStart_toEndOf="@id/assistant_icon"
             app:layout_constraintTop_toTopOf="@id/assistant_icon"
-            tools:text="@string/chatgpt" />
+            tools:text="@string/assistant_label" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/pin_button"

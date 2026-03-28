@@ -21,7 +21,7 @@
         android:importantForAccessibility="no"
         android:tint="@color/widget_secondary"
         tools:ignore="UseAppTint"
-        tools:src="@drawable/ic_assistant_chatgpt" />
+        tools:src="@drawable/ic_assistant" />
 
     <TextView
         android:id="@+id/assistant_name"
@@ -32,5 +32,5 @@
         android:maxLines="1"
         android:textColor="@color/widget_on_secondary_container"
         android:textSize="14sp"
-        tools:text="@string/chatgpt" />
+        tools:text="@string/assistant_label" />
 </LinearLayout>

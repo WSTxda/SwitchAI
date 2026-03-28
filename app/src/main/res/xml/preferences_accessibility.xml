@@ -1,10 +1,11 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <Preference
         android:icon="@drawable/header_accessibility"
-        android:selectable="false"
-        android:layout="@layout/preference_material_header" />
+        android:layout="@layout/preference_material_header"
+        android:selectable="false" />
 
     <SwitchPreferenceCompat
         android:defaultValue="true"
@@ -12,7 +13,8 @@
         android:summary="@string/pref_accessibility_vibration_summary"
         android:title="@string/pref_accessibility_vibration"
         app:iconSpaceReserved="false"
-        app:layout="@layout/preference_material_top" />
+        app:layout="@layout/preference_material_top"
+        tools:widgetLayout="@layout/preference_material_switch" />
 
     <SwitchPreferenceCompat
         android:defaultValue="true"
@@ -20,5 +22,6 @@
         android:summary="@string/pref_accessibility_sound_summary"
         android:title="@string/pref_accessibility_sound"
         app:iconSpaceReserved="false"
-        app:layout="@layout/preference_material_bottom" />
+        app:layout="@layout/preference_material_bottom"
+        tools:widgetLayout="@layout/preference_material_switch" />
 </androidx.preference.PreferenceScreen>

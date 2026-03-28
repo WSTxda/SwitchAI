@@ -22,7 +22,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:tint="?attr/colorSecondary"
-            tools:src="@drawable/ic_assistant_chatgpt" />
+            tools:src="@drawable/ic_assistant" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/assistant_name"
@@ -34,7 +34,7 @@
             android:textAlignment="center"
             android:textAppearance="?attr/textAppearanceTitleSmall"
             android:textColor="?attr/colorOnSecondaryContainer"
-            tools:text="@string/chatgpt" />
+            tools:text="@string/assistant_label" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/pin_button"

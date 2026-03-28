@@ -1,17 +1,19 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <Preference
         android:icon="@drawable/header_selector"
-        android:selectable="false"
-        android:layout="@layout/preference_material_header" />
+        android:layout="@layout/preference_material_header"
+        android:selectable="false" />
 
     <SwitchPreferenceCompat
         android:defaultValue="true"
         android:key="assistant_selector"
         android:title="@string/pref_selector"
         app:iconSpaceReserved="false"
-        app:layout="@layout/preference_material_switch_bar" />
+        app:layout="@layout/preference_material_switch_bar"
+        tools:widgetLayout="@layout/preference_material_switch" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"
@@ -52,7 +54,8 @@
         android:summaryOn="@string/pref_selector_manager_dynamic_summary_on"
         android:title="@string/pref_selector_manager_dynamic"
         app:iconSpaceReserved="false"
-        app:layout="@layout/preference_material_bottom" />
+        app:layout="@layout/preference_material_bottom"
+        tools:widgetLayout="@layout/preference_material_switch" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"

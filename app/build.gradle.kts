@@ -12,8 +12,8 @@ android {
         applicationId = "com.wstxda.switchai"
         minSdk = 26
         targetSdk = 36
-        versionCode = 341
-        versionName = "3.4.1"
+        versionCode = 400
+        versionName = "4.0.0"
     }
 
     buildTypes {

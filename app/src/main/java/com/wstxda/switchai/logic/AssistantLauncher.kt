@@ -1,5 +1,6 @@
 package com.wstxda.switchai.logic
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
@@ -29,11 +30,12 @@ fun Context.openAssistant(
 }
 
 fun Context.openAssistant(intent: Intent): Boolean = runCatching {
-    startActivity(Intent(intent).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK })
+    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    startActivity(intent)
     true
 }.getOrElse { false }
 
-suspend fun Context.openAssistantRoot(
+fun Context.openAssistantRoot(
     intents: List<Intent>,
     rootAccessMessage: Int,
     errorMessage: Int,
@@ -46,9 +48,10 @@ suspend fun Context.openAssistantRoot(
     }
 
     intents.forEach { intent ->
-        val component = intent.component ?: return@forEach
         val success = runCatching {
-            launchRootActivity(component.packageName, component.className)
+            launchRootActivity(
+                intent.component!!.packageName, intent.component!!.className
+            )
         }.getOrElse { false }
 
         if (success) {
@@ -59,10 +62,17 @@ suspend fun Context.openAssistantRoot(
     }
 
     val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
-    val handled = pkg?.takeIf { it.isNotEmpty() }?.let { openOnStore(it) } ?: false
 
-    showToast(errorMessage)
-    return handled
+    val isInstalled = pkg?.let {
+        runCatching { packageManager.getPackageInfo(it, 0); true }.getOrElse { false }
+    } ?: false
+
+    return if (isInstalled) {
+        openAssistant(intents, errorMessage)
+    } else {
+        showToast(errorMessage)
+        pkg?.takeIf { it.isNotEmpty() }?.let { openOnStore(it) } ?: false
+    }
 }
 
 fun Context.openOnStore(packageName: String): Boolean {
@@ -74,10 +84,10 @@ fun Context.openOnStore(packageName: String): Boolean {
         Intent.ACTION_VIEW, "https://www.google.com/search?q=$packageName+android+app".toUri()
     ).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
 
-    return runCatching {
+    return try {
         startActivity(marketIntent)
         true
-    }.getOrElse {
+    } catch (_: ActivityNotFoundException) {
         runCatching {
             startActivity(webSearchIntent)
             true

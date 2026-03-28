@@ -1,8 +1,9 @@
 package com.wstxda.switchai.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 
-class AboutViewModel : ViewModel() {
+class AboutViewModel (application: Application) : AndroidViewModel(application) {
 
     val links: Map<String, String> = mapOf(
         "developer" to "https://github.com/WSTxda",

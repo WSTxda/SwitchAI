@@ -1,20 +1,26 @@
 [versions]
 #noinspection AndroidGradlePluginVersion (Upgrade it after migrate to compose aboutLibraries required to Gradle 9) for more: https://github.com/mikepenz/AboutLibraries/issues/1090#issuecomment-2761198419
 agp = "8.13.2"
+activity = "1.13.0"
+fragment = "1.8.9"
 kotlin = "2.3.20"
 kotlinReflect = "2.2.21"
 preference = "1.2.1"
 appcompat = "1.7.1"
 navigation = "2.9.7"
+transition = "1.7.0"
 splashScreen = "1.2.0"
 material = "1.14.0-alpha10"
 aboutLibraries = "13.2.1"
 
 [libraries]
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect"}
+androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
+androidx-fragment = { module = "androidx.fragment:fragment", version.ref = "fragment" }
 androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-navigation = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigation" }
+androidx-transition = { module = "androidx.transition:transition", version.ref = "transition" }
 androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 aboutlibraries-view = { module = "com.mikepenz:aboutlibraries", version.ref = "aboutLibraries" }

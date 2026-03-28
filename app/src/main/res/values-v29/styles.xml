@@ -1,0 +1,8 @@
+<resources>
+
+    <style name="Theme.Component.Material.BottomSheet" parent="@style/ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Theme.Component.BottomSheet.Modal</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+    </style>
+</resources>

@@ -27,7 +27,7 @@ class GeminiAssistant : AssistantActivity() {
         }
     }
 
-    private suspend fun openGeminiRoot() {
+    private fun openGeminiRoot() {
         openAssistantRoot(
             intents = listOf(createGeminiRootIntent()),
             rootAccessMessage = R.string.root_access_warning,

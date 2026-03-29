@@ -206,8 +206,8 @@
     <string name="widget_label">Estilo Material</string>
     <string name="widget_invisible_label">Invisível</string>
     <!--widget description-->
-    <string name="widget_description">Um widget estilo Material para acessar seu assistente</string>
-    <string name="widget_invisible_description">Um widget invisível para acessar seu assistente</string>
+    <string name="widget_description">Um widget estilo Material para acessar o seu assistente</string>
+    <string name="widget_invisible_description">Um widget invisível para acessar o seu assistente</string>
     <!--pinning widget-->
     <string name="widget_launcher_not_supported">Seu launcher não suporta a fixação de widgets</string>
 </resources>

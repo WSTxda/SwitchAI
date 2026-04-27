@@ -1,3 +1,5 @@
+| English | [Türkçe](README.tr.md) |
+
 # SwitchAI – Switch AI Digital Assistant
 
 Easily select, start, and manage your preferred AI digital assistants on Android. A fresh, streamlined way to choose and control AI assistants on your device.

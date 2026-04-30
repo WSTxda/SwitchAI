@@ -14,38 +14,16 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set Up JDK 22
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '22'
-          distribution: 'oracle'
-          cache: gradle
+          distribution: 'temurin'
 
-      - name: Cache Gradle Dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle
-
-      - name: Cache Android Build Outputs
-        uses: actions/cache@v4
-        with:
-          path: app/build
-          key: ${{ runner.os }}-build-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-build
-
-      - name: Set Executable Permission for Gradle Wrapper
-        run: chmod +x gradlew
-
-      - name: Validate Gradle Wrapper
-        uses: gradle/actions/wrapper-validation@v4
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v6
 
       - name: Run Code Linting
         run: ./gradlew lint
@@ -54,11 +32,22 @@ jobs:
         run: ./gradlew test
 
       - name: Build APK (Debug)
-        id: gradle_build_debug
         run: ./gradlew assembleDebug
 
+      - name: Upload Lint & Test Reports
+        uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: reports
+          path: |
+            app/build/reports/lint-results*.html
+            app/build/reports/tests/
+          retention-days: 7
+
       - name: Upload Debug APK
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/
+          if-no-files-found: error
+          retention-days: 14

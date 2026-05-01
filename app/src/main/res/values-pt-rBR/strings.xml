@@ -128,14 +128,6 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">Verificar atualizações</string>
-    <string name="update_checker_download_button">Baixar</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">Nenhuma atualização disponível</string>
-    <string name="update_checker_update_available">Nova atualização disponível: %s</string>
-    <string name="update_checker_no_internet">Sem conexão com a internet</string>
-    <string name="update_checker_generic_error">Algo deu errado… Tente novamente mais tarde</string>
-
     <!--digital/selector/open assistant-->
 
     <string name="assistant_selector_title">Selecionar assistente</string>

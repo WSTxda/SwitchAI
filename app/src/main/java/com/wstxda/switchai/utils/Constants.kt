@@ -51,6 +51,7 @@ object Constants {
     // -------------------------------------------------------------------------
 
     const val LIBRARY_PREF_KEY = "library"
+    const val UPDATER_PREF_KEY = "updater"
 
     // -------------------------------------------------------------------------
     // Navigation preference keys (entries on the main screen)
@@ -126,6 +127,8 @@ object Constants {
     const val TUTORIAL_DIALOG = "AssistantTutorialBottomSheet"
     const val PREFERENCE_DIALOG = "PreferenceDialog"
     const val GRID_COLUMNS_DIALOG = "GridColumnsDialog"
+    const val FREE_ANDROID_WARN_DIALOG = "FreeAndroidWarnDialog"
+    const val UPDATER_DIALOG = "UpdaterBottomSheet"
 
     // -------------------------------------------------------------------------
     // Assistant widget
@@ -138,6 +141,7 @@ object Constants {
     // -------------------------------------------------------------------------
 
     const val IS_ASSIST_SETUP_DONE = "is_assist_setup_done"
+    const val IS_WARN_DISMISSED = "is_warn_dismissed"
     const val PREFS_NAME = "assistant_selector_prefs"
 
     // -------------------------------------------------------------------------
@@ -150,6 +154,13 @@ object Constants {
     // Updater GitHub API
     // -------------------------------------------------------------------------
 
-    const val GITHUB_RELEASE_URL = "https://api.github.com/repos/WSTxda/SwitchAI/releases/latest"
-    const val GITHUB_RELEASE_PAGE_URL = "https://github.com/WSTxda/SwitchAI/releases/latest"
+    const val GITHUB_TITLE = "title"
+    const val GITHUB_VERSION = "version"
+    const val GITHUB_CHANGELOG = "changelog"
+    const val GITHUB_DOWNLOAD_URL = "download_url"
+    const val GITHUB_PAGE_URL = "page_url"
+    const val GITHUB_UPDATE_CHECKED = "update_checked"
+
+    const val GITHUB_API_URL = "https://api.github.com/repos/WSTxda/SwitchAI/releases/latest"
+    const val GITHUB_RELEASE_URL = "https://github.com/WSTxda/SwitchAI/releases/latest"
 }

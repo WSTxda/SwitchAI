@@ -128,14 +128,6 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">Проверить обновления</string>
-    <string name="update_checker_download_button">Скачать</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">Обновлений нет</string>
-    <string name="update_checker_update_available">Доступно новое обновление: %s</string>
-    <string name="update_checker_no_internet">Нет подключения к интернету</string>
-    <string name="update_checker_generic_error">Что-то пошло не так… Попробуйте позже</string>
-
     <!--digital/selector/open assistant-->
 
     <string name="assistant_selector_title">Выберите ассистента</string>

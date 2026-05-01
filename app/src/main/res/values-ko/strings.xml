@@ -127,14 +127,6 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">업데이트 확인</string>
-    <string name="update_checker_download_button">다운로드</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">새로운 업데이트가 없습니다</string>
-    <string name="update_checker_update_available">새 업데이트 가능: %s</string>
-    <string name="update_checker_no_internet">인터넷에 연결되어 있지 않습니다</string>
-    <string name="update_checker_generic_error">오류가 발생했습니다… 나중에 다시 시도해 주세요</string>
-
     <!--digital/selector/open assistant-->
 
     <string name="assistant_selector_title">어시스턴트 선택</string>

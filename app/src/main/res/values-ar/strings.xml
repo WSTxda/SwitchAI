@@ -126,13 +126,6 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">التحقق من التحديثات</string>
-    <string name="update_checker_download_button">تحميل</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">لا توجد تحديثات</string>
-    <string name="update_checker_update_available">تحديث جديد متاح: %s</string>
-    <string name="update_checker_no_internet">لا يوجد اتصال بالإنترنت</string>
-    <string name="update_checker_generic_error">حدث خطأ ما… يرجى المعاودة لاحقا</string>
 
     <!--digital/selector/open assistant-->
 

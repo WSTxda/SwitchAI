@@ -1,9 +1,8 @@
 [versions]
-agp = "8.13.2"
+agp = "9.2.0"
 activity = "1.13.0"
 fragment = "1.8.9"
-kotlin = "2.3.21"
-kotlinReflect = "2.3.0"
+kotlinReflect = "2.3.20"
 preference = "1.2.1"
 appcompat = "1.7.1"
 navigation = "2.9.8"
@@ -29,5 +28,4 @@ markdown-linkify = { module = "io.noties.markwon:linkify", version.ref = "markdo
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 aboutLibraries = { id = "com.mikepenz.aboutlibraries.plugin.android", version.ref = "aboutLibraries" }

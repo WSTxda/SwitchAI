@@ -1,8 +1,8 @@
-| English | [Türkçe](README.tr.md) |
+| [English](README.md) | Türkçe |
 
-# SwitchAI – Switch AI Digital Assistant
+# SwitchAI – Switch AI Dijital Asistanı
 
-Easily select, start, and manage your preferred AI digital assistants on Android. A fresh, streamlined way to choose and control AI assistants on your device.
+Android üzerinde tercih ettiğiniz yapay zeka dijital asistanlarını kolayca seçin, başlatın ve yönetin. Cihazınızdaki yapay zeka asistanlarını seçmenin ve kontrol etmenin yepyeni, modern bir yolu.
 
 [![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/WSTxda/SwitchAI/.github%2Fworkflows%2Fandroid.yml?style=for-the-badge&logo=github-actions&labelColor=21262D&color=3FB950)](https://github.com/WSTxda/SwitchAI/actions)
 [![Platform](https://img.shields.io/badge/android-platform?style=for-the-badge&label=platform&labelColor=21262d&color=6e7681)](https://www.android.com)
@@ -12,7 +12,7 @@ Easily select, start, and manage your preferred AI digital assistants on Android
 
 ![Banner](https://raw.githubusercontent.com/WSTxda/SwitchAI/main/images/Banner.svg)
 
-SwitchAI lets you easily choose your preferred AI assistant for different purposes. With a single tap, select an AI to use, or set one as the default assistant for your device’s digital assistant feature. Increase productivity by easily switching between AI assistants for different tasks.
+SwitchAI, farklı amaçlar için tercih ettiğiniz yapay zeka asistanını kolayca seçmenize olanak tanır. Tek bir dokunuşla kullanmak istediğiniz yapay zekayı seçin veya cihazınızın dijital asistan özelliği için bir tanesini varsayılan asistan olarak ayarlayın. Farklı görevler için yapay zeka asistanları arasında kolayca geçiş yaparak üretkenliğinizi artırın.
 
 <details>
   <summary>Screenshots</summary>
@@ -21,24 +21,24 @@ SwitchAI lets you easily choose your preferred AI assistant for different purpos
 
 </details>
 
-## Features
+## Özellikler
 
-#### Versatile Digital Assistant Management  
-SwitchAI gives you full control over your device’s digital assistant capabilities:
+#### Çok Yönlü Dijital Asistan Yönetimi
+SwitchAI, cihazınızın dijital asistan yetenekleri üzerinde tam kontrol sağlar:
 
-**Switch between digital assistants:**  
-Seamlessly choose and switch between installed digital assistant apps for better device feature management.
+Dijital asistanlar arasında geçiş yap:
+Daha iyi cihaz özelliği yönetimi için yüklü dijital asistan uygulamaları arasında sorunsuzca seçim yapın ve geçiş yapın.
 
-**Assistant selector:**  
-Select which assistant to use each time you activate your digital assistant—via gestures, buttons, or other triggers—enabling workflows optimized for specific tasks.
+Asistan seçici:
+Dijital asistanınızı her etkinleştirdiğinizde (hareketler, düğmeler veya diğer tetikleyiciler aracılığıyla) hangi asistanın kullanılacağını seçin; böylece belirli görevler için optimize edilmiş iş akışları sağlayın.
 
-**Shortcuts & Widgets:**  
-Quickly start your selected assistant or assistant selector using a home screen widget or Quick Settings tile.
+Kısayollar & Widget'lar:
+Ana ekran widget'ı veya Hızlı Ayarlar kutucuğunu kullanarak seçtiğiniz asistanı ya da asistan seçiciyi hızla başlatın.
 
-**Broad compatibility:**  
-Supports a growing list of popular AI assistant apps, replacing the old Plugin-VoiceGPT solution.
+Geniş uyumluluk:
+Eski Plugin-VoiceGPT çözümünün yerini alan, popüler yapay zeka asistanı uygulamalarından oluşan ve giderek büyüyen bir listeyi destekler.
 
-### Supported AI assistants apps
+### Desteklenen yapay zeka asistanı uygulamaları
 
 * **[Accio](https://play.google.com/store/apps/details?id=com.accio.android.app)** by Accio
 * **[Alexa](https://play.google.com/store/apps/details?id=com.amazon.dee.app)** by Amazon
@@ -88,15 +88,15 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 * **[Zapia](https://play.google.com/store/apps/details?id=com.brainlogic.zapia)** by BrainLogic AI
 -------
 
-> [!IMPORTANT]
-> App availability may vary by region and device. SwitchAI launches these apps using package and class names; if an app is not installed, you may see an error and be prompted to install it. Please ensure the apps are installed.
+> [!ÖNEMLİ]
+> Uygulama kullanılabilirliği bölgeye ve cihaza göre değişiklik gösterebilir. SwitchAI, bu uygulamaları paket ve sınıf adlarını kullanarak başlatır; eğer bir uygulama yüklü değilse, bir hata görebilir ve yüklemeniz istenebilir. Lütfen uygulamaların yüklü olduğundan emin olun.
 
-> [!NOTE]  
-> **Requirements:** The AI assistant apps must be installed on your device.
+> [!NOT]
+> Gereksinimler: Yapay zeka asistanı uygulamalarının cihazınızda yüklü olması gerekir.
 >
-> **Functionality:** SwitchAI launches external assistant apps, but does not embed their services.
+> İşlevsellik: SwitchAI harici asistan uygulamalarını başlatır, ancak bunların hizmetlerini içine gömmez.
 
-### Download
+### İndir
 
 [<img src="https://raw.githubusercontent.com/WSTxda/WSTxda/main/images/GitHub.svg"
 	  alt='Get it on GitHub'
@@ -104,7 +104,7 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 	  alt='Get it on Telegram'
 	  height="80">](https://t.me/WSTprojects)
 
-### Donate
+### Bağış Yap
 
 [<img src="https://raw.githubusercontent.com/WSTxda/WSTxda/main/images/PayPal.svg"
 	  alt='Donate with PayPal'

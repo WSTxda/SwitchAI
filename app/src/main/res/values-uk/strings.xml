@@ -128,14 +128,6 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">Перевірити оновлення</string>
-    <string name="update_checker_download_button">Завантажити</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">Оновлень немає</string>
-    <string name="update_checker_update_available">Доступне нове оновлення: %s</string>
-    <string name="update_checker_no_internet">Немає підключення до інтернету</string>
-    <string name="update_checker_generic_error">Щось пішло не так… Спробуйте пізніше</string>
-
     <!--digital/selector/open assistant-->
 
     <string name="assistant_selector_title">Оберіть асистента</string>

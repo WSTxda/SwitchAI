@@ -132,13 +132,20 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">Check updates</string>
-    <string name="update_checker_download_button">Download</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">No update available</string>
-    <string name="update_checker_update_available">New update available: %s</string>
-    <string name="update_checker_no_internet">No internet connection</string>
-    <string name="update_checker_generic_error">Something went wrong… Please try again later</string>
+    <string name="updater_title">New update available!</string>
+    <string name="updater_version">Version %s</string>
+    <string name="updater_no_update_message">No update available</string>
+    <string name="updater_no_internet_message">No internet connection</string>
+    <string name="updater_generic_error_message">Something went wrong. Please try again later</string>
+    <string name="updater_download_button">Download</string>
+    <string name="updater_github_button">Open in GitHub</string>
+
+    <!--free android warn dialog-->
+
+    <string name="free_android_warn_title">Important information</string>
+    <string name="free_android_warn_message">Google has announced that, starting in 2026/2027, all apps on certified Android devices will require the developer to submit personal identity details directly to Google. Since the developers of this app do not agree to this requirement, this app will no longer work on certified Android devices after that time.</string>
+    <string name="free_android_warn_link"><u>More info</u></string>
+    <string name="free_android_warn_solution_button">Solution</string>
 
     <!--digital/selector/open assistant-->
 

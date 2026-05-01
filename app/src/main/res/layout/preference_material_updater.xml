@@ -71,7 +71,7 @@
             style="@style/Widget.Material3Expressive.Button.IconButton"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/update_checker_button"
+            android:importantForAccessibility="no"
             app:icon="@drawable/ic_update"
             app:iconGravity="textStart"
             app:layout_constraintBottom_toBottomOf="parent"

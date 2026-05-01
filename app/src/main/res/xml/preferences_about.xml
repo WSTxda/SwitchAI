@@ -3,7 +3,7 @@
 
     <com.wstxda.switchai.preference.UpdaterPreference
         android:icon="@mipmap/ic_launcher"
-        android:key="version"
+        android:key="updater"
         android:summary="@string/pref_version_number"
         android:title="@string/app_name"
         app:allowDividerAbove="false" />

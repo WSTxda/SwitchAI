@@ -7,6 +7,7 @@ import androidx.preference.Preference
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.LibraryActivity
 import com.wstxda.switchai.fragment.BasePreferenceFragment
+import com.wstxda.switchai.preference.UpdaterPreference
 import com.wstxda.switchai.utils.Constants
 import com.wstxda.switchai.viewmodel.AboutViewModel
 
@@ -18,6 +19,7 @@ class AboutPreferencesFragment : BasePreferenceFragment() {
 
     override fun setupListeners() {
         setupLibraryPreference()
+        setupUpdaterPreference()
         setupLinkPreferences()
     }
 
@@ -26,6 +28,11 @@ class AboutPreferencesFragment : BasePreferenceFragment() {
             startActivity(Intent(requireContext(), LibraryActivity::class.java))
             true
         }
+    }
+
+    private fun setupUpdaterPreference() {
+        findPreference<UpdaterPreference>(Constants.UPDATER_PREF_KEY)?.fragmentManager =
+            childFragmentManager
     }
 
     private fun setupLinkPreferences() {

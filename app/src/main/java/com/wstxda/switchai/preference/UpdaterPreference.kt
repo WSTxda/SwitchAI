@@ -56,6 +56,6 @@ class UpdaterPreference @JvmOverloads constructor(
     }
 
     private fun getInstalledVersion(): String = runCatching {
-        context.packageManager.getPackageInfo(context.packageName, 0).versionName ?: "N/A"
-    }.getOrDefault("N/A")
+        context.packageManager.getPackageInfo(context.packageName, 0).versionName ?: "Unknown"
+    }.getOrDefault("Unknown")
 }

@@ -6,7 +6,7 @@
         <item name="android:windowAnimationStyle">@style/Animation.SharedXAxis</item>
     </style>
 
-    <!--activity with shared x axis animation-->
+    <!--activity with shared x-axis animation-->
 
     <style name="Animation.SharedXAxis" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/shared_x_axis_activity_open_enter</item>

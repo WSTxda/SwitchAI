@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.XmlRes
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.findNavController
@@ -21,7 +20,6 @@ abstract class BasePreferenceFragment : PreferenceFragmentCompat() {
     private var _binding: FragmentPreferencesBinding? = null
     protected val binding get() = _binding!!
 
-    @get:XmlRes
     protected abstract val preferencesResId: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {

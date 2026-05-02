@@ -4,6 +4,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.view.View
+import androidx.core.content.edit
 import androidx.core.content.getSystemService
 import androidx.fragment.app.FragmentManager
 import androidx.preference.PreferenceManager
@@ -11,7 +12,6 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import androidx.core.content.edit
 import com.wstxda.switchai.R
 import com.wstxda.switchai.repository.GitHubReleaseRepository
 import com.wstxda.switchai.ui.component.UpdaterBottomSheet

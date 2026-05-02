@@ -18,13 +18,9 @@ class DigitalAssistantSetupDialog : BaseDialog<DialogAssistantSetupBinding>() {
     private lateinit var launcher: ActivityResultLauncher<Intent>
 
     companion object {
-        fun show(
-            fragmentManager: FragmentManager,
-            launcher: ActivityResultLauncher<Intent>,
-        ) {
-            if (fragmentManager.findFragmentByTag(Constants.DIGITAL_ASSISTANT_DIALOG) != null) return
+        fun show(fragmentManager: FragmentManager, launcher: ActivityResultLauncher<Intent>) {
             DigitalAssistantSetupDialog().apply { this.launcher = launcher }
-                .show(fragmentManager, Constants.DIGITAL_ASSISTANT_DIALOG)
+                .showSafely(fragmentManager, Constants.DIGITAL_ASSISTANT_DIALOG)
         }
     }
 
@@ -36,11 +32,11 @@ class DigitalAssistantSetupDialog : BaseDialog<DialogAssistantSetupBinding>() {
             dialogIcon.setImageResource(R.mipmap.ic_launcher)
             dialogTitle.text = getString(R.string.digital_assistant_setup_title)
             dialogMessage.text = getString(R.string.digital_assistant_setup_message)
-            positiveButton.text = getString(R.string.digital_assistant_setup_button)
-            negativeButton.text = getString(android.R.string.cancel)
+            dialogButtonPositive.text = getString(R.string.digital_assistant_setup_button)
+            dialogButtonNegative.text = getString(android.R.string.cancel)
 
-            positiveButton.setOnClickListener { onPositiveClicked() }
-            negativeButton.setOnClickListener { dismiss() }
+            dialogButtonPositive.setOnClickListener { onPositiveClicked() }
+            dialogButtonNegative.setOnClickListener { dismiss() }
         }
     }
 

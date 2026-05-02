@@ -23,9 +23,11 @@ class FreeAndroidWarnDialog : BaseDialog<DialogFreeAndroidWarnBinding>() {
     companion object {
         fun show(fragmentManager: FragmentManager, context: Context) {
             val prefs = PreferenceManager.getDefaultSharedPreferences(context)
-            if (prefs.getBoolean(Constants.IS_WARN_DISMISSED, false)) return
-            if (fragmentManager.findFragmentByTag(Constants.FREE_ANDROID_WARN_DIALOG) != null) return
-            FreeAndroidWarnDialog().show(fragmentManager, Constants.FREE_ANDROID_WARN_DIALOG)
+            if (!prefs.getBoolean(Constants.IS_WARN_DISMISSED, false)) {
+                FreeAndroidWarnDialog().showSafely(
+                    fragmentManager, Constants.FREE_ANDROID_WARN_DIALOG
+                )
+            }
         }
     }
 
@@ -37,12 +39,13 @@ class FreeAndroidWarnDialog : BaseDialog<DialogFreeAndroidWarnBinding>() {
             dialogIcon.setImageResource(R.drawable.ic_warning)
             dialogTitle.text = getString(R.string.free_android_warn_title)
             dialogMessage.text = getString(R.string.free_android_warn_message)
-            positiveButton.text = getString(android.R.string.ok)
-            negativeButton.text = getString(R.string.free_android_warn_solution_button)
+            dialogButtonPositive.text = getString(android.R.string.ok)
+            dialogButtonNegative.text = getString(R.string.free_android_warn_solution_button)
 
-            positiveButton.setOnClickListener { onPositiveClicked() }
-            negativeButton.setOnClickListener { openUrl("https://github.com/woheller69/FreeDroidWarn?tab=readme-ov-file#solutions") }
-            moreInfoLink.setOnClickListener { openUrl("https://keepandroidopen.org") }
+            dialogButtonPositive.setOnClickListener { onPositiveClicked() }
+            dialogButtonNegative.setOnClickListener { openUrl("https://github.com/woheller69/FreeDroidWarn?tab=readme-ov-file#solutions") }
+            dialogLinkMoreInfo.text = getString(R.string.free_android_warn_link)
+            dialogLinkMoreInfo.setOnClickListener { openUrl("https://keepandroidopen.org") }
         }
     }
 

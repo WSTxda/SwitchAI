@@ -11,7 +11,7 @@
         android:layout_height="wrap_content" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/bottom_sheet_title"
+        android:id="@+id/dialog_title"
         style="?attr/textAppearanceHeadlineSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         app:dividerThickness="1dp" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/tutorial_fragment_container"
+        android:id="@+id/dialog_fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

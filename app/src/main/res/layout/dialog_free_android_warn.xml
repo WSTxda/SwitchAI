@@ -38,7 +38,7 @@
         tools:text="@string/free_android_warn_title" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_container"
+        android:id="@+id/dialog_card_message"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -65,37 +65,37 @@
                 tools:text="@string/free_android_warn_message" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/more_info_link"
+                android:id="@+id/dialog_link_more_info"
                 style="?attr/textAppearanceBodyMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:background="?attr/selectableItemBackground"
                 android:paddingVertical="2dp"
-                android:text="@string/free_android_warn_link"
-                android:textColor="?attr/colorPrimary" />
+                android:textColor="?attr/colorPrimary"
+                tools:text="@string/free_android_warn_link" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/negative_button"
+        android:id="@+id/dialog_button_negative"
         style="@style/Widget.Material3Expressive.Button.TonalButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="12dp"
-        app:layout_constraintBottom_toBottomOf="@id/positive_button"
-        app:layout_constraintEnd_toStartOf="@id/positive_button"
-        app:layout_constraintTop_toTopOf="@id/positive_button"
+        app:layout_constraintBottom_toBottomOf="@id/dialog_button_positive"
+        app:layout_constraintEnd_toStartOf="@id/dialog_button_positive"
+        app:layout_constraintTop_toTopOf="@id/dialog_button_positive"
         tools:text="@string/free_android_warn_solution_button" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/positive_button"
+        android:id="@+id/dialog_button_positive"
         style="@style/Widget.Material3Expressive.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_container"
+        app:layout_constraintTop_toBottomOf="@id/dialog_card_message"
         tools:text="@android:string/ok" />
 </androidx.constraintlayout.widget.ConstraintLayout>

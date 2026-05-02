@@ -2,7 +2,7 @@
 
     <!--app theme base-->
 
-    <style name="AppTheme.Base" parent="@style/Theme.Material3Expressive.DynamicColors.Light.NoActionBar">
+    <style name="AppTheme.Base" parent="@style/Theme.Material3.DynamicColors.Light.NoActionBar">
         <!--preference theme-->
         <item name="android:colorAccent">?attr/colorPrimary</item>
         <!--components theme-->

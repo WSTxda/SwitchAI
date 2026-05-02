@@ -127,6 +127,21 @@
 
     <!--update checker-->
 
+    <string name="updater_title">새로운 업데이트가 있습니다!</string>
+    <string name="updater_version">버전 %s</string>
+    <string name="updater_no_update_message">사용 가능한 업데이트 없음</string>
+    <string name="updater_no_internet_message">인터넷 연결 없음</string>
+    <string name="updater_generic_error_message">문제가 발생했습니다. 나중에 다시 시도해 주세요</string>
+    <string name="updater_download_button">다운로드</string>
+    <string name="updater_github_button">GitHub에서 열기</string>
+
+    <!--free android warn dialog-->
+
+    <string name="free_android_warn_title">중요한 정보</string>
+    <string name="free_android_warn_message">Google은 2026/2027년부터 인증된 Android 기기의 모든 앱에 대해 개발자가 직접 Google에 개인 신원 정보를 제출해야 한다고 발표했습니다. 이 앱의 개발자는 이러한 요구 사항에 동의하지 않으므로, 해당 시기 이후에는 이 앱이 인증된 Android 기기에서 더 이상 작동하지 않습니다.</string>
+    <string name="free_android_warn_link"><u>자세한 정보</u></string>
+    <string name="free_android_warn_solution_button">해결 방법</string>
+
     <!--digital/selector/open assistant-->
 
     <string name="assistant_selector_title">어시스턴트 선택</string>

@@ -36,8 +36,6 @@ class SelectorPreferencesFragment : BasePreferenceFragment() {
     }
 
     override fun onDisplayPreferenceDialog(preference: Preference) {
-        if (parentFragmentManager.findFragmentByTag(Constants.PREFERENCE_DIALOG) != null) return
-
         if (preference is MultiSelectListPreference) {
             val dialog = AssistantManagerDialog.newInstance(preference.key)
             @Suppress("DEPRECATION") dialog.setTargetFragment(this, 0)

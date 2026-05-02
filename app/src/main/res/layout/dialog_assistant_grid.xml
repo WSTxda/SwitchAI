@@ -34,7 +34,7 @@
         tools:text="@string/selector_grid_title" />
 
     <com.google.android.material.button.MaterialButtonToggleGroup
-        android:id="@+id/orientation_toggle"
+        android:id="@+id/dialog_orientation_toggle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -45,36 +45,36 @@
         app:singleSelection="true">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_portrait"
+            android:id="@+id/dialog_button_portrait"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/selector_grid_portrait_button" />
+            tools:text="@string/selector_grid_portrait_button" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_landscape"
+            android:id="@+id/dialog_button_landscape"
             style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/selector_grid_landscape_button" />
+            tools:text="@string/selector_grid_landscape_button" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_container"
+        android:id="@+id/dialog_card_preview"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+        app:cardBackgroundColor="?attr/colorSurfaceContainerHighest"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/orientation_toggle">
+        app:layout_constraintTop_toBottomOf="@id/dialog_orientation_toggle">
 
         <GridLayout
-            android:id="@+id/preview_grid"
+            android:id="@+id/dialog_preview_grid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="2"
@@ -83,17 +83,17 @@
     </com.google.android.material.card.MaterialCardView>
 
     <HorizontalScrollView
-        android:id="@+id/chips_scroll_container"
+        android:id="@+id/dialog_chips_scroll"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_container">
+        app:layout_constraintTop_toBottomOf="@id/dialog_card_preview">
 
         <com.google.android.material.chip.ChipGroup
-            android:id="@+id/column_chip_group"
+            android:id="@+id/dialog_chip_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:selectionRequired="true"
@@ -102,24 +102,24 @@
     </HorizontalScrollView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/positive_button"
+        android:id="@+id/dialog_button_positive"
         style="@style/Widget.Material3Expressive.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/chips_scroll_container"
+        app:layout_constraintTop_toBottomOf="@id/dialog_chips_scroll"
         tools:text="@android:string/ok" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/negative_button"
+        android:id="@+id/dialog_button_negative"
         style="@style/Widget.Material3Expressive.Button.TonalButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/positive_button"
+        app:layout_constraintTop_toBottomOf="@id/dialog_button_positive"
         tools:text="@android:string/cancel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

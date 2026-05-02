@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/colorSurfaceContainer"
-    android:padding="?attr/dialogPreferredPadding">
+    android:padding="?attr/dialogPreferredPadding"
+    tools:ignore="Overdraw">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/dialog_icon"
@@ -34,12 +35,12 @@
         tools:text="@string/digital_assistant_setup_title" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_container"
+        android:id="@+id/dialog_card_message"
         style="?attr/materialCardViewFilledStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:cardBackgroundColor="?attr/colorSurfaceContainerHigh"
+        app:cardBackgroundColor="?attr/colorSurfaceContainerHighest"
         app:cardCornerRadius="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,33 +51,33 @@
             style="?attr/textAppearanceBodyMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="8"
+            android:maxLines="20"
             android:padding="12dp"
             tools:text="@string/digital_assistant_setup_message" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/negative_button"
+        android:id="@+id/dialog_button_negative"
         style="@style/Widget.Material3Expressive.Button.TonalButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toStartOf="@id/positive_button"
+        app:layout_constraintEnd_toStartOf="@id/dialog_button_positive"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_container"
+        app:layout_constraintTop_toBottomOf="@id/dialog_card_message"
         tools:text="@android:string/cancel" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/positive_button"
+        android:id="@+id/dialog_button_positive"
         style="@style/Widget.Material3Expressive.Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/negative_button"
-        app:layout_constraintTop_toBottomOf="@id/card_container"
+        app:layout_constraintStart_toEndOf="@id/dialog_button_negative"
+        app:layout_constraintTop_toBottomOf="@id/dialog_card_message"
         tools:text="@string/digital_assistant_setup_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

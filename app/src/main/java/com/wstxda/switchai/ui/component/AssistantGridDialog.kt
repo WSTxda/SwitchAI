@@ -24,8 +24,7 @@ class AssistantGridDialog : BaseDialog<DialogAssistantGridBinding>() {
 
     companion object {
         fun show(fragmentManager: FragmentManager) {
-            if (fragmentManager.findFragmentByTag(Constants.GRID_COLUMNS_DIALOG) != null) return
-            AssistantGridDialog().show(fragmentManager, Constants.GRID_COLUMNS_DIALOG)
+            AssistantGridDialog().showSafely(fragmentManager, Constants.GRID_COLUMNS_DIALOG)
         }
     }
 
@@ -33,24 +32,23 @@ class AssistantGridDialog : BaseDialog<DialogAssistantGridBinding>() {
         DialogAssistantGridBinding.inflate(inflater)
 
     override fun onSetupDialog(savedInstanceState: Bundle?) {
-        initUI()
+        binding.apply {
+            dialogIcon.setImageResource(R.drawable.ic_grid)
+            dialogTitle.text = getString(R.string.selector_grid_title)
+            dialogButtonPositive.text = getString(android.R.string.ok)
+            dialogButtonNegative.text = getString(android.R.string.cancel)
+            dialogButtonPortrait.text = getString(R.string.selector_grid_portrait_button)
+            dialogButtonLandscape.text = getString(R.string.selector_grid_landscape_button)
+            dialogButtonPortrait.isChecked = true
+
+            dialogButtonPositive.setOnClickListener { saveAndDismiss() }
+            dialogButtonNegative.setOnClickListener { dismiss() }
+        }
+
         loadSettings()
         setupOrientationToggle()
         setupColumnChips()
         refreshPreview()
-
-        binding.positiveButton.setOnClickListener { saveAndDismiss() }
-        binding.negativeButton.setOnClickListener { dismiss() }
-    }
-
-    private fun initUI() {
-        binding.apply {
-            dialogIcon.setImageResource(R.drawable.ic_grid)
-            dialogTitle.setText(R.string.selector_grid_title)
-            positiveButton.setText(android.R.string.ok)
-            negativeButton.setText(android.R.string.cancel)
-            buttonPortrait.isChecked = true
-        }
     }
 
     private fun loadSettings() {
@@ -65,9 +63,9 @@ class AssistantGridDialog : BaseDialog<DialogAssistantGridBinding>() {
     }
 
     private fun setupOrientationToggle() {
-        binding.orientationToggle.addOnButtonCheckedListener { _, checkedId, isChecked ->
+        binding.dialogOrientationToggle.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (!isChecked) return@addOnButtonCheckedListener
-            isLandscapeSelected = (checkedId == R.id.button_landscape)
+            isLandscapeSelected = (checkedId == R.id.dialog_button_landscape)
             syncChipSelection()
             refreshPreview()
         }
@@ -78,17 +76,17 @@ class AssistantGridDialog : BaseDialog<DialogAssistantGridBinding>() {
         val inflater = LayoutInflater.from(requireContext())
 
         for (count in 1..Constants.MAX_GRID_COLUMNS) {
-            val chip = inflater.inflate(R.layout.chip_grid, binding.columnChipGroup, false) as Chip
+            val chip = inflater.inflate(R.layout.chip_grid, binding.dialogChipGroup, false) as Chip
             chip.apply {
                 id = View.generateViewId()
                 text = count.toString()
             }
-            binding.columnChipGroup.addView(chip)
+            binding.dialogChipGroup.addView(chip)
         }
 
         syncChipSelection()
 
-        binding.columnChipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
+        binding.dialogChipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
             if (isProgrammaticChipUpdate) return@setOnCheckedStateChangeListener
             val checkedId = checkedIds.firstOrNull() ?: return@setOnCheckedStateChangeListener
             val selectedCount = group.findViewById<Chip>(checkedId)?.text?.toString()?.toIntOrNull()
@@ -103,8 +101,8 @@ class AssistantGridDialog : BaseDialog<DialogAssistantGridBinding>() {
     private fun syncChipSelection() {
         val targetCount = if (isLandscapeSelected) landscapeColumns else portraitColumns
         isProgrammaticChipUpdate = true
-        for (i in 0 until binding.columnChipGroup.childCount) {
-            val chip = binding.columnChipGroup.getChildAt(i) as? Chip ?: continue
+        for (i in 0 until binding.dialogChipGroup.childCount) {
+            val chip = binding.dialogChipGroup.getChildAt(i) as? Chip ?: continue
             chip.isChecked = (chip.text.toString().toIntOrNull() == targetCount)
         }
         isProgrammaticChipUpdate = false
@@ -112,7 +110,7 @@ class AssistantGridDialog : BaseDialog<DialogAssistantGridBinding>() {
 
     private fun refreshPreview() {
         val columnCount = if (isLandscapeSelected) landscapeColumns else portraitColumns
-        binding.previewGrid.apply {
+        binding.dialogPreviewGrid.apply {
             removeAllViews()
             this.columnCount = columnCount
         }
@@ -139,7 +137,7 @@ class AssistantGridDialog : BaseDialog<DialogAssistantGridBinding>() {
                     columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1, 1f)
                 }
             }
-            binding.previewGrid.addView(cell)
+            binding.dialogPreviewGrid.addView(cell)
         }
     }
 

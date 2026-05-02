@@ -9,10 +9,6 @@
     <color name="ic_shortcut_background">@android:color/system_accent2_700</color>
     <color name="ic_shortcut_icon">@android:color/system_accent2_100</color>
 
-    <!--app search bar-->
-
-    <color name="search_bar_background">@android:color/system_accent2_800</color>
-
     <!--app widget-->
 
     <color name="widget_primary">@android:color/system_accent1_100</color>

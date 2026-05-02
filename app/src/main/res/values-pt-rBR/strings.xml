@@ -67,7 +67,7 @@
     <string name="pref_category_advanced">Avançado</string>
 
     <string name="pref_developer">Desenvolvedor</string>
-    <string name="pref_source_code">Repositório do código fonte</string>
+    <string name="pref_source_code">Repositório com o código fonte</string>
 
     <string name="pref_theme">Tema</string>
 
@@ -128,6 +128,21 @@
 
     <!--update checker-->
 
+    <string name="updater_title">Nova atualização disponível!</string>
+    <string name="updater_version">Versão %s</string>
+    <string name="updater_no_update_message">Nenhuma atualização disponível</string>
+    <string name="updater_no_internet_message">Sem conexão com a internet</string>
+    <string name="updater_generic_error_message">Algo deu errado. Tente novamente mais tarde</string>
+    <string name="updater_download_button">Download</string>
+    <string name="updater_github_button">Ver no GitHub</string>
+
+    <!--free android warn dialog-->
+
+    <string name="free_android_warn_title">Informação importante</string>
+    <string name="free_android_warn_message">O Google anunciou que, a partir de 2026/2027, todos os aplicativos em dispositivos Android certificados exigirão que o desenvolvedor envie dados de identidade pessoal diretamente ao Google. Como os desenvolvedores deste aplicativo não concordam com esse requisito, este aplicativo não funcionará mais em dispositivos Android certificados após esse período.</string>
+    <string name="free_android_warn_link"><u>Mais informações</u></string>
+    <string name="free_android_warn_solution_button">Solução</string>
+
     <!--digital/selector/open assistant-->
 
     <string name="assistant_selector_title">Selecionar assistente</string>
@@ -163,7 +178,7 @@
     <string name="digital_assistant_tutorial_title">Como usar o assistente digital</string>
     <!--tutorial digital assistant-->
     <string name="assistant_tutorial_edge_gestures">Usando gestos na borda da tela</string>
-    <string name="assistant_tutorial_edge_gestures_summary">Em dispositivos que usam navegação por gestos (Android 10+), deslize para cima e para dentro a partir de um dos cantos inferiores da tela. Um arco brilhante aparecerá no canto para confirmar que o assistente digital está abrindo. Para que isso funcione, a <b>Navegação por gestos</b> deve estar selecionada como o modo de navegação do sistema nas configurações do seu dispositivo</string>
+    <string name="assistant_tutorial_edge_gestures_summary">Em dispositivos que usam navegação por gestos (Android 10+), deslize para cima e para dentro a partir de um dos cantos inferiores da tela. Um arco brilhante aparecerá no canto para confirmar que o assistente digital está abrindo. Para isso funcionar, a <b>Navegação por gestos</b> deve estar selecionada como o modo de navegação do sistema nas configurações do seu dispositivo</string>
     <string name="assistant_tutorial_home_button">Usando o botão de navegação home</string>
     <string name="assistant_tutorial_home_button_summary">Se o seu dispositivo usa a navegação clássica de 3 botões, pressione e segure o botão home central por alguns segundos. Esta ação é normalmente reservada para abrir o assistente digital. Se esta ação realizar uma função diferente, pode ter sido personalizada pela fabricante do seu dispositivo</string>
     <string name="assistant_tutorial_power_button">Usando o botão liga/desliga</string>

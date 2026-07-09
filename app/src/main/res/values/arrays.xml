@@ -7,7 +7,7 @@
         <item>@string/alexa</item>
         <item>@string/alice</item>
         <item>@string/bixby</item>
-        <item>@string/brenno</item>
+        <item>@string/breeno</item>
         <item>@string/chatgpt</item>
         <item>@string/claude</item>
         <item>@string/conduit</item>
@@ -56,7 +56,7 @@
         <item>alexa_assistant</item>
         <item>alice_assistant</item>
         <item>bixby_assistant</item>
-        <item>brenno_assistant</item>
+        <item>breeno_assistant</item>
         <item>chatgpt_assistant</item>
         <item>claude_assistant</item>
         <item>conduit_assistant</item>

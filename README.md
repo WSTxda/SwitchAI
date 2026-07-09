@@ -42,7 +42,7 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 * **[Alexa](https://play.google.com/store/apps/details?id=com.amazon.dee.app)** by Amazon
 * **[Alice](https://play.google.com/store/apps/details?id=com.yandex.aliceapp)** by Yandex
 * **[Bixby](https://www.samsung.com/bixby)** by Samsung
-* **[Brenno](https://www.coloros.com/version/coloros16/#AI%E7%94%9F%E4%BA%A7%E5%8A%9B)** by OPPO
+* **[Breeno](https://www.coloros.com/version/coloros16/#AI%E7%94%9F%E4%BA%A7%E5%8A%9B)** by OPPO
 * **[ChatGPT](https://play.google.com/store/apps/details?id=com.openai.chatgpt)** by OpenAI
 * **[Claude](https://play.google.com/store/apps/details?id=com.anthropic.claude)** by Anthropic
 * **[Conduit](https://play.google.com/store/apps/details?id=app.cogwheel.conduit)** by Cogwheel
@@ -58,7 +58,6 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 * **[ima](https://play.google.com/store/apps/details?id=com.tencent.ima)** by Tencent
 * **[Kimi](https://play.google.com/store/apps/details?id=com.moonshot.kimichat)** by Moonshot AI
 * **[Kruti](https://play.google.com/store/apps/details?id=com.app.krutrim.prod)** by Ola Krutrim
-* **[Le Chat](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI
 * **[Liner](https://play.google.com/store/apps/details?id=com.getliner.liner)** by Liner
 * **[Lumo](https://play.google.com/store/apps/details?id=me.proton.android.lumo)** by Proton
 * **[Luzia](https://play.google.com/store/apps/details?id=co.thewordlab.luzia)** by Luzia AI
@@ -79,6 +78,7 @@ Supports a growing list of popular AI assistant apps, replacing the old Plugin-V
 * **[StepFun](https://play.google.com/store/apps/details?id=cn.yuewen.ywapp)** by StepFun
 * **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions
 * **[Venice AI](https://play.google.com/store/apps/details?id=com.ai.venice)** by Venice AI
+* **[Vibe](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI
 * **[Wenxin Yiyan](https://apkpure.com/cn/wen-xin-yi-yan/com.baidu.newapp)** by Baidu
 * **[XiaoAI](https://xiaoai.mi.com/)** by Xiaomi
 * **[You](https://play.google.com/store/apps/details?id=com.you.browser)** by You.com

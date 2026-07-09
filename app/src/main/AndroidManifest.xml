@@ -105,10 +105,10 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
-            android:name=".assistant.BrennoAssistant"
+            android:name=".assistant.BreenoAssistant"
             android:excludeFromRecents="true"
             android:exported="false"
-            android:label="@string/brenno"
+            android:label="@string/breeno"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />

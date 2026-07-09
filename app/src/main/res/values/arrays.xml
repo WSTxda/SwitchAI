@@ -24,7 +24,6 @@
         <item>@string/ima</item>
         <item>@string/kimi</item>
         <item>@string/kruti</item>
-        <item>@string/le_chat</item>
         <item>@string/liner</item>
         <item>@string/lumo</item>
         <item>@string/luzia</item>
@@ -44,6 +43,7 @@
         <item>@string/stepfun</item>
         <item>@string/ultimate_alexa</item>
         <item>@string/venice</item>
+        <item>@string/vibe</item>
         <item>@string/wenxiaoyan</item>
         <item>@string/xiaoai</item>
         <item>@string/you</item>
@@ -73,7 +73,6 @@
         <item>ima_assistant</item>
         <item>kimi_assistant</item>
         <item>kruti_assistant</item>
-        <item>le_chat_assistant</item>
         <item>liner_assistant</item>
         <item>lumo_assistant</item>
         <item>luzia_assistant</item>
@@ -93,6 +92,7 @@
         <item>stepfun_assistant</item>
         <item>ultimate_alexa_assistant</item>
         <item>venice_assistant</item>
+        <item>vibe_assistant</item>
         <item>wenxiaoyan_assistant</item>
         <item>xiaoai_assistant</item>
         <item>you_assistant</item>

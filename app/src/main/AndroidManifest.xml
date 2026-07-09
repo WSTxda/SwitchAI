@@ -258,15 +258,6 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
-            android:name=".assistant.LeChatAssistant"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:label="@string/le_chat"
-            android:launchMode="singleTop"
-            android:noHistory="true"
-            android:theme="@style/AppTheme.Transparent" />
-
-        <activity
             android:name=".assistant.LinerAssistant"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -433,6 +424,15 @@
             android:excludeFromRecents="true"
             android:exported="false"
             android:label="@string/venice"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
+            android:name=".assistant.VibeAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/vibe"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />

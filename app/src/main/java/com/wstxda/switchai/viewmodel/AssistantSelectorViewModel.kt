@@ -195,7 +195,7 @@ class AssistantSelectorViewModel(application: Application) : AndroidViewModel(ap
         when (pinnedAssistantsValue) {
             is Set<*> -> {
                 pinnedAssistantKeys.clear()
-                pinnedAssistantKeys.addAll(pinnedAssistantsValue.mapNotNull { it as? String })
+                pinnedAssistantKeys.addAll(pinnedAssistantsValue.filterIsInstance<String>())
                 savePinnedAssistantsOrder()
             }
 

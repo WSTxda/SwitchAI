@@ -35,7 +35,7 @@
         android:clickable="false"
         android:focusable="false"
         android:textColor="?attr/colorOnTertiaryContainer"
-        android:textSize="16dp"
+        android:textSize="16sp"
         app:chipBackgroundColor="?attr/colorTertiaryContainer"
         app:chipCornerRadius="20dp"
         app:chipIconTint="?attr/colorOnTertiaryContainer"

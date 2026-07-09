@@ -13,6 +13,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.withContext
 import java.io.File
+import kotlin.time.Duration.Companion.milliseconds
 
 object ApkDownloader {
 
@@ -84,7 +85,7 @@ object ApkDownloader {
                 }
 
                 DownloadManager.STATUS_PAUSED -> {
-                    delay(1_000)
+                    delay(1_000.milliseconds)
                 }
 
                 else -> {
@@ -92,7 +93,7 @@ object ApkDownloader {
                         val percent = ((downloaded * 100) / total).toInt()
                         withContext(Dispatchers.Main) { onProgress(percent) }
                     }
-                    delay(300)
+                    delay(300.milliseconds)
                 }
             }
         }

@@ -19,6 +19,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.sample
+import kotlin.time.Duration.Companion.milliseconds
 
 abstract class BaseTileService : TileService() {
 
@@ -40,7 +41,7 @@ abstract class BaseTileService : TileService() {
 
         collectionJob?.cancel()
         collectionJob = flows.merge()
-            .let { flow -> if (sampleIntervalMs > 0L) flow.sample(sampleIntervalMs) else flow }
+            .let { flow -> if (sampleIntervalMs > 0L) flow.sample(sampleIntervalMs.milliseconds) else flow }
             .conflate().onEach { updateTile() }.launchIn(serviceScope)
     }
 

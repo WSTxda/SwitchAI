@@ -6,16 +6,13 @@ plugins {
 android {
     namespace = "com.wstxda.switchai"
     compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
+        version = release(37)
     }
 
     defaultConfig {
         applicationId = "com.wstxda.switchai"
         minSdk = 26
-        //noinspection OldTargetApi
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 400
         versionName = "4.0.0"
     }

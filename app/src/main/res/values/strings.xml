@@ -79,7 +79,7 @@
 
     <string name="pref_used_library">Libraries</string>
     <string name="pref_used_library_summary">Open source licenses</string>
-    
+
     <string name="pref_license">License</string>
     <string name="pref_license_gnu">GNU General Public License v3.0</string>
 
@@ -109,6 +109,8 @@
 
     <string name="pref_voice_input_root">Use root permission</string>
     <string name="pref_voice_input_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
+
+    <string name="pref_voice_input_support_title">Supported assistants:</string>
 
     <string name="pref_accessibility_vibration">Vibrate when opening</string>
     <string name="pref_accessibility_vibration_summary">Provides haptic feedback when opening the assistant. This may be affected by system settings</string>

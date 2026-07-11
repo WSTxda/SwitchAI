@@ -101,4 +101,21 @@ object AssistantsMap {
         "yuanbao_assistant" to "com.tencent.hunyuan.app.chat",
         "zapia_assistant" to "com.brainlogic.zapia"
     )
+
+    internal val assistantsVoiceInput = listOf(
+        "alexa_assistant",
+        "breeno_assistant",
+        "chatgpt_assistant",
+        "claude_assistant",
+        "dicio_assistant",
+        "gemini_assistant",
+        "home_assistant",
+        "marusya_assistant",
+        "meta_assistant",
+        "moto_assistant",
+        "perplexity_assistant",
+        "xiaoai_assistant",
+        "you_assistant",
+        "yuanbao_assistant"
+    )
 }

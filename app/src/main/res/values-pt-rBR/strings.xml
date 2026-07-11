@@ -106,6 +106,8 @@
     <string name="pref_voice_input_root">Usar permissão root</string>
     <string name="pref_voice_input_root_summary">Usar permissão root para ativar a entrada de voz em assistentes específicos e melhorar a usabilidade</string>
 
+    <string name="pref_voice_input_support_title">Assistentes suportados:</string>
+
     <string name="pref_accessibility_vibration">Vibrar ao abrir</string>
     <string name="pref_accessibility_vibration_summary">Fornece feedback tátil ao abrir o assistente. Isso pode ser afetado pelas configurações do sistema</string>
 

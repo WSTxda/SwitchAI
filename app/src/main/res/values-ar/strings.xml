@@ -104,6 +104,8 @@
     <string name="pref_voice_input_root">استخدام صلاحيات الروت</string>
     <string name="pref_voice_input_root_summary">استخدم صلاحيات الروت لتمكين الإدخال الصوتي لمساعدين محددين وتحسين سهولة الاستخدام</string>
 
+    <string name="pref_voice_input_support_title">المساعدون المدعومون:</string>
+
     <string name="pref_accessibility_vibration">اهتزاز عند الفتح</string>
     <string name="pref_accessibility_vibration_summary">يوفر ردود فعل لمسية عند فتح المساعد. قد يتأثر هذا بإعدادات النظام</string>
 

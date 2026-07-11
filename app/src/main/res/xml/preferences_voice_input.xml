@@ -16,6 +16,12 @@
         app:layout="@layout/preference_material_switch_bar"
         tools:widgetLayout="@layout/preference_material_switch" />
 
+    <com.wstxda.switchai.preference.VoiceInputSupportPreference
+        android:dependency="voice_input"
+        android:key="voice_input_support"
+        android:title="@string/pref_voice_input_support_title"
+        android:selectable="false"
+        app:allowDividerAbove="false" />
 
     <PreferenceCategory
         android:layout="@layout/preference_material_category"

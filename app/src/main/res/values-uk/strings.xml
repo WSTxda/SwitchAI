@@ -106,6 +106,8 @@
     <string name="pref_voice_input_root">Використовувати права root</string>
     <string name="pref_voice_input_root_summary">Використовувати права root для увімкнення голосового введення для окремих асистентів і покращення зручності використання</string>
 
+    <string name="pref_voice_input_support_title">Підтримувані асистенти:</string>
+
     <string name="pref_accessibility_vibration">Вібрація при відкритті</string>
     <string name="pref_accessibility_vibration_summary">Тактильний зворотний зв\'язок при відкритті асистента. На нього можуть впливати системні налаштування</string>
 

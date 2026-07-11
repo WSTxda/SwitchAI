@@ -5,7 +5,7 @@ Easily select, start, and manage your preferred AI digital assistants on Android
 [![GitHub Actions Status](https://img.shields.io/github/actions/workflow/status/WSTxda/SwitchAI/.github%2Fworkflows%2Fandroid.yml?style=for-the-badge&logo=github-actions&labelColor=21262D&color=3FB950)](https://github.com/WSTxda/SwitchAI/actions)
 [![Platform](https://img.shields.io/badge/android-platform?style=for-the-badge&label=platform&labelColor=21262d&color=6e7681)](https://www.android.com)
 [![API](https://img.shields.io/badge/26%2B-level?style=for-the-badge&logo=android&logoColor=3cd382&label=API&labelColor=21262d&color=ff663b)](https://developer.android.com/studio/releases/platforms)
-[![Release](https://img.shields.io/github/v/release/WSTxda/SwitchAI?display_name=tag&style=for-the-badge&logo=github&labelColor=21262d&color=1f6feb)](https://github.com/WSTxda/SwitchAI/releases/latest)
+[![Release](https://img.shields.io/github/v/release/WSTxda/SwitchAI?display_name=release&style=for-the-badge&labelColor=21262d&color=1f6feb)](https://github.com/WSTxda/SwitchAI/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/WSTxda/SwitchAI/total?style=for-the-badge&labelColor=21262d&color=238636)](https://github.com/WSTxda/SwitchAI/releases) 
 
 ![Banner](https://raw.githubusercontent.com/WSTxda/SwitchAI/main/images/Banner.svg)
@@ -13,7 +13,7 @@ Easily select, start, and manage your preferred AI digital assistants on Android
 SwitchAI lets you easily choose your preferred AI assistant for different purposes. With a single tap, select an AI to use, or set one as the default assistant for your device’s digital assistant feature. Increase productivity by easily switching between AI assistants for different tasks.
 
 <details>
-  <summary>Screenshots</summary>
+  <summary><h3>Screenshots</h3></summary>
 
 ![Screenshot](https://raw.githubusercontent.com/WSTxda/SwitchAI/main/images/Screenshots.png)
 

@@ -1,0 +1,220 @@
+<resources>
+
+    <!--app names-->
+    <string name="app_name" translatable="false">SwitchAI</string>
+    <string name="app_settings">Asistan ayarları</string>
+
+    <!--assistant names-->
+    <string name="accio">Accio</string>
+    <string name="alexa">Alexa</string>
+    <string name="alice">Alice</string>
+    <string name="bixby">Bixby</string>
+    <string name="brenno">Brenno</string>
+    <string name="chatgpt">ChatGPT</string>
+    <string name="claude">Claude</string>
+    <string name="conduit">Conduit</string>
+    <string name="copilot">Copilot</string>
+    <string name="deepseek">DeepSeek</string>
+    <string name="dicio">Dicio</string>
+    <string name="dola">Dola</string>
+    <string name="doubao">Doubao</string>
+    <string name="euria">Euria</string>
+    <string name="gemini">Gemini</string>
+    <string name="grok">Grok</string>
+    <string name="home">Home Assistant</string>
+    <string name="home_minimal">Home Minimal</string>
+    <string name="ima">ima</string>
+    <string name="kimi">Kimi</string>
+    <string name="kruti">Kruti</string>
+    <string name="le_chat">Le Chat</string>
+    <string name="liner">Liner</string>
+    <string name="lumo">Lumo</string>
+    <string name="luzia">Luzia</string>
+    <string name="manus">Manus</string>
+    <string name="marusya">Marusya</string>
+    <string name="meta">Meta AI</string>
+    <string name="minimax">MiniMax</string>
+    <string name="monica">Monica</string>
+    <string name="moto">Moto AI</string>
+    <string name="oxproxion">oxproxion</string>
+    <string name="perplexity">Perplexity</string>
+    <string name="pi">Pi</string>
+    <string name="poe">Poe</string>
+    <string name="qingyan">Qingyan</string>
+    <string name="qwen">Qwen</string>
+    <string name="spark">Spark</string>
+    <string name="stepfun">StepFun</string>
+    <string name="ultimate_alexa">Ultimate Alexa</string>
+    <string name="venice">Venice AI</string>
+    <string name="wenxiaoyan">Wenxiaoyan</string>
+    <string name="xiaoai">XiaoAI</string>
+    <string name="you">You</string>
+    <string name="yuanbao">Yuanbao</string>
+    <string name="zapia">Zapia</string>
+
+    <!--preferences-->
+    <string name="pref_screen_appearance">Görünüm</string>
+    <string name="pref_screen_selector">Seçici</string>
+    <string name="pref_screen_shortcuts">Kısayollar</string>
+    <string name="pref_screen_about">Hakkında</string>
+    <string name="pref_screen_accessibility">Erişilebilirlik</string>
+    <string name="pref_screen_voice_input">Sesli giriş</string>
+
+    <string name="pref_category_manager">Yönetim</string>
+    <string name="pref_category_appearance">Görünüm</string>
+    <string name="pref_category_advanced">Gelişmiş</string>
+
+    <string name="pref_wstxda" translatable="false">WSTxda</string>
+    <string name="pref_github" translatable="false">GitHub</string>
+
+    <string name="pref_developer">Geliştirici</string>
+    <string name="pref_source_code">Kaynak kodu deposu</string>
+
+    <string name="pref_theme">Tema</string>
+
+    <string name="pref_version_number">Sürüm %s</string>
+  
+    <string name="pref_used_library">Kütüphaneler</string>
+    <string name="pref_used_library_summary">Açık kaynak lisansları</string>
+    
+    <string name="pref_license">Lisans</string>
+    <string name="pref_license_gnu">GNU Genel Kamu Lisansı v3.0</string>
+
+    <string name="pref_digital_assistant">Dijital asistan</string>
+
+    <string name="pref_setup_digital_assistant">Dijital asistanı kur</string>
+    <string name="pref_setup_digital_assistant_summary">SwitchAI\'yi varsayılan dijital asistan uygulaması olarak ayarla</string>
+
+    <string name="pref_selector">Asistan seçiciyi kullan</string>
+    <string name="pref_selector_summary">Etkinleştirildiğinde, cihazın dijital asistanını her başlattığınızda bir asistan seçin. Aksi takdirde, <b>Dijital Asistan</b> seçeneği, şu anda ayarlı olan asistanla birlikte kullanılacaktır</string>
+
+    <string name="pref_selector_components">Bileşenleri yönet</string>
+    <string name="pref_selector_components_summary">Seçicide hangi bileşen öğelerinin görüntüleneceğini seçin</string>
+
+    <string name="pref_selector_manager_manual">Asistanları yönet</string>
+    <string name="pref_selector_manager_manual_summary">Seçicide hangi asistanların görüntüleneceğini seçin</string>
+
+    <string name="pref_selector_manager_dynamic">Dinamik yönetici</string>
+    <string name="pref_selector_manager_dynamic_summary_off">Seçicide hangi asistanların görüntüleneceğini uygulama kullanılabilirliğine göre dinamik olarak yönetin</string>
+    <string name="pref_selector_manager_dynamic_summary_on">Seçicide yalnızca yüklü olan asistanlar gösterilir</string>
+
+    <string name="pref_selector_grid">Asistanlar ızgarası</string>
+    <string name="pref_selector_grid_summary">Asistanlar ızgara listesi sütunlarını özelleştirin</string>
+
+    <string name="pref_voice_input">Sesli girişi kullan</string>
+    <string name="pref_voice_input_summary">Etkinleştirildiğinde, desteklenen asistanlarda ana etkinlik yerine sesli giriş etkinliği kullanılacaktır</string>
+
+    <string name="pref_voice_input_root">Root iznini kullan</string>
+    <string name="pref_voice_input_root_summary">Belirli asistanlar için sesli girişi etkinleştirmek ve kullanılabilirliği artırmak amacıyla root iznini kullan</string>
+
+    <string name="pref_accessibility_vibration">Açılırken titreşim</string>
+    <string name="pref_accessibility_vibration_summary">Asistan açıldığında dokunsal geri bildirim sağlar. Bu, sistem ayarlarından etkilenebilir</string>
+
+    <string name="pref_accessibility_sound">Açılırken ses çal</string>
+    <string name="pref_accessibility_sound_summary">Asistan açıldığında sesli geri bildirim sağlar. Cihazın ses modu veya aktif medya oynatma tarafından sessize alınabilir</string>
+
+    <string name="pref_shortcut_tile">Asistan kutucuğu ekle</string>
+    <string name="pref_shortcut_tile_summary">Asistanlarınıza kolay erişim için hızlı ayarlar paneline bir kutucuk ekleyin</string>
+
+    <string name="pref_shortcut_widget">Asistan widget'ı ekle</string>
+    <string name="pref_shortcut_widget_summary">Asistanlarınıza hızlı erişim için ana ekranınıza bir widget ekleyin</string>
+  
+    <!--theme selector-->
+    <string name="theme_select">Tema seç</string>
+  
+    <!--themes modes-->
+    <string name="theme_system">Sistem varsayılanı</string>
+    <string name="theme_light">Açık</string>
+    <string name="theme_dark">Koyu</string>
+
+    <!--update checker-->
+    <string name="update_checker_button">Güncellemeleri denetle</string>
+    <string name="update_checker_download_button">İndir</string>
+  
+    <!--updater messages-->
+    <string name="update_checker_no_update">Güncelleme bulunamadı</string>
+    <string name="update_checker_update_available">Yeni güncelleme mevcut: %s</string>
+    <string name="update_checker_no_internet">İnternet bağlantısı yok</string>
+    <string name="update_checker_generic_error">Bir şeyler yanlış gitti… Lütfen daha sonra tekrar deneyin</string>
+
+    <!--digital/selector/open assistant-->
+    <string name="assistant_selector_title">Asistan seç</string>
+
+    <!--assistant selector search-->
+    <string name="selector_search_hint">Asistanları ara</string>
+    <string name="selector_search_empty">Asistan bulunamadı</string>
+  
+    <!--assistant selector categories-->
+    <string name="selector_category_pin">Sabitlenenler</string>
+    <string name="selector_category_recent">Son kullanılanlar</string>
+    <string name="selector_category_all">Asistanlar</string>
+    <string name="selector_category_not_installed">Yüklü değil</string>
+  
+    <!--assistant selector tips-->
+    <string name="selector_tip_reorder">Sabitlenen asistanlarınızın yerini değiştirmek için bir tanesine dokunup basılı tutun, ardından tercih ettiğiniz konuma sürükleyin</string>
+    <string name="selector_tip_close">İpucunu kapat</string>
+  
+    <!--assistant selector components-->  
+    <string name="selector_component_title">Başlık</string>
+    <string name="selector_component_search_bar">Arama çubuğu</string>
+    <string name="selector_component_counter">Sayaç</string>
+  
+    <!--assistant selector grid-->  
+    <string name="selector_grid_title">Izgarayı özelleştir</string>
+    <string name="selector_grid_portrait_button">Dikey</string>
+    <string name="selector_grid_landscape_button">Yatay</string>
+  
+    <!--open assistant messages-->
+    <string name="assistant_open">Asistanı aç</string>
+    <string name="assistant_open_error">Asistanı açma hatası</string>
+    <string name="assistant_application_not_found">Uygulama bulunamadı. Lütfen önce yükleyin</string>
+    <string name="assistant_not_implemented">Asistan henüz uygulanmadı…</string>
+  
+    <!--setup digital assistant dialog-->  
+    <string name="digital_assistant_setup_title">Varsayılan dijital asistan uygulaması</string>
+    <string name="digital_assistant_setup_message">Seçili asistana hareketler, düğmeler ve daha fazlasını kullanarak hızla erişmek için ayarlardan <b>SwitchAI</b> uygulamasını varsayılan dijital asistanınız olarak seçin…</string>
+    <string name="digital_assistant_setup_button">Varsayılan olarak ayarla</string>
+  
+    <!--tutorial digital assistant dialog-->  
+    <string name="digital_assistant_tutorial_title">Dijital asistan nasıl kullanılır</string>
+
+    <!--tutorial digital assistant-->
+    <string name="assistant_tutorial_edge_gestures">Ekran kenarı hareketlerini kullanma</string>
+    <string name="assistant_tutorial_edge_gestures_summary">Hareketle gezinmeyi kullanan cihazlarda (Android 10+), ekranın alt köşelerinden birinden yukarı ve içeri doğru kaydırın. Dijital asistanın açıldığını doğrulamak için köşeden parlayan bir yay belirecektir. Bunun çalışması için cihazınızın ayarlarında sistem gezinme modu olarak <b>Hareketle gezinme</b> seçili olmalıdır</string>
+    <string name="assistant_tutorial_home_button">Ana sayfa gezinme düğmesini kullanma</string>
+    <string name="assistant_tutorial_home_button_summary">Cihazınız klasik 3 düğmeli gezinmeyi kullanıyorsa, orta ana ekran düğmesine bir süre basılı tutun. Bu eylem genellikle dijital asistanı açmak için ayrılmıştır. Bu eylem farklı bir işlev gerçekleştiriyorsa, cihazınızın üreticisi tarafından özelleştirilmiş olabilir</string>
+    <string name="assistant_tutorial_power_button">Güç düğmesini kullanma</string>
+    <string name="assistant_tutorial_power_button_summary">Birçok cihaz, güç düğmesine uzun basarak dijital asistanı açmanıza olanak tanır. Bunu yaptığınızda güç kapalı/yeniden başlat menüsü belirirse, özellik muhtemelen devre dışıdır. Genellikle <b>Ayarlar &gt; Sistem &gt; Hareketler &gt; Güç düğmesini basılı tut</b> gibi bir yol izleyerek sistem ayarlarınızdan etkinleştirebilirsiniz</string>
+    <string name="assistant_tutorial_headset_button">Kablolu ve bluetooth kulaklıkları kullanma</string>
+    <string name="assistant_tutorial_headset_button_summary">Birçok kablolu ve bluetooth kulaklık, çok işlevli düğmeye uzun basarak dijital asistanı açmanıza olanak tanır. Bu düğme genellikle medya oynatmayı kontrol etmek veya aramaları yanıtlamak için kullanılır, ancak kulaklık modelinize bağlı olarak asistanı da açabilir. Bazı kablosuz kulaklıklardaki <b>çift dokunma</b> gibi dokunma hareketleri, destekleniyorsa ve uygulama içinde yapılandırılmışsa dijital asistanı da açabilir</string>
+   
+      <!--app shortcut/tile-->
+    <string name="assistant_label">Asistan</string>
+    <string name="assistant_label_open">Aç</string>
+    <string name="assistant_label_select">Seç</string>
+    <string name="assistant_label_selector">Seçici</string>
+    <string name="assistant_label_long_selector">Seçiciyi aç</string>
+
+    <!--app quick settings tile-->
+    <string name="tile_added_success">Hızlı ayarlara başarıyla eklendi</string>
+    <string name="tile_already_added">Zaten hızlı ayarlara eklendi</string>
+  
+    <!--root permission-->
+    <string name="root_access_warning">Önce root izni verin</string>
+  
+    <!--multi select list preference selection-->
+    <string name="error_min_selection">En az %1$d seçenek belirleyin</string>
+    <string name="error_max_selection">En fazla %1$d seçenek belirleyin</string>
+  
+    <!--app widgets-->
+    <string name="widget_label">Material stili</string>
+    <string name="widget_invisible_label">Görünmez</string>
+  
+    <!--widget description-->
+    <string name="widget_description">Asistanınıza erişmek için Material stilli bir widget</string>
+    <string name="widget_invisible_description">Asistanınıza erişmek için görünmez bir widget</string>
+  
+    <!--pinning widget-->
+    <string name="widget_launcher_not_supported">Başlatıcınız widget sabitlemeyi desteklemiyor</string>
+
+</resources>

@@ -1,0 +1,223 @@
+<resources>
+
+    <!--app names-->
+
+    <string name="app_settings">Impostazioni assistente</string>
+
+    <!--assistant names-->
+
+    <string name="accio">Accio</string>
+    <string name="alexa">Alexa</string>
+    <string name="alice">Alice</string>
+    <string name="bixby">Bixby</string>
+    <string name="breeno">Breeno</string>
+    <string name="chatgpt">ChatGPT</string>
+    <string name="claude">Claude</string>
+    <string name="conduit">Conduit</string>
+    <string name="copilot">Copilot</string>
+    <string name="deepseek">DeepSeek</string>
+    <string name="dicio">Dicio</string>
+    <string name="dola">Dola</string>
+    <string name="doubao">Doubao</string>
+    <string name="euria">Euria</string>
+    <string name="gemini">Gemini</string>
+    <string name="grok">Grok</string>
+    <string name="home">Home Assistant</string>
+    <string name="home_minimal">Home Minimal</string>
+    <string name="ima">ima</string>
+    <string name="kimi">Kimi</string>
+    <string name="kruti">Kruti</string>
+    <string name="liner">Liner</string>
+    <string name="lumo">Lumo</string>
+    <string name="luzia">Luzia</string>
+    <string name="manus">Manus</string>
+    <string name="marusya">Marusya</string>
+    <string name="meta">Meta AI</string>
+    <string name="minimax">MiniMax</string>
+    <string name="miromind">MiroMind</string>
+    <string name="monica">Monica</string>
+    <string name="moto">Moto AI</string>
+    <string name="oxproxion">oxproxion</string>
+    <string name="perplexity">Perplexity</string>
+    <string name="pi">Pi</string>
+    <string name="poe">Poe</string>
+    <string name="qingyan">Qingyan</string>
+    <string name="qwen">Qwen</string>
+    <string name="spark">Spark</string>
+    <string name="stepfun">StepFun</string>
+    <string name="ultimate_alexa">Ultimate Alexa</string>
+    <string name="venice">Venice AI</string>
+    <string name="vibe">Vibe</string>
+    <string name="wenxiaoyan">Wenxiaoyan</string>
+    <string name="xiaoai">XiaoAI</string>
+    <string name="you">You</string>
+    <string name="yuanbao">Yuanbao</string>
+    <string name="zapia">Zapia</string>
+
+    <!--preferences-->
+
+    <string name="pref_screen_appearance">Aspetto</string>
+    <string name="pref_screen_selector">Selettore</string>
+    <string name="pref_screen_shortcuts">Scorciatoie</string>
+    <string name="pref_screen_about">Informazioni</string>
+    <string name="pref_screen_accessibility">Accessibilità</string>
+    <string name="pref_screen_voice_input">Input vocale</string>
+
+    <string name="pref_category_manager">Gestione</string>
+    <string name="pref_category_appearance">Aspetto</string>
+    <string name="pref_category_advanced">Avanzate</string>
+
+    <string name="pref_developer">Sviluppatore</string>
+    <string name="pref_source_code">Repository del codice sorgente</string>
+
+    <string name="pref_theme">Tema</string>
+
+    <string name="pref_version_number">Versione %s</string>
+
+    <string name="pref_used_library">Librerie</string>
+    <string name="pref_used_library_summary">Licenze open source</string>
+
+    <string name="pref_license">Licenza</string>
+    <string name="pref_license_gnu">GNU General Public License v3.0</string>
+
+    <string name="pref_digital_assistant">Assistente digitale</string>
+
+    <string name="pref_setup_digital_assistant">Configura assistente digitale</string>
+    <string name="pref_setup_digital_assistant_summary">Imposta SwitchAI come app di assistente digitale predefinita</string>
+
+    <string name="pref_selector">Usa il selettore di assistenti</string>
+    <string name="pref_selector_summary">Se attivo, ogni volta che avvii l\'assistente digitale del dispositivo potrai scegliere un assistente. Altrimenti verrà usata l\'opzione <b>Assistente digitale</b> con l\'assistente attualmente impostato</string>
+
+    <string name="pref_selector_components">Gestisci componenti</string>
+    <string name="pref_selector_components_summary">Scegli quali elementi mostrare nel selettore</string>
+
+    <string name="pref_selector_manager_manual">Gestisci assistenti</string>
+    <string name="pref_selector_manager_manual_summary">Scegli quali assistenti mostrare nel selettore</string>
+
+    <string name="pref_selector_manager_dynamic">Gestione dinamica</string>
+    <string name="pref_selector_manager_dynamic_summary_off">Gestisce dinamicamente gli assistenti mostrati nel selettore in base alle app disponibili</string>
+    <string name="pref_selector_manager_dynamic_summary_on">Nel selettore vengono mostrati solo gli assistenti installati</string>
+
+    <string name="pref_selector_grid">Griglia degli assistenti</string>
+    <string name="pref_selector_grid_summary">Personalizza le colonne della griglia degli assistenti</string>
+
+    <string name="pref_voice_input">Usa input vocale</string>
+    <string name="pref_voice_input_summary">Se attivo, negli assistenti supportati verrà usata l\'attività di input vocale al posto di quella principale</string>
+
+    <string name="pref_voice_input_root">Usa permessi di root</string>
+    <string name="pref_voice_input_root_summary">Usa i permessi di root per attivare l\'input vocale in alcuni assistenti e migliorare l\'usabilità</string>
+
+    <string name="pref_voice_input_support_title">Assistenti supportati:</string>
+
+    <string name="pref_accessibility_vibration">Vibra all\'apertura</string>
+    <string name="pref_accessibility_vibration_summary">Fornisce un feedback aptico all\'apertura dell\'assistente. Può essere influenzato dalle impostazioni di sistema</string>
+
+    <string name="pref_accessibility_sound">Suono all\'apertura</string>
+    <string name="pref_accessibility_sound_summary">Fornisce un feedback sonoro all\'apertura dell\'assistente. Può essere disattivato dalla modalità audio del dispositivo o da una riproduzione multimediale in corso</string>
+
+    <string name="pref_shortcut_tile">Aggiungi riquadro assistente</string>
+    <string name="pref_shortcut_tile_summary">Aggiungi un riquadro al pannello delle impostazioni rapide per accedere facilmente ai tuoi assistenti</string>
+
+    <string name="pref_shortcut_widget">Aggiungi widget assistente</string>
+    <string name="pref_shortcut_widget_summary">Aggiungi un widget alla schermata Home per accedere rapidamente ai tuoi assistenti</string>
+
+    <!--theme selector-->
+
+    <string name="theme_select">Seleziona tema</string>
+    <!--themes modes-->
+    <string name="theme_system">Predefinito di sistema</string>
+    <string name="theme_light">Chiaro</string>
+    <string name="theme_dark">Scuro</string>
+
+    <!--update checker-->
+
+    <string name="updater_title">Nuovo aggiornamento disponibile!</string>
+    <string name="updater_version">Versione %s</string>
+    <string name="updater_no_update_message">Nessun aggiornamento disponibile</string>
+    <string name="updater_no_internet_message">Nessuna connessione a internet</string>
+    <string name="updater_generic_error_message">Qualcosa è andato storto. Riprova più tardi</string>
+    <string name="updater_download_button">Scarica</string>
+    <string name="updater_github_button">Apri su GitHub</string>
+
+    <!--free android warn dialog-->
+
+    <string name="free_android_warn_title">Informazione importante</string>
+    <string name="free_android_warn_message">Google ha annunciato che, a partire dal 2026/2027, per tutte le app sui dispositivi Android certificati lo sviluppatore dovrà inviare direttamente a Google i propri dati di identità personale. Poiché gli sviluppatori di questa app non accettano tale requisito, dopo quella data l\'app non funzionerà più sui dispositivi Android certificati.</string>
+    <string name="free_android_warn_link"><u>Maggiori informazioni</u></string>
+    <string name="free_android_warn_solution_button">Soluzione</string>
+
+    <!--digital/selector/open assistant-->
+
+    <string name="assistant_selector_title">Seleziona assistente</string>
+    <!--assistant selector search-->
+    <string name="selector_search_hint">Cerca assistenti</string>
+    <string name="selector_search_empty">Nessun assistente trovato</string>
+    <!--assistant selector categories-->
+    <string name="selector_category_pin">Fissati</string>
+    <string name="selector_category_recent">Usati di recente</string>
+    <string name="selector_category_all">Assistenti</string>
+    <string name="selector_category_not_installed">Non installati</string>
+    <!--assistant selector tips-->
+    <string name="selector_tip_reorder">Per riordinare gli assistenti fissati, tieni premuto su uno di essi e trascinalo nella posizione che preferisci</string>
+    <string name="selector_tip_close">Chiudi suggerimento</string>
+    <!--assistant selector components-->
+    <string name="selector_component_title">Titolo</string>
+    <string name="selector_component_search_bar">Barra di ricerca</string>
+    <string name="selector_component_counter">Contatore</string>
+    <!--assistant selector grid-->
+    <string name="selector_grid_title">Personalizza griglia</string>
+    <string name="selector_grid_portrait_button">Verticale</string>
+    <string name="selector_grid_landscape_button">Orizzontale</string>
+    <!--open assistant messages-->
+    <string name="assistant_open">Apri assistente</string>
+    <string name="assistant_open_error">Errore nell\'apertura dell\'assistente</string>
+    <string name="assistant_application_not_found">Applicazione non trovata. Installala prima</string>
+    <string name="assistant_not_implemented">Assistente non ancora implementato…</string>
+    <!--setup digital assistant dialog-->
+    <string name="digital_assistant_setup_title">App di assistente digitale predefinita</string>
+    <string name="digital_assistant_setup_message">Nelle impostazioni, seleziona <b>SwitchAI</b> come app di assistente digitale predefinita per accedere rapidamente all\'assistente scelto con gesti, pulsanti e altro…</string>
+    <string name="digital_assistant_setup_button">Imposta come predefinita</string>
+    <!--tutorial digital assistant dialog-->
+    <string name="digital_assistant_tutorial_title">Come usare l\'assistente digitale</string>
+    <!--tutorial digital assistant-->
+    <string name="assistant_tutorial_edge_gestures">Con i gesti dai bordi dello schermo</string>
+    <string name="assistant_tutorial_edge_gestures_summary">Sui dispositivi con navigazione a gesti (Android 10+), scorri verso l\'alto e verso l\'interno da uno dei due angoli in basso dello schermo. Dall\'angolo comparirà un arco luminoso a conferma dell\'apertura dell\'assistente digitale. Perché funzioni, nelle impostazioni del dispositivo come modalità di navigazione di sistema deve essere selezionata la <b>Navigazione a gesti</b></string>
+    <string name="assistant_tutorial_home_button">Con il pulsante Home di navigazione</string>
+    <string name="assistant_tutorial_home_button_summary">Se il dispositivo usa la classica navigazione a 3 pulsanti, tieni premuto per un momento il pulsante Home centrale. Questa azione è di solito riservata all\'apertura dell\'assistente digitale. Se esegue una funzione diversa, potrebbe essere stata personalizzata dal produttore del dispositivo</string>
+    <string name="assistant_tutorial_power_button">Con il pulsante di accensione</string>
+    <string name="assistant_tutorial_power_button_summary">Molti dispositivi permettono di aprire l\'assistente digitale con una pressione prolungata del pulsante di accensione. Se così facendo compare il menu di spegnimento/riavvio, la funzione è probabilmente disattivata. Spesso puoi attivarla nelle impostazioni di sistema, di solito in un percorso come <b>Impostazioni &gt; Sistema &gt; Gesti &gt; Tieni premuto il pulsante di accensione</b></string>
+    <string name="assistant_tutorial_headset_button">Con cuffie cablate e bluetooth</string>
+    <string name="assistant_tutorial_headset_button_summary">Molte cuffie cablate e bluetooth permettono di aprire l\'assistente digitale con una pressione prolungata del pulsante multifunzione. Di solito questo pulsante controlla la riproduzione multimediale o risponde alle chiamate, ma a seconda del modello può anche aprire l\'assistente. Anche i tocchi su alcuni auricolari wireless, come il <b>doppio tocco</b>, possono aprire l\'assistente digitale se supportati e configurati nell\'app</string>
+
+    <!--app shortcut/tile-->
+
+    <string name="assistant_label">Assistente</string>
+    <string name="assistant_label_open">Apri</string>
+    <string name="assistant_label_select">Seleziona</string>
+    <string name="assistant_label_selector">Selettore</string>
+    <string name="assistant_label_long_selector">Apri selettore</string>
+
+    <!--app quick settings tile-->
+
+    <string name="tile_added_success">Aggiunto alle impostazioni rapide</string>
+    <string name="tile_already_added">Già aggiunto alle impostazioni rapide</string>
+
+    <!--root permission-->
+
+    <string name="root_access_warning">Concedi prima il permesso di root</string>
+
+    <!--multi select list preference selection-->
+
+    <string name="error_min_selection">Seleziona almeno %1$d opzioni</string>
+    <string name="error_max_selection">Seleziona al massimo %1$d opzioni</string>
+
+    <!--app widgets-->
+
+    <string name="widget_label">Stile Material</string>
+    <string name="widget_invisible_label">Invisibile</string>
+    <!--widget description-->
+    <string name="widget_description">Un widget in stile Material per accedere al tuo assistente</string>
+    <string name="widget_invisible_description">Un widget invisibile per accedere al tuo assistente</string>
+    <!--pinning widget-->
+    <string name="widget_launcher_not_supported">Il tuo launcher non supporta il blocco dei widget</string>
+</resources>

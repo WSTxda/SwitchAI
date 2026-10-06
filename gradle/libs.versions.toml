@@ -1,32 +1,45 @@
 [versions]
-agp = "9.2.1"
+agp = "9.4.1"
+kotlin = "2.4.20"
+coroutines = "1.11.0"
+serialization = "1.11.0"
 activity = "1.13.0"
-fragment = "1.8.9"
-kotlinReflect = "2.3.21"
-preference = "1.2.1"
-appcompat = "1.7.1"
-navigation = "2.9.8"
-transition = "1.7.0"
+core = "1.19.1"
+datastore = "1.2.1"
+lifecycle = "2.11.0"
 splashScreen = "1.2.0"
-material = "1.14.0"
-#noinspection NewerVersionAvailable
-aboutLibraries = "14.2.1"
-markdown = "4.6.2"
+compose = "1.12.1"
+miuix = "0.9.4"
+aboutLibraries = "15.2.0"
+markdown = "0.45.0"
+reorderable = "3.1.0"
+shizuku = "13.1.5"
 
 [libraries]
-kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect"}
-androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
-androidx-fragment = { module = "androidx.fragment:fragment", version.ref = "fragment" }
-androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "preference" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-androidx-navigation = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigation" }
-androidx-transition = { module = "androidx.transition:transition", version.ref = "transition" }
-androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen" }
-google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-aboutlibraries-view = { module = "com.mikepenz:aboutlibraries", version.ref = "aboutLibraries" }
-markdown-core = { module = "io.noties.markwon:core", version.ref = "markdown" }
-markdown-linkify = { module = "io.noties.markwon:linkify", version.ref = "markdown" }
+kotlinx-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+androidx-core = { module = "androidx.core:core-ktx", version.ref = "core" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "splashScreen" }
+compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+miuix-ui = { module = "top.yukonga.miuix.kmp:miuix-ui", version.ref = "miuix" }
+miuix-preference = { module = "top.yukonga.miuix.kmp:miuix-preference", version.ref = "miuix" }
+miuix-nav = { module = "top.yukonga.miuix.kmp:miuix-nav", version.ref = "miuix" }
+miuix-blur = { module = "top.yukonga.miuix.kmp:miuix-blur", version.ref = "miuix" }
+miuix-icons = { module = "top.yukonga.miuix.kmp:miuix-icons", version.ref = "miuix" }
+miuix-squircle = { module = "top.yukonga.miuix.kmp:miuix-squircle", version.ref = "miuix" }
+aboutlibraries-compose-core = { module = "com.mikepenz:aboutlibraries-compose-core", version.ref = "aboutLibraries" }
+markdown = { module = "com.mikepenz:multiplatform-markdown-renderer", version.ref = "markdown" }
+reorderable = { module = "sh.calvin.reorderable:reorderable", version.ref = "reorderable" }
+shizuku-api = { module = "dev.rikka.shizuku:api", version.ref = "shizuku" }
+shizuku-provider = { module = "dev.rikka.shizuku:provider", version.ref = "shizuku" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 aboutLibraries = { id = "com.mikepenz.aboutlibraries.plugin.android", version.ref = "aboutLibraries" }

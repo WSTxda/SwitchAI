@@ -1,27 +1,22 @@
 <resources>
 
-    <!--app icon-->
+    <!--app splash screen-->
 
-    <!--splash icon-->
     <color name="ic_splash_stars">@android:color/system_accent1_600</color>
     <color name="ic_splash_dots">@android:color/system_accent1_200</color>
-    <!--shortcuts icon-->
+
+    <!--app shortcuts-->
+
     <color name="ic_shortcut_background">@android:color/system_accent2_100</color>
     <color name="ic_shortcut_icon">@android:color/system_accent2_900</color>
 
-    <!--app widget-->
+    <!--app widgets-->
 
     <color name="widget_primary">@android:color/system_accent1_600</color>
-    <color name="widget_secondary">@android:color/system_accent2_600</color>
     <color name="widget_tertiary">@android:color/system_accent3_600</color>
-
     <color name="widget_primary_container">@android:color/system_accent1_100</color>
-    <color name="widget_secondary_container">@android:color/system_accent2_100</color>
     <color name="widget_tertiary_container">@android:color/system_accent3_100</color>
-
     <color name="widget_on_primary_container">@android:color/system_accent1_900</color>
-    <color name="widget_on_secondary_container">@android:color/system_accent2_900</color>
     <color name="widget_on_tertiary_container">@android:color/system_accent3_900</color>
-
     <color name="widget_surface">@android:color/system_accent2_50</color>
 </resources>

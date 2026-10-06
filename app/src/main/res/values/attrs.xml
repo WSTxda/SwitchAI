@@ -1,6 +1,0 @@
-<resources>
-    <declare-styleable name="CustomMultiSelectListPreference">
-        <attr name="minSelection" format="integer" />
-        <attr name="maxSelection" format="integer" />
-    </declare-styleable>
-</resources>

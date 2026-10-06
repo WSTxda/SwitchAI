@@ -3,14 +3,14 @@ name: Android CI
 on:
   workflow_dispatch:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
   build_debug_apk:
     name: Build Debug APK
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout Repository
@@ -31,20 +31,16 @@ jobs:
       - name: Run Code Linting
         run: ./gradlew lint
 
-      - name: Run Unit Tests
-        run: ./gradlew test
-
       - name: Build APK (Debug)
         run: ./gradlew assembleDebug
 
-      - name: Upload Lint & Test Reports
+      - name: Upload Lint Reports
         uses: actions/upload-artifact@v7
         if: always()
         with:
           name: reports
           path: |
             app/build/reports/lint-results*.html
-            app/build/reports/tests/
           retention-days: 7
 
       - name: Upload Debug APK

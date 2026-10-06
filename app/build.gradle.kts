@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.aboutLibraries)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -14,17 +16,14 @@ android {
         minSdk = 26
         targetSdk = 37
         versionCode = 410
-        versionName = "4.1.0"
+        versionName = "4.0.0"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            //noinspection NotShrinkingResources
-            isShrinkResources = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
+            optimization {
+                enable = true
+            }
         }
     }
 
@@ -34,7 +33,8 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        aidl = true
+        compose = true
     }
 
     dependenciesInfo {
@@ -44,16 +44,25 @@ android {
 }
 
 dependencies {
-    implementation(libs.kotlin.reflect)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.fragment)
-    implementation(libs.androidx.preference)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.navigation)
-    implementation(libs.androidx.transition)
+    implementation(libs.shizuku.api)
+    implementation(libs.shizuku.provider)
+    implementation(libs.androidx.datastore.preferences)
+    implementation(libs.kotlinx.coroutines)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.androidx.lifecycle.viewmodel)
     implementation(libs.androidx.splashscreen)
-    implementation(libs.google.material)
-    implementation(libs.aboutlibraries.view)
-    implementation(libs.markdown.core)
-    implementation(libs.markdown.linkify)
+    implementation(libs.compose.foundation)
+    implementation(libs.compose.ui)
+    implementation(libs.miuix.ui)
+    implementation(libs.miuix.preference)
+    implementation(libs.miuix.icons)
+    implementation(libs.miuix.nav)
+    implementation(libs.miuix.blur)
+    implementation(libs.miuix.squircle)
+    implementation(libs.aboutlibraries.compose.core)
+    implementation(libs.kotlinx.serialization)
+    implementation(libs.markdown)
+    implementation(libs.reorderable)
 }

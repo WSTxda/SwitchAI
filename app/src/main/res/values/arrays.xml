@@ -1,107 +1,5 @@
 <resources>
 
-    <!--assistant selector-->
-
-    <string-array name="assistant_entries">
-        <item>@string/accio</item>
-        <item>@string/alexa</item>
-        <item>@string/alice</item>
-        <item>@string/bixby</item>
-        <item>@string/breeno</item>
-        <item>@string/chatgpt</item>
-        <item>@string/claude</item>
-        <item>@string/conduit</item>
-        <item>@string/copilot</item>
-        <item>@string/deepseek</item>
-        <item>@string/dicio</item>
-        <item>@string/dola</item>
-        <item>@string/doubao</item>
-        <item>@string/euria</item>
-        <item>@string/gemini</item>
-        <item>@string/grok</item>
-        <item>@string/home</item>
-        <item>@string/home_minimal</item>
-        <item>@string/ima</item>
-        <item>@string/kimi</item>
-        <item>@string/kruti</item>
-        <item>@string/liner</item>
-        <item>@string/lumo</item>
-        <item>@string/luzia</item>
-        <item>@string/manus</item>
-        <item>@string/marusya</item>
-        <item>@string/meta</item>
-        <item>@string/minimax</item>
-        <item>@string/miromind</item>
-        <item>@string/monica</item>
-        <item>@string/moto</item>
-        <item>@string/oxproxion</item>
-        <item>@string/perplexity</item>
-        <item>@string/pi</item>
-        <item>@string/poe</item>
-        <item>@string/qingyan</item>
-        <item>@string/qwen</item>
-        <item>@string/spark</item>
-        <item>@string/stepfun</item>
-        <item>@string/ultimate_alexa</item>
-        <item>@string/venice</item>
-        <item>@string/vibe</item>
-        <item>@string/wenxiaoyan</item>
-        <item>@string/xiaoai</item>
-        <item>@string/you</item>
-        <item>@string/yuanbao</item>
-        <item>@string/zapia</item>
-    </string-array>
-
-    <string-array name="assistant_values">
-        <item>accio_assistant</item>
-        <item>alexa_assistant</item>
-        <item>alice_assistant</item>
-        <item>bixby_assistant</item>
-        <item>breeno_assistant</item>
-        <item>chatgpt_assistant</item>
-        <item>claude_assistant</item>
-        <item>conduit_assistant</item>
-        <item>copilot_assistant</item>
-        <item>deepseek_assistant</item>
-        <item>dicio_assistant</item>
-        <item>dola_assistant</item>
-        <item>doubao_assistant</item>
-        <item>euria_assistant</item>
-        <item>gemini_assistant</item>
-        <item>grok_assistant</item>
-        <item>home_assistant</item>
-        <item>home_minimal_assistant</item>
-        <item>ima_assistant</item>
-        <item>kimi_assistant</item>
-        <item>kruti_assistant</item>
-        <item>liner_assistant</item>
-        <item>lumo_assistant</item>
-        <item>luzia_assistant</item>
-        <item>manus_assistant</item>
-        <item>marusya_assistant</item>
-        <item>meta_assistant</item>
-        <item>minimax_assistant</item>
-        <item>miromind_assistant</item>
-        <item>monica_assistant</item>
-        <item>moto_assistant</item>
-        <item>oxproxion_assistant</item>
-        <item>perplexity_assistant</item>
-        <item>pi_assistant</item>
-        <item>poe_assistant</item>
-        <item>qingyan_assistant</item>
-        <item>qwen_assistant</item>
-        <item>spark_assistant</item>
-        <item>stepfun_assistant</item>
-        <item>ultimate_alexa_assistant</item>
-        <item>venice_assistant</item>
-        <item>vibe_assistant</item>
-        <item>wenxiaoyan_assistant</item>
-        <item>xiaoai_assistant</item>
-        <item>you_assistant</item>
-        <item>yuanbao_assistant</item>
-        <item>zapia_assistant</item>
-    </string-array>
-
     <!--theme selector-->
 
     <string-array name="theme_entries">
@@ -110,10 +8,15 @@
         <item>@string/theme_dark</item>
     </string-array>
 
-    <string-array name="theme_values">
-        <item>system</item>
-        <item>light</item>
-        <item>dark</item>
+    <string-array name="theme_key_color_entries">
+        <item>@string/theme_color_default</item>
+        <item>@string/theme_color_blue</item>
+        <item>@string/theme_color_green</item>
+        <item>@string/theme_color_purple</item>
+        <item>@string/theme_color_yellow</item>
+        <item>@string/theme_color_orange</item>
+        <item>@string/theme_color_pink</item>
+        <item>@string/theme_color_teal</item>
     </string-array>
 
     <!--assistant selector components-->

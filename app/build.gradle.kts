@@ -19,12 +19,9 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            //noinspection NotShrinkingResources
-            isShrinkResources = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
+            optimization {
+                enable = true
+            }
         }
     }
 
@@ -35,6 +32,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        aidl = true
     }
 
     dependenciesInfo {
@@ -56,4 +54,6 @@ dependencies {
     implementation(libs.aboutlibraries.view)
     implementation(libs.markdown.core)
     implementation(libs.markdown.linkify)
+    implementation(libs.shizuku.api)
+    implementation(libs.shizuku.provider)
 }

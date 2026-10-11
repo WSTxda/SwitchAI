@@ -41,7 +41,7 @@ class VoiceInputSupportPreference @JvmOverloads constructor(
             val displayName = resourcesManager.getAssistantName(key)
 
             val button = inflater.inflate(
-                R.layout.button_assistant_voice_input_support, binding.buttonsContainer, false
+                R.layout.button_voice_input_support, binding.buttonsContainer, false
             ) as MaterialButton
 
             val drawable = androidx.core.content.ContextCompat.getDrawable(context, iconResId)

@@ -25,7 +25,6 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/dialog_title"
-        style="?attr/textAppearanceHeadlineSmall"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -35,6 +34,7 @@
         android:autoSizeTextType="uniform"
         android:maxLines="3"
         android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadlineSmall"
         app:layout_constraintEnd_toStartOf="@id/guideline_center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dialog_icon"

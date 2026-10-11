@@ -5,11 +5,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginEnd="8dp"
-    android:insetLeft="0dp"
-    android:insetTop="0dp"
-    android:insetRight="0dp"
-    android:insetBottom="0dp"
     app:backgroundTint="?attr/colorTertiaryContainer"
     app:iconGravity="textStart"
     app:iconTint="?attr/colorOnTertiaryContainer"
+    app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.IconButton.Medium"
     tools:icon="@drawable/ic_assistant" />

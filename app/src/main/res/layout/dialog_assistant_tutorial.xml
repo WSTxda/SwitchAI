@@ -12,7 +12,6 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/dialog_title"
-        style="?attr/textAppearanceHeadlineSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoSizeMaxTextSize="24sp"
@@ -23,6 +22,7 @@
         android:paddingHorizontal="14dp"
         android:paddingBottom="24dp"
         android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadlineSmall"
         tools:text="@string/digital_assistant_tutorial_title" />
 
     <com.google.android.material.divider.MaterialDivider

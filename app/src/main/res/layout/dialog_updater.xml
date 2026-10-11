@@ -12,7 +12,6 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/dialog_title"
-        style="?attr/textAppearanceHeadlineSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autoSizeMaxTextSize="24sp"
@@ -22,6 +21,7 @@
         android:maxLines="4"
         android:paddingHorizontal="14dp"
         android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceHeadlineSmall"
         tools:text="@string/updater_title" />
 
     <com.google.android.material.chip.Chip

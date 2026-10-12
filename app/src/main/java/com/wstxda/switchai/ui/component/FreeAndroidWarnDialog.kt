@@ -44,7 +44,7 @@ class FreeAndroidWarnDialog : BaseDialog<DialogFreeAndroidWarnBinding>() {
 
             dialogButtonPositive.setOnClickListener { onPositiveClicked() }
             dialogButtonNegative.setOnClickListener { openUrl("https://github.com/woheller69/FreeDroidWarn?tab=readme-ov-file#solutions") }
-            dialogLinkMoreInfo.text = getString(R.string.free_android_warn_link)
+            dialogLinkMoreInfo.text = getString(R.string.free_android_warn_link_button)
             dialogLinkMoreInfo.setOnClickListener { openUrl("https://keepandroidopen.org") }
         }
     }

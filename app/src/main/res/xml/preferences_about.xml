@@ -32,7 +32,7 @@
     <Preference
         android:icon="@drawable/ic_balance"
         android:key="license"
-        android:summary="@string/pref_license_gnu"
+        android:summary="@string/pref_license_version"
         android:title="@string/pref_license"
         app:layout="@layout/preference_material_bottom" />
 </androidx.preference.PreferenceScreen>

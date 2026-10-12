@@ -37,8 +37,8 @@ class AssistantGridDialog : BaseDialog<DialogAssistantGridBinding>() {
             dialogTitle.text = getString(R.string.selector_grid_title)
             dialogButtonPositive.text = getString(android.R.string.ok)
             dialogButtonNegative.text = getString(android.R.string.cancel)
-            dialogButtonPortrait.text = getString(R.string.selector_grid_portrait_button)
-            dialogButtonLandscape.text = getString(R.string.selector_grid_landscape_button)
+            dialogButtonPortrait.text = getString(R.string.selector_grid_portrait)
+            dialogButtonLandscape.text = getString(R.string.selector_grid_landscape)
             dialogButtonPortrait.isChecked = true
 
             dialogButtonPositive.setOnClickListener { saveAndDismiss() }

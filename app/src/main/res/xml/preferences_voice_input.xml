@@ -19,7 +19,7 @@
     <com.wstxda.switchai.preference.VoiceInputSupportPreference
         android:dependency="voice_input"
         android:key="voice_input_support"
-        android:title="@string/pref_voice_input_support_title"
+        android:title="@string/pref_voice_input_support"
         android:selectable="false"
         app:allowDividerAbove="false" />
 

@@ -58,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="@string/selector_grid_portrait_button" />
+            tools:text="@string/selector_grid_portrait" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/dialog_button_landscape"
@@ -66,7 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            tools:text="@string/selector_grid_landscape_button" />
+            tools:text="@string/selector_grid_landscape" />
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
     <HorizontalScrollView

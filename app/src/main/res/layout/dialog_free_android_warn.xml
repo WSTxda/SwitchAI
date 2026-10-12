@@ -73,7 +73,7 @@
                 android:paddingVertical="2dp"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?attr/colorPrimary"
-                tools:text="@string/free_android_warn_link" />
+                tools:text="@string/free_android_warn_link_button" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </com.google.android.material.card.MaterialCardView>
 

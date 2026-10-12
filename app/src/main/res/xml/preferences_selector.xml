@@ -26,11 +26,11 @@
         android:entryValues="@array/selector_components_values"
         android:key="selector_components"
         android:layout="@layout/preference_material_top"
-        android:title="@string/pref_selector_components"
+        android:title="@string/pref_selector_manager_components"
         app:defaultValue="@array/selector_components_default_values"
         app:dialogIcon="@drawable/ic_visibility"
         app:iconSpaceReserved="false"
-        app:summary="@string/pref_selector_components_summary" />
+        app:summary="@string/pref_selector_manager_components_summary" />
 
     <com.wstxda.switchai.preference.MultiSelectListPreference
         android:dependency="assistant_selector"

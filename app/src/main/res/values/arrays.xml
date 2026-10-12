@@ -46,7 +46,6 @@
         <item>@string/vibe</item>
         <item>@string/wenxiaoyan</item>
         <item>@string/xiaoai</item>
-        <item>@string/you</item>
         <item>@string/yuanbao</item>
         <item>@string/zapia</item>
     </string-array>
@@ -95,7 +94,6 @@
         <item>vibe_assistant</item>
         <item>wenxiaoyan_assistant</item>
         <item>xiaoai_assistant</item>
-        <item>you_assistant</item>
         <item>yuanbao_assistant</item>
         <item>zapia_assistant</item>
     </string-array>

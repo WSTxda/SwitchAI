@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.divider.MaterialDivider
 import com.wstxda.switchai.R
 import com.wstxda.switchai.data.AssistantItem
 import com.wstxda.switchai.databinding.DialogAssistantSelectorBinding
@@ -31,9 +32,9 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<DialogAssistantSelectorBind
     private val preferenceHelper by lazy { PreferenceHelper(requireContext()) }
     private lateinit var assistantSelectorAdapter: AssistantSelectorAdapter
 
-    override val topDivider: View get() = binding.dividerTop
-    override val bottomDivider: View get() = binding.dividerBottom
-    override val titleTextView: TextView get() = binding.bottomSheetTitle
+    override val topDivider: MaterialDivider get() = binding.dividerTop
+    override val bottomDivider: MaterialDivider get() = binding.dividerBottom
+    override val titleTextView: TextView get() = binding.dialogTitle
     override val titleResId: Int get() = R.string.assistant_selector_title
 
     override fun getBinding(inflater: LayoutInflater, container: ViewGroup?) =
@@ -62,9 +63,9 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<DialogAssistantSelectorBind
 
     private fun setupSearch() {
         val isSearchBarEnabled = Constants.SELECTOR_COMPONENT_SEARCH_BAR in activeComponents()
-        binding.searchTextInputLayout.isVisible = isSearchBarEnabled
+        binding.dialogSearchInput.isVisible = isSearchBarEnabled
         if (isSearchBarEnabled) {
-            binding.searchEditText.doOnTextChanged { text, _, _, _ ->
+            binding.dialogSearchEditText.doOnTextChanged { text, _, _, _ ->
                 viewModel.searchAssistants(text?.toString())
             }
         }
@@ -99,7 +100,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<DialogAssistantSelectorBind
             columnCount = columnCount,
         )
 
-        binding.assistantsRecyclerView.layoutManager = if (isGridMode) {
+        binding.dialogRecyclerView.layoutManager = if (isGridMode) {
             GridLayoutManager(requireContext(), columnCount).also { glm ->
                 glm.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                     override fun getSpanSize(position: Int) =
@@ -110,7 +111,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<DialogAssistantSelectorBind
         } else {
             LinearLayoutManager(requireContext())
         }
-        binding.assistantsRecyclerView.adapter = assistantSelectorAdapter
+        binding.dialogRecyclerView.adapter = assistantSelectorAdapter
     }
 
     private fun setupObservers() {
@@ -119,19 +120,18 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<DialogAssistantSelectorBind
         }
 
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            binding.assistantLoading.isVisible = isLoading
-            binding.assistantsRecyclerView.isInvisible = isLoading
+            binding.dialogLoading.isVisible = isLoading
+            binding.dialogRecyclerView.isInvisible = isLoading
         }
 
         viewModel.searchResultEmpty.observe(viewLifecycleOwner) { isEmpty ->
-            binding.searchTextInputLayout.error =
+            binding.dialogSearchInput.error =
                 if (isEmpty) getString(R.string.selector_search_empty) else null
         }
     }
 
     override fun setupScrollListener() {
-        binding.assistantsRecyclerView.addOnScrollListener(object :
-            RecyclerView.OnScrollListener() {
+        binding.dialogRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 val lm = recyclerView.layoutManager as? LinearLayoutManager ?: return
                 val canScrollUp = lm.findFirstCompletelyVisibleItemPosition() > 0
@@ -146,7 +146,7 @@ class AssistantSelectorBottomSheet : BaseBottomSheet<DialogAssistantSelectorBind
         ItemTouchHelper(
             PinnedItemReorderCallback(assistantSelectorAdapter) { updatedList ->
                 viewModel.updatePinnedAssistantsOrder(updatedList)
-            }).attachToRecyclerView(binding.assistantsRecyclerView)
+            }).attachToRecyclerView(binding.dialogRecyclerView)
     }
 
     private class PinnedItemReorderCallback(

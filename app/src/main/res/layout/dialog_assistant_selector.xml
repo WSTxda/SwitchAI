@@ -11,7 +11,7 @@
         android:layout_height="wrap_content" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/bottom_sheet_title"
+        android:id="@+id/dialog_title"
         style="?attr/textAppearanceHeadlineSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,24 +26,24 @@
         tools:text="@string/assistant_selector_title" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/search_text_input_layout"
+        android:id="@+id/dialog_search_input"
         style="?attr/textInputOutlinedDenseStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="24dp"
         android:paddingBottom="24dp"
-        app:boxBackgroundColor="@color/search_bar_background"
-        app:boxStrokeColor="@color/search_bar_background"
+        app:boxBackgroundColor="?attr/colorSurfaceContainerHighest"
+        app:boxStrokeColor="?attr/colorSurfaceContainerHighest"
         app:boxStrokeWidth="0dp"
         app:endIconMode="clear_text"
         app:placeholderText="@string/selector_search_hint"
-        app:placeholderTextColor="?attr/colorOnSecondaryContainer"
+        app:placeholderTextColor="?attr/colorOnSurfaceVariant"
         app:shapeAppearance="?attr/shapeAppearanceCornerExtraExtraLarge"
         app:startIconDrawable="@drawable/ic_search"
-        app:startIconTint="?attr/colorOnSecondaryContainer">
+        app:startIconTint="?attr/colorOnSurface">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/search_edit_text"
+            android:id="@+id/dialog_search_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:forceHasOverlappingRendering="false"
@@ -59,7 +59,7 @@
         app:dividerThickness="1dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/assistants_recycler_view"
+        android:id="@+id/dialog_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -71,7 +71,7 @@
         tools:listitem="@layout/list_item_assistant_list_view" />
 
     <com.google.android.material.loadingindicator.LoadingIndicator
-        android:id="@+id/assistant_loading"
+        android:id="@+id/dialog_loading"
         style="@style/Widget.Material3.LoadingIndicator.Contained"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

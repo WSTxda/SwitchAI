@@ -9,7 +9,7 @@
     <string name="alexa">Alexa</string>
     <string name="alice">Alice</string>
     <string name="bixby">Bixby</string>
-    <string name="brenno">Brenno</string>
+    <string name="breeno">Breeno</string>
     <string name="chatgpt">ChatGPT</string>
     <string name="claude">Claude</string>
     <string name="conduit">Conduit</string>
@@ -26,7 +26,6 @@
     <string name="ima">ima</string>
     <string name="kimi">Kimi</string>
     <string name="kruti">Kruti</string>
-    <string name="le_chat">Le Chat</string>
     <string name="liner">Liner</string>
     <string name="lumo">Lumo</string>
     <string name="luzia">Luzia</string>
@@ -34,6 +33,7 @@
     <string name="marusya">Marusya</string>
     <string name="meta">Meta AI</string>
     <string name="minimax">MiniMax</string>
+    <string name="miromind">MiroMind</string>
     <string name="monica">Monica</string>
     <string name="moto">Moto AI</string>
     <string name="oxproxion">oxproxion</string>
@@ -46,6 +46,7 @@
     <string name="stepfun">StepFun</string>
     <string name="ultimate_alexa">Ultimate Alexa</string>
     <string name="venice">Venice AI</string>
+    <string name="vibe">Vibe</string>
     <string name="wenxiaoyan">Wenxiaoyan</string>
     <string name="xiaoai">XiaoAI</string>
     <string name="you">You</string>
@@ -104,6 +105,8 @@
     <string name="pref_voice_input_root">استخدام صلاحيات الروت</string>
     <string name="pref_voice_input_root_summary">استخدم صلاحيات الروت لتمكين الإدخال الصوتي لمساعدين محددين وتحسين سهولة الاستخدام</string>
 
+    <string name="pref_voice_input_support_title">المساعدون المدعومون:</string>
+
     <string name="pref_accessibility_vibration">اهتزاز عند الفتح</string>
     <string name="pref_accessibility_vibration_summary">يوفر ردود فعل لمسية عند فتح المساعد. قد يتأثر هذا بإعدادات النظام</string>
 
@@ -126,13 +129,20 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">التحقق من التحديثات</string>
-    <string name="update_checker_download_button">تحميل</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">لا توجد تحديثات</string>
-    <string name="update_checker_update_available">تحديث جديد متاح: %s</string>
-    <string name="update_checker_no_internet">لا يوجد اتصال بالإنترنت</string>
-    <string name="update_checker_generic_error">حدث خطأ ما… يرجى المعاودة لاحقا</string>
+    <string name="updater_title">تحديث جديد متاح!</string>
+    <string name="updater_version">الإصدار %s</string>
+    <string name="updater_no_update_message">لا يوجد تحديث متاح</string>
+    <string name="updater_no_internet_message">لا يوجد اتصال بالإنترنت</string>
+    <string name="updater_generic_error_message">حدث خطأ ما. الرجاء المحاولة لاحقاً</string>
+    <string name="updater_download_button">تحميل</string>
+    <string name="updater_github_button">فتح في GitHub</string>
+
+    <!--free android warn dialog-->
+
+    <string name="free_android_warn_title">معلومات مهمة</string>
+    <string name="free_android_warn_message">أعلنت Google أنه اعتبارًا من 2026/2027، ستلزم جميع التطبيقات على أجهزة Android المعتمدة المطورَ بتقديم بيانات هويته الشخصية مباشرةً إلى Google. نظرًا لأن مطوري هذا التطبيق لا يوافقون على هذا الشرط، فلن يعمل هذا التطبيق على أجهزة Android المعتمدة بعد ذلك الوقت.</string>
+    <string name="free_android_warn_link"><u>مزيد من المعلومات</u></string>
+    <string name="free_android_warn_solution_button">الحل</string>
 
     <!--digital/selector/open assistant-->
 

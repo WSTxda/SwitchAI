@@ -21,6 +21,6 @@ class CopilotAssistant : AssistantActivity() {
     private fun createCopilotIntent() = createAssistantIntent(
         packageName = Companion.packageName,
         defaultActivity = "com.microsoft.copilotn.MainActivity",
-        voiceInputActivity = "com.microsoft.copilotn.features.digitalassistant.AssistantOverlayActivity"
+        voiceInputActivity = "com.microsoft.copilotn.MainActivity"
     )
 }

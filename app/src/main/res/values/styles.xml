@@ -27,6 +27,6 @@
     </style>
 
     <style name="Theme.Component.BottomSheet.Modal" parent="@style/Widget.Material3.BottomSheet">
-        <item name="backgroundTint">?attr/colorSurface</item>
+        <item name="backgroundTint">?attr/colorSurfaceContainer</item>
     </style>
 </resources>

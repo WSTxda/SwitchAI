@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.pm.ShortcutManagerCompat
 
 abstract class BaseActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdgeNoContrast()
@@ -49,8 +50,7 @@ abstract class BaseActivity : AppCompatActivity() {
     protected open fun onMenuItemSelected(item: MenuItem): Boolean = false
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (onMenuItemSelected(item)) true
-        else super.onOptionsItemSelected(item)
+        return onMenuItemSelected(item) || super.onOptionsItemSelected(item)
     }
 
     private fun handleShortcutUsage() {

@@ -20,8 +20,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@android:id/icon"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:background="@android:color/white"
             android:importantForAccessibility="no"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -36,10 +36,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@android:id/icon"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/check_updates"
             app:layout_constraintStart_toEndOf="@android:id/icon"
-            app:layout_constraintTop_toTopOf="@android:id/icon">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@android:id/title"
@@ -69,13 +69,14 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/check_updates"
             style="@style/Widget.Material3Expressive.Button.IconButton"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/update_checker_button"
+            android:importantForAccessibility="no"
             app:icon="@drawable/ic_update"
             app:iconGravity="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.IconButton.Small.Wide" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

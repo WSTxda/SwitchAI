@@ -11,7 +11,7 @@
     <string name="alexa">Alexa</string>
     <string name="alice">Alice</string>
     <string name="bixby">Bixby</string>
-    <string name="brenno">Brenno</string>
+    <string name="breeno">Breeno</string>
     <string name="chatgpt">ChatGPT</string>
     <string name="claude">Claude</string>
     <string name="conduit">Conduit</string>
@@ -28,7 +28,6 @@
     <string name="ima">ima</string>
     <string name="kimi">Kimi</string>
     <string name="kruti">Kruti</string>
-    <string name="le_chat">Le Chat</string>
     <string name="liner">Liner</string>
     <string name="lumo">Lumo</string>
     <string name="luzia">Luzia</string>
@@ -36,6 +35,7 @@
     <string name="marusya">Marusya</string>
     <string name="meta">Meta AI</string>
     <string name="minimax">MiniMax</string>
+    <string name="miromind">MiroMind</string>
     <string name="monica">Monica</string>
     <string name="moto">Moto AI</string>
     <string name="oxproxion">oxproxion</string>
@@ -48,6 +48,7 @@
     <string name="stepfun">StepFun</string>
     <string name="ultimate_alexa">Ultimate Alexa</string>
     <string name="venice">Venice AI</string>
+    <string name="vibe">Vibe</string>
     <string name="wenxiaoyan">Wenxiaoyan</string>
     <string name="xiaoai">XiaoAI</string>
     <string name="you">You</string>
@@ -79,7 +80,7 @@
 
     <string name="pref_used_library">Libraries</string>
     <string name="pref_used_library_summary">Open source licenses</string>
-    
+
     <string name="pref_license">License</string>
     <string name="pref_license_gnu">GNU General Public License v3.0</string>
 
@@ -110,6 +111,8 @@
     <string name="pref_voice_input_root">Use root permission</string>
     <string name="pref_voice_input_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
 
+    <string name="pref_voice_input_support_title">Supported assistants:</string>
+
     <string name="pref_accessibility_vibration">Vibrate when opening</string>
     <string name="pref_accessibility_vibration_summary">Provides haptic feedback when opening the assistant. This may be affected by system settings</string>
 
@@ -132,13 +135,20 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">Check updates</string>
-    <string name="update_checker_download_button">Download</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">No update available</string>
-    <string name="update_checker_update_available">New update available: %s</string>
-    <string name="update_checker_no_internet">No internet connection</string>
-    <string name="update_checker_generic_error">Something went wrong… Please try again later</string>
+    <string name="updater_title">New update available!</string>
+    <string name="updater_version">Version %s</string>
+    <string name="updater_no_update_message">No update available</string>
+    <string name="updater_no_internet_message">No internet connection</string>
+    <string name="updater_generic_error_message">Something went wrong. Please try again later</string>
+    <string name="updater_download_button">Download</string>
+    <string name="updater_github_button">Open in GitHub</string>
+
+    <!--free android warn dialog-->
+
+    <string name="free_android_warn_title">Important information</string>
+    <string name="free_android_warn_message">Google has announced that, starting in 2026/2027, all apps on certified Android devices will require the developer to submit personal identity details directly to Google. Since the developers of this app do not agree to this requirement, this app will no longer work on certified Android devices after that time.</string>
+    <string name="free_android_warn_link"><u>More info</u></string>
+    <string name="free_android_warn_solution_button">Solution</string>
 
     <!--digital/selector/open assistant-->
 

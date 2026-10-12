@@ -14,6 +14,7 @@ import java.util.concurrent.Executors
 import java.util.function.Consumer
 
 class TileManager(private val context: Context) {
+
     fun requestAddTile() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val tileServiceComponent = ComponentName(context, AssistantTileService::class.java)

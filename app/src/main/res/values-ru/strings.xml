@@ -10,7 +10,7 @@
     <string name="alexa">Alexa</string>
     <string name="alice">Алиса</string>
     <string name="bixby">Bixby</string>
-    <string name="brenno">Brenno</string>
+    <string name="breeno">Breeno</string>
     <string name="chatgpt">ChatGPT</string>
     <string name="claude">Claude</string>
     <string name="conduit">Conduit</string>
@@ -27,7 +27,6 @@
     <string name="ima">ima</string>
     <string name="kimi">Kimi</string>
     <string name="kruti">Kruti</string>
-    <string name="le_chat">Le Chat</string>
     <string name="liner">Liner</string>
     <string name="lumo">Lumo</string>
     <string name="luzia">Luzia</string>
@@ -35,6 +34,7 @@
     <string name="marusya">Маруся</string>
     <string name="meta">Meta AI</string>
     <string name="minimax">MiniMax</string>
+    <string name="miromind">MiroMind</string>
     <string name="monica">Monica</string>
     <string name="moto">Moto AI</string>
     <string name="oxproxion">oxproxion</string>
@@ -47,6 +47,7 @@
     <string name="stepfun">StepFun</string>
     <string name="ultimate_alexa">Ultimate Alexa</string>
     <string name="venice">Venice AI</string>
+    <string name="vibe">Vibe</string>
     <string name="wenxiaoyan">Wenxiaoyan</string>
     <string name="xiaoai">XiaoAI</string>
     <string name="you">You</string>
@@ -106,6 +107,8 @@
     <string name="pref_voice_input_root">Использовать права root</string>
     <string name="pref_voice_input_root_summary">Использовать права root для включения голосового ввода для отдельных ассистентов и улучшения удобства использования</string>
 
+    <string name="pref_voice_input_support_title">Поддерживаемые ассистенты:</string>
+
     <string name="pref_accessibility_vibration">Вибрация при открытии</string>
     <string name="pref_accessibility_vibration_summary">Тактильная обратная связь при открытии ассистента. На неё могут влиять системные настройки</string>
 
@@ -128,13 +131,20 @@
 
     <!--update checker-->
 
-    <string name="update_checker_button">Проверить обновления</string>
-    <string name="update_checker_download_button">Скачать</string>
-    <!--updater messages-->
-    <string name="update_checker_no_update">Обновлений нет</string>
-    <string name="update_checker_update_available">Доступно новое обновление: %s</string>
-    <string name="update_checker_no_internet">Нет подключения к интернету</string>
-    <string name="update_checker_generic_error">Что-то пошло не так… Попробуйте позже</string>
+    <string name="updater_title">Доступно новое обновление!</string>
+    <string name="updater_version">Версия %s</string>
+    <string name="updater_no_update_message">Обновлений нет</string>
+    <string name="updater_no_internet_message">Нет подключения к интернету</string>
+    <string name="updater_generic_error_message">Что-то пошло не так. Пожалуйста, повторите попытку позже</string>
+    <string name="updater_download_button">Скачать</string>
+    <string name="updater_github_button">Открыть в GitHub</string>
+
+    <!--free android warn dialog-->
+
+    <string name="free_android_warn_title">Важная информация</string>
+    <string name="free_android_warn_message">Google объявила, что начиная с 2026/2027 года для всех приложений на сертифицированных устройствах Android потребуется, чтобы разработчик напрямую предоставлял Google свои личные данные. Поскольку разработчики этого приложения не согласны с этим требованием, после указанного времени данное приложение больше не будет работать на сертифицированных устройствах Android.</string>
+    <string name="free_android_warn_link"><u>Подробнее</u></string>
+    <string name="free_android_warn_solution_button">Решение</string>
 
     <!--digital/selector/open assistant-->
 

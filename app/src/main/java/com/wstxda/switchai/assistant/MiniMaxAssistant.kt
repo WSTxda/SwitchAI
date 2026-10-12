@@ -20,7 +20,7 @@ class MiniMaxAssistant : AssistantActivity() {
 
     private fun createMiniMaxIntent() = createAssistantIntent(
         packageName = Companion.packageName,
-        defaultActivity = "com.xproducer.yingshi.app.MainSplashActivity",
-        voiceInputActivity = "com.xproducer.yingshi.app.MainSplashActivity"
+        defaultActivity = "com.xproducer.yingshi.MainActivity",
+        voiceInputActivity = "com.xproducer.yingshi.MainActivity"
     )
 }

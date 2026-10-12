@@ -1,17 +1,19 @@
 [versions]
-#noinspection AndroidGradlePluginVersion (Upgrade it after migrate to compose aboutLibraries required to Gradle 9) for more: https://github.com/mikepenz/AboutLibraries/issues/1090#issuecomment-2761198419
-agp = "8.13.2"
+agp = "9.4.1"
 activity = "1.13.0"
-fragment = "1.8.9"
-kotlin = "2.3.21"
-kotlinReflect = "2.3.0"
+fragment = "1.9.1"
+#noinspection GradleDependency
+kotlinReflect = "2.2.0"
 preference = "1.2.1"
-appcompat = "1.7.1"
-navigation = "2.9.8"
-transition = "1.7.0"
+appcompat = "1.8.0"
+navigation = "2.10.2"
+transition = "1.7.2"
 splashScreen = "1.2.0"
-material = "1.14.0-rc01"
-aboutLibraries = "14.0.1"
+material = "1.14.0"
+#noinspection NewerVersionAvailable
+aboutLibraries = "14.2.1"
+markdown = "4.6.2"
+shizuku = "13.1.5"
 
 [libraries]
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect"}
@@ -24,8 +26,11 @@ androidx-transition = { module = "androidx.transition:transition", version.ref =
 androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashScreen" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 aboutlibraries-view = { module = "com.mikepenz:aboutlibraries", version.ref = "aboutLibraries" }
+markdown-core = { module = "io.noties.markwon:core", version.ref = "markdown" }
+markdown-linkify = { module = "io.noties.markwon:linkify", version.ref = "markdown" }
+shizuku-api = { module = "dev.rikka.shizuku:api", version.ref = "shizuku" }
+shizuku-provider = { module = "dev.rikka.shizuku:provider", version.ref = "shizuku" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 aboutLibraries = { id = "com.mikepenz.aboutlibraries.plugin.android", version.ref = "aboutLibraries" }

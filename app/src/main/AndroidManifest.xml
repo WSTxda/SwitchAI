@@ -1,11 +1,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--used to check connection in OTA (UpdaterService.kt) implementation-->
+    <!--updater permissions-->
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"
+        tools:ignore="RequestInstallPackagesPolicy" />
+
     <!--used to check if an assistant app is currently installed or not in (PackageChecker.kt)-->
+
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="PackageVisibilityPolicy,QueryAllPackagesPermission" />
@@ -24,6 +29,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="tiramisu">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <!--main activity (settings)-->
 
@@ -90,10 +105,10 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
-            android:name=".assistant.BrennoAssistant"
+            android:name=".assistant.BreenoAssistant"
             android:excludeFromRecents="true"
             android:exported="false"
-            android:label="@string/brenno"
+            android:label="@string/breeno"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />
@@ -243,15 +258,6 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
-            android:name=".assistant.LeChatAssistant"
-            android:excludeFromRecents="true"
-            android:exported="false"
-            android:label="@string/le_chat"
-            android:launchMode="singleTop"
-            android:noHistory="true"
-            android:theme="@style/AppTheme.Transparent" />
-
-        <activity
             android:name=".assistant.LinerAssistant"
             android:excludeFromRecents="true"
             android:exported="false"
@@ -310,6 +316,15 @@
             android:excludeFromRecents="true"
             android:exported="false"
             android:label="@string/minimax"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
+            android:name=".assistant.MiroMindAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/miromind"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />
@@ -418,6 +433,15 @@
             android:excludeFromRecents="true"
             android:exported="false"
             android:label="@string/venice"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
+            android:name=".assistant.VibeAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/vibe"
             android:launchMode="singleTop"
             android:noHistory="true"
             android:theme="@style/AppTheme.Transparent" />
@@ -533,8 +557,13 @@
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
+            <meta-data
+                android:name="android.service.quicksettings.TILE_CATEGORY"
+                android:value="android.service.quicksettings.CATEGORY_UTILITIES" />
         </service>
-
 
         <!--assistant widget list service-->
 

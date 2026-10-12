@@ -1,0 +1,12 @@
+<com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3Expressive.Button.IconButton.Tonal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    app:backgroundTint="?attr/colorTertiaryContainer"
+    app:iconGravity="textStart"
+    app:iconTint="?attr/colorOnTertiaryContainer"
+    app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.IconButton.Medium"
+    tools:icon="@drawable/ic_assistant" />

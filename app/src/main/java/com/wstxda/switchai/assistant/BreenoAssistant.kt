@@ -5,22 +5,22 @@ import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.openAssistant
 import com.wstxda.switchai.utils.AssistantProperties
 
-class LeChatAssistant : AssistantActivity() {
+class BreenoAssistant : AssistantActivity() {
 
     companion object : AssistantProperties {
-        override val packageName = "ai.mistral.chat"
+        override val packageName = "com.heytap.speechassist"
     }
 
     override fun onCreateInternal() {
         openAssistant(
-            intents = listOf(createLeChatIntent()),
+            intents = listOf(createBreenoIntent()),
             errorMessage = R.string.assistant_application_not_found
         )
     }
 
-    private fun createLeChatIntent() = createAssistantIntent(
+    private fun createBreenoIntent() = createAssistantIntent(
         packageName = Companion.packageName,
-        defaultActivity = "ai.mistral.chat.MainActivity",
-        voiceInputActivity = "ai.mistral.chat.MainActivity"
+        defaultActivity = "com.heytap.speechassist.launcher.SpeechAssistMainActivity",
+        voiceInputActivity = "com.heytap.speechassist.business.lockscreen.FloatSpeechActivity"
     )
 }

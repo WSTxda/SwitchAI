@@ -2,10 +2,10 @@ package com.wstxda.switchai.ui.component
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
+import com.google.android.material.divider.MaterialDivider
 import com.wstxda.switchai.R
 import com.wstxda.switchai.databinding.DialogAssistantTutorialBinding
 import com.wstxda.switchai.fragment.TutorialFragment
@@ -14,9 +14,9 @@ import com.wstxda.switchai.utils.Constants
 class AssistantTutorialBottomSheet : BaseBottomSheet<DialogAssistantTutorialBinding>(),
     TutorialFragment.ScrollListener {
 
-    override val topDivider: View get() = binding.dividerTop
-    override val bottomDivider: View get() = binding.dividerBottom
-    override val titleTextView: TextView get() = binding.bottomSheetTitle
+    override val topDivider: MaterialDivider get() = binding.dividerTop
+    override val bottomDivider: MaterialDivider get() = binding.dividerBottom
+    override val titleTextView: TextView get() = binding.dialogTitle
     override val titleResId: Int get() = R.string.digital_assistant_tutorial_title
 
     companion object {
@@ -31,7 +31,7 @@ class AssistantTutorialBottomSheet : BaseBottomSheet<DialogAssistantTutorialBind
     override fun setupContentFragment(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
             childFragmentManager.beginTransaction()
-                .replace(binding.tutorialFragmentContainer.id, TutorialFragment()).commit()
+                .replace(binding.dialogFragmentContainer.id, TutorialFragment()).commit()
         }
     }
 

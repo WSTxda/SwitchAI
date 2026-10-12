@@ -7,7 +7,7 @@
         <item>@string/alexa</item>
         <item>@string/alice</item>
         <item>@string/bixby</item>
-        <item>@string/brenno</item>
+        <item>@string/breeno</item>
         <item>@string/chatgpt</item>
         <item>@string/claude</item>
         <item>@string/conduit</item>
@@ -24,7 +24,6 @@
         <item>@string/ima</item>
         <item>@string/kimi</item>
         <item>@string/kruti</item>
-        <item>@string/le_chat</item>
         <item>@string/liner</item>
         <item>@string/lumo</item>
         <item>@string/luzia</item>
@@ -32,6 +31,7 @@
         <item>@string/marusya</item>
         <item>@string/meta</item>
         <item>@string/minimax</item>
+        <item>@string/miromind</item>
         <item>@string/monica</item>
         <item>@string/moto</item>
         <item>@string/oxproxion</item>
@@ -44,6 +44,7 @@
         <item>@string/stepfun</item>
         <item>@string/ultimate_alexa</item>
         <item>@string/venice</item>
+        <item>@string/vibe</item>
         <item>@string/wenxiaoyan</item>
         <item>@string/xiaoai</item>
         <item>@string/you</item>
@@ -56,7 +57,7 @@
         <item>alexa_assistant</item>
         <item>alice_assistant</item>
         <item>bixby_assistant</item>
-        <item>brenno_assistant</item>
+        <item>breeno_assistant</item>
         <item>chatgpt_assistant</item>
         <item>claude_assistant</item>
         <item>conduit_assistant</item>
@@ -73,7 +74,6 @@
         <item>ima_assistant</item>
         <item>kimi_assistant</item>
         <item>kruti_assistant</item>
-        <item>le_chat_assistant</item>
         <item>liner_assistant</item>
         <item>lumo_assistant</item>
         <item>luzia_assistant</item>
@@ -81,6 +81,7 @@
         <item>marusya_assistant</item>
         <item>meta_assistant</item>
         <item>minimax_assistant</item>
+        <item>miromind_assistant</item>
         <item>monica_assistant</item>
         <item>moto_assistant</item>
         <item>oxproxion_assistant</item>
@@ -93,6 +94,7 @@
         <item>stepfun_assistant</item>
         <item>ultimate_alexa_assistant</item>
         <item>venice_assistant</item>
+        <item>vibe_assistant</item>
         <item>wenxiaoyan_assistant</item>
         <item>xiaoai_assistant</item>
         <item>you_assistant</item>

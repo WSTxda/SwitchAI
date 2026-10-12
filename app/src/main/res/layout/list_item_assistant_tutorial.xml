@@ -30,7 +30,6 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tutorial_title"
-        style="?attr/textAppearanceTitleMedium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:drawablePadding="8dp"
@@ -38,6 +37,7 @@
         android:ellipsize="marquee"
         android:maxLines="2"
         android:paddingTop="16dp"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
         android:textColor="?android:textColorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,13 +47,13 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tutorial_summary"
-        style="?attr/textAppearanceBodyMedium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ellipsize="marquee"
-        android:maxLines="10"
+        android:maxLines="20"
         android:paddingTop="8dp"
         android:paddingBottom="16dp"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
         android:textColor="?android:textColorSecondary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,28 +1,27 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.aboutLibraries)
 }
 
 android {
     namespace = "com.wstxda.switchai"
-    compileSdk = 36
+    compileSdk {
+        version = release(37)
+    }
 
     defaultConfig {
         applicationId = "com.wstxda.switchai"
         minSdk = 26
-        targetSdk = 36
-        versionCode = 400
-        versionName = "4.0.0"
+        targetSdk = 37
+        versionCode = 410
+        versionName = "4.1.0"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            isShrinkResources = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
-            )
+            optimization {
+                enable = true
+            }
         }
     }
 
@@ -31,26 +30,14 @@ android {
         targetCompatibility = JavaVersion.VERSION_21
     }
 
-    kotlin {
-        compilerOptions {
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
-        }
-    }
-
     buildFeatures {
         viewBinding = true
+        aidl = true
     }
 
     dependenciesInfo {
         includeInApk = false
         includeInBundle = false
-    }
-
-    aboutLibraries {
-        library {
-            duplicationMode = com.mikepenz.aboutlibraries.plugin.DuplicateMode.MERGE
-            duplicationRule = com.mikepenz.aboutlibraries.plugin.DuplicateRule.SIMPLE
-        }
     }
 }
 
@@ -65,4 +52,8 @@ dependencies {
     implementation(libs.androidx.splashscreen)
     implementation(libs.google.material)
     implementation(libs.aboutlibraries.view)
+    implementation(libs.markdown.core)
+    implementation(libs.markdown.linkify)
+    implementation(libs.shizuku.api)
+    implementation(libs.shizuku.provider)
 }

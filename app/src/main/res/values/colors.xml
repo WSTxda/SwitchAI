@@ -13,10 +13,6 @@
 
     <color name="divider_color">#1F000000</color>
 
-    <!--app search bar-->
-
-    <color name="search_bar_background">#F9F9FF</color>
-
     <!--app widget-->
 
     <color name="widget_primary">#435E91</color>

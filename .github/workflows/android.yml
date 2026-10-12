@@ -14,13 +14,13 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
       - name: Set Up JDK 22
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v6
         with:
           java-version: '22'
           distribution: 'temurin'

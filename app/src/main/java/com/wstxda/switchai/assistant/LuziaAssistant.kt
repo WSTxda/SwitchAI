@@ -21,6 +21,7 @@ class LuziaAssistant : AssistantActivity() {
     private fun createLuziaIntent() = createAssistantIntent(
         packageName = Companion.packageName,
         defaultActivity = "co.thewordlab.luzia.ui.activity.launch.LaunchActivity",
+        // Soon can receive (root/shizuku): "co.thewordlab.luzia.features.assistant.presentation.AssistantActivity" (not work yet)
         voiceInputActivity = "co.thewordlab.luzia.ui.activity.launch.LaunchActivity"
     )
 }

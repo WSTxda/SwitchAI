@@ -48,7 +48,6 @@ object AssistantsMap {
         "vibe_assistant" to VibeAssistant::class.java,
         "wenxiaoyan_assistant" to WenxiaoyanAssistant::class.java,
         "xiaoai_assistant" to XiaoAiAssistant::class.java,
-        "you_assistant" to YouAssistant::class.java,
         "yuanbao_assistant" to YuanbaoAssistant::class.java,
         "zapia_assistant" to ZapiaAssistant::class.java,
     )
@@ -97,13 +96,13 @@ object AssistantsMap {
         "vibe_assistant" to "ai.mistral.chat",
         "wenxiaoyan_assistant" to "com.baidu.newapp",
         "xiaoai_assistant" to "com.miui.voiceassist",
-        "you_assistant" to "com.you.browser",
         "yuanbao_assistant" to "com.tencent.hunyuan.app.chat",
         "zapia_assistant" to "com.brainlogic.zapia"
     )
 
     internal val assistantsVoiceInput = listOf(
         "alexa_assistant",
+        "bixby_assistant",
         "breeno_assistant",
         "chatgpt_assistant",
         "claude_assistant",
@@ -113,9 +112,10 @@ object AssistantsMap {
         "marusya_assistant",
         "meta_assistant",
         "moto_assistant",
+        "oxproxion_assistant",
         "perplexity_assistant",
+        "ultimate_alexa_assistant",
         "xiaoai_assistant",
-        "you_assistant",
         "yuanbao_assistant"
     )
 }

@@ -8,7 +8,7 @@ import com.wstxda.switchai.utils.AssistantProperties
 class  QwenAssistant : AssistantActivity() {
 
     companion object : AssistantProperties {
-        override val packageName = "ai.qwenlm.chat.android"
+        override val packageName = "com.tongyi.intl"
     }
 
     override fun onCreateInternal() {

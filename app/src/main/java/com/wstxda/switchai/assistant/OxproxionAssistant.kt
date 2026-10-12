@@ -21,6 +21,6 @@ class OxproxionAssistant : AssistantActivity() {
     private fun createKimiIntent() = createAssistantIntent(
         packageName = Companion.packageName,
         defaultActivity = "io.github.stardomains3.oxproxion.MainActivity",
-        voiceInputActivity = "io.github.stardomains3.oxproxion.MainActivity"
+        voiceInputActivity = "io.github.stardomains3.oxproxion.AssistantActivity"
     )
 }

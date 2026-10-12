@@ -393,6 +393,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.RikkaAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/rikka"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.SparkAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

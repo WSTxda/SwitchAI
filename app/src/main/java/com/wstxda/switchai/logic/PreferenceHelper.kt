@@ -4,10 +4,15 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
+import com.wstxda.switchai.utils.Constants
 
 class PreferenceHelper(context: Context) {
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+
+    fun isShizukuVoiceInputEnabled(): Boolean = getBoolean(
+        Constants.VOICE_INPUT_PREF_KEY, true
+    ) && getBoolean(Constants.VOICE_INPUT_SHIZUKU_PREF_KEY, false)
 
     fun getBoolean(key: String, defaultValue: Boolean = false): Boolean =
         preferences.getBoolean(key, defaultValue)

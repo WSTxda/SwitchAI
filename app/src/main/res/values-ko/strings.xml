@@ -105,9 +105,9 @@
     <string name="pref_voice_input_summary">활성화되면 지원되는 어시스턴트에서 메인 액티비티 대신 음성 입력 액티비티가 사용됩니다.</string>
 
     <string name="pref_voice_input_support">지원되는 어시스턴트:</string>
-    <!--root-->
-    <string name="pref_voice_input_root">루트 권한 사용</string>
-    <string name="pref_voice_input_root_summary">특정 어시스턴트에서 음성 입력을 활성화하고 사용성을 개선하기 위해 루트 권한을 사용합니다</string>
+    <!--shizuku-->
+    <string name="pref_voice_input_shizuku">Shizuku 사용</string>
+    <string name="pref_voice_input_shizuku_summary">Shizuku를 사용하여 특정 어시스턴트의 음성 입력을 활성화하고 사용성을 개선합니다</string>
 
     <!--accessibility-->
 
@@ -146,6 +146,25 @@
     <string name="theme_system">기기 테마 사용</string>
     <string name="theme_light">밝은 테마</string>
     <string name="theme_dark">어두운 테마</string>
+
+    <!--shizuku setup-->
+
+    <string name="app_shizuku_setup">Shizuku 설정</string>
+    <string name="shizuku_start_title">Shizuku 시작</string>
+    <string name="shizuku_permission_title">접근 허용</string>
+    <!--messages-->
+    <string name="shizuku_start_message">기기에 서비스를 설치하고 시작하세요</string>
+    <string name="shizuku_permission_message">SwitchAI에서 Shizuku를 사용하도록 허용하세요</string>
+    <string name="shizuku_unsupported_message">계속하려면 Shizuku를 업데이트하세요</string>
+    <string name="browser_not_found_message">브라우저를 찾을 수 없습니다. 브라우저를 설치하거나 활성화하세요</string>
+    <string name="shizuku_info_message">Shizuku를 사용하면 일부 어시스턴트에서 다른 앱이 일반적으로 사용할 수 없는 음성 입력 액티비티를 열 수 있습니다.</string>
+    <!--buttons-->
+    <string name="shizuku_install_button">설치</string>
+    <string name="shizuku_open_button">열기</string>
+    <string name="shizuku_ready_button">준비됨</string>
+    <string name="shizuku_grant_access_button">접근 허용</string>
+    <string name="shizuku_granted_button">허용됨</string>
+    <string name="shizuku_continue_button">계속</string>
 
     <!--setup digital assistant dialog-->
 
@@ -220,10 +239,6 @@
 
     <string name="error_min_selection">최소 %1$d 개의 옵션을 선택하세요</string>
     <string name="error_max_selection">최대 %1$d 개의 옵션을 선택하세요</string>
-
-    <!--root permission-->
-
-    <string name="root_access_warning">먼저 루트 권한을 부여하세요</string>
 
     <!--app shortcut/tile-->
 

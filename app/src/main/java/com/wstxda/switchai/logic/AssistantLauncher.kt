@@ -5,10 +5,19 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.net.toUri
+import com.wstxda.switchai.activity.AssistantActivity
+import com.wstxda.switchai.activity.ShizukuSetupActivity
+import com.wstxda.switchai.data.ShizukuLaunchResult
+import com.wstxda.switchai.data.ShizukuState
 import com.wstxda.switchai.ui.utils.SoundService.openAssistantSound
 import com.wstxda.switchai.ui.utils.VibrationService.openAssistantVibration
 import com.wstxda.switchai.utils.AssistantProperties
 import kotlin.reflect.full.companionObjectInstance
+
+fun Context.onAssistantOpened() {
+    openAssistantVibration()
+    openAssistantSound()
+}
 
 fun Context.openAssistant(
     intents: List<Intent>,
@@ -16,13 +25,13 @@ fun Context.openAssistant(
 ): Boolean {
     intents.forEach { intent ->
         if (openAssistant(intent)) {
-            openAssistantVibration()
-            openAssistantSound()
+            onAssistantOpened()
             return true
         }
     }
 
     val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
+
     val handled = pkg?.takeIf { it.isNotEmpty() }?.let { openOnStore(it) } ?: false
 
     showToast(errorMessage)
@@ -35,54 +44,64 @@ fun Context.openAssistant(intent: Intent): Boolean = runCatching {
     true
 }.getOrElse { false }
 
-fun Context.openAssistantRoot(
-    intents: List<Intent>,
-    rootAccessMessage: Int,
+fun Context.openAssistantShizuku(
+    intent: Intent,
     errorMessage: Int,
 ): Boolean {
-    val hasRoot = runCatching { isRootAvailable() }.getOrElse { false }
+    if (!PreferenceHelper(this).isShizukuVoiceInputEnabled()) return false
 
-    if (!hasRoot) {
-        showToast(rootAccessMessage)
+    val component = intent.component ?: run {
+        showToast(errorMessage)
         return false
     }
 
-    intents.forEach { intent ->
-        val success = runCatching {
-            launchRootActivity(
-                intent.component!!.packageName, intent.component!!.className
-            )
-        }.getOrElse { false }
+    val isInstalled = runCatching {
+        packageManager.getApplicationInfo(component.packageName, 0)
+    }.isSuccess
 
-        if (success) {
-            openAssistantVibration()
-            openAssistantSound()
-            return true
-        }
-    }
-
-    val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
-
-    val isInstalled = pkg?.let {
-        runCatching { packageManager.getPackageInfo(it, 0); true }.getOrElse { false }
-    } ?: false
-
-    return if (isInstalled) {
-        openAssistant(intents, errorMessage)
-    } else {
+    if (!isInstalled) {
         showToast(errorMessage)
-        pkg?.takeIf { it.isNotEmpty() }?.let { openOnStore(it) } ?: false
+        return openOnStore(component.packageName)
     }
+
+    fun openSetup(): Boolean = runCatching {
+        startActivity(
+            ShizukuSetupActivity.createIntent(this, component, errorMessage)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        )
+        true
+    }.getOrElse {
+        showToast(errorMessage)
+        false
+    }
+
+    if (this is AssistantActivity && ShizukuChecker.getState(this) == ShizukuState.READY) {
+        openAndFinish {
+            when (ShizukuLauncher.launch(this, component)) {
+                ShizukuLaunchResult.SUCCESS -> onAssistantOpened()
+                ShizukuLaunchResult.PERMISSION_REQUIRED, ShizukuLaunchResult.UNAVAILABLE -> openSetup()
+
+                ShizukuLaunchResult.TARGET_FAILED -> showToast(errorMessage)
+            }
+        }
+        return true
+    }
+
+    return openSetup()
 }
 
 fun Context.openOnStore(packageName: String): Boolean {
     val marketIntent = Intent(
         Intent.ACTION_VIEW, "market://details?id=$packageName".toUri()
-    ).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
+    ).apply {
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    }
 
     val webSearchIntent = Intent(
         Intent.ACTION_VIEW, "https://www.google.com/search?q=$packageName+android+app".toUri()
-    ).apply { flags = Intent.FLAG_ACTIVITY_NEW_TASK }
+    ).apply {
+        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    }
 
     return try {
         startActivity(marketIntent)

@@ -30,7 +30,7 @@ object Constants {
     // -------------------------------------------------------------------------
 
     const val VOICE_INPUT_PREF_KEY = "voice_input"
-    const val VOICE_INPUT_ROOT_PREF_KEY = "voice_input_root"
+    const val VOICE_INPUT_SHIZUKU_PREF_KEY = "voice_input_shizuku"
 
     // -------------------------------------------------------------------------
     // Preferences keys — accessibility
@@ -142,13 +142,26 @@ object Constants {
 
     const val IS_ASSIST_SETUP_DONE = "is_assist_setup_done"
     const val IS_WARN_DISMISSED = "is_warn_dismissed"
+
     const val PREFS_NAME = "assistant_selector_prefs"
 
+    const val STATE_SHIZUKU_SETUP_SHOWN = "shizuku_setup_shown"
+    const val STATE_SHIZUKU_LAUNCH_STARTED = "shizuku_launch_started"
+    const val STATE_SHIZUKU_PERMISSION_INVALIDATED = "shizuku_permission_invalidated"
+
     // -------------------------------------------------------------------------
-    // Logs tags
+    // Shizuku
     // -------------------------------------------------------------------------
 
-    const val ROOT_CHECKER = "RootChecker"
+    const val SHIZUKU_PACKAGE = "moe.shizuku.privileged.api"
+    const val SHIZUKU_PERMISSION_REQUEST_CODE = 1
+    const val SHIZUKU_SERVICE_PROCESS = "shizuku"
+    const val SHIZUKU_SERVICE_TAG = "switchai_shizuku"
+    const val SHIZUKU_SERVICE_VERSION = 1
+    const val EXTRA_SHIZUKU_TARGET_COMPONENT = "shizuku_target_component"
+    const val EXTRA_SHIZUKU_ERROR_MESSAGE = "shizuku_error_message"
+
+    const val SHIZUKU_DOWNLOAD_URL = "https://shizuku.rikka.app/download/"
 
     // -------------------------------------------------------------------------
     // Updater GitHub API

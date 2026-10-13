@@ -105,9 +105,9 @@
     <string name="pref_voice_input_summary">Etkinleştirildiğinde, desteklenen asistanlarda ana etkinlik yerine sesli giriş etkinliği kullanılacaktır.</string>
 
     <string name="pref_voice_input_support">Desteklenen asistanlar:</string>
-    <!--root-->
-    <string name="pref_voice_input_root">Root iznini kullan</string>
-    <string name="pref_voice_input_root_summary">Belirli asistanlar için sesli girişi etkinleştirmek ve kullanılabilirliği artırmak amacıyla root iznini kullanın</string>
+    <!--shizuku-->
+    <string name="pref_voice_input_shizuku">Shizuku kullan</string>
+    <string name="pref_voice_input_shizuku_summary">Belirli asistanlar için sesli girişi etkinleştirmek ve kullanılabilirliği artırmak amacıyla Shizuku kullanın</string>
 
     <!--accessibility-->
 
@@ -146,6 +146,25 @@
     <string name="theme_system">Sistem varsayılanı</string>
     <string name="theme_light">Açık</string>
     <string name="theme_dark">Koyu</string>
+
+    <!--shizuku setup-->
+
+    <string name="app_shizuku_setup">Shizuku kurulumu</string>
+    <string name="shizuku_start_title">Shizuku başlat</string>
+    <string name="shizuku_permission_title">Erişim ver</string>
+    <!--messages-->
+    <string name="shizuku_start_message">Hizmeti cihazınıza yükleyin ve başlatın</string>
+    <string name="shizuku_permission_message">SwitchAI uygulamasına Shizuku kullanma izni verin</string>
+    <string name="shizuku_unsupported_message">Devam etmek için Shizuku uygulamasını güncelleyin</string>
+    <string name="browser_not_found_message">Tarayıcı bulunamadı. Lütfen bir tarayıcı yükleyin veya etkinleştirin</string>
+    <string name="shizuku_info_message">Shizuku, bazı asistanların normalde diğer uygulamalara açık olmayan sesli giriş etkinliklerini açmasını sağlar.</string>
+    <!--buttons-->
+    <string name="shizuku_install_button">Yükle</string>
+    <string name="shizuku_open_button">Aç</string>
+    <string name="shizuku_ready_button">Hazır</string>
+    <string name="shizuku_grant_access_button">Erişim ver</string>
+    <string name="shizuku_granted_button">İzin verildi</string>
+    <string name="shizuku_continue_button">Devam et</string>
 
     <!--setup digital assistant dialog-->
 
@@ -220,10 +239,6 @@
 
     <string name="error_min_selection">En az %1$d seçenek belirleyin</string>
     <string name="error_max_selection">En fazla %1$d seçenek belirleyin</string>
-
-    <!--root permission-->
-
-    <string name="root_access_warning">Önce root izni verin</string>
 
     <!--app shortcut/tile-->
 

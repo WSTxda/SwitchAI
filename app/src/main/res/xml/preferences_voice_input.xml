@@ -19,8 +19,8 @@
     <com.wstxda.switchai.preference.VoiceInputSupportPreference
         android:dependency="voice_input"
         android:key="voice_input_support"
-        android:title="@string/pref_voice_input_support"
         android:selectable="false"
+        android:title="@string/pref_voice_input_support"
         app:allowDividerAbove="false" />
 
     <PreferenceCategory
@@ -31,9 +31,9 @@
     <SwitchPreferenceCompat
         android:defaultValue="false"
         android:dependency="voice_input"
-        android:key="voice_input_root"
-        android:summary="@string/pref_voice_input_root_summary"
-        android:title="@string/pref_voice_input_root"
+        android:key="voice_input_shizuku"
+        android:summary="@string/pref_voice_input_shizuku_summary"
+        android:title="@string/pref_voice_input_shizuku"
         app:iconSpaceReserved="false"
         app:layout="@layout/preference_material_single"
         tools:widgetLayout="@layout/preference_material_switch" />

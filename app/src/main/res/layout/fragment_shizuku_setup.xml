@@ -1,0 +1,186 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="?attr/listPreferredItemPaddingStart"
+    android:layout_marginEnd="?attr/listPreferredItemPaddingEnd">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/shizuku_card_start"
+                style="?attr/materialCardViewFilledStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/shizuku_title_start"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:maxLines="2"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/shizuku_start_title" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/shizuku_message_start"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="marquee"
+                        android:maxLines="10"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?android:textColorSecondary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/shizuku_title_start"
+                        app:layout_constraintTop_toBottomOf="@id/shizuku_title_start"
+                        tools:text="@string/shizuku_start_message" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/shizuku_button_start"
+                        style="@style/Widget.Material3Expressive.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shizuku_message_start"
+                        tools:icon="@drawable/ic_download"
+                        tools:text="@string/shizuku_install_button" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/shizuku_card_permission"
+                style="?attr/materialCardViewFilledStyle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="?attr/colorSurfaceContainer"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shizuku_card_start">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/shizuku_icon_permission"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:importantForAccessibility="no"
+                        android:src="@mipmap/ic_launcher"
+                        app:layout_constraintBottom_toBottomOf="@id/shizuku_message_permission"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/shizuku_title_permission" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/shizuku_title_permission"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:ellipsize="marquee"
+                        android:maxLines="2"
+                        android:textAppearance="?attr/textAppearanceTitleMedium"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/shizuku_icon_permission"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/shizuku_permission_title" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/shizuku_message_permission"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="marquee"
+                        android:maxLines="10"
+                        android:textAppearance="?attr/textAppearanceBodyMedium"
+                        android:textColor="?android:textColorSecondary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/shizuku_title_permission"
+                        app:layout_constraintTop_toBottomOf="@id/shizuku_title_permission"
+                        tools:text="@string/shizuku_permission_message" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/shizuku_button_permission"
+                        style="@style/Widget.Material3Expressive.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/shizuku_message_permission"
+                        tools:icon="@drawable/ic_open"
+                        tools:text="@string/shizuku_grant_access_button" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/shizuku_button_continue"
+                style="@style/Widget.Material3Expressive.Button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shizuku_card_permission"
+                app:materialSizeOverlay="@style/SizeOverlay.Material3Expressive.Button.Medium"
+                tools:text="@string/shizuku_continue_button" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shizuku_info_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shizuku_button_continue"
+                app:tint="?attr/colorOnSurfaceVariant" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/shizuku_info_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="marquee"
+                android:maxLines="10"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:textColorSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shizuku_info_icon"
+                tools:text="@string/shizuku_info_message" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

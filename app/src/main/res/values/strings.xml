@@ -106,9 +106,9 @@
     <string name="pref_voice_input_summary">When enabled, the voice input activity will be used instead of the main activity in supported assistants.</string>
 
     <string name="pref_voice_input_support">Supported assistants:</string>
-    <!--root-->
-    <string name="pref_voice_input_root">Use root permission</string>
-    <string name="pref_voice_input_root_summary">Use root permission to enable voice input for specific assistants and improve usability</string>
+    <!--shizuku-->
+    <string name="pref_voice_input_shizuku">Use Shizuku</string>
+    <string name="pref_voice_input_shizuku_summary">Use Shizuku to enable voice input for specific assistants and improve usability</string>
 
     <!--accessibility-->
 
@@ -149,6 +149,25 @@
     <string name="theme_system">System default</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
+
+    <!--shizuku setup-->
+
+    <string name="app_shizuku_setup">Set up Shizuku</string>
+    <string name="shizuku_start_title">Start Shizuku</string>
+    <string name="shizuku_permission_title">Grant access</string>
+    <!--messages-->
+    <string name="shizuku_start_message">Install and start the service on your device</string>
+    <string name="shizuku_permission_message">Allow SwitchAI to use Shizuku</string>
+    <string name="shizuku_unsupported_message">Update Shizuku to continue</string>
+    <string name="browser_not_found_message">No browser found, Please install or enable your browser</string>
+    <string name="shizuku_info_message">Shizuku allows some assistants to open voice input activities that are normally unavailable to other apps.</string>
+    <!--buttons-->
+    <string name="shizuku_install_button">Install</string>
+    <string name="shizuku_open_button">Open</string>
+    <string name="shizuku_ready_button">Ready</string>
+    <string name="shizuku_grant_access_button">Grant access</string>
+    <string name="shizuku_granted_button">Granted</string>
+    <string name="shizuku_continue_button">Continue</string>
 
     <!--setup digital assistant dialog-->
 
@@ -223,10 +242,6 @@
 
     <string name="error_min_selection">Select at least %1$d options</string>
     <string name="error_max_selection">Select a maximum of %1$d options</string>
-
-    <!--root permission-->
-
-    <string name="root_access_warning">Grant root permission first</string>
 
     <!--app shortcut/tile-->
 

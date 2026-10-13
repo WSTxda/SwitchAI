@@ -105,9 +105,9 @@
     <string name="pref_voice_input_summary">Якщо увімкнено, замість головного екрана в підтримуваних асистентах буде використовуватися активність голосового введення.</string>
 
     <string name="pref_voice_input_support">Підтримувані асистенти:</string>
-    <!--root-->
-    <string name="pref_voice_input_root">Використовувати права root</string>
-    <string name="pref_voice_input_root_summary">Використовувати права root для увімкнення голосового введення для окремих асистентів і покращення зручності використання</string>
+    <!--shizuku-->
+    <string name="pref_voice_input_shizuku">Використовувати Shizuku</string>
+    <string name="pref_voice_input_shizuku_summary">Використовуйте Shizuku для ввімкнення голосового введення для окремих асистентів і покращення зручності використання</string>
 
     <!--accessibility-->
 
@@ -146,6 +146,25 @@
     <string name="theme_system">Системна</string>
     <string name="theme_light">Світла</string>
     <string name="theme_dark">Темна</string>
+
+    <!--shizuku setup-->
+
+    <string name="app_shizuku_setup">Налаштування Shizuku</string>
+    <string name="shizuku_start_title">Запустіть Shizuku</string>
+    <string name="shizuku_permission_title">Надайте доступ</string>
+    <!--messages-->
+    <string name="shizuku_start_message">Установіть і запустіть службу на пристрої</string>
+    <string name="shizuku_permission_message">Дозвольте SwitchAI використовувати Shizuku</string>
+    <string name="shizuku_unsupported_message">Оновіть Shizuku, щоб продовжити</string>
+    <string name="browser_not_found_message">Браузер не знайдено. Установіть або ввімкніть браузер</string>
+    <string name="shizuku_info_message">Shizuku дозволяє деяким асистентам відкривати дії голосового введення, які зазвичай недоступні іншим застосункам.</string>
+    <!--buttons-->
+    <string name="shizuku_install_button">Установити</string>
+    <string name="shizuku_open_button">Відкрити</string>
+    <string name="shizuku_ready_button">Готово</string>
+    <string name="shizuku_grant_access_button">Надати доступ</string>
+    <string name="shizuku_granted_button">Доступ надано</string>
+    <string name="shizuku_continue_button">Продовжити</string>
 
     <!--setup digital assistant dialog-->
 
@@ -220,10 +239,6 @@
 
     <string name="error_min_selection">Оберіть щонайменше %1$d варіанти</string>
     <string name="error_max_selection">Оберіть не більше %1$d варіантів</string>
-
-    <!--root permission-->
-
-    <string name="root_access_warning">Спочатку надайте права root</string>
 
     <!--app shortcut/tile-->
 

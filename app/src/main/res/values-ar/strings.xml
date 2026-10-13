@@ -102,12 +102,12 @@
     <!--voice input-->
 
     <string name="pref_voice_input">استخدام الإدخال الصوتي</string>
-    <string name="pref_voice_input_summary">عند تفعيله، سيتم استخدام نشاط الإدخال الصوتي بدلاً من النشاط الرئيسي في المساعدين المدعومين.</string>
+    <string name="pref_voice_input_summary">عند تفعيله، سيتم استخدام نشاط الإدخال الصوتي بدلًا من النشاط الرئيس في المساعدين المدعومين.</string>
 
     <string name="pref_voice_input_support">المساعدون المدعومون:</string>
-    <!--root-->
-    <string name="pref_voice_input_root">استخدام صلاحيات الروت</string>
-    <string name="pref_voice_input_root_summary">استخدم صلاحيات الروت لتمكين الإدخال الصوتي لمساعدين محددين وتحسين سهولة الاستخدام</string>
+    <!--shizuku-->
+    <string name="pref_voice_input_shizuku">استخدام Shizuku</string>
+    <string name="pref_voice_input_shizuku_summary">استخدم Shizuku لتمكين الإدخال الصوتي لمساعدين محددين وتحسين سهولة الاستخدام</string>
 
     <!--accessibility-->
 
@@ -123,12 +123,13 @@
     <string name="pref_shortcut_tile_summary">أضف مربعًا إلى لوحة الإعدادات السريعة للوصول السهل إلى مساعديك</string>
 
     <string name="pref_shortcut_widget">إضافة ويدجيت المساعد</string>
-    <string name="pref_shortcut_widget_summary">أضف ويدجيت إلى شاشتك الرئيسية للوصول السريع إلى مساعديك</string>
+    <string name="pref_shortcut_widget_summary">أضف ويدجيت إلى شاشتك الرئيسة للوصول السريع إلى مساعديك</string>
 
     <!--about-->
 
     <string name="pref_version_number">الإصدار %s</string>
     <!--links-->
+
     <string name="pref_developer">المطور</string>
 
     <string name="pref_source_code">مستودع كود المصدر</string>
@@ -147,11 +148,30 @@
     <string name="theme_light">الوضع المضيء</string>
     <string name="theme_dark">الوضع المظلم</string>
 
+    <!--shizuku setup-->
+
+    <string name="app_shizuku_setup">إعداد Shizuku</string>
+    <string name="shizuku_start_title">تشغيل Shizuku</string>
+    <string name="shizuku_permission_title">منح الوصول</string>
+    <!--messages-->
+    <string name="shizuku_start_message">ثبّت الخدمة وشغّلها على الجهاز</string>
+    <string name="shizuku_permission_message">اسمح لـ SwitchAI باستخدام Shizuku</string>
+    <string name="shizuku_unsupported_message">حدّث Shizuku للمتابعة</string>
+    <string name="browser_not_found_message">لم يتم العثور على متصفح، الرجاء تثبيت أو تفعيل المتصفح</string>
+    <string name="shizuku_info_message">يتيح Shizuku لبعض المساعدين فتح أنشطة الإدخال الصوتي التي لا تكون متاحة عادةً للتطبيقات الأخرى.</string>
+    <!--buttons-->
+    <string name="shizuku_install_button">تثبيت</string>
+    <string name="shizuku_open_button">فتح</string>
+    <string name="shizuku_ready_button">جاهز</string>
+    <string name="shizuku_grant_access_button">منح الوصول</string>
+    <string name="shizuku_granted_button">تم المنح</string>
+    <string name="shizuku_continue_button">متابعة</string>
+
     <!--setup digital assistant dialog-->
 
     <string name="digital_assistant_setup_title">تطبيق المساعد الرقمي الافتراضي</string>
     <!--messages-->
-    <string name="digital_assistant_setup_message">في الإعدادات قم باختيار <b>SwitchAI</b> للوصول سريعا إلي المساعد المحدد باستخدام الإيماءات و الأزرار و المزيد.</string>
+    <string name="digital_assistant_setup_message">في الإعدادات قم باختيار <b>SwitchAI</b> للوصول سريعًا إلي المساعد المحدد باستخدام الإيماءات و الأزرار و المزيد.</string>
     <!--buttons-->
     <string name="digital_assistant_setup_button">تعيين كافتراضي</string>
 
@@ -163,13 +183,13 @@
     <string name="assistant_tutorial_edge_gestures_summary">على الأجهزة التي تستخدم التنقل بالإيماءات (أندرويد 10 والإصدارات الأحدث)، اسحب لأعلى وللداخل من أي من الزاويتين السفليتين للشاشة. سيظهر قوس متوهج من الزاوية لتأكيد فتح المساعد الرقمي. لكي يعمل هذا، يجب تحديد <b>التنقل بالإيماءات</b> كوضع تنقل النظام في إعدادات جهازك.</string>
 
     <string name="assistant_tutorial_home_button">استخدام زر التنقل الرئيسي</string>
-    <string name="assistant_tutorial_home_button_summary">إذا كان جهازك يستخدم التنقل بثلاثة أزرار، فاضغط مع الاستمرار على زر الصفحة الرئيسية المركزي للحظة. هذا الإجراء مخصص عادةً لفتح المساعد الرقمي. إذا كان هذا الإجراء يؤدي وظيفة مختلفة، فربما يكون قد تم تخصيصه بواسطة الشركة المصنعة لجهازك.</string>
+    <string name="assistant_tutorial_home_button_summary">إذا كان جهازك يستخدم التنقل بثلاثة أزرار، فاضغط مع الاستمرار على زر الصفحة الرئيسة المركزي للحظة. هذا الإجراء مخصص عادةً لفتح المساعد الرقمي. إذا كان هذا الإجراء يؤدي وظيفة مختلفة، فربما يكون قد تم تخصيصه بواسطة الشركة المصنعة لجهازك.</string>
 
     <string name="assistant_tutorial_power_button">استخدام زر الطاقة</string>
-    <string name="assistant_tutorial_power_button_summary">تسمح العديد من الأجهزة بفتح المساعد الرقمي عن طريق الضغط لفترة طويلة على زر الطاقة. إذا ظهرت قائمة الطاقة عند القيام بذلك، فمن المحتمل أن تكون الميزة معطلة. يمكنك غالبًا تمكينها في إعدادات نظامك، عادةً ضمن مسار مثل <b>الإعدادات &gt; النظام &gt; الإيماءات &gt; الضغط مع الاستمرار على زر الطاقة</b>.</string>
+    <string name="assistant_tutorial_power_button_summary">تسمح العديد من الأجهزة بفتح المساعد الرقمي عن طريق الضغط مدة على زر الطاقة. إذا ظهرت قائمة الطاقة عند الفعل من (ذلك)، فمن المحتمل أن تكون المِيزة معطلة. يمكنك غالبًا تمكينها في إعدادات نظامك، عادةً ضمن مسار مثل <b>الإعدادات &gt; النظام &gt; الإيماءات &gt; الضغط مع الاستمرار على زر الطاقة</b>.</string>
 
     <string name="assistant_tutorial_headset_button">استخدام سماعات الرأس السلكية والبلوتوث</string>
-    <string name="assistant_tutorial_headset_button_summary">تسمح العديد من سماعات الرأس السلكية واللاسلكية بفتح المساعد الرقمي عن طريق الضغط لفترة طويلة على الزر متعدد الوظائف. يُستخدم هذا الزر عادةً للتحكم في تشغيل الوسائط أو الرد على المكالمات، ولكن يمكنه أيضًا فتح المساعد حسب طراز سماعة الرأس. قد تفتح إيماءات النقر على بعض سماعات الأذن اللاسلكية مثل <b>النقر المزدوج</b> أيضًا المساعد الرقمي إذا كان مدعومًا ومُكوَّنًا في التطبيق.</string>
+    <string name="assistant_tutorial_headset_button_summary">تسمح العديد من سماعات الرأس السلكية واللاسلكية بفتح المساعد الرقمي عن طريق الضغط مدة على الزر متعدد الوظائف. يُستخدم هذا الزر عادةً للتحكم في تشغيل الوسائط أو الرد على المكالمات، ولكن يمكنه أيضًا فتح المساعد حسب طراز سماعة الرأس. قد تفتح إيماءات النقر على بعض سماعات الأذن اللاسلكية مثل <b>النقر المزدوج</b> أيضًا المساعد الرقمي إذا كان مدعومًا ومُكوَّنًا في التطبيق.</string>
 
     <!--assistant selector dialog-->
 
@@ -221,10 +241,6 @@
     <string name="error_min_selection">اختر %1$d على الأقل</string>
     <string name="error_max_selection">اختر %1$d كحد أقصى</string>
 
-    <!--root permission-->
-
-    <string name="root_access_warning">امنح صلاحيات الروت أولا</string>
-
     <!--app shortcut/tile-->
 
     <string name="assistant_label">المساعد</string>
@@ -246,7 +262,7 @@
     <string name="widget_description">ويدجيت بتصميم Material للوصول إلى مساعدك</string>
     <string name="widget_invisible_description">ويدجيت مخفي للوصول إلى مساعدك</string>
     <!--pinning widget-->
-    <string name="widget_launcher_not_supported">برنامج الشاشة الرئيسية لا يدعم تثبيت الويدجيت</string>
+    <string name="widget_launcher_not_supported">برنامج الشاشة الرئيسة لا يدعم تثبيت الويدجيت</string>
 
     <!--open assistant messages-->
 

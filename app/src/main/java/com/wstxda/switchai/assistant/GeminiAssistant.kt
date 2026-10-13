@@ -1,14 +1,11 @@
 package com.wstxda.switchai.assistant
 
-import androidx.lifecycle.lifecycleScope
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.logic.openAssistant
-import com.wstxda.switchai.logic.openAssistantRoot
+import com.wstxda.switchai.logic.openAssistantShizuku
 import com.wstxda.switchai.utils.AssistantProperties
-import com.wstxda.switchai.utils.Constants
-import kotlinx.coroutines.launch
 
 class GeminiAssistant : AssistantActivity() {
     private val preferences by lazy { PreferenceHelper(this) }
@@ -18,19 +15,16 @@ class GeminiAssistant : AssistantActivity() {
     }
 
     override fun onCreateInternal() {
-        lifecycleScope.launch {
-            if (preferences.getBoolean(Constants.VOICE_INPUT_ROOT_PREF_KEY)) {
-                openGeminiRoot()
-            } else {
-                openGemini()
-            }
+        if (preferences.isShizukuVoiceInputEnabled()) {
+            openGeminiShizuku()
+        } else {
+            openGemini()
         }
     }
 
-    private fun openGeminiRoot() {
-        openAssistantRoot(
-            intents = listOf(createGeminiRootIntent()),
-            rootAccessMessage = R.string.root_access_warning,
+    private fun openGeminiShizuku() {
+        openAssistantShizuku(
+            intent = createGeminiShizukuIntent(),
             errorMessage = R.string.assistant_application_not_found
         )
     }
@@ -48,7 +42,7 @@ class GeminiAssistant : AssistantActivity() {
         voiceInputActivity = "com.google.android.apps.bard.shellapp.BardEntryPointActivity"
     )
 
-    private fun createGeminiRootIntent() = createAssistantIntent(
+    private fun createGeminiShizukuIntent() = createAssistantIntent(
         packageName = "com.google.android.googlequicksearchbox",
         defaultActivity = "com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity",
         voiceInputActivity = "com.google.android.apps.search.assistant.surfaces.voice.robin.ui.floaty.activity.FloatyActivity"

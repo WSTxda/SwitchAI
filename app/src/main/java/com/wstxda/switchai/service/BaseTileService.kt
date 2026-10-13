@@ -27,6 +27,9 @@ abstract class BaseTileService : TileService() {
 
     private var collectionJob: Job? = null
 
+    protected var isListening = false
+        private set
+
     protected open val sampleIntervalMs: Long = 0L
 
     @OptIn(FlowPreview::class)
@@ -34,12 +37,14 @@ abstract class BaseTileService : TileService() {
     override fun onStartListening() {
         super.onStartListening()
 
+        isListening = true
+        collectionJob?.cancel()
+        collectionJob = null
         updateTile()
 
         val flows = flowsToCollect()
         if (flows.isEmpty()) return
 
-        collectionJob?.cancel()
         collectionJob = flows.merge()
             .let { flow -> if (sampleIntervalMs > 0L) flow.sample(sampleIntervalMs.milliseconds) else flow }
             .conflate().onEach { updateTile() }.launchIn(serviceScope)
@@ -47,6 +52,7 @@ abstract class BaseTileService : TileService() {
 
     @CallSuper
     override fun onStopListening() {
+        isListening = false
         collectionJob?.cancel()
         collectionJob = null
         super.onStopListening()
@@ -54,6 +60,8 @@ abstract class BaseTileService : TileService() {
 
     @CallSuper
     override fun onDestroy() {
+        isListening = false
+        collectionJob = null
         serviceScope.cancel()
         super.onDestroy()
     }
@@ -69,6 +77,7 @@ abstract class BaseTileService : TileService() {
         icon: Icon? = null,
         description: CharSequence? = null,
     ) {
+        if (!isListening) return
         val tile = qsTile ?: return
         tile.state = state
         tile.label = label
@@ -76,7 +85,7 @@ abstract class BaseTileService : TileService() {
             tile.subtitle = subtitle
         }
         icon?.let { tile.icon = it }
-        tile.contentDescription = description
+        tile.contentDescription = description ?: label
         tile.updateTile()
     }
 

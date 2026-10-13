@@ -1,5 +1,6 @@
 package com.wstxda.switchai.service
 
+import android.content.SharedPreferences
 import android.service.quicksettings.Tile
 import androidx.core.graphics.drawable.IconCompat
 import com.wstxda.switchai.R
@@ -8,10 +9,32 @@ import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.ui.utils.AssistantResourcesManager
 import com.wstxda.switchai.utils.Constants
 
-class AssistantTileService : BaseTileService() {
+class AssistantTileService : BaseTileService(), SharedPreferences.OnSharedPreferenceChangeListener {
 
     private val assistantResourcesManager by lazy { AssistantResourcesManager(applicationContext) }
     private val preferenceHelper by lazy { PreferenceHelper(applicationContext) }
+
+    override fun onStartListening() {
+        preferenceHelper.registerListener(this)
+        super.onStartListening()
+    }
+
+    override fun onStopListening() {
+        preferenceHelper.unregisterListener(this)
+        super.onStopListening()
+    }
+
+    override fun onDestroy() {
+        preferenceHelper.unregisterListener(this)
+        super.onDestroy()
+    }
+
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        if (!isListening) return
+        when (key) {
+            Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, Constants.SELECTOR_PREF_KEY, Constants.IS_ASSIST_SETUP_DONE, null -> updateTile()
+        }
+    }
 
     override fun onClick() {
         startActivityAndCollapse(DigitalAssistantService::class.java)
@@ -20,14 +43,15 @@ class AssistantTileService : BaseTileService() {
     override fun updateTile() {
         if (!DigitalAssistantChecker.isSetupDone(this)) {
             setTileState(
-                state = Tile.STATE_UNAVAILABLE, label = getString(R.string.assistant_label)
+                state = Tile.STATE_UNAVAILABLE,
+                label = getString(R.string.assistant_label),
+                icon = IconCompat.createWithResource(this, R.drawable.ic_assistant).toIcon(this)
             )
             return
         }
 
-        val isSelectorEnabled = preferenceHelper.getBoolean(Constants.SELECTOR_PREF_KEY, false)
-        val assistantValue =
-            preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
+        val isSelectorEnabled = preferenceHelper.getBoolean(Constants.SELECTOR_PREF_KEY, true)
+        val assistantValue = preferenceHelper.getString(Constants.DIGITAL_ASSISTANT_SELECT_PREF_KEY, null)
 
         val tileState = if (isSelectorEnabled || assistantValue != null) {
             Tile.STATE_ACTIVE

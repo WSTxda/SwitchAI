@@ -24,13 +24,19 @@ class ShizukuSetupActivity : BaseActivity() {
         fun createIntent(
             context: Context, component: ComponentName, errorMessageResId: Int
         ): Intent = Intent(context, ShizukuSetupActivity::class.java).apply {
-            putExtra(Constants.EXTRA_SHIZUKU_TARGET_COMPONENT, component.flattenToString())
+            putExtra(
+                Constants.EXTRA_SHIZUKU_TARGET_COMPONENT, component.flattenToString()
+            )
             putExtra(Constants.EXTRA_SHIZUKU_ERROR_MESSAGE, errorMessageResId)
         }
     }
 
     private lateinit var binding: ActivityShizukuSetupBinding
-    private lateinit var targetComponent: ComponentName
+    private var targetComponent: ComponentName? = null
+
+    private val setupOnly by lazy {
+        intent.getBooleanExtra(Constants.EXTRA_SHIZUKU_SETUP_ONLY, false)
+    }
 
     private var errorMessageResId = R.string.assistant_application_not_found
     private var setupShown = false
@@ -43,7 +49,7 @@ class ShizukuSetupActivity : BaseActivity() {
             intent.getStringExtra(Constants.EXTRA_SHIZUKU_TARGET_COMPONENT).orEmpty()
         )
 
-        if (component == null) {
+        if (component == null && !setupOnly) {
             finish()
             return
         }
@@ -59,7 +65,7 @@ class ShizukuSetupActivity : BaseActivity() {
         setupShown =
             savedInstanceState?.getBoolean(Constants.STATE_SHIZUKU_SETUP_SHOWN) == true || launchInterrupted
 
-        if (!setupShown && ShizukuChecker.getState(this) == ShizukuState.READY) {
+        if (!setupOnly && !setupShown && ShizukuChecker.getState(this) == ShizukuState.READY) {
             launchTarget()
             return
         }
@@ -88,19 +94,23 @@ class ShizukuSetupActivity : BaseActivity() {
         if (supportFragmentManager.findFragmentById(containerId) == null) {
             supportFragmentManager.beginTransaction().replace(
                 containerId, ShizukuSetupFragment.newInstance(
-                    targetComponent, errorMessageResId, permissionInvalidated
+                    component = targetComponent,
+                    errorMessageResId = errorMessageResId,
+                    permissionInvalidated = permissionInvalidated,
+                    setupOnly = setupOnly
                 )
             ).commit()
         }
     }
 
     private fun launchTarget() {
-        if (launchStarted) return
+        if (setupOnly || launchStarted) return
 
+        val component = targetComponent ?: return
         launchStarted = true
 
         lifecycleScope.launch {
-            when (ShizukuLauncher.launch(this@ShizukuSetupActivity, targetComponent)) {
+            when (ShizukuLauncher.launch(this@ShizukuSetupActivity, component)) {
                 ShizukuLaunchResult.SUCCESS -> {
                     onAssistantOpened()
                     finish()

@@ -35,8 +35,15 @@
         android:summary="@string/pref_voice_input_shizuku_summary"
         android:title="@string/pref_voice_input_shizuku"
         app:iconSpaceReserved="false"
-        app:layout="@layout/preference_material_single"
+        app:layout="@layout/preference_material_top"
         tools:widgetLayout="@layout/preference_material_switch" />
+
+    <Preference
+        android:dependency="voice_input_shizuku"
+        android:icon="@drawable/ic_shizuku"
+        android:key="voice_input_shizuku_setup"
+        android:layout="@layout/preference_material_bottom"
+        android:title="@string/app_shizuku_setup" />
 
     <Preference
         android:icon="@drawable/ic_info"

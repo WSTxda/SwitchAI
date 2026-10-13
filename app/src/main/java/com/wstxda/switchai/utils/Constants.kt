@@ -31,6 +31,7 @@ object Constants {
 
     const val VOICE_INPUT_PREF_KEY = "voice_input"
     const val VOICE_INPUT_SHIZUKU_PREF_KEY = "voice_input_shizuku"
+    const val VOICE_INPUT_SHIZUKU_SETUP_PREF_KEY = "voice_input_shizuku_setup"
 
     // -------------------------------------------------------------------------
     // Preferences keys — accessibility
@@ -158,6 +159,7 @@ object Constants {
     const val SHIZUKU_SERVICE_PROCESS = "shizuku"
     const val SHIZUKU_SERVICE_TAG = "switchai_shizuku"
     const val SHIZUKU_SERVICE_VERSION = 1
+    const val EXTRA_SHIZUKU_SETUP_ONLY = "shizuku_setup_only"
     const val EXTRA_SHIZUKU_TARGET_COMPONENT = "shizuku_target_component"
     const val EXTRA_SHIZUKU_ERROR_MESSAGE = "shizuku_error_message"
 

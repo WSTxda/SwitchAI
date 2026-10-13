@@ -14,7 +14,7 @@
 
     <!--app theme library-->
 
-    <style name="AppTheme.Library" parent="@style/AppTheme.Base" />
+    <style name="AppTheme.Animation" parent="@style/AppTheme.Base" />
 
     <!--app theme transparent-->
 

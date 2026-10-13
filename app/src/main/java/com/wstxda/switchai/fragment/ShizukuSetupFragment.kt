@@ -14,13 +14,12 @@ import com.wstxda.switchai.R
 import com.wstxda.switchai.data.ShizukuLaunchResult
 import com.wstxda.switchai.data.ShizukuState
 import com.wstxda.switchai.databinding.FragmentShizukuSetupBinding
+import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.logic.ShizukuChecker
 import com.wstxda.switchai.logic.ShizukuLauncher
-import com.wstxda.switchai.logic.PreferenceHelper
+import com.wstxda.switchai.logic.onAssistantOpened
 import com.wstxda.switchai.logic.openAssistant
 import com.wstxda.switchai.logic.showToast
-import com.wstxda.switchai.ui.utils.SoundService.openAssistantSound
-import com.wstxda.switchai.ui.utils.VibrationService.openAssistantVibration
 import com.wstxda.switchai.utils.Constants
 import kotlinx.coroutines.launch
 import rikka.shizuku.Shizuku
@@ -29,12 +28,20 @@ class ShizukuSetupFragment : Fragment() {
 
     companion object {
         fun newInstance(
-            component: ComponentName, errorMessageResId: Int, permissionInvalidated: Boolean = false
+            component: ComponentName?,
+            errorMessageResId: Int,
+            permissionInvalidated: Boolean = false,
+            setupOnly: Boolean = false
         ) = ShizukuSetupFragment().apply {
             arguments = Bundle().apply {
-                putString(Constants.EXTRA_SHIZUKU_TARGET_COMPONENT, component.flattenToString())
+                putString(
+                    Constants.EXTRA_SHIZUKU_TARGET_COMPONENT, component?.flattenToString()
+                )
                 putInt(Constants.EXTRA_SHIZUKU_ERROR_MESSAGE, errorMessageResId)
-                putBoolean(Constants.STATE_SHIZUKU_PERMISSION_INVALIDATED, permissionInvalidated)
+                putBoolean(
+                    Constants.STATE_SHIZUKU_PERMISSION_INVALIDATED, permissionInvalidated
+                )
+                putBoolean(Constants.EXTRA_SHIZUKU_SETUP_ONLY, setupOnly)
             }
         }
     }
@@ -42,7 +49,8 @@ class ShizukuSetupFragment : Fragment() {
     private var _binding: FragmentShizukuSetupBinding? = null
     private val binding get() = requireNotNull(_binding)
 
-    private lateinit var targetComponent: ComponentName
+    private var targetComponent: ComponentName? = null
+    private var setupOnly = false
     private var errorMessageResId = R.string.assistant_application_not_found
     private var launchStarted = false
     private var permissionInvalidated = false
@@ -52,7 +60,11 @@ class ShizukuSetupFragment : Fragment() {
         activity?.runOnUiThread {
             val context = context ?: return@runOnUiThread
             val state = ShizukuChecker.getState(context)
-            if (binderDied && state == ShizukuState.READY) permissionInvalidated = false
+
+            if (binderDied && state == ShizukuState.READY) {
+                permissionInvalidated = false
+            }
+
             binderDied = false
             refreshState(state)
         }
@@ -70,6 +82,7 @@ class ShizukuSetupFragment : Fragment() {
             if (requestCode == Constants.SHIZUKU_PERMISSION_REQUEST_CODE) {
                 activity?.runOnUiThread {
                     permissionInvalidated = grantResult != PackageManager.PERMISSION_GRANTED
+
                     refreshState(
                         if (grantResult == PackageManager.PERMISSION_GRANTED) {
                             ShizukuState.READY
@@ -84,21 +97,30 @@ class ShizukuSetupFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setupOnly = requireArguments().getBoolean(
+            Constants.EXTRA_SHIZUKU_SETUP_ONLY, false
+        )
+
         val component = ComponentName.unflattenFromString(
             requireArguments().getString(Constants.EXTRA_SHIZUKU_TARGET_COMPONENT).orEmpty()
         )
-        if (component == null) {
+
+        if (component == null && !setupOnly) {
             requireActivity().finish()
             return
         }
 
         targetComponent = component
+
         errorMessageResId = requireArguments().getInt(
             Constants.EXTRA_SHIZUKU_ERROR_MESSAGE, R.string.assistant_application_not_found
         )
+
         permissionInvalidated = savedInstanceState?.getBoolean(
             Constants.STATE_SHIZUKU_PERMISSION_INVALIDATED
-        ) ?: requireArguments().getBoolean(Constants.STATE_SHIZUKU_PERMISSION_INVALIDATED)
+        ) ?: requireArguments().getBoolean(
+            Constants.STATE_SHIZUKU_PERMISSION_INVALIDATED
+        )
     }
 
     override fun onCreateView(
@@ -110,6 +132,7 @@ class ShizukuSetupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.apply {
             shizukuTitleStart.setText(R.string.shizuku_start_title)
             shizukuMessageStart.setText(R.string.shizuku_start_message)
@@ -143,7 +166,9 @@ class ShizukuSetupFragment : Fragment() {
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        outState.putBoolean(Constants.STATE_SHIZUKU_PERMISSION_INVALIDATED, permissionInvalidated)
+        outState.putBoolean(
+            Constants.STATE_SHIZUKU_PERMISSION_INVALIDATED, permissionInvalidated
+        )
         super.onSaveInstanceState(outState)
     }
 
@@ -156,19 +181,20 @@ class ShizukuSetupFragment : Fragment() {
         val binding = _binding ?: return
 
         binding.shizukuMessageStart.setText(R.string.shizuku_start_message)
+
         binding.shizukuButtonStart.apply {
             setIconResource(R.drawable.ic_open)
             isEnabled = true
             setOnClickListener(null)
         }
+
         binding.shizukuButtonPermission.apply {
             setIconResource(R.drawable.ic_open)
             isEnabled = false
             setOnClickListener(null)
         }
-        binding.shizukuButtonContinue.apply {
-            isEnabled = false
-        }
+
+        binding.shizukuButtonContinue.isEnabled = false
 
         when (state) {
             ShizukuState.NOT_INSTALLED -> {
@@ -177,24 +203,32 @@ class ShizukuSetupFragment : Fragment() {
                     setText(R.string.shizuku_install_button)
                     setOnClickListener { openDownloadPage() }
                 }
-                binding.shizukuButtonPermission.setText(R.string.shizuku_grant_access_button)
+
+                binding.shizukuButtonPermission.setText(
+                    R.string.shizuku_grant_access_button
+                )
             }
 
             ShizukuState.NOT_RUNNING -> {
                 binding.shizukuButtonStart.setText(R.string.shizuku_open_button)
                 binding.shizukuButtonStart.setOnClickListener { openShizuku() }
-                binding.shizukuButtonPermission.setText(R.string.shizuku_grant_access_button)
+                binding.shizukuButtonPermission.setText(
+                    R.string.shizuku_grant_access_button
+                )
             }
 
             ShizukuState.UNSUPPORTED -> {
                 binding.shizukuMessageStart.setText(R.string.shizuku_unsupported_message)
                 binding.shizukuButtonStart.setText(R.string.shizuku_open_button)
                 binding.shizukuButtonStart.setOnClickListener { openShizuku() }
-                binding.shizukuButtonPermission.setText(R.string.shizuku_grant_access_button)
+                binding.shizukuButtonPermission.setText(
+                    R.string.shizuku_grant_access_button
+                )
             }
 
             ShizukuState.PERMISSION_REQUIRED -> {
                 setStartReadyState()
+
                 binding.shizukuButtonPermission.apply {
                     isEnabled = true
                     setText(R.string.shizuku_grant_access_button)
@@ -204,11 +238,13 @@ class ShizukuSetupFragment : Fragment() {
 
             ShizukuState.READY -> {
                 setStartReadyState()
+
                 binding.shizukuButtonPermission.apply {
                     setIconResource(R.drawable.ic_check_circle)
                     isEnabled = false
                     setText(R.string.shizuku_granted_button)
                 }
+
                 binding.shizukuButtonContinue.isEnabled = !launchStarted
             }
         }
@@ -224,6 +260,7 @@ class ShizukuSetupFragment : Fragment() {
 
     private fun getState(): ShizukuState {
         val state = ShizukuChecker.getState(requireContext())
+
         return if (permissionInvalidated && state == ShizukuState.READY) {
             ShizukuState.PERMISSION_REQUIRED
         } else {
@@ -246,29 +283,48 @@ class ShizukuSetupFragment : Fragment() {
 
     private fun openDownloadPage() {
         val context = requireContext()
-        if (!context.openAssistant(
-                Intent(
-                    Intent.ACTION_VIEW, Constants.SHIZUKU_DOWNLOAD_URL.toUri()
-                )
-            )
-        ) {
+        val intent = Intent(
+            Intent.ACTION_VIEW, Constants.SHIZUKU_DOWNLOAD_URL.toUri()
+        )
+
+        if (!context.openAssistant(intent)) {
             context.showToast(R.string.browser_not_found_message)
         }
     }
 
     private fun openShizuku() {
         val context = requireContext()
-        val intent = context.packageManager.getLaunchIntentForPackage(Constants.SHIZUKU_PACKAGE)
-        if (intent == null || !context.openAssistant(intent)) openDownloadPage()
+        val intent = context.packageManager.getLaunchIntentForPackage(
+            Constants.SHIZUKU_PACKAGE
+        )
+
+        if (intent == null || !context.openAssistant(intent)) {
+            openDownloadPage()
+        }
     }
 
     private fun launchTarget() {
+        if (setupOnly) {
+            if (getState() == ShizukuState.READY) {
+                requireActivity().finish()
+            } else {
+                refreshState()
+            }
+            return
+        }
+
         if (!PreferenceHelper(requireContext()).isShizukuVoiceInputEnabled()) {
             requireActivity().finish()
             return
         }
+
         if (launchStarted || getState() != ShizukuState.READY) {
             refreshState()
+            return
+        }
+
+        val component = targetComponent ?: run {
+            requireActivity().finish()
             return
         }
 
@@ -276,10 +332,9 @@ class ShizukuSetupFragment : Fragment() {
         binding.shizukuButtonContinue.isEnabled = false
 
         viewLifecycleOwner.lifecycleScope.launch {
-            when (ShizukuLauncher.launch(requireContext(), targetComponent)) {
+            when (ShizukuLauncher.launch(requireContext(), component)) {
                 ShizukuLaunchResult.SUCCESS -> {
-                    requireContext().openAssistantVibration()
-                    requireContext().openAssistantSound()
+                    requireContext().onAssistantOpened()
                     requireActivity().finish()
                 }
 

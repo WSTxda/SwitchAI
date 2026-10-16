@@ -1,6 +1,5 @@
 package com.wstxda.switchai.logic
 
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
@@ -30,16 +29,20 @@ fun Context.openAssistant(
         }
     }
 
-    val pkg = this::class.companionObjectInstance.let { it as? AssistantProperties }?.packageName
+    val pkg = intents.firstNotNullOfOrNull { intent ->
+        (intent.component?.packageName ?: intent.`package`)?.takeIf { it.isNotBlank() }
+    } ?: runCatching {
+        (this::class.companionObjectInstance as? AssistantProperties)?.packageName?.takeIf { it.isNotBlank() }
+    }.getOrNull()
 
-    val handled = pkg?.takeIf { it.isNotEmpty() }?.let { openOnStore(it) } ?: false
+    val handled = pkg?.let { openOnStore(it) } ?: false
 
     showToast(errorMessage)
     return handled
 }
 
 fun Context.openAssistant(intent: Intent): Boolean = runCatching {
-    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     startActivity(intent)
     true
 }.getOrElse { false }
@@ -91,27 +94,19 @@ fun Context.openAssistantShizuku(
 }
 
 fun Context.openOnStore(packageName: String): Boolean {
+    if (packageName.isBlank()) return false
+
     val marketIntent = Intent(
         Intent.ACTION_VIEW, "market://details?id=$packageName".toUri()
-    ).apply {
-        flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    }
+    )
 
     val webSearchIntent = Intent(
-        Intent.ACTION_VIEW, "https://www.google.com/search?q=$packageName+android+app".toUri()
-    ).apply {
-        flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    }
+        Intent.ACTION_VIEW,
+        "https://www.google.com/search".toUri().buildUpon()
+            .appendQueryParameter("q", "$packageName android app").build()
+    )
 
-    return try {
-        startActivity(marketIntent)
-        true
-    } catch (_: ActivityNotFoundException) {
-        runCatching {
-            startActivity(webSearchIntent)
-            true
-        }.getOrElse { false }
-    }
+    return openAssistant(marketIntent) || openAssistant(webSearchIntent)
 }
 
 fun Context.showToast(message: Int) {

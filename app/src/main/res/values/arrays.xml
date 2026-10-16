@@ -33,6 +33,7 @@
         <item>@string/miromind</item>
         <item>@string/monica</item>
         <item>@string/moto</item>
+        <item>@string/notion</item>
         <item>@string/oxproxion</item>
         <item>@string/perplexity</item>
         <item>@string/pi</item>
@@ -83,6 +84,7 @@
         <item>miromind_assistant</item>
         <item>monica_assistant</item>
         <item>moto_assistant</item>
+        <item>notion_assistant</item>
         <item>oxproxion_assistant</item>
         <item>perplexity_assistant</item>
         <item>pi_assistant</item>

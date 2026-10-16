@@ -364,6 +364,15 @@
             android:theme="@style/AppTheme.Transparent" />
 
         <activity
+            android:name=".assistant.NotionAssistant"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/notion"
+            android:launchMode="singleTop"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.Transparent" />
+
+        <activity
             android:name=".assistant.OxproxionAssistant"
             android:excludeFromRecents="true"
             android:exported="false"

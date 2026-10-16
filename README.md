@@ -68,6 +68,7 @@ Supports 40+ popular AI assistant apps including ChatGPT, Claude, DeepSeek, Gemi
 * **[MiroMind](https://play.google.com/store/apps/details?id=ai.miromind.app)** by EverMind AI
 * **[Monica](https://play.google.com/store/apps/details?id=im.monica.app.monica)** by Monica IM
 * **[Moto AI](https://play.google.com/store/apps/details?id=com.motorola.uxcore)** by Motorola
+* **[Notion](https://play.google.com/store/apps/details?id=notion.id)** by Notion Labs
 * **[oxproxion](https://github.com/stardomains3/oxproxion)** by stardomains3
 * **[Perplexity](https://play.google.com/store/apps/details?id=ai.perplexity.app.android)** by Perplexity AI
 * **[Pi](https://play.google.com/store/apps/details?id=ai.inflection.pi)** by Inflection AI
@@ -77,6 +78,7 @@ Supports 40+ popular AI assistant apps including ChatGPT, Claude, DeepSeek, Gemi
 * **[RikkaHub](https://rikka-ai.com/en)** by RikkaHub
 * **[Spark](https://xinghuo.xfyun.cn/)** by iFlytek
 * **[StepFun](https://play.google.com/store/apps/details?id=cn.yuewen.ywapp)** by StepFun
+* **[Tianxi AI](https://tianxi.cn/)** by Lenovo
 * **[Ultimate Alexa](https://play.google.com/store/apps/details?id=com.customsolutions.android.alexa)** by Custom Solutions
 * **[Venice AI](https://play.google.com/store/apps/details?id=com.ai.venice)** by Venice AI
 * **[Vibe](https://play.google.com/store/apps/details?id=ai.mistral.chat)** by Mistral AI

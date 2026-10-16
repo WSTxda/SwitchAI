@@ -44,6 +44,7 @@ object AssistantsMap {
         "rikka_assistant" to RikkaAssistant::class.java,
         "spark_assistant" to SparkAssistant::class.java,
         "stepfun_assistant" to StepFunAssistant::class.java,
+        "tianxi_assistant" to TianxiAssistant::class.java,
         "ultimate_alexa_assistant" to UltimateAlexaAssistant::class.java,
         "venice_assistant" to VeniceAssistant::class.java,
         "vibe_assistant" to VibeAssistant::class.java,
@@ -93,6 +94,7 @@ object AssistantsMap {
         "rikka_assistant" to "me.rerere.rikkahub",
         "spark_assistant" to "com.iflytek.spark",
         "stepfun_assistant" to "cn.yuewen.ywapp",
+        "tianxi_assistant" to "com.lenovo.menu_assistant",
         "ultimate_alexa_assistant" to "com.customsolutions.android.alexa",
         "venice_assistant" to "com.ai.venice",
         "vibe_assistant" to "ai.mistral.chat",
@@ -116,6 +118,7 @@ object AssistantsMap {
         "moto_assistant",
         "oxproxion_assistant",
         "perplexity_assistant",
+        "tianxi_assistant",
         "ultimate_alexa_assistant",
         "xiaoai_assistant",
         "yuanbao_assistant"

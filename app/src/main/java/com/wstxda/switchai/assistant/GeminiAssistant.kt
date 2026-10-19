@@ -42,7 +42,8 @@ class GeminiAssistant : AssistantActivity() {
         }
         openAssistant(
             intents = intents,
-            errorMessage = R.string.assistant_application_not_found
+            errorMessage = R.string.assistant_application_not_found,
+            storePackageName = Companion.packageName
         )
     }
 

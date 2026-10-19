@@ -1,11 +1,14 @@
 package com.wstxda.switchai.assistant
 
+import android.content.Intent
+import androidx.core.net.toUri
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.logic.openAssistant
 import com.wstxda.switchai.logic.openAssistantShizuku
 import com.wstxda.switchai.utils.AssistantProperties
+import com.wstxda.switchai.utils.Constants
 
 class GeminiAssistant : AssistantActivity() {
     private val preferences by lazy { PreferenceHelper(this) }
@@ -30,8 +33,15 @@ class GeminiAssistant : AssistantActivity() {
     }
 
     private fun openGemini() {
+        val intents = buildList {
+            if (preferences.getBoolean(Constants.VOICE_INPUT_PREF_KEY, true)) {
+                add(Intent(Intent.ACTION_VIEW, "https://gemini.google.com/app?target=live".toUri())
+                    .setPackage("com.google.android.googlequicksearchbox"))
+            }
+            add(createGeminiIntent())
+        }
         openAssistant(
-            intents = listOf(createGeminiIntent()),
+            intents = intents,
             errorMessage = R.string.assistant_application_not_found
         )
     }

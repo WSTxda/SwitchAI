@@ -1,11 +1,14 @@
 package com.wstxda.switchai.assistant
 
+import android.content.Intent
+import androidx.core.net.toUri
 import com.wstxda.switchai.R
 import com.wstxda.switchai.activity.AssistantActivity
 import com.wstxda.switchai.logic.PreferenceHelper
 import com.wstxda.switchai.logic.openAssistant
 import com.wstxda.switchai.logic.openAssistantShizuku
 import com.wstxda.switchai.utils.AssistantProperties
+import com.wstxda.switchai.utils.Constants
 
 class ChatGPTAssistant : AssistantActivity() {
     private val preferences by lazy { PreferenceHelper(this) }
@@ -30,8 +33,15 @@ class ChatGPTAssistant : AssistantActivity() {
     }
 
     private fun openChatGPT() {
+        val intents = buildList {
+            if (preferences.getBoolean(Constants.VOICE_INPUT_PREF_KEY, true)) {
+                add(Intent(Intent.ACTION_VIEW, "https://chatgpt.com/voice".toUri())
+                    .setPackage(Companion.packageName))
+            }
+            add(createChatGPTIntent())
+        }
         openAssistant(
-            intents = listOf(createChatGPTIntent()),
+            intents = intents,
             errorMessage = R.string.assistant_application_not_found
         )
     }

@@ -21,6 +21,7 @@ fun Context.onAssistantOpened() {
 fun Context.openAssistant(
     intents: List<Intent>,
     errorMessage: Int,
+    storePackageName: String? = null,
 ): Boolean {
     intents.forEach { intent ->
         if (openAssistant(intent)) {
@@ -29,7 +30,7 @@ fun Context.openAssistant(
         }
     }
 
-    val pkg = intents.firstNotNullOfOrNull { intent ->
+    val pkg = storePackageName ?: intents.firstNotNullOfOrNull { intent ->
         (intent.component?.packageName ?: intent.`package`)?.takeIf { it.isNotBlank() }
     } ?: runCatching {
         (this::class.companionObjectInstance as? AssistantProperties)?.packageName?.takeIf { it.isNotBlank() }
